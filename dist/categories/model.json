@@ -1,6 +1,6 @@
 {
   "kind": "model",
-  "updated_at": "2026-10-21T18:10:14.967291+00:00",
+  "updated_at": "2026-11-03T03:42:29.001885+00:00",
   "count": 11,
   "components": [
     {
@@ -78,7 +78,7 @@
       "id": "blendrl",
       "name": "BlendRL Neural-Symbolic Policy",
       "kind": "model",
-      "version": "1.0.3",
+      "version": "1.0.9",
       "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
       "author": {
         "name": "NeSyRL Contributors",
@@ -119,6 +119,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.3.zip",
           "sha256": "a974e83a1d01d7e368fca237f27c306fc946091b92b3e0a1f818451b88a335a3",
           "published_at": "2026-10-21T15:07:44.190439+00:00"
+        },
+        "1.0.9": {
+          "tag": "v1.0.9",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.9.zip",
+          "sha256": "339f13722ec5b26872836d52dd09bb56e785adb55490589d498b8260ecb673ac",
+          "published_at": "2026-11-03T03:07:24.497628+00:00"
         }
       },
       "config_path": "in/config/model/blendrl.yaml",
@@ -142,22 +148,31 @@
           },
           "blender": {
             "type": "object",
+            "required": [
+              "mode"
+            ],
             "properties": {
               "mode": {
                 "type": "string",
                 "enum": [
-                  "logic",
-                  "neural"
-                ]
+                  "neural",
+                  "symbolic"
+                ],
+                "x-theta-hide-label": true
               },
-              "blend_function": {
-                "type": "string",
-                "enum": [
-                  "softmax",
-                  "gumbel_softmax"
-                ]
+              "model": {
+                "type": "object",
+                "x-theta-domain": "model",
+                "description": "Model used to produce blender weights."
               }
             }
+          },
+          "blend_function": {
+            "type": "string",
+            "enum": [
+              "softmax",
+              "gumbel_softmax"
+            ]
           },
           "blend_q_values": {
             "type": "boolean"
@@ -414,7 +429,7 @@
       "id": "mlp",
       "name": "Multi-Layer Perceptron (MLP)",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
       "author": {
         "name": "Theta-IDE Team"
@@ -435,6 +450,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.0.zip",
           "sha256": "a2cb543f3aac933ca4148bedf46eb32bebefec3af344da44bc5f8464dded8adb",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.1.zip",
+          "sha256": "2d85b920698b2782f0bdda0d2b00b707fd69bcdcc63c2a596ff8be6348199167",
+          "published_at": "2026-11-03T03:07:24.501729+00:00"
         }
       },
       "paradigms": [
@@ -558,7 +579,7 @@
       "id": "neumann",
       "name": "NEUMANN Neural Symbolic Reasoner",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.3",
       "description": "Neuro-symbolic message passing reasoner over logic graphs.",
       "author": {
         "name": "Hikaru Shindo"
@@ -580,6 +601,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/neumann-1.0.0.zip",
           "sha256": "47ff2125a956fee7fa01383511448d89c0add7f66de1de7c083a2bb8f22b52e0",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.3": {
+          "tag": "v1.0.3",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/neumann-1.0.3.zip",
+          "sha256": "da1fed2adacaf1635650f8d0dc7ebe156a138228e1e3043efc87410a678dc3aa",
+          "published_at": "2026-11-03T03:07:24.680202+00:00"
         }
       },
       "paradigms": [
@@ -594,7 +621,8 @@
         "type": "object",
         "properties": {
           "rules": {
-            "type": "string"
+            "type": "string",
+            "x-theta-domain": "ruleset"
           },
           "logic_type": {
             "type": "string"
@@ -606,7 +634,7 @@
       "id": "nsfr",
       "name": "Neural Symbolic Forward Reasoner (NSFR)",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.3",
       "description": "Differentiable forward reasoning engine computing soft valuations over first-order logic clauses.",
       "author": {
         "name": "Hikaru Shindo"
@@ -627,6 +655,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.0.zip",
           "sha256": "2cbbc76388c7137de0d51877081075ccf25a644e9fd26f0023a80d1547cc87d9",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.3": {
+          "tag": "v1.0.3",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.3.zip",
+          "sha256": "ef676fbe87ac510b935265df0a9cf95103bb6be2bbddcfcd7857d5cd2f8520fa",
+          "published_at": "2026-11-03T03:07:24.590036+00:00"
         }
       },
       "paradigms": [
@@ -641,7 +675,8 @@
         "type": "object",
         "properties": {
           "rules": {
-            "type": "string"
+            "type": "string",
+            "x-theta-domain": "ruleset"
           },
           "logic_type": {
             "type": "string"

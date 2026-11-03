@@ -2,7 +2,7 @@
   "id": "blendrl",
   "name": "BlendRL Neural-Symbolic Policy",
   "kind": "model",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
   "author": {
     "name": "NeSyRL Contributors",
@@ -43,6 +43,12 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.3.zip",
       "sha256": "a974e83a1d01d7e368fca237f27c306fc946091b92b3e0a1f818451b88a335a3",
       "published_at": "2026-10-21T15:07:44.190439+00:00"
+    },
+    "1.0.9": {
+      "tag": "v1.0.9",
+      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.9.zip",
+      "sha256": "339f13722ec5b26872836d52dd09bb56e785adb55490589d498b8260ecb673ac",
+      "published_at": "2026-11-03T03:07:24.497628+00:00"
     }
   },
   "config_path": "in/config/model/blendrl.yaml",
@@ -66,22 +72,31 @@
       },
       "blender": {
         "type": "object",
+        "required": [
+          "mode"
+        ],
         "properties": {
           "mode": {
             "type": "string",
             "enum": [
-              "logic",
-              "neural"
-            ]
+              "neural",
+              "symbolic"
+            ],
+            "x-theta-hide-label": true
           },
-          "blend_function": {
-            "type": "string",
-            "enum": [
-              "softmax",
-              "gumbel_softmax"
-            ]
+          "model": {
+            "type": "object",
+            "x-theta-domain": "model",
+            "description": "Model used to produce blender weights."
           }
         }
+      },
+      "blend_function": {
+        "type": "string",
+        "enum": [
+          "softmax",
+          "gumbel_softmax"
+        ]
       },
       "blend_q_values": {
         "type": "boolean"

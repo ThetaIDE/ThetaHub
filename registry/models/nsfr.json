@@ -2,7 +2,7 @@
   "id": "nsfr",
   "name": "Neural Symbolic Forward Reasoner (NSFR)",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Differentiable forward reasoning engine computing soft valuations over first-order logic clauses.",
   "author": {
     "name": "Hikaru Shindo"
@@ -23,6 +23,12 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.0.zip",
       "sha256": "2cbbc76388c7137de0d51877081075ccf25a644e9fd26f0023a80d1547cc87d9",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.3": {
+      "tag": "v1.0.3",
+      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.3.zip",
+      "sha256": "ef676fbe87ac510b935265df0a9cf95103bb6be2bbddcfcd7857d5cd2f8520fa",
+      "published_at": "2026-11-03T03:07:24.590036+00:00"
     }
   },
   "paradigms": [
@@ -37,7 +43,8 @@
     "type": "object",
     "properties": {
       "rules": {
-        "type": "string"
+        "type": "string",
+        "x-theta-domain": "ruleset"
       },
       "logic_type": {
         "type": "string"

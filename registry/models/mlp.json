@@ -2,7 +2,7 @@
   "id": "mlp",
   "name": "Multi-Layer Perceptron (MLP)",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
   "author": {
     "name": "Theta-IDE Team"
@@ -23,6 +23,12 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.0.zip",
       "sha256": "a2cb543f3aac933ca4148bedf46eb32bebefec3af344da44bc5f8464dded8adb",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.1.zip",
+      "sha256": "2d85b920698b2782f0bdda0d2b00b707fd69bcdcc63c2a596ff8be6348199167",
+      "published_at": "2026-11-03T03:07:24.501729+00:00"
     }
   },
   "paradigms": [
