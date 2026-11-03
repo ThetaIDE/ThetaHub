@@ -1,6 +1,6 @@
 {
   "kind": "model",
-  "updated_at": "2026-11-03T03:42:29.001885+00:00",
+  "updated_at": "2026-11-03T16:58:08.602005+00:00",
   "count": 11,
   "components": [
     {
@@ -78,7 +78,7 @@
       "id": "blendrl",
       "name": "BlendRL Neural-Symbolic Policy",
       "kind": "model",
-      "version": "1.0.9",
+      "version": "1.1.0",
       "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
       "author": {
         "name": "NeSyRL Contributors",
@@ -125,11 +125,18 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.9.zip",
           "sha256": "339f13722ec5b26872836d52dd09bb56e785adb55490589d498b8260ecb673ac",
           "published_at": "2026-11-03T03:07:24.497628+00:00"
+        },
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.1.0.zip",
+          "sha256": "ad29199700bbd67c545bd95dbb02ba3f14c3771b9c0f402b25f8eeed9efc5e9b",
+          "published_at": "2026-11-03T16:58:08.600463+00:00"
         }
       },
       "config_path": "in/config/model/blendrl.yaml",
       "config_paths": [
-        "in/config/model/blendrl.yaml"
+        "in/config/model/blendrl.yaml",
+        "in/config/plot/blendrl/blend_routing.yaml"
       ],
       "paradigms": [
         "online_rl",
@@ -195,6 +202,16 @@
             "type": "string",
             "x-theta-domain": "model",
             "description": "Symbolic reasoning module."
+          },
+          "monitoring_interval": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "SB3 environment steps between routing summaries; 0 disables."
+          },
+          "monitoring_max_samples": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Maximum recent observations to save for routing plots; 0 disables."
           }
         }
       },

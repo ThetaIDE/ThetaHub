@@ -1,7 +1,7 @@
 {
   "$schema": "https://hub.thetaide.org/schemas/component-v1.json",
   "version": "1.0",
-  "updated_at": "2026-11-03T03:42:29.001885+00:00",
+  "updated_at": "2026-11-03T16:58:08.602005+00:00",
   "count": 41,
   "components": [
     {
@@ -1813,7 +1813,7 @@
       "id": "sb3-suite",
       "name": "Stable-Baselines3 Suite",
       "kind": "method",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "description": "Standard reinforcement learning algorithms (PPO, DQN, A2C, SAC) powered by Stable-Baselines3.",
       "author": {
         "name": "DLR-RM & SB3 Contributors",
@@ -1867,6 +1867,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.5.zip",
           "sha256": "cc6904fa27c39eb743f005b9f061226ebc59c0b2302aa2862c2e9b0dd579941a",
           "published_at": "2026-11-03T03:07:24.492997+00:00"
+        },
+        "1.0.6": {
+          "tag": "v1.0.6",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.6.zip",
+          "sha256": "e4e5f699b615c7639df679838e190b10d61189bb76a4868d3a99b7ae059a7d1a",
+          "published_at": "2026-11-03T16:58:08.601649+00:00"
         }
       },
       "paradigms": [
@@ -2117,7 +2123,7 @@
       "id": "blendrl",
       "name": "BlendRL Neural-Symbolic Policy",
       "kind": "model",
-      "version": "1.0.9",
+      "version": "1.1.0",
       "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
       "author": {
         "name": "NeSyRL Contributors",
@@ -2164,11 +2170,18 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.9.zip",
           "sha256": "339f13722ec5b26872836d52dd09bb56e785adb55490589d498b8260ecb673ac",
           "published_at": "2026-11-03T03:07:24.497628+00:00"
+        },
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.1.0.zip",
+          "sha256": "ad29199700bbd67c545bd95dbb02ba3f14c3771b9c0f402b25f8eeed9efc5e9b",
+          "published_at": "2026-11-03T16:58:08.600463+00:00"
         }
       },
       "config_path": "in/config/model/blendrl.yaml",
       "config_paths": [
-        "in/config/model/blendrl.yaml"
+        "in/config/model/blendrl.yaml",
+        "in/config/plot/blendrl/blend_routing.yaml"
       ],
       "paradigms": [
         "online_rl",
@@ -2234,6 +2247,16 @@
             "type": "string",
             "x-theta-domain": "model",
             "description": "Symbolic reasoning module."
+          },
+          "monitoring_interval": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "SB3 environment steps between routing summaries; 0 disables."
+          },
+          "monitoring_max_samples": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Maximum recent observations to save for routing plots; 0 disables."
           }
         }
       },
