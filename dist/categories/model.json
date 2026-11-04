@@ -1,6 +1,6 @@
 {
   "kind": "model",
-  "updated_at": "2026-11-03T17:39:36.326650+00:00",
+  "updated_at": "2026-11-04T04:46:40.214021+00:00",
   "count": 11,
   "components": [
     {
@@ -641,7 +641,7 @@
       "id": "neumann",
       "name": "NEUMANN Neural Symbolic Reasoner",
       "kind": "model",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "Neuro-symbolic message passing reasoner over logic graphs.",
       "author": {
         "name": "Hikaru Shindo"
@@ -669,6 +669,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/neumann-1.0.3.zip",
           "sha256": "da1fed2adacaf1635650f8d0dc7ebe156a138228e1e3043efc87410a678dc3aa",
           "published_at": "2026-11-03T03:07:24.680202+00:00"
+        },
+        "1.0.4": {
+          "tag": "v1.0.4",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.4.zip",
+          "sha256": "c23b3eaed1c22f97a8e9ab22ee4600e3f63dcaddb8426a16de6a283f58a49597",
+          "published_at": "2026-11-04T04:45:50.295908+00:00"
         }
       },
       "paradigms": [
@@ -684,7 +690,17 @@
         "properties": {
           "rules": {
             "type": "string",
-            "x-theta-domain": "ruleset"
+            "x-theta-domain": "ruleset",
+            "x-theta-actions": [
+              {
+                "type": "open-in-editor",
+                "label": "Edit rules",
+                "handler": {
+                  "path": "src/usr/models/neumann/editor_actions.py",
+                  "function": "rules_edit_targets"
+                }
+              }
+            ]
           },
           "logic_type": {
             "type": "string"
@@ -696,7 +712,7 @@
       "id": "nsfr",
       "name": "Neural Symbolic Forward Reasoner (NSFR)",
       "kind": "model",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "Differentiable forward reasoning engine computing soft valuations over first-order logic clauses.",
       "author": {
         "name": "Hikaru Shindo"
@@ -723,6 +739,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.3.zip",
           "sha256": "ef676fbe87ac510b935265df0a9cf95103bb6be2bbddcfcd7857d5cd2f8520fa",
           "published_at": "2026-11-03T03:07:24.590036+00:00"
+        },
+        "1.0.4": {
+          "tag": "v1.0.4",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.4.zip",
+          "sha256": "0aea19d02dba95a38a535f26a1fcf1f78f1b1fc1df54019c886a372e94790cb0",
+          "published_at": "2026-11-04T04:45:50.252258+00:00"
         }
       },
       "paradigms": [
@@ -738,7 +760,17 @@
         "properties": {
           "rules": {
             "type": "string",
-            "x-theta-domain": "ruleset"
+            "x-theta-domain": "ruleset",
+            "x-theta-actions": [
+              {
+                "type": "open-in-editor",
+                "label": "Edit rules",
+                "handler": {
+                  "path": "src/usr/models/nsfr/editor_actions.py",
+                  "function": "rules_edit_targets"
+                }
+              }
+            ]
           },
           "logic_type": {
             "type": "string"

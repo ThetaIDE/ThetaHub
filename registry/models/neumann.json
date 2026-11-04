@@ -2,7 +2,7 @@
   "id": "neumann",
   "name": "NEUMANN Neural Symbolic Reasoner",
   "kind": "model",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Neuro-symbolic message passing reasoner over logic graphs.",
   "author": {
     "name": "Hikaru Shindo"
@@ -30,6 +30,12 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/neumann-1.0.3.zip",
       "sha256": "da1fed2adacaf1635650f8d0dc7ebe156a138228e1e3043efc87410a678dc3aa",
       "published_at": "2026-11-03T03:07:24.680202+00:00"
+    },
+    "1.0.4": {
+      "tag": "v1.0.4",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.4.zip",
+      "sha256": "c23b3eaed1c22f97a8e9ab22ee4600e3f63dcaddb8426a16de6a283f58a49597",
+      "published_at": "2026-11-04T04:45:50.295908+00:00"
     }
   },
   "paradigms": [
@@ -45,7 +51,17 @@
     "properties": {
       "rules": {
         "type": "string",
-        "x-theta-domain": "ruleset"
+        "x-theta-domain": "ruleset",
+        "x-theta-actions": [
+          {
+            "type": "open-in-editor",
+            "label": "Edit rules",
+            "handler": {
+              "path": "src/usr/models/neumann/editor_actions.py",
+              "function": "rules_edit_targets"
+            }
+          }
+        ]
       },
       "logic_type": {
         "type": "string"
