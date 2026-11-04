@@ -2,7 +2,7 @@
   "id": "neumann",
   "name": "NEUMANN Neural Symbolic Reasoner",
   "kind": "model",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Neuro-symbolic message passing reasoner over logic graphs.",
   "author": {
     "name": "Hikaru Shindo"
@@ -36,6 +36,12 @@
       "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.4.zip",
       "sha256": "c23b3eaed1c22f97a8e9ab22ee4600e3f63dcaddb8426a16de6a283f58a49597",
       "published_at": "2026-11-04T04:45:50.295908+00:00"
+    },
+    "1.0.5": {
+      "tag": "v1.0.5",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.5.zip",
+      "sha256": "bc8074079741cab615ea1ae89132be3a2e496f59bd6183c5942c0e462eb6be9f",
+      "published_at": "2026-11-04T04:49:14.510279+00:00"
     }
   },
   "paradigms": [
