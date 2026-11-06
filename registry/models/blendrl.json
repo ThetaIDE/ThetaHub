@@ -2,7 +2,7 @@
   "id": "blendrl",
   "name": "BlendRL Neural-Symbolic Policy",
   "kind": "model",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
   "author": {
     "name": "NeSyRL Contributors",
@@ -61,6 +61,12 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.1.1.zip",
       "sha256": "8c8c69e32c998920e686a89e7ebf3fb41b5b3a6abfcb37169ec1726923cf3431",
       "published_at": "2026-11-03T17:39:30.139737+00:00"
+    },
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.2.0.zip",
+      "sha256": "10b6991a4f7c7ecf305f7b4ed83eb9820f467e09374e496dda7107036bf2a371",
+      "published_at": "2026-11-06T20:06:02.371311+00:00"
     }
   },
   "config_path": "in/config/model/blendrl.yaml",
@@ -146,6 +152,15 @@
         "type": "integer",
         "minimum": 0,
         "description": "Maximum recent observations to save for routing plots; 0 disables."
+      },
+      "logic_confidence_floor": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0,
+        "exclusiveMaximum": 1,
+        "description": "Truth scores at or below this floor abstain; stronger evidence blends with the default action distribution. Null preserves legacy normalization for historical checkpoints."
       }
     },
     "x-theta-config-schemas": {

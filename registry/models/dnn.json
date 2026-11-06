@@ -2,7 +2,7 @@
   "id": "dnn",
   "name": "Deep Neural Network (MLP)",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Standard Multi-Layer Perceptron (DNN) wrapping PyTorch Linear, LayerNorm, and Dueling Q-value heads.",
   "author": {
     "name": "Theta-IDE Team"
@@ -17,6 +17,12 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dnn-1.0.0.zip",
       "sha256": "8ce3ae1a0321c28bf07889d7bc664689c4a8829d1ef3d481c534f65032cf84ad",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.0.zip",
+      "sha256": "bb3bb0a78b23ca6eeb33f2a42eaf9b2a3fcc05109b0c7780082611727e199b28",
+      "published_at": "2026-11-06T20:06:02.364551+00:00"
     }
   },
   "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -54,6 +60,15 @@
           "leaky_relu",
           "identity"
         ]
+      },
+      "shared_features": {
+        "type": "boolean",
+        "default": true,
+        "description": "Share policy/value features. Disable for independent PPO actor and critic networks."
+      },
+      "dueling": {
+        "type": "boolean",
+        "description": "Use dueling Q-value heads; defaults to enabled for widths >=128."
       }
     }
   }

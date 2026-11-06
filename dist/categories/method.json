@@ -1,6 +1,6 @@
 {
   "kind": "method",
-  "updated_at": "2026-11-04T04:49:31.095699+00:00",
+  "updated_at": "2026-11-06T20:06:02.976967+00:00",
   "count": 2,
   "components": [
     {
@@ -173,7 +173,7 @@
       "id": "sb3-suite",
       "name": "Stable-Baselines3 Suite",
       "kind": "method",
-      "version": "1.0.6",
+      "version": "1.1.0",
       "description": "Standard reinforcement learning algorithms (PPO, DQN, A2C, SAC) powered by Stable-Baselines3.",
       "author": {
         "name": "DLR-RM & SB3 Contributors",
@@ -233,6 +233,12 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.6.zip",
           "sha256": "e4e5f699b615c7639df679838e190b10d61189bb76a4868d3a99b7ae059a7d1a",
           "published_at": "2026-11-03T16:58:08.601649+00:00"
+        },
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3_suite-1.1.0.zip",
+          "sha256": "a62265aa56f9de95978d8109c09e6cf4d89a1abc96057c24c98fd743eb905d0b",
+          "published_at": "2026-11-06T20:06:02.377156+00:00"
         }
       },
       "paradigms": [
@@ -279,6 +285,21 @@
               },
               "entrypoint": {
                 "type": "string"
+              },
+              "learning_rate_schedule": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "linear"
+                ],
+                "default": "constant",
+                "description": "Constant rate or linear decay across the training budget."
+              },
+              "learning_rate_final": {
+                "type": "number",
+                "minimum": 0,
+                "default": 0,
+                "description": "Final rate when using a linear learning-rate schedule."
               }
             }
           },
@@ -322,6 +343,21 @@
               },
               "entrypoint": {
                 "type": "string"
+              },
+              "learning_rate_schedule": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "linear"
+                ],
+                "default": "constant",
+                "description": "Constant rate or linear decay across the training budget."
+              },
+              "learning_rate_final": {
+                "type": "number",
+                "minimum": 0,
+                "default": 0,
+                "description": "Final rate when using a linear learning-rate schedule."
               }
             }
           },
@@ -362,6 +398,21 @@
               },
               "entrypoint": {
                 "type": "string"
+              },
+              "learning_rate_schedule": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "linear"
+                ],
+                "default": "constant",
+                "description": "Constant rate or linear decay across the training budget."
+              },
+              "learning_rate_final": {
+                "type": "number",
+                "minimum": 0,
+                "default": 0,
+                "description": "Final rate when using a linear learning-rate schedule."
               }
             }
           },
@@ -402,6 +453,21 @@
               },
               "entrypoint": {
                 "type": "string"
+              },
+              "learning_rate_schedule": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "linear"
+                ],
+                "default": "constant",
+                "description": "Constant rate or linear decay across the training budget."
+              },
+              "learning_rate_final": {
+                "type": "number",
+                "minimum": 0,
+                "default": 0,
+                "description": "Final rate when using a linear learning-rate schedule."
               }
             }
           }
