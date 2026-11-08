@@ -2,7 +2,7 @@
   "id": "autoencoder",
   "name": "Dense & Sequence Autoencoders",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dense and sequence autoencoder architectures for unsupervised representation learning.",
   "author": {
     "name": "Theta-IDE Team"
@@ -16,23 +16,24 @@
     "representation",
     "latent"
   ],
-  "target_path": "src/usr/models/autoencoder",
   "releases": {
     "1.0.0": {
       "tag": "v1.0.0",
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/autoencoder-1.0.0.zip",
       "sha256": "198afa6ed72b47ccd42938bd34ddddf1aa27c654c1a4e34672e9dc5d1b13cee2",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/autoencoder-1.0.1.zip",
+      "sha256": "e762607ec5dc9eb355db0430757442c3b39bff65a782690190fe65522b31e8fe",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 3929
     }
   },
   "paradigms": [
     "unsupervised",
     "supervised"
-  ],
-  "config_path": "in/config/model/basics/autoencoder.yaml",
-  "config_paths": [
-    "in/config/model/basics/autoencoder.yaml",
-    "in/config/model/basics/dense_autoencoder.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -66,6 +67,58 @@
           }
         }
       }
+    }
+  },
+  "config_path": "in/config/model/basics/autoencoder.yaml",
+  "config_paths": [
+    "in/config/model/basics/autoencoder.yaml",
+    "in/config/model/basics/dense_autoencoder.yaml"
+  ],
+  "dependencies": {
+    "components": [],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "autoencoder",
+      "kind": "model",
+      "entry_point": "autoencoder_model.py:SequenceAutoencoder",
+      "aliases": [
+        "sequence_autoencoder",
+        "seq_autoencoder",
+        "basics/autoencoder"
+      ]
+    },
+    {
+      "id": "dense_autoencoder",
+      "kind": "model",
+      "entry_point": "autoencoder_model.py:DenseAutoencoder",
+      "aliases": [
+        "mlp_autoencoder",
+        "basics/dense_autoencoder"
+      ]
+    },
+    {
+      "id": "AutoencoderLightningModule",
+      "kind": "component",
+      "entry_point": "training.py:AutoencoderLightningModule",
+      "aliases": [
+        "autoencoder_training"
+      ]
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "autoencoder_model.py",
+      "training.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/model/basics/autoencoder.yaml": "configs/model/basics/autoencoder.yaml",
+      "in/config/model/basics/dense_autoencoder.yaml": "configs/model/basics/dense_autoencoder.yaml"
     }
   }
 }

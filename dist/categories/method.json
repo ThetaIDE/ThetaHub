@@ -1,13 +1,13 @@
 {
   "kind": "method",
-  "updated_at": "2026-11-06T20:06:02.976967+00:00",
+  "updated_at": "2026-11-08T04:28:06.776283+00:00",
   "count": 2,
   "components": [
     {
       "id": "d3rlpy-suite",
       "name": "d3rlpy Offline RL Suite",
       "kind": "method",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "description": "Standard offline reinforcement learning algorithms (CQL, IQL, TD3+BC, BC) powered by d3rlpy.",
       "author": {
         "name": "Takuma Seno & d3rlpy Contributors",
@@ -25,12 +25,12 @@
         "d3rlpy",
         "baselines"
       ],
-      "target_path": "src/usr/methods/d3rlpy",
       "dependencies": {
         "pip": [
-          "d3rlpy",
+          "d3rlpy>=2.8,<3",
           "gymnasium"
-        ]
+        ],
+        "components": []
       },
       "releases": {
         "1.0.0": {
@@ -50,16 +50,17 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/d3rlpy_suite-1.0.2.zip",
           "sha256": "b0b5a520595f4739321a73e3c6b5501bbe3219a0a68d46ea438e2f438322f965",
           "published_at": "2026-10-21T18:10:09.769235+00:00"
+        },
+        "1.0.3": {
+          "tag": "v1.0.3",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/d3rlpy-suite-1.0.3.zip",
+          "sha256": "fec1b822dd5d3c9eb29a5394f7724795934753de5f67eb5edb90023b7314684b",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 5136
         }
       },
       "paradigms": [
         "offline_rl"
-      ],
-      "config_paths": [
-        "in/config/agent/d3rlpy/bc.yaml",
-        "in/config/agent/d3rlpy/cql.yaml",
-        "in/config/agent/d3rlpy/iql.yaml",
-        "in/config/agent/d3rlpy/td3_bc.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -167,13 +168,82 @@
             }
           }
         }
-      }
+      },
+      "config_paths": [
+        "in/config/agent/d3rlpy/bc.yaml",
+        "in/config/agent/d3rlpy/cql.yaml",
+        "in/config/agent/d3rlpy/iql.yaml",
+        "in/config/agent/d3rlpy/td3_bc.yaml"
+      ],
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "d3rlpy/bc",
+          "kind": "algorithm",
+          "entry_point": "d3rlpy_runner.py:main",
+          "aliases": [
+            "bc"
+          ],
+          "paradigms": [
+            "offline_rl"
+          ]
+        },
+        {
+          "id": "d3rlpy/cql",
+          "kind": "algorithm",
+          "entry_point": "d3rlpy_runner.py:main",
+          "aliases": [
+            "cql"
+          ],
+          "paradigms": [
+            "offline_rl"
+          ]
+        },
+        {
+          "id": "d3rlpy/iql",
+          "kind": "algorithm",
+          "entry_point": "d3rlpy_runner.py:main",
+          "aliases": [
+            "iql"
+          ],
+          "paradigms": [
+            "offline_rl"
+          ]
+        },
+        {
+          "id": "d3rlpy/td3_bc",
+          "kind": "algorithm",
+          "entry_point": "d3rlpy_runner.py:main",
+          "aliases": [
+            "td3_bc"
+          ],
+          "paradigms": [
+            "offline_rl"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "d3rlpy_runner.py"
+        ],
+        "resources": [
+          "requirements.txt"
+        ],
+        "configs": {
+          "in/config/agent/d3rlpy/bc.yaml": "configs/agent/d3rlpy/bc.yaml",
+          "in/config/agent/d3rlpy/cql.yaml": "configs/agent/d3rlpy/cql.yaml",
+          "in/config/agent/d3rlpy/iql.yaml": "configs/agent/d3rlpy/iql.yaml",
+          "in/config/agent/d3rlpy/td3_bc.yaml": "configs/agent/d3rlpy/td3_bc.yaml"
+        }
+      },
+      "config_path": "in/config/agent/d3rlpy/bc.yaml"
     },
     {
       "id": "sb3-suite",
       "name": "Stable-Baselines3 Suite",
       "kind": "method",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "Standard reinforcement learning algorithms (PPO, DQN, A2C, SAC) powered by Stable-Baselines3.",
       "author": {
         "name": "DLR-RM & SB3 Contributors",
@@ -189,13 +259,13 @@
         "dqn",
         "sb3"
       ],
-      "target_path": "src/usr/algorithms/sb3-suite",
       "dependencies": {
         "pip": [
           "stable-baselines3",
           "gymnasium",
           "shimmy"
-        ]
+        ],
+        "components": []
       },
       "releases": {
         "1.0.0": {
@@ -239,16 +309,17 @@
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3_suite-1.1.0.zip",
           "sha256": "a62265aa56f9de95978d8109c09e6cf4d89a1abc96057c24c98fd743eb905d0b",
           "published_at": "2026-11-06T20:06:02.377156+00:00"
+        },
+        "1.1.1": {
+          "tag": "v1.1.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-1.1.1.zip",
+          "sha256": "d50c5b056f2d21baf5d72288d59b92f4d32896f71179b3d11aac1a69a1c5f00e",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 12688
         }
       },
       "paradigms": [
         "online_rl"
-      ],
-      "config_paths": [
-        "in/config/agent/sb3/a2c.yaml",
-        "in/config/agent/sb3/dqn.yaml",
-        "in/config/agent/sb3/ppo.yaml",
-        "in/config/agent/sb3/sac.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -472,7 +543,81 @@
             }
           }
         }
-      }
+      },
+      "config_paths": [
+        "in/config/agent/sb3/a2c.yaml",
+        "in/config/agent/sb3/dqn.yaml",
+        "in/config/agent/sb3/ppo.yaml",
+        "in/config/agent/sb3/sac.yaml"
+      ],
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "sb3/a2c",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:main",
+          "aliases": [
+            "a2c"
+          ],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true
+        },
+        {
+          "id": "sb3/dqn",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:main",
+          "aliases": [
+            "dqn"
+          ],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true
+        },
+        {
+          "id": "sb3/ppo",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:main",
+          "aliases": [
+            "ppo"
+          ],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true
+        },
+        {
+          "id": "sb3/sac",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:main",
+          "aliases": [
+            "sac"
+          ],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "sb3_runner.py",
+          "theta_sb3_policy.py"
+        ],
+        "resources": [
+          "requirements.txt"
+        ],
+        "configs": {
+          "in/config/agent/sb3/a2c.yaml": "configs/agent/sb3/a2c.yaml",
+          "in/config/agent/sb3/dqn.yaml": "configs/agent/sb3/dqn.yaml",
+          "in/config/agent/sb3/ppo.yaml": "configs/agent/sb3/ppo.yaml",
+          "in/config/agent/sb3/sac.yaml": "configs/agent/sb3/sac.yaml"
+        }
+      },
+      "config_path": "in/config/agent/sb3/a2c.yaml"
     }
   ]
 }

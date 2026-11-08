@@ -2,8 +2,8 @@
   "id": "mimic-env",
   "name": "MIMIC-III Clinical Environment Suite",
   "kind": "env",
-  "version": "1.0.1",
-  "description": "ICU sepsis benchmarks, valuation hooks, clinical rules, and transition interfaces for MIMIC-III.",
+  "version": "1.0.2",
+  "description": "ICU sepsis benchmarks, valuation hooks, and transition interfaces for MIMIC-III.",
   "author": {
     "name": "Theta Clinical Team"
   },
@@ -25,25 +25,26 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_env-1.0.1.zip",
       "sha256": "70d244d3f87eed12e21241b81e42f330230f77d144ffef828ea53e630c1e73df",
       "published_at": "2026-10-21T15:06:51.811508+00:00"
+    },
+    "1.0.2": {
+      "tag": "v1.0.2",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-env-1.0.2.zip",
+      "sha256": "dd13d6469475b03c3fff91ef46a87e3de87387e0cd50a4febe598a430efb5d1f",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 8619
     }
   },
-  "config_path": "in/config/env/mimic.yaml",
-  "target_path": "in/envs/mimic",
   "dependencies": {
     "components": [
       "clinical-timeseries-data",
       "mimic-early-prediction",
       "mimic-clinical-suite"
-    ]
+    ],
+    "pip": []
   },
   "paradigms": [
     "supervised",
     "offline_rl"
-  ],
-  "suite": "mimic",
-  "hidden": true,
-  "config_paths": [
-    "in/config/env/mimic.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -101,6 +102,35 @@
           "type": "string"
         }
       }
+    }
+  },
+  "created_at": "2026-10-18T00:00:00Z",
+  "config_path": "in/config/env/mimic.yaml",
+  "config_paths": [
+    "in/config/env/mimic.yaml"
+  ],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "mimic-env",
+      "kind": "env",
+      "entry_point": "environment/env_vectorized.py:VectorizedNudgeEnv",
+      "aliases": [
+        "mimic"
+      ],
+      "resource_root": "environment"
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "environment/env_vectorized.py",
+      "environment/generate_expert.py",
+      "environment/valuation.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/env/mimic.yaml": "configs/env/mimic.yaml"
     }
   }
 }

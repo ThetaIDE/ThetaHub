@@ -2,7 +2,7 @@
   "id": "tabular-data",
   "name": "Tabular Data Module",
   "kind": "datamodule",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "General tabular dataset loader supporting CSV, NPZ, and NPY files with automated train/val/test splitting and standardization.",
   "author": {
     "name": "Theta-IDE Team"
@@ -19,20 +19,20 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/tabular_data-1.0.0.zip",
       "sha256": "d2aa9433ce5c9d194776ef1e0c1a93aa951afcc627c3467ced2e0acae44a0c14",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/tabular-data-1.0.1.zip",
+      "sha256": "75e3b5524da08faa9bcab5edbe26a0fee9effdf69c973e72d5c8cd13cb31dcff",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 3188
     }
   },
-  "config_path": "in/config/data/thetalib/tabular_data.yaml",
-  "target_path": "src/usr/data/tabular_data",
   "paradigms": [
     "supervised",
     "offline_rl",
     "unsupervised"
   ],
-  "config_paths": [
-    "in/config/data/thetalib/tabular_data.yaml"
-  ],
-  "suite": "thetalib",
-  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -54,6 +54,42 @@
       "pin_memory": {
         "type": "boolean"
       }
+    }
+  },
+  "created_at": "2026-10-18T00:00:00Z",
+  "config_path": "in/config/data/thetalib/tabular_data.yaml",
+  "compatibility": {
+    "theta": ">=2.0.0"
+  },
+  "config_paths": [
+    "in/config/data/thetalib/tabular_data.yaml"
+  ],
+  "suite": "thetalib",
+  "hidden": true,
+  "dependencies": {
+    "components": [],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "tabular_data",
+      "kind": "datamodule",
+      "entry_point": "tabular_data.py:TabularDataModule",
+      "aliases": [
+        "TabularDataModule"
+      ]
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "tabular_data.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/data/thetalib/tabular_data.yaml": "configs/data/thetalib/tabular_data.yaml"
     }
   }
 }

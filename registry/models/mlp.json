@@ -2,7 +2,7 @@
   "id": "mlp",
   "name": "Multi-Layer Perceptron (MLP)",
   "kind": "model",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
   "author": {
     "name": "Theta-IDE Team"
@@ -16,7 +16,6 @@
     "classification",
     "policy"
   ],
-  "target_path": "src/usr/models/mlp",
   "releases": {
     "1.0.0": {
       "tag": "v1.0.0",
@@ -29,6 +28,13 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.1.zip",
       "sha256": "2d85b920698b2782f0bdda0d2b00b707fd69bcdcc63c2a596ff8be6348199167",
       "published_at": "2026-11-03T03:07:24.501729+00:00"
+    },
+    "1.0.2": {
+      "tag": "v1.0.2",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.0.2.zip",
+      "sha256": "3cd7c1e4e4fc606413ab991176815ddef30651a8f7876f91ea6c53c3be2d31ae",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 4959
     }
   },
   "paradigms": [
@@ -36,13 +42,6 @@
     "offline_rl",
     "supervised"
   ],
-  "config_path": "in/config/model/basics/mlp.yaml",
-  "config_paths": [
-    "in/config/model/basics/mlp.yaml",
-    "in/config/model/basics/mlp_classifier.yaml"
-  ],
-  "suite": "thetalib",
-  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {},
@@ -98,6 +97,90 @@
           }
         }
       }
+    }
+  },
+  "config_path": "in/config/model/basics/mlp.yaml",
+  "config_paths": [
+    "in/config/model/basics/mlp.yaml",
+    "in/config/model/basics/mlp_classifier.yaml"
+  ],
+  "suite": "thetalib",
+  "hidden": true,
+  "dependencies": {
+    "components": [
+      "nature_cnn"
+    ],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "standard_mlp_actor",
+      "kind": "model",
+      "entry_point": "mlp_model.py:StandardMLPActor",
+      "aliases": [
+        "standard_mlp",
+        "neural_blender_mlp"
+      ]
+    },
+    {
+      "id": "value_network",
+      "kind": "model",
+      "entry_point": "mlp_model.py:ValueNetwork",
+      "aliases": [
+        "cnn_value_network"
+      ]
+    },
+    {
+      "id": "mlp",
+      "kind": "model",
+      "entry_point": "mlp_model.py:MLPQNetwork",
+      "aliases": [
+        "mlpqnetwork",
+        "basics/mlp"
+      ]
+    },
+    {
+      "id": "mlp_value_network",
+      "kind": "model",
+      "entry_point": "mlp_model.py:MLPValueNetwork",
+      "aliases": []
+    },
+    {
+      "id": "q_network",
+      "kind": "model",
+      "entry_point": "mlp_model.py:QNetwork",
+      "aliases": [
+        "cnn_q_network"
+      ]
+    },
+    {
+      "id": "mlp_classifier",
+      "kind": "model",
+      "entry_point": "mlp_model.py:MLPClassifier",
+      "aliases": [
+        "tabular_classifier",
+        "classifier",
+        "basics/mlp_classifier"
+      ]
+    },
+    {
+      "id": "MLPClassifierLightningModule",
+      "kind": "component",
+      "entry_point": "training.py:MLPClassifierLightningModule"
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "mlp_model.py",
+      "training.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/model/basics/mlp.yaml": "configs/model/basics/mlp.yaml",
+      "in/config/model/basics/mlp_classifier.yaml": "configs/model/basics/mlp_classifier.yaml"
     }
   }
 }

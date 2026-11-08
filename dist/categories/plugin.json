@@ -1,13 +1,13 @@
 {
   "kind": "plugin",
-  "updated_at": "2026-11-04T04:49:31.095699+00:00",
-  "count": 4,
+  "updated_at": "2026-11-08T04:28:06.776283+00:00",
+  "count": 3,
   "components": [
     {
       "id": "antigravity",
       "name": "Antigravity Agent",
       "kind": "plugin",
-      "version": "0.1.5",
+      "version": "1.0.1",
       "description": "Integrated Google Antigravity Agent for pair programming and codebase assistance with full-panel and sidepane modes.",
       "author": {
         "name": "Antigravity Team",
@@ -22,7 +22,6 @@
         "assistant",
         "antigravity"
       ],
-      "target_path": "plugins/antigravity",
       "releases": {
         "0.1.5": {
           "tag": "v0.1.5",
@@ -65,14 +64,54 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.5.zip",
           "sha256": "dadf64894a0312e59c49c180f06b0fb1ca865cf70db08e665f8db1c00732bc12",
           "published_at": "2026-10-16T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/antigravity-1.0.1.zip",
+          "sha256": "4a85c7e750d1d338c6880d896422d27c5a11b3b9b5704e4c8bdf8c13b2b65e2e",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 8455
         }
-      }
+      },
+      "default_enabled": true,
+      "icon": "antigravity",
+      "entry_point": "AntigravityPlugin",
+      "extra": {
+        "has_settings": true
+      },
+      "dependencies": {
+        "components": [],
+        "pip": [
+          "PyQt6",
+          "PyQt6-WebEngine"
+        ]
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "antigravity",
+          "kind": "plugin",
+          "entry_point": "__init__.py:AntigravityPlugin"
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "panel.py"
+        ],
+        "resources": [
+          "antigravity.svg"
+        ],
+        "configs": {}
+      },
+      "config_paths": []
     },
     {
       "id": "doom-sim",
       "name": "DOOM",
       "kind": "plugin",
-      "version": "0.1.0",
+      "version": "1.0.1",
       "description": "Authentic 1993 id Software DOOM engine running directly inside Theta IDE.",
       "author": {
         "name": "Cameron Egbert",
@@ -88,7 +127,6 @@
         "classic",
         "rl"
       ],
-      "target_path": "plugins/doom",
       "releases": {
         "0.1.0": {
           "tag": "v0.1.0",
@@ -101,20 +139,56 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_sim-0.1.0.zip",
           "sha256": "2a4f1fc0605a5d9dfa27590f69a650366f76a7fb4874ee3ac2640771e5614ec3",
           "published_at": "2026-10-16T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.0.1.zip",
+          "sha256": "c47051f10cefef898618aced8f38b03e3e721770ab7c591e37c803861b02dd78",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 4873
         }
-      }
+      },
+      "default_enabled": false,
+      "icon": "doom",
+      "entry_point": "DoomPlugin",
+      "dependencies": {
+        "components": [
+          "doom-env"
+        ],
+        "pip": [
+          "PyQt6",
+          "PyQt6-WebEngine"
+        ]
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "doom",
+          "kind": "plugin",
+          "entry_point": "__init__.py:DoomPlugin"
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "panel.py"
+        ],
+        "resources": [
+          "doom.svg",
+          "doom.html"
+        ],
+        "configs": {}
+      },
+      "config_paths": []
     },
     {
       "id": "obsidian-notes",
       "name": "Obsidian Notes",
       "kind": "plugin",
-      "version": "0.1.0",
+      "version": "1.0.1",
       "description": "Embedded Obsidian markdown vault browser, research notebook, and NeSyRL experiment logger.",
-      "author": {
-        "name": "Cameron Egbert",
-        "github": "CameronEgb",
-        "url": "https://github.com/CameronEgb"
-      },
+      "author": "NeSyRL Team",
       "repository": "https://github.com/CameronEgb/theta-plugins",
       "license": "MIT",
       "tags": [
@@ -123,7 +197,6 @@
         "markdown",
         "research"
       ],
-      "target_path": "plugins/obsidian",
       "releases": {
         "0.1.0": {
           "tag": "v0.1.0",
@@ -136,76 +209,45 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
           "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
           "published_at": "2026-10-16T19:00:00Z"
-        }
-      }
-    },
-    {
-      "id": "thetalib",
-      "name": "ThetaLib Core Foundation Suite",
-      "kind": "plugin",
-      "version": "1.0.1",
-      "description": "Foundational library plugin for Theta-IDE: universal convergence/loss/report figures and core data loaders (image, replay buffer, tabular).",
-      "author": {
-        "name": "Theta-IDE Team"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plugin",
-        "thetalib"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
-          "sha256": "ea301868ff48d1b6d7ebd3ebb70399d7f6528b9d5ebcd1d5d8201e7255a3aa35",
-          "published_at": "2026-10-18T19:00:00Z"
         },
         "1.0.1": {
           "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
-          "sha256": "c596f6e47a98878fc71dea920c84ae4a7cb45d4fca765ef32e76e5611a3129a8",
-          "published_at": "2026-10-18T19:00:00Z"
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.0.1.zip",
+          "sha256": "dcc38a2e9ae8e4b893641ab123189a8cd140eac875a573e9b26ad252088c2c79",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 5757
         }
       },
-      "config_paths": [
-        "in/config/plot/thetalib/convergence.yaml",
-        "in/config/plot/thetalib/losses.yaml",
-        "in/config/plot/thetalib/reports.yaml",
-        "in/config/data/thetalib/image_data.yaml",
-        "in/config/data/thetalib/replay_buffer.yaml",
-        "in/config/data/thetalib/tabular_data.yaml",
-        "in/config/model/basics/dnn.yaml",
-        "in/config/model/basics/mlp.yaml",
-        "in/config/model/basics/nature_cnn.yaml",
-        "in/config/model/basics/dueling_resnet.yaml"
+      "default_enabled": false,
+      "icon": "obsidian",
+      "entry_point": "ObsidianPlugin",
+      "dependencies": {
+        "components": [],
+        "pip": [
+          "PyQt6",
+          "PyQt6-WebEngine"
+        ]
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "obsidian",
+          "kind": "plugin",
+          "entry_point": "__init__.py:ObsidianPlugin"
+        }
       ],
-      "provides": [
-        "standard-figures",
-        "image-data",
-        "replay-buffer",
-        "tabular-data",
-        "dnn",
-        "mlp",
-        "nature_cnn",
-        "dueling_resnet"
-      ],
-      "installed_dirs": [
-        "plot/standard_figures",
-        "src/usr/data/image_data",
-        "src/usr/data/replay_buffer",
-        "src/usr/data/tabular_data",
-        "src/usr/models/dnn",
-        "src/usr/models/mlp",
-        "src/usr/models/nature_cnn",
-        "src/usr/models/dueling_resnet"
-      ],
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised",
-        "unsupervised"
-      ]
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "panel.py"
+        ],
+        "resources": [
+          "obsidian.svg"
+        ],
+        "configs": {}
+      },
+      "config_paths": []
     }
   ]
 }

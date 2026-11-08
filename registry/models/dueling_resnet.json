@@ -2,7 +2,7 @@
   "id": "dueling_resnet",
   "name": "Dueling ResNet",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaled residual policy and Q-network architecture with LayerNorm, GELU, and Dueling decomposition.",
   "author": {
     "name": "Theta-IDE Team"
@@ -17,6 +17,13 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dueling_resnet-1.0.0.zip",
       "sha256": "70196ecf7abce536bd12a66a49081dffe0873ee9a75575c1508172edd69bd8c7",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dueling_resnet-1.0.1.zip",
+      "sha256": "95a48bcbc0f1f237963cf20748c579a0fb1a3c06654f2477458a06baf6311a26",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 3609
     }
   },
   "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -26,13 +33,6 @@
     "offline_rl",
     "supervised"
   ],
-  "config_path": "in/config/model/basics/dueling_resnet.yaml",
-  "config_paths": [
-    "in/config/model/basics/dueling_resnet.yaml"
-  ],
-  "target_path": "src/usr/models/dueling_resnet",
-  "suite": "thetalib",
-  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -42,6 +42,42 @@
           "type": "integer"
         }
       }
+    }
+  },
+  "config_path": "in/config/model/basics/dueling_resnet.yaml",
+  "config_paths": [
+    "in/config/model/basics/dueling_resnet.yaml"
+  ],
+  "compatibility": {
+    "theta": ">=2.0.0"
+  },
+  "suite": "thetalib",
+  "hidden": true,
+  "dependencies": {
+    "components": [],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "dueling_resnet",
+      "kind": "model",
+      "entry_point": "dueling_resnet_model.py:DuelingResNetMLP",
+      "aliases": [
+        "resnet",
+        "basics/dueling_resnet"
+      ]
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "dueling_resnet_model.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/model/basics/dueling_resnet.yaml": "configs/model/basics/dueling_resnet.yaml"
     }
   }
 }

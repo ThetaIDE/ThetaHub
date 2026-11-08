@@ -12,7 +12,11 @@
     "description",
     "author",
     "repository",
-    "releases"
+    "releases",
+    "storage_version",
+    "api_version",
+    "capabilities",
+    "payload"
   ],
   "properties": {
     "id": {
@@ -54,7 +58,10 @@
       "description": "Clear summary of the component's functionality."
     },
     "author": {
-      "type": "object",
+      "type": [
+        "object",
+        "string"
+      ],
       "required": [
         "name"
       ],
@@ -87,10 +94,7 @@
       },
       "uniqueItems": true
     },
-    "target_path": {
-      "type": "string",
-      "description": "Relative target directory inside the IDE or workspace."
-    },
+    "target_path": false,
     "compatibility": {
       "type": "object",
       "properties": {
@@ -328,7 +332,55 @@
         }
       },
       "description": "JSON Schema for component parameters. Use properties for nested keys, enum for dropdown choices, x-theta-domain: model for installed model choices, and x-theta-config-schemas for profile-specific schemas."
-    }
+    },
+    "storage_version": {
+      "const": 2
+    },
+    "api_version": {
+      "const": 1
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "entry_point"
+        ]
+      }
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "implementations",
+        "resources",
+        "configs"
+      ],
+      "properties": {
+        "implementations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "configs": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "legacy_paths": false,
+    "module_aliases": false,
+    "legacy_archive": false
   },
   "additionalProperties": true
 }

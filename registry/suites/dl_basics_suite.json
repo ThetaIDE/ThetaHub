@@ -2,7 +2,7 @@
   "id": "dl_basics_suite",
   "name": "Deep Learning Basics Suite",
   "kind": "suite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Foundational deep learning architectures for Theta-IDE: Multi-Layer Perceptrons (MLP), Transformers, LSTMs, and Dense/Sequence Autoencoders.",
   "author": {
     "name": "Theta-IDE Team"
@@ -23,6 +23,13 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dl_basics_suite-1.0.0.zip",
       "sha256": "931d222bca55425366853af480eafc65f294f1a6871e8c98402aa7771fcce929",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.0.1.zip",
+      "sha256": "2e860fba9e2e1a51e258972d6dfa8b23b6121a78cf1f17081afb0b1495a2fc9f",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 495
     }
   },
   "paradigms": [
@@ -37,6 +44,19 @@
       "transformer",
       "lstm",
       "autoencoder"
-    ]
-  }
+    ],
+    "pip": []
+  },
+  "compatibility": {
+    "theta": ">=2.0.0"
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [],
+  "payload": {
+    "implementations": [],
+    "resources": [],
+    "configs": {}
+  },
+  "config_paths": []
 }

@@ -2,23 +2,19 @@
   "id": "doom-env",
   "name": "ViZDoom Environment",
   "kind": "env",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ViZDoom visual reinforcement learning environment for Doom scenario benchmarks.",
   "author": {
-    "name": "Cameron Egbert",
-    "github": "CameronEgb",
-    "url": "https://github.com/CameronEgb"
+    "name": "ViZDoom Team"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "repository": "https://github.com/Farama-Foundation/ViZDoom",
   "license": "MIT",
   "tags": [
     "doom",
-    "rl",
-    "tactical",
-    "gym",
-    "environment"
+    "vizdoom",
+    "reinforcement-learning",
+    "visual"
   ],
-  "target_path": "in/envs/doom",
   "releases": {
     "1.0.0": {
       "tag": "v1.0.0",
@@ -31,12 +27,18 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_env-1.0.1.zip",
       "sha256": "9294391f9b6d3bc2f901aa47b05c36048bf9782bb76eed3aaa2ec1ffbe4bf925",
       "published_at": "2026-10-21T14:55:42.482302+00:00"
+    },
+    "1.0.2": {
+      "tag": "v1.0.2",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.0.2.zip",
+      "sha256": "2e6f0a3314d2185305c4f94857c52761da8510f642ca4e78979a95c966c844b3",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 6331
     }
   },
   "paradigms": [
     "online_rl"
   ],
-  "config_path": "in/config/env/doom.yaml",
   "dependencies": {
     "components": [
       "thetalib"
@@ -45,9 +47,6 @@
       "vizdoom"
     ]
   },
-  "config_paths": [
-    "in/config/env/doom.yaml"
-  ],
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -84,6 +83,36 @@
           "type": "string"
         }
       }
+    }
+  },
+  "config_path": "in/config/env/doom.yaml",
+  "config_paths": [
+    "in/config/env/doom.yaml"
+  ],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "doom-env",
+      "kind": "env",
+      "entry_point": "env_vectorized.py:VectorizedNudgeEnv",
+      "aliases": [
+        "doom"
+      ],
+      "resource_root": "."
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "env_vectorized.py",
+      "env.py",
+      "actions.py",
+      "mlp.py",
+      "valuation.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/env/doom.yaml": "configs/env/doom.yaml"
     }
   }
 }

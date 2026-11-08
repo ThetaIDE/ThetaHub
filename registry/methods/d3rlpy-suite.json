@@ -2,7 +2,7 @@
   "id": "d3rlpy-suite",
   "name": "d3rlpy Offline RL Suite",
   "kind": "method",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Standard offline reinforcement learning algorithms (CQL, IQL, TD3+BC, BC) powered by d3rlpy.",
   "author": {
     "name": "Takuma Seno & d3rlpy Contributors",
@@ -20,12 +20,12 @@
     "d3rlpy",
     "baselines"
   ],
-  "target_path": "src/usr/methods/d3rlpy",
   "dependencies": {
     "pip": [
-      "d3rlpy",
+      "d3rlpy>=2.8,<3",
       "gymnasium"
-    ]
+    ],
+    "components": []
   },
   "releases": {
     "1.0.0": {
@@ -45,16 +45,17 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/d3rlpy_suite-1.0.2.zip",
       "sha256": "b0b5a520595f4739321a73e3c6b5501bbe3219a0a68d46ea438e2f438322f965",
       "published_at": "2026-10-21T18:10:09.769235+00:00"
+    },
+    "1.0.3": {
+      "tag": "v1.0.3",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/d3rlpy-suite-1.0.3.zip",
+      "sha256": "fec1b822dd5d3c9eb29a5394f7724795934753de5f67eb5edb90023b7314684b",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 5136
     }
   },
   "paradigms": [
     "offline_rl"
-  ],
-  "config_paths": [
-    "in/config/agent/d3rlpy/bc.yaml",
-    "in/config/agent/d3rlpy/cql.yaml",
-    "in/config/agent/d3rlpy/iql.yaml",
-    "in/config/agent/d3rlpy/td3_bc.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -162,5 +163,74 @@
         }
       }
     }
-  }
+  },
+  "config_paths": [
+    "in/config/agent/d3rlpy/bc.yaml",
+    "in/config/agent/d3rlpy/cql.yaml",
+    "in/config/agent/d3rlpy/iql.yaml",
+    "in/config/agent/d3rlpy/td3_bc.yaml"
+  ],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "d3rlpy/bc",
+      "kind": "algorithm",
+      "entry_point": "d3rlpy_runner.py:main",
+      "aliases": [
+        "bc"
+      ],
+      "paradigms": [
+        "offline_rl"
+      ]
+    },
+    {
+      "id": "d3rlpy/cql",
+      "kind": "algorithm",
+      "entry_point": "d3rlpy_runner.py:main",
+      "aliases": [
+        "cql"
+      ],
+      "paradigms": [
+        "offline_rl"
+      ]
+    },
+    {
+      "id": "d3rlpy/iql",
+      "kind": "algorithm",
+      "entry_point": "d3rlpy_runner.py:main",
+      "aliases": [
+        "iql"
+      ],
+      "paradigms": [
+        "offline_rl"
+      ]
+    },
+    {
+      "id": "d3rlpy/td3_bc",
+      "kind": "algorithm",
+      "entry_point": "d3rlpy_runner.py:main",
+      "aliases": [
+        "td3_bc"
+      ],
+      "paradigms": [
+        "offline_rl"
+      ]
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "d3rlpy_runner.py"
+    ],
+    "resources": [
+      "requirements.txt"
+    ],
+    "configs": {
+      "in/config/agent/d3rlpy/bc.yaml": "configs/agent/d3rlpy/bc.yaml",
+      "in/config/agent/d3rlpy/cql.yaml": "configs/agent/d3rlpy/cql.yaml",
+      "in/config/agent/d3rlpy/iql.yaml": "configs/agent/d3rlpy/iql.yaml",
+      "in/config/agent/d3rlpy/td3_bc.yaml": "configs/agent/d3rlpy/td3_bc.yaml"
+    }
+  },
+  "config_path": "in/config/agent/d3rlpy/bc.yaml"
 }

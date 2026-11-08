@@ -1,13 +1,13 @@
 {
   "kind": "suite",
-  "updated_at": "2026-11-04T04:49:31.095699+00:00",
-  "count": 4,
+  "updated_at": "2026-11-08T04:28:06.776283+00:00",
+  "count": 5,
   "components": [
     {
       "id": "basic_suite",
       "name": "ThetaIDE Basics",
       "kind": "suite",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Basic reinforcement learning benchmark suite for Theta-IDE: Stable-Baselines3, d3rlpy offline baselines, Atari 2600 (ALE), Gymnasium classic control, standard deep neural network architectures, and ThetaLib core figures and loaders.",
       "author": {
         "name": "Theta-IDE Team"
@@ -22,6 +22,13 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/basic_suite-1.0.0.zip",
           "sha256": "a79dd876972d06472672d7512b60c5cdc46be9389939d25db762566e1dcd7f9c",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/basic_suite-1.0.1.zip",
+          "sha256": "452ef733d20f7e63a314005c038b61e576a8a9adbe2b6ba23c33a572e24b7122",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 575
         }
       },
       "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -41,14 +48,27 @@
           "dnn",
           "nature_cnn",
           "dueling_resnet"
-        ]
-      }
+        ],
+        "pip": []
+      },
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [],
+      "payload": {
+        "implementations": [],
+        "resources": [],
+        "configs": {}
+      },
+      "config_paths": []
     },
     {
       "id": "dl_basics_suite",
       "name": "Deep Learning Basics Suite",
       "kind": "suite",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Foundational deep learning architectures for Theta-IDE: Multi-Layer Perceptrons (MLP), Transformers, LSTMs, and Dense/Sequence Autoencoders.",
       "author": {
         "name": "Theta-IDE Team"
@@ -69,6 +89,13 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dl_basics_suite-1.0.0.zip",
           "sha256": "931d222bca55425366853af480eafc65f294f1a6871e8c98402aa7771fcce929",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.0.1.zip",
+          "sha256": "2e860fba9e2e1a51e258972d6dfa8b23b6121a78cf1f17081afb0b1495a2fc9f",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 495
         }
       },
       "paradigms": [
@@ -83,14 +110,27 @@
           "transformer",
           "lstm",
           "autoencoder"
-        ]
-      }
+        ],
+        "pip": []
+      },
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [],
+      "payload": {
+        "implementations": [],
+        "resources": [],
+        "configs": {}
+      },
+      "config_paths": []
     },
     {
       "id": "robotics_suite",
       "name": "Robotics Suite",
       "kind": "suite",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "description": "A ready-to-use Theta-IDE robotics group with MuJoCo robot tasks, PPO and SAC baselines, MLP policies, and standard training plots.",
       "author": {
         "name": "Theta-IDE Team"
@@ -114,6 +154,13 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics_suite-1.0.1.zip",
           "sha256": "9260678241d0171351afb4efd99fa9524629764eb665f223946fa2a8f0a3c39c",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.2": {
+          "tag": "v1.0.2",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics_suite-1.0.2.zip",
+          "sha256": "cf4fdde2eead51f6e590a4e191fbcf9cf176d37c064c16f10e4fa268fb94ef17",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 682
         }
       },
       "paradigms": [
@@ -122,17 +169,27 @@
       "dependencies": {
         "components": [
           "robotics"
-        ]
+        ],
+        "pip": []
       },
       "compatibility": {
         "theta": ">=2.0.0"
-      }
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [],
+      "payload": {
+        "implementations": [],
+        "resources": [],
+        "configs": {}
+      },
+      "config_paths": []
     },
     {
       "id": "theta-validation-suite",
       "name": "Theta Validation Suite",
       "kind": "suite",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "Online-RL experiment and component conformance recipes for ThetaIDE Basics.",
       "author": {
         "name": "Theta-IDE Team"
@@ -148,7 +205,8 @@
       "dependencies": {
         "components": [
           "basic_suite"
-        ]
+        ],
+        "pip": []
       },
       "releases": {
         "1.0.0": {
@@ -163,25 +221,17 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/theta-validation-suite-1.1.0.zip",
           "sha256": "95ef00476e135d56f4f9c2416a52694707100c4f57da0e1107f28d2b292993c2",
           "published_at": "2026-10-21T18:23:47.065128+00:00"
+        },
+        "1.1.1": {
+          "tag": "v1.1.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.1.1.zip",
+          "sha256": "46d4bf43d43030ec865e0709c1a597dc529438e2eeefae363573d86390bb2937",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 6278
         }
       },
       "paradigms": [
         "online_rl"
-      ],
-      "config_paths": [
-        "in/config/experiment/theta_validation/_base.yaml",
-        "in/config/experiment/theta_validation/success/online_smoke.yaml",
-        "in/config/experiment/theta_validation/failure/missing_method.yaml",
-        "in/config/experiment/theta_validation/failure/missing_agent.yaml",
-        "in/config/experiment/theta_validation/failure/missing_model.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_cql.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_iql.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_bc.yaml",
-        "in/config/experiment/theta_validation/failure/unknown_agent.yaml",
-        "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml",
-        "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
-        "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml"
       ],
       "test_suite": {
         "format": "theta.test-suite/v1",
@@ -204,7 +254,7 @@
             "description": "PPO must retain its runner entrypoint, algorithm identity, and online-RL capability declaration.",
             "config_path": "in/config/agent/sb3/ppo.yaml",
             "required": {
-              "entrypoint": "src/usr/algorithms/sb3-suite/sb3_runner.py",
+              "entrypoint": "package://sb3-suite/sb3_runner.py",
               "algorithm": "PPO",
               "compatible_paradigms": [
                 "online_rl"
@@ -217,7 +267,7 @@
             "description": "CQL must retain its runner entrypoint, algorithm identity, and offline-RL capability declaration.",
             "config_path": "in/config/agent/d3rlpy/cql.yaml",
             "required": {
-              "entrypoint": "src/usr/algorithms/d3rlpy-suite/d3rlpy_runner.py",
+              "entrypoint": "package://d3rlpy-suite/d3rlpy_runner.py",
               "algorithm": "CQL",
               "compatible_paradigms": [
                 "offline_rl"
@@ -364,6 +414,123 @@
             "expected_error": "telemetry.metrics' must be a list"
           }
         ]
+      },
+      "config_paths": [
+        "in/config/experiment/theta_validation/_base.yaml",
+        "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml",
+        "in/config/experiment/theta_validation/failure/incompatible_bc.yaml",
+        "in/config/experiment/theta_validation/failure/incompatible_cql.yaml",
+        "in/config/experiment/theta_validation/failure/incompatible_iql.yaml",
+        "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+        "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+        "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+        "in/config/experiment/theta_validation/failure/missing_agent.yaml",
+        "in/config/experiment/theta_validation/failure/missing_method.yaml",
+        "in/config/experiment/theta_validation/failure/missing_model.yaml",
+        "in/config/experiment/theta_validation/failure/unknown_agent.yaml",
+        "in/config/experiment/theta_validation/success/online_smoke.yaml"
+      ],
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [],
+      "payload": {
+        "implementations": [],
+        "resources": [],
+        "configs": {
+          "in/config/experiment/theta_validation/_base.yaml": "configs/experiment/theta_validation/_base.yaml",
+          "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml": "configs/experiment/theta_validation/failure/checkpoint_conflict.yaml",
+          "in/config/experiment/theta_validation/failure/incompatible_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_bc.yaml",
+          "in/config/experiment/theta_validation/failure/incompatible_cql.yaml": "configs/experiment/theta_validation/failure/incompatible_cql.yaml",
+          "in/config/experiment/theta_validation/failure/incompatible_iql.yaml": "configs/experiment/theta_validation/failure/incompatible_iql.yaml",
+          "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+          "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml": "configs/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+          "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml": "configs/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+          "in/config/experiment/theta_validation/failure/missing_agent.yaml": "configs/experiment/theta_validation/failure/missing_agent.yaml",
+          "in/config/experiment/theta_validation/failure/missing_method.yaml": "configs/experiment/theta_validation/failure/missing_method.yaml",
+          "in/config/experiment/theta_validation/failure/missing_model.yaml": "configs/experiment/theta_validation/failure/missing_model.yaml",
+          "in/config/experiment/theta_validation/failure/unknown_agent.yaml": "configs/experiment/theta_validation/failure/unknown_agent.yaml",
+          "in/config/experiment/theta_validation/success/online_smoke.yaml": "configs/experiment/theta_validation/success/online_smoke.yaml"
+        }
+      },
+      "config_path": "in/config/experiment/theta_validation/_base.yaml"
+    },
+    {
+      "id": "thetalib",
+      "name": "ThetaLib Core Foundation Suite",
+      "kind": "suite",
+      "version": "1.0.2",
+      "description": "Foundational library plugin for Theta-IDE: universal convergence/loss/report figures and core data loaders (image, replay buffer, tabular).",
+      "author": {
+        "name": "Theta-IDE Team"
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plugin",
+        "thetalib"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
+          "sha256": "ea301868ff48d1b6d7ebd3ebb70399d7f6528b9d5ebcd1d5d8201e7255a3aa35",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
+          "sha256": "c596f6e47a98878fc71dea920c84ae4a7cb45d4fca765ef32e76e5611a3129a8",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.2": {
+          "tag": "v1.0.2",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.0.2.zip",
+          "sha256": "cf1044d4f6741d052c9553cd3e68fc3b140ccec77e3aa8c7cc640efdf2219e46",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 584
+        }
+      },
+      "installed_dirs": [
+        "plot/standard_figures",
+        "src/usr/data/image_data",
+        "src/usr/data/replay_buffer",
+        "src/usr/data/tabular_data",
+        "src/usr/models/dnn",
+        "src/usr/models/mlp",
+        "src/usr/models/nature_cnn",
+        "src/usr/models/dueling_resnet"
+      ],
+      "paradigms": [
+        "online_rl",
+        "offline_rl",
+        "supervised",
+        "unsupervised"
+      ],
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "config_paths": [],
+      "dependencies": {
+        "components": [
+          "standard-figures",
+          "image-data",
+          "replay-buffer",
+          "tabular-data",
+          "dnn",
+          "mlp",
+          "nature_cnn",
+          "dueling_resnet"
+        ],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [],
+      "payload": {
+        "implementations": [],
+        "resources": [],
+        "configs": {}
       }
     }
   ]

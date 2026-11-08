@@ -2,7 +2,7 @@
   "id": "robotics-mujoco",
   "name": "Gymnasium MuJoCo Robotics",
   "kind": "env",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Continuous-control robotics benchmarks from Gymnasium MuJoCo: Ant, HalfCheetah, Hopper, Walker2d, and Humanoid.",
   "author": {
     "name": "Theta-IDE Team"
@@ -26,6 +26,13 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-mujoco-1.0.1.zip",
       "sha256": "530e18d297a5a1f5cda14f1cffc70e31b90bcaa6f9d3fddd2d379b1d1fb4bc05",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.2": {
+      "tag": "v1.0.2",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.0.2.zip",
+      "sha256": "0df9a4906aea4b9733a12e606389f69c7043518e0fd94ed42d980bdf79c0bab4",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 2275
     }
   },
   "paradigms": [
@@ -34,19 +41,12 @@
   "dependencies": {
     "pip": [
       "gymnasium[mujoco]>=1.0.0"
-    ]
+    ],
+    "components": []
   },
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "config_paths": [
-    "in/config/env/mujoco/ant.yaml",
-    "in/config/env/mujoco/half_cheetah.yaml",
-    "in/config/env/mujoco/hopper.yaml",
-    "in/config/env/mujoco/walker2d.yaml",
-    "in/config/env/mujoco/humanoid.yaml"
-  ],
-  "target_path": "in/envs/mujoco",
   "parameter_schema": {
     "type": "object",
     "properties": {},
@@ -212,5 +212,33 @@
         }
       }
     }
+  },
+  "config_paths": [],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "robotics-mujoco",
+      "kind": "env",
+      "entry_point": "env_vectorized.py:VectorizedEnv",
+      "aliases": [
+        "mujoco",
+        "mujoco/ant",
+        "mujoco/humanoid",
+        "mujoco/hopper",
+        "mujoco/walker2d",
+        "mujoco/half_cheetah"
+      ],
+      "resource_root": "."
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "env_vectorized.py"
+    ],
+    "resources": [
+      "requirements.txt"
+    ],
+    "configs": {}
   }
 }

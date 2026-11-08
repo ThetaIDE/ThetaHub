@@ -2,7 +2,7 @@
   "id": "atari-env",
   "name": "Atari 2600 Environment Suite",
   "kind": "env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Standard Arcade Learning Environment (ALE) Atari 2600 benchmarks for Gymnasium.",
   "author": {
     "name": "Farama Foundation",
@@ -17,7 +17,6 @@
     "reinforcement-learning",
     "benchmark"
   ],
-  "target_path": "in/envs/atari",
   "dependencies": {
     "components": [
       "thetalib"
@@ -34,21 +33,17 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/atari_env-1.0.0.zip",
       "sha256": "30164478d6cc56305a7ec751d1dac33db035edb797e91c6e81aa9632a95e1247",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/atari-env-1.0.1.zip",
+      "sha256": "965e69f20056f76c476a39b887cf8dd2cf4457e912d5b38e6eca5ffad24db09e",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 4837
     }
   },
   "paradigms": [
     "online_rl"
-  ],
-  "config_path": "in/config/env/atari.yaml",
-  "config_paths": [
-    "in/config/env/atari.yaml",
-    "in/config/env/atari/beam_rider.yaml",
-    "in/config/env/atari/breakout.yaml",
-    "in/config/env/atari/mspacman.yaml",
-    "in/config/env/atari/pong.yaml",
-    "in/config/env/atari/qbert.yaml",
-    "in/config/env/atari/seaquest.yaml",
-    "in/config/env/atari/space_invaders.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -299,6 +294,53 @@
           }
         }
       }
+    }
+  },
+  "config_path": "in/config/env/atari/beam_rider.yaml",
+  "config_paths": [
+    "in/config/env/atari/beam_rider.yaml",
+    "in/config/env/atari/breakout.yaml",
+    "in/config/env/atari/mspacman.yaml",
+    "in/config/env/atari/pong.yaml",
+    "in/config/env/atari/qbert.yaml",
+    "in/config/env/atari/seaquest.yaml",
+    "in/config/env/atari/space_invaders.yaml"
+  ],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "atari-env",
+      "kind": "env",
+      "entry_point": "env_vectorized.py:VectorizedEnv",
+      "aliases": [
+        "atari",
+        "atari/beam_rider",
+        "atari/breakout",
+        "atari/mspacman",
+        "atari/pong",
+        "atari/qbert",
+        "atari/seaquest",
+        "atari/space_invaders"
+      ],
+      "resource_root": "."
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "env_vectorized.py"
+    ],
+    "resources": [
+      "requirements.txt"
+    ],
+    "configs": {
+      "in/config/env/atari/beam_rider.yaml": "configs/env/atari/beam_rider.yaml",
+      "in/config/env/atari/breakout.yaml": "configs/env/atari/breakout.yaml",
+      "in/config/env/atari/mspacman.yaml": "configs/env/atari/mspacman.yaml",
+      "in/config/env/atari/pong.yaml": "configs/env/atari/pong.yaml",
+      "in/config/env/atari/qbert.yaml": "configs/env/atari/qbert.yaml",
+      "in/config/env/atari/seaquest.yaml": "configs/env/atari/seaquest.yaml",
+      "in/config/env/atari/space_invaders.yaml": "configs/env/atari/space_invaders.yaml"
     }
   }
 }

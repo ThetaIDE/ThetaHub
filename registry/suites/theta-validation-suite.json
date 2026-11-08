@@ -2,7 +2,7 @@
   "id": "theta-validation-suite",
   "name": "Theta Validation Suite",
   "kind": "suite",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Online-RL experiment and component conformance recipes for ThetaIDE Basics.",
   "author": {
     "name": "Theta-IDE Team"
@@ -18,7 +18,8 @@
   "dependencies": {
     "components": [
       "basic_suite"
-    ]
+    ],
+    "pip": []
   },
   "releases": {
     "1.0.0": {
@@ -33,25 +34,17 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/theta-validation-suite-1.1.0.zip",
       "sha256": "95ef00476e135d56f4f9c2416a52694707100c4f57da0e1107f28d2b292993c2",
       "published_at": "2026-10-21T18:23:47.065128+00:00"
+    },
+    "1.1.1": {
+      "tag": "v1.1.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.1.1.zip",
+      "sha256": "46d4bf43d43030ec865e0709c1a597dc529438e2eeefae363573d86390bb2937",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 6278
     }
   },
   "paradigms": [
     "online_rl"
-  ],
-  "config_paths": [
-    "in/config/experiment/theta_validation/_base.yaml",
-    "in/config/experiment/theta_validation/success/online_smoke.yaml",
-    "in/config/experiment/theta_validation/failure/missing_method.yaml",
-    "in/config/experiment/theta_validation/failure/missing_agent.yaml",
-    "in/config/experiment/theta_validation/failure/missing_model.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_cql.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_iql.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_bc.yaml",
-    "in/config/experiment/theta_validation/failure/unknown_agent.yaml",
-    "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml",
-    "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
-    "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml"
   ],
   "test_suite": {
     "format": "theta.test-suite/v1",
@@ -74,7 +67,7 @@
         "description": "PPO must retain its runner entrypoint, algorithm identity, and online-RL capability declaration.",
         "config_path": "in/config/agent/sb3/ppo.yaml",
         "required": {
-          "entrypoint": "src/usr/algorithms/sb3-suite/sb3_runner.py",
+          "entrypoint": "package://sb3-suite/sb3_runner.py",
           "algorithm": "PPO",
           "compatible_paradigms": [
             "online_rl"
@@ -87,7 +80,7 @@
         "description": "CQL must retain its runner entrypoint, algorithm identity, and offline-RL capability declaration.",
         "config_path": "in/config/agent/d3rlpy/cql.yaml",
         "required": {
-          "entrypoint": "src/usr/algorithms/d3rlpy-suite/d3rlpy_runner.py",
+          "entrypoint": "package://d3rlpy-suite/d3rlpy_runner.py",
           "algorithm": "CQL",
           "compatible_paradigms": [
             "offline_rl"
@@ -234,5 +227,43 @@
         "expected_error": "telemetry.metrics' must be a list"
       }
     ]
-  }
+  },
+  "config_paths": [
+    "in/config/experiment/theta_validation/_base.yaml",
+    "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml",
+    "in/config/experiment/theta_validation/failure/incompatible_bc.yaml",
+    "in/config/experiment/theta_validation/failure/incompatible_cql.yaml",
+    "in/config/experiment/theta_validation/failure/incompatible_iql.yaml",
+    "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+    "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+    "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+    "in/config/experiment/theta_validation/failure/missing_agent.yaml",
+    "in/config/experiment/theta_validation/failure/missing_method.yaml",
+    "in/config/experiment/theta_validation/failure/missing_model.yaml",
+    "in/config/experiment/theta_validation/failure/unknown_agent.yaml",
+    "in/config/experiment/theta_validation/success/online_smoke.yaml"
+  ],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [],
+  "payload": {
+    "implementations": [],
+    "resources": [],
+    "configs": {
+      "in/config/experiment/theta_validation/_base.yaml": "configs/experiment/theta_validation/_base.yaml",
+      "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml": "configs/experiment/theta_validation/failure/checkpoint_conflict.yaml",
+      "in/config/experiment/theta_validation/failure/incompatible_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_bc.yaml",
+      "in/config/experiment/theta_validation/failure/incompatible_cql.yaml": "configs/experiment/theta_validation/failure/incompatible_cql.yaml",
+      "in/config/experiment/theta_validation/failure/incompatible_iql.yaml": "configs/experiment/theta_validation/failure/incompatible_iql.yaml",
+      "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+      "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml": "configs/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+      "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml": "configs/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+      "in/config/experiment/theta_validation/failure/missing_agent.yaml": "configs/experiment/theta_validation/failure/missing_agent.yaml",
+      "in/config/experiment/theta_validation/failure/missing_method.yaml": "configs/experiment/theta_validation/failure/missing_method.yaml",
+      "in/config/experiment/theta_validation/failure/missing_model.yaml": "configs/experiment/theta_validation/failure/missing_model.yaml",
+      "in/config/experiment/theta_validation/failure/unknown_agent.yaml": "configs/experiment/theta_validation/failure/unknown_agent.yaml",
+      "in/config/experiment/theta_validation/success/online_smoke.yaml": "configs/experiment/theta_validation/success/online_smoke.yaml"
+    }
+  },
+  "config_path": "in/config/experiment/theta_validation/_base.yaml"
 }

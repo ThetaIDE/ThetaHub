@@ -2,7 +2,7 @@
   "id": "doom-sim",
   "name": "DOOM",
   "kind": "plugin",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Authentic 1993 id Software DOOM engine running directly inside Theta IDE.",
   "author": {
     "name": "Cameron Egbert",
@@ -18,7 +18,6 @@
     "classic",
     "rl"
   ],
-  "target_path": "plugins/doom",
   "releases": {
     "0.1.0": {
       "tag": "v0.1.0",
@@ -31,6 +30,46 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_sim-0.1.0.zip",
       "sha256": "2a4f1fc0605a5d9dfa27590f69a650366f76a7fb4874ee3ac2640771e5614ec3",
       "published_at": "2026-10-16T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.0.1.zip",
+      "sha256": "c47051f10cefef898618aced8f38b03e3e721770ab7c591e37c803861b02dd78",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 4873
     }
-  }
+  },
+  "default_enabled": false,
+  "icon": "doom",
+  "entry_point": "DoomPlugin",
+  "dependencies": {
+    "components": [
+      "doom-env"
+    ],
+    "pip": [
+      "PyQt6",
+      "PyQt6-WebEngine"
+    ]
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "doom",
+      "kind": "plugin",
+      "entry_point": "__init__.py:DoomPlugin"
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "panel.py"
+    ],
+    "resources": [
+      "doom.svg",
+      "doom.html"
+    ],
+    "configs": {}
+  },
+  "config_paths": []
 }

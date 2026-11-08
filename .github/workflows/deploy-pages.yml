@@ -28,6 +28,7 @@ jobs:
 
       - name: Compile Registry Index Feeds
         run: |
+          python scripts/validate_manifest.py --check-archives
           python scripts/build_index.py --output-dir dist/
 
       - name: Upload Pages Artifact

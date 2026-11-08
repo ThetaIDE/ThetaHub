@@ -2,7 +2,7 @@
   "id": "nature_cnn",
   "name": "Nature CNN",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Canonical 3-stage convolutional neural network architecture (Mnih et al., 2015) for visual reinforcement learning.",
   "author": {
     "name": "Theta-IDE Team"
@@ -17,6 +17,13 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nature_cnn-1.0.0.zip",
       "sha256": "46c7d4157d99f46e29a6b19aec92f0471bb995b19990812e706fa2a38a07f414",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nature_cnn-1.0.1.zip",
+      "sha256": "89b7cf2642d85cd274af9e5381e568d31f2e5f07e78a0a7ffdccbcc0cc8dac96",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 2967
     }
   },
   "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -26,13 +33,6 @@
     "offline_rl",
     "supervised"
   ],
-  "config_path": "in/config/model/basics/nature_cnn.yaml",
-  "config_paths": [
-    "in/config/model/basics/nature_cnn.yaml"
-  ],
-  "target_path": "src/usr/models/nature_cnn",
-  "suite": "thetalib",
-  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -42,6 +42,44 @@
       "features_dim": {
         "type": "integer"
       }
+    }
+  },
+  "config_path": "in/config/model/basics/nature_cnn.yaml",
+  "config_paths": [
+    "in/config/model/basics/nature_cnn.yaml"
+  ],
+  "compatibility": {
+    "theta": ">=2.0.0"
+  },
+  "suite": "thetalib",
+  "hidden": true,
+  "dependencies": {
+    "components": [],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "nature_cnn",
+      "kind": "model",
+      "entry_point": "nature_cnn_model.py:NatureCNNActor",
+      "aliases": [
+        "nature_cnn_actor",
+        "cnn",
+        "cnn_actor",
+        "basics/nature_cnn"
+      ]
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "nature_cnn_model.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/model/basics/nature_cnn.yaml": "configs/model/basics/nature_cnn.yaml"
     }
   }
 }

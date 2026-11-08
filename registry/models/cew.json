@@ -2,7 +2,7 @@
   "id": "cew",
   "name": "Clinical Expert Weighting (CEW)",
   "kind": "model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Self-organizing neuro-fuzzy Q-function with CLIP, ECM clustering, and Wang-Mendel rule generation.",
   "author": {
     "name": "NeSyRL Contributors",
@@ -17,23 +17,25 @@
     "interpretability",
     "cew"
   ],
-  "target_path": "src/usr/models/cew",
   "releases": {
     "1.0.0": {
       "tag": "v1.0.0",
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
       "sha256": "0a8d0e96f93491e36c19756212af78593756ba2074101e03bb04e24da9fc013d",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/cew-1.0.1.zip",
+      "sha256": "8fdeb40b2efc04bc6a0b4eb38128800d58ece77653e1623b9592b1e02c81a4fd",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 10409
     }
   },
   "paradigms": [
     "online_rl",
     "offline_rl",
     "supervised"
-  ],
-  "config_path": "in/config/model/cew.yaml",
-  "config_paths": [
-    "in/config/model/cew.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -47,6 +49,38 @@
       "fyd_top_k": {
         "type": "integer"
       }
+    }
+  },
+  "installed_from": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
+  "sha256": "3db5d37219a88e614ff52a8a6cbd5bcee4fa956462311f5325ca6d4e43397043",
+  "config_path": "in/config/model/cew.yaml",
+  "config_paths": [
+    "in/config/model/cew.yaml"
+  ],
+  "dependencies": {
+    "components": [],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "cew",
+      "kind": "model",
+      "entry_point": "cew_model.py:CEWModel",
+      "aliases": []
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "cew_model.py",
+      "cew_utils.py",
+      "cew_callback.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/model/cew.yaml": "configs/model/cew.yaml"
     }
   }
 }

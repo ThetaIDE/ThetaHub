@@ -2,7 +2,7 @@
   "id": "basic_suite",
   "name": "ThetaIDE Basics",
   "kind": "suite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic reinforcement learning benchmark suite for Theta-IDE: Stable-Baselines3, d3rlpy offline baselines, Atari 2600 (ALE), Gymnasium classic control, standard deep neural network architectures, and ThetaLib core figures and loaders.",
   "author": {
     "name": "Theta-IDE Team"
@@ -17,6 +17,13 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/basic_suite-1.0.0.zip",
       "sha256": "a79dd876972d06472672d7512b60c5cdc46be9389939d25db762566e1dcd7f9c",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/basic_suite-1.0.1.zip",
+      "sha256": "452ef733d20f7e63a314005c038b61e576a8a9adbe2b6ba23c33a572e24b7122",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 575
     }
   },
   "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -36,6 +43,19 @@
       "dnn",
       "nature_cnn",
       "dueling_resnet"
-    ]
-  }
+    ],
+    "pip": []
+  },
+  "compatibility": {
+    "theta": ">=2.0.0"
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [],
+  "payload": {
+    "implementations": [],
+    "resources": [],
+    "configs": {}
+  },
+  "config_paths": []
 }

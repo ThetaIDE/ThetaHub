@@ -2,7 +2,7 @@
   "id": "dnn",
   "name": "Deep Neural Network (MLP)",
   "kind": "model",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Standard Multi-Layer Perceptron (DNN) wrapping PyTorch Linear, LayerNorm, and Dueling Q-value heads.",
   "author": {
     "name": "Theta-IDE Team"
@@ -23,6 +23,13 @@
       "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.0.zip",
       "sha256": "bb3bb0a78b23ca6eeb33f2a42eaf9b2a3fcc05109b0c7780082611727e199b28",
       "published_at": "2026-11-06T20:06:02.364551+00:00"
+    },
+    "1.1.1": {
+      "tag": "v1.1.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.1.zip",
+      "sha256": "443ed66885b81f664a3dcc5cda7320335d8a726aca7199e94f910a64cbe7ae16",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 3764
     }
   },
   "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -32,13 +39,6 @@
     "offline_rl",
     "supervised"
   ],
-  "config_path": "in/config/model/basics/dnn.yaml",
-  "config_paths": [
-    "in/config/model/basics/dnn.yaml"
-  ],
-  "target_path": "src/usr/models/dnn",
-  "suite": "thetalib",
-  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -70,6 +70,41 @@
         "type": "boolean",
         "description": "Use dueling Q-value heads; defaults to enabled for widths >=128."
       }
+    }
+  },
+  "config_path": "in/config/model/basics/dnn.yaml",
+  "config_paths": [
+    "in/config/model/basics/dnn.yaml"
+  ],
+  "compatibility": {
+    "theta": ">=2.0.0"
+  },
+  "suite": "thetalib",
+  "hidden": true,
+  "dependencies": {
+    "components": [],
+    "pip": []
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "dnn",
+      "kind": "model",
+      "entry_point": "dnn_model.py:DNNModel",
+      "aliases": [
+        "basics/dnn"
+      ]
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "dnn_model.py"
+    ],
+    "resources": [],
+    "configs": {
+      "in/config/model/basics/dnn.yaml": "configs/model/basics/dnn.yaml"
     }
   }
 }

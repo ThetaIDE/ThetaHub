@@ -1,13 +1,13 @@
 {
   "kind": "model",
-  "updated_at": "2026-11-06T20:06:02.976967+00:00",
+  "updated_at": "2026-11-08T04:28:06.776283+00:00",
   "count": 11,
   "components": [
     {
       "id": "autoencoder",
       "name": "Dense & Sequence Autoencoders",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Dense and sequence autoencoder architectures for unsupervised representation learning.",
       "author": {
         "name": "Theta-IDE Team"
@@ -21,23 +21,24 @@
         "representation",
         "latent"
       ],
-      "target_path": "src/usr/models/autoencoder",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/autoencoder-1.0.0.zip",
           "sha256": "198afa6ed72b47ccd42938bd34ddddf1aa27c654c1a4e34672e9dc5d1b13cee2",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/autoencoder-1.0.1.zip",
+          "sha256": "e762607ec5dc9eb355db0430757442c3b39bff65a782690190fe65522b31e8fe",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 3929
         }
       },
       "paradigms": [
         "unsupervised",
         "supervised"
-      ],
-      "config_path": "in/config/model/basics/autoencoder.yaml",
-      "config_paths": [
-        "in/config/model/basics/autoencoder.yaml",
-        "in/config/model/basics/dense_autoencoder.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -72,13 +73,65 @@
             }
           }
         }
+      },
+      "config_path": "in/config/model/basics/autoencoder.yaml",
+      "config_paths": [
+        "in/config/model/basics/autoencoder.yaml",
+        "in/config/model/basics/dense_autoencoder.yaml"
+      ],
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "autoencoder",
+          "kind": "model",
+          "entry_point": "autoencoder_model.py:SequenceAutoencoder",
+          "aliases": [
+            "sequence_autoencoder",
+            "seq_autoencoder",
+            "basics/autoencoder"
+          ]
+        },
+        {
+          "id": "dense_autoencoder",
+          "kind": "model",
+          "entry_point": "autoencoder_model.py:DenseAutoencoder",
+          "aliases": [
+            "mlp_autoencoder",
+            "basics/dense_autoencoder"
+          ]
+        },
+        {
+          "id": "AutoencoderLightningModule",
+          "kind": "component",
+          "entry_point": "training.py:AutoencoderLightningModule",
+          "aliases": [
+            "autoencoder_training"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "autoencoder_model.py",
+          "training.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/autoencoder.yaml": "configs/model/basics/autoencoder.yaml",
+          "in/config/model/basics/dense_autoencoder.yaml": "configs/model/basics/dense_autoencoder.yaml"
+        }
       }
     },
     {
       "id": "blendrl",
       "name": "BlendRL Neural-Symbolic Policy",
       "kind": "model",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
       "author": {
         "name": "NeSyRL Contributors",
@@ -94,7 +147,6 @@
         "logic",
         "rl"
       ],
-      "target_path": "src/usr/models/blendrl",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
@@ -143,13 +195,15 @@
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.2.0.zip",
           "sha256": "10b6991a4f7c7ecf305f7b4ed83eb9820f467e09374e496dda7107036bf2a371",
           "published_at": "2026-11-06T20:06:02.371311+00:00"
+        },
+        "1.2.1": {
+          "tag": "v1.2.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.2.1.zip",
+          "sha256": "58d2f185ba25f0ed59c0c04b2c8f7d20c445613a4d3c718cb238484c2d9d3080",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 17389
         }
       },
-      "config_path": "in/config/model/blendrl.yaml",
-      "config_paths": [
-        "in/config/model/blendrl.yaml",
-        "in/config/plot/blendrl/blend_routing.yaml"
-      ],
       "paradigms": [
         "online_rl",
         "offline_rl"
@@ -280,14 +334,58 @@
           "dnn",
           "nsfr",
           "neumann"
+        ],
+        "pip": [
+          "captum"
         ]
+      },
+      "config_path": "in/config/model/blendrl.yaml",
+      "config_paths": [
+        "in/config/model/blendrl.yaml",
+        "in/config/plot/blendrl/blend_routing.yaml"
+      ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "blendrl",
+          "kind": "model",
+          "entry_point": "agents/blender_agent.py:BlenderActorCritic",
+          "aliases": [
+            "blender"
+          ]
+        },
+        {
+          "id": "blend_routing",
+          "kind": "plotter",
+          "entry_point": "plot/blendrl/routing.py:BlendRoutingPlotter",
+          "aliases": []
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "monitoring.py",
+          "__init__.py",
+          "agents/blender_agent.py",
+          "agents/__init__.py",
+          "plot/blendrl/__init__.py",
+          "plot/blendrl/routing.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/blendrl.yaml": "configs/model/blendrl.yaml",
+          "in/config/plot/blendrl/blend_routing.yaml": "configs/plot/blendrl/blend_routing.yaml"
+        }
       }
     },
     {
       "id": "cew",
       "name": "Clinical Expert Weighting (CEW)",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Self-organizing neuro-fuzzy Q-function with CLIP, ECM clustering, and Wang-Mendel rule generation.",
       "author": {
         "name": "NeSyRL Contributors",
@@ -302,23 +400,25 @@
         "interpretability",
         "cew"
       ],
-      "target_path": "src/usr/models/cew",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
           "sha256": "0a8d0e96f93491e36c19756212af78593756ba2074101e03bb04e24da9fc013d",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/cew-1.0.1.zip",
+          "sha256": "8fdeb40b2efc04bc6a0b4eb38128800d58ece77653e1623b9592b1e02c81a4fd",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 10409
         }
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
-      ],
-      "config_path": "in/config/model/cew.yaml",
-      "config_paths": [
-        "in/config/model/cew.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -333,13 +433,45 @@
             "type": "integer"
           }
         }
+      },
+      "installed_from": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
+      "sha256": "3db5d37219a88e614ff52a8a6cbd5bcee4fa956462311f5325ca6d4e43397043",
+      "config_path": "in/config/model/cew.yaml",
+      "config_paths": [
+        "in/config/model/cew.yaml"
+      ],
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "cew",
+          "kind": "model",
+          "entry_point": "cew_model.py:CEWModel",
+          "aliases": []
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "cew_model.py",
+          "cew_utils.py",
+          "cew_callback.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/cew.yaml": "configs/model/cew.yaml"
+        }
       }
     },
     {
       "id": "dnn",
       "name": "Deep Neural Network (MLP)",
       "kind": "model",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "Standard Multi-Layer Perceptron (DNN) wrapping PyTorch Linear, LayerNorm, and Dueling Q-value heads.",
       "author": {
         "name": "Theta-IDE Team"
@@ -360,6 +492,13 @@
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.0.zip",
           "sha256": "bb3bb0a78b23ca6eeb33f2a42eaf9b2a3fcc05109b0c7780082611727e199b28",
           "published_at": "2026-11-06T20:06:02.364551+00:00"
+        },
+        "1.1.1": {
+          "tag": "v1.1.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.1.zip",
+          "sha256": "443ed66885b81f664a3dcc5cda7320335d8a726aca7199e94f910a64cbe7ae16",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 3764
         }
       },
       "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -369,13 +508,6 @@
         "offline_rl",
         "supervised"
       ],
-      "config_path": "in/config/model/basics/dnn.yaml",
-      "config_paths": [
-        "in/config/model/basics/dnn.yaml"
-      ],
-      "target_path": "src/usr/models/dnn",
-      "suite": "thetalib",
-      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -408,13 +540,48 @@
             "description": "Use dueling Q-value heads; defaults to enabled for widths >=128."
           }
         }
+      },
+      "config_path": "in/config/model/basics/dnn.yaml",
+      "config_paths": [
+        "in/config/model/basics/dnn.yaml"
+      ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "suite": "thetalib",
+      "hidden": true,
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "dnn",
+          "kind": "model",
+          "entry_point": "dnn_model.py:DNNModel",
+          "aliases": [
+            "basics/dnn"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "dnn_model.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/dnn.yaml": "configs/model/basics/dnn.yaml"
+        }
       }
     },
     {
       "id": "dueling_resnet",
       "name": "Dueling ResNet",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Scaled residual policy and Q-network architecture with LayerNorm, GELU, and Dueling decomposition.",
       "author": {
         "name": "Theta-IDE Team"
@@ -429,6 +596,13 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dueling_resnet-1.0.0.zip",
           "sha256": "70196ecf7abce536bd12a66a49081dffe0873ee9a75575c1508172edd69bd8c7",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dueling_resnet-1.0.1.zip",
+          "sha256": "95a48bcbc0f1f237963cf20748c579a0fb1a3c06654f2477458a06baf6311a26",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 3609
         }
       },
       "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -438,13 +612,6 @@
         "offline_rl",
         "supervised"
       ],
-      "config_path": "in/config/model/basics/dueling_resnet.yaml",
-      "config_paths": [
-        "in/config/model/basics/dueling_resnet.yaml"
-      ],
-      "target_path": "src/usr/models/dueling_resnet",
-      "suite": "thetalib",
-      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -455,13 +622,49 @@
             }
           }
         }
+      },
+      "config_path": "in/config/model/basics/dueling_resnet.yaml",
+      "config_paths": [
+        "in/config/model/basics/dueling_resnet.yaml"
+      ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "suite": "thetalib",
+      "hidden": true,
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "dueling_resnet",
+          "kind": "model",
+          "entry_point": "dueling_resnet_model.py:DuelingResNetMLP",
+          "aliases": [
+            "resnet",
+            "basics/dueling_resnet"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "dueling_resnet_model.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/dueling_resnet.yaml": "configs/model/basics/dueling_resnet.yaml"
+        }
       }
     },
     {
       "id": "lstm",
       "name": "LSTM Recurrent Neural Network",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Long Short-Term Memory (LSTM) recurrent network architecture with temporal attention pooling.",
       "author": {
         "name": "Theta-IDE Team"
@@ -475,23 +678,25 @@
         "rnn",
         "sequential"
       ],
-      "target_path": "src/usr/models/lstm",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/lstm-1.0.0.zip",
           "sha256": "df96ba85cfc189008f8ce7787f5c6bf704d602d143f782cbc8877514737e868f",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.0.1.zip",
+          "sha256": "ad6144a2e404ddfaac7b7e12bb02a4c05c08aa9900cb3a895f4c56485c068859",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 2192
         }
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
-      ],
-      "config_path": "in/config/model/basics/lstm.yaml",
-      "config_paths": [
-        "in/config/model/basics/lstm.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -515,13 +720,44 @@
             "type": "boolean"
           }
         }
+      },
+      "config_path": "in/config/model/basics/lstm.yaml",
+      "config_paths": [
+        "in/config/model/basics/lstm.yaml"
+      ],
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "lstm",
+          "kind": "model",
+          "entry_point": "lstm_model.py:LSTMModel",
+          "aliases": [
+            "sepsis_lstm",
+            "basics/lstm"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "lstm_model.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/lstm.yaml": "configs/model/basics/lstm.yaml"
+        }
       }
     },
     {
       "id": "mlp",
       "name": "Multi-Layer Perceptron (MLP)",
       "kind": "model",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
       "author": {
         "name": "Theta-IDE Team"
@@ -535,7 +771,6 @@
         "classification",
         "policy"
       ],
-      "target_path": "src/usr/models/mlp",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
@@ -548,6 +783,13 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.1.zip",
           "sha256": "2d85b920698b2782f0bdda0d2b00b707fd69bcdcc63c2a596ff8be6348199167",
           "published_at": "2026-11-03T03:07:24.501729+00:00"
+        },
+        "1.0.2": {
+          "tag": "v1.0.2",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.0.2.zip",
+          "sha256": "3cd7c1e4e4fc606413ab991176815ddef30651a8f7876f91ea6c53c3be2d31ae",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 4959
         }
       },
       "paradigms": [
@@ -555,13 +797,6 @@
         "offline_rl",
         "supervised"
       ],
-      "config_path": "in/config/model/basics/mlp.yaml",
-      "config_paths": [
-        "in/config/model/basics/mlp.yaml",
-        "in/config/model/basics/mlp_classifier.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {},
@@ -618,13 +853,97 @@
             }
           }
         }
+      },
+      "config_path": "in/config/model/basics/mlp.yaml",
+      "config_paths": [
+        "in/config/model/basics/mlp.yaml",
+        "in/config/model/basics/mlp_classifier.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
+      "dependencies": {
+        "components": [
+          "nature_cnn"
+        ],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "standard_mlp_actor",
+          "kind": "model",
+          "entry_point": "mlp_model.py:StandardMLPActor",
+          "aliases": [
+            "standard_mlp",
+            "neural_blender_mlp"
+          ]
+        },
+        {
+          "id": "value_network",
+          "kind": "model",
+          "entry_point": "mlp_model.py:ValueNetwork",
+          "aliases": [
+            "cnn_value_network"
+          ]
+        },
+        {
+          "id": "mlp",
+          "kind": "model",
+          "entry_point": "mlp_model.py:MLPQNetwork",
+          "aliases": [
+            "mlpqnetwork",
+            "basics/mlp"
+          ]
+        },
+        {
+          "id": "mlp_value_network",
+          "kind": "model",
+          "entry_point": "mlp_model.py:MLPValueNetwork",
+          "aliases": []
+        },
+        {
+          "id": "q_network",
+          "kind": "model",
+          "entry_point": "mlp_model.py:QNetwork",
+          "aliases": [
+            "cnn_q_network"
+          ]
+        },
+        {
+          "id": "mlp_classifier",
+          "kind": "model",
+          "entry_point": "mlp_model.py:MLPClassifier",
+          "aliases": [
+            "tabular_classifier",
+            "classifier",
+            "basics/mlp_classifier"
+          ]
+        },
+        {
+          "id": "MLPClassifierLightningModule",
+          "kind": "component",
+          "entry_point": "training.py:MLPClassifierLightningModule"
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "mlp_model.py",
+          "training.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/mlp.yaml": "configs/model/basics/mlp.yaml",
+          "in/config/model/basics/mlp_classifier.yaml": "configs/model/basics/mlp_classifier.yaml"
+        }
       }
     },
     {
       "id": "nature_cnn",
       "name": "Nature CNN",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Canonical 3-stage convolutional neural network architecture (Mnih et al., 2015) for visual reinforcement learning.",
       "author": {
         "name": "Theta-IDE Team"
@@ -639,6 +958,13 @@
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nature_cnn-1.0.0.zip",
           "sha256": "46c7d4157d99f46e29a6b19aec92f0471bb995b19990812e706fa2a38a07f414",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nature_cnn-1.0.1.zip",
+          "sha256": "89b7cf2642d85cd274af9e5381e568d31f2e5f07e78a0a7ffdccbcc0cc8dac96",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 2967
         }
       },
       "repository": "https://github.com/CameronEgb/theta-plugins",
@@ -648,13 +974,6 @@
         "offline_rl",
         "supervised"
       ],
-      "config_path": "in/config/model/basics/nature_cnn.yaml",
-      "config_paths": [
-        "in/config/model/basics/nature_cnn.yaml"
-      ],
-      "target_path": "src/usr/models/nature_cnn",
-      "suite": "thetalib",
-      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -665,13 +984,51 @@
             "type": "integer"
           }
         }
+      },
+      "config_path": "in/config/model/basics/nature_cnn.yaml",
+      "config_paths": [
+        "in/config/model/basics/nature_cnn.yaml"
+      ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "suite": "thetalib",
+      "hidden": true,
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "nature_cnn",
+          "kind": "model",
+          "entry_point": "nature_cnn_model.py:NatureCNNActor",
+          "aliases": [
+            "nature_cnn_actor",
+            "cnn",
+            "cnn_actor",
+            "basics/nature_cnn"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "nature_cnn_model.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/nature_cnn.yaml": "configs/model/basics/nature_cnn.yaml"
+        }
       }
     },
     {
       "id": "neumann",
       "name": "NEUMANN Neural Symbolic Reasoner",
       "kind": "model",
-      "version": "1.0.5",
+      "version": "1.0.7",
       "description": "Neuro-symbolic message passing reasoner over logic graphs.",
       "author": {
         "name": "Hikaru Shindo"
@@ -686,7 +1043,6 @@
         "graph-reasoning",
         "message-passing"
       ],
-      "target_path": "src/usr/models/neumann",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
@@ -711,15 +1067,18 @@
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.5.zip",
           "sha256": "bc8074079741cab615ea1ae89132be3a2e496f59bd6183c5942c0e462eb6be9f",
           "published_at": "2026-11-04T04:49:14.510279+00:00"
+        },
+        "1.0.7": {
+          "tag": "v1.0.7",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.7.zip",
+          "sha256": "08fdc0738fa0fd69ad1d281ac532e780acc6a4b9db698b8d8b06d64143940a34",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 40512
         }
       },
       "paradigms": [
         "online_rl",
         "offline_rl"
-      ],
-      "config_path": "in/config/model/neumann.yaml",
-      "config_paths": [
-        "in/config/model/neumann.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -730,17 +1089,77 @@
             "x-theta-actions": [
               {
                 "type": "open-in-editor",
-                "label": "Edit rules",
+                "label": "Open rules folder",
                 "handler": {
-                  "path": "src/usr/models/neumann/editor_actions.py",
+                  "path": "package://neumann/editor_actions.py",
                   "function": "rules_edit_targets"
                 }
               }
-            ]
+            ],
+            "description": "Environment-scoped ruleset name, or environment/name in an unscoped model profile."
           },
           "logic_type": {
             "type": "string"
           }
+        }
+      },
+      "config_path": "in/config/model/neumann.yaml",
+      "config_paths": [
+        "in/config/model/neumann.yaml"
+      ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "dependencies": {
+        "components": [
+          "nsfr"
+        ],
+        "pip": [
+          "torch-geometric",
+          "networkx",
+          "joblib"
+        ]
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "neumann",
+          "kind": "model",
+          "entry_point": "common.py:get_neumann_model",
+          "aliases": []
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "logic_utils.py",
+          "reasoning_graph.py",
+          "neumann.py",
+          "soft_logic.py",
+          "editor_actions.py",
+          "__init__.py",
+          "refinement.py",
+          "neumann_utils.py",
+          "facts_converter.py",
+          "common.py",
+          "valuation.py",
+          "message_passing.py",
+          "scatter.py",
+          "valuation_func.py",
+          "torch_utils.py",
+          "fol/__init__.py",
+          "fol/logic.py",
+          "fol/data_utils.py",
+          "fol/language.py",
+          "fol/logic_ops.py",
+          "fol/exp_parser.py"
+        ],
+        "resources": [
+          "lark",
+          "fol/exp.lark"
+        ],
+        "configs": {
+          "in/config/model/neumann.yaml": "configs/model/neumann.yaml"
         }
       }
     },
@@ -748,7 +1167,7 @@
       "id": "nsfr",
       "name": "Neural Symbolic Forward Reasoner (NSFR)",
       "kind": "model",
-      "version": "1.0.5",
+      "version": "1.0.7",
       "description": "Differentiable forward reasoning engine computing soft valuations over first-order logic clauses.",
       "author": {
         "name": "Hikaru Shindo"
@@ -762,7 +1181,6 @@
         "logic",
         "differentiable-reasoning"
       ],
-      "target_path": "src/usr/models/nsfr",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
@@ -787,15 +1205,18 @@
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.5.zip",
           "sha256": "7df17617ed6627ff69c429281446a9b1b8d057ba5e1c5d2b9dbc64efa9d77be1",
           "published_at": "2026-11-04T04:49:14.472434+00:00"
+        },
+        "1.0.7": {
+          "tag": "v1.0.7",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.7.zip",
+          "sha256": "dfdd8af80a8f56b156380dcc67c6a924c62e8ba36d708a07a3b909e88aed0594",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 86120
         }
       },
       "paradigms": [
         "online_rl",
         "offline_rl"
-      ],
-      "config_path": "in/config/model/nsfr.yaml",
-      "config_paths": [
-        "in/config/model/nsfr.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -806,17 +1227,81 @@
             "x-theta-actions": [
               {
                 "type": "open-in-editor",
-                "label": "Edit rules",
+                "label": "Open rules folder",
                 "handler": {
-                  "path": "src/usr/models/nsfr/editor_actions.py",
+                  "path": "package://nsfr/editor_actions.py",
                   "function": "rules_edit_targets"
                 }
               }
-            ]
+            ],
+            "description": "Environment-scoped ruleset name, or environment/name in an unscoped model profile."
           },
           "logic_type": {
             "type": "string"
           }
+        }
+      },
+      "config_path": "in/config/model/nsfr.yaml",
+      "config_paths": [
+        "in/config/model/nsfr.yaml"
+      ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "dependencies": {
+        "components": [],
+        "pip": [
+          "lark",
+          "tqdm"
+        ]
+      },
+      "rules_root": "resources/rules",
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "nsfr",
+          "kind": "model",
+          "entry_point": "common.py:get_nsfr_model",
+          "aliases": []
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "nsfr.py",
+          "nsfr_beam.py",
+          "mode_declaration.py",
+          "editor_actions.py",
+          "__init__.py",
+          "refinement.py",
+          "facts_converter.py",
+          "results_plusplus.py",
+          "common.py",
+          "valuation.py",
+          "clause_generator.py",
+          "infer.py",
+          "tensor_encoder.py",
+          "fol/__init__.py",
+          "fol/logic.py",
+          "fol/data_utils.py",
+          "fol/language.py",
+          "fol/logic_ops.py",
+          "fol/exp_parser.py",
+          "utils/neural.py",
+          "utils/__init__.py",
+          "utils/logic.py",
+          "utils/common.py",
+          "utils/valuation.py",
+          "utils/beam.py",
+          "utils/torch.py"
+        ],
+        "resources": [
+          "resources",
+          "lark",
+          "fol/exp.lark"
+        ],
+        "configs": {
+          "in/config/model/nsfr.yaml": "configs/model/nsfr.yaml"
         }
       }
     },
@@ -824,7 +1309,7 @@
       "id": "transformer",
       "name": "Transformer Policy & Attention Networks",
       "kind": "model",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Multi-head self-attention and cross-attention transformer policy architectures with temporal attention pooling.",
       "author": {
         "name": "Theta-IDE Team"
@@ -838,23 +1323,25 @@
         "neural",
         "sequential"
       ],
-      "target_path": "src/usr/models/transformer",
       "releases": {
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/transformer-1.0.0.zip",
           "sha256": "4fa377122d17761429711d8e427186e36c0c820c8049287aca026c3d321bf6af",
           "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.0.1.zip",
+          "sha256": "5b0fd5e1d54f818573a04c88f3d7a1f621cb7d8a87aa0a35abfa1b3c17fa40f6",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 4063
         }
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
-      ],
-      "config_path": "in/config/model/basics/transformer.yaml",
-      "config_paths": [
-        "in/config/model/basics/transformer.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -877,6 +1364,46 @@
           "max_len": {
             "type": "integer"
           }
+        }
+      },
+      "config_path": "in/config/model/basics/transformer.yaml",
+      "config_paths": [
+        "in/config/model/basics/transformer.yaml"
+      ],
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "transformer",
+          "kind": "model",
+          "entry_point": "transformer_model.py:SepsisTransformerPolicy",
+          "aliases": [
+            "sepsis_transformer",
+            "basics/transformer"
+          ]
+        },
+        {
+          "id": "cross_attention",
+          "kind": "model",
+          "entry_point": "transformer_model.py:CrossAttentionSepsisPolicy",
+          "aliases": [
+            "cross_attention_transformer",
+            "sepsis_cross_attention"
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "transformer_model.py",
+          "__init__.py"
+        ],
+        "resources": [],
+        "configs": {
+          "in/config/model/basics/transformer.yaml": "configs/model/basics/transformer.yaml"
         }
       }
     }

@@ -2,7 +2,7 @@
   "id": "mnist",
   "name": "MNIST Handwritten Digits",
   "kind": "env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Handwritten digits classification benchmark (8x8 mini-MNIST and 28x28 MNIST) supporting supervised, unsupervised, and RL environments.",
   "author": {
     "name": "Theta-IDE Team"
@@ -17,30 +17,32 @@
     "classification",
     "benchmark"
   ],
-  "target_path": "in/envs/mnist",
   "releases": {
     "1.0.0": {
       "tag": "v1.0.0",
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mnist-1.0.0.zip",
       "sha256": "1cfa08b4ea906da07fd9845888b94d7afd7b7c24d9c511de796faa1f8ed0c125",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mnist-1.0.1.zip",
+      "sha256": "ef712aa56c4c00cd9f9f5c83172f9c6284ffe689e263ac93e79ab1637770d154",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 2972
     }
   },
   "paradigms": [
     "supervised",
     "unsupervised"
   ],
-  "config_path": "in/config/env/mnist.yaml",
-  "config_paths": [
-    "in/config/env/mnist.yaml",
-    "in/config/env/digits.yaml"
-  ],
   "dependencies": {
     "pip": [
       "scikit-learn",
       "numpy",
       "torch"
-    ]
+    ],
+    "components": []
   },
   "parameter_schema": {
     "type": "object",
@@ -122,6 +124,39 @@
           }
         }
       }
+    }
+  },
+  "config_path": "in/config/env/mnist/digits.yaml",
+  "config_paths": [
+    "in/config/env/mnist/digits.yaml",
+    "in/config/env/mnist/mnist.yaml"
+  ],
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "mnist",
+      "kind": "env",
+      "entry_point": "env_vectorized.py:VectorizedEnv",
+      "aliases": [
+        "mnist/mnist",
+        "mnist/digits",
+        "digits"
+      ],
+      "resource_root": "."
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "env_vectorized.py",
+      "__init__.py"
+    ],
+    "resources": [
+      "requirements.txt"
+    ],
+    "configs": {
+      "in/config/env/mnist/digits.yaml": "configs/env/mnist/digits.yaml",
+      "in/config/env/mnist/mnist.yaml": "configs/env/mnist/mnist.yaml"
     }
   }
 }

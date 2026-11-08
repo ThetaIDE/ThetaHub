@@ -2,7 +2,7 @@
   "id": "antigravity",
   "name": "Antigravity Agent",
   "kind": "plugin",
-  "version": "0.1.5",
+  "version": "1.0.1",
   "description": "Integrated Google Antigravity Agent for pair programming and codebase assistance with full-panel and sidepane modes.",
   "author": {
     "name": "Antigravity Team",
@@ -17,7 +17,6 @@
     "assistant",
     "antigravity"
   ],
-  "target_path": "plugins/antigravity",
   "releases": {
     "0.1.5": {
       "tag": "v0.1.5",
@@ -60,6 +59,46 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.5.zip",
       "sha256": "dadf64894a0312e59c49c180f06b0fb1ca865cf70db08e665f8db1c00732bc12",
       "published_at": "2026-10-16T19:00:00Z"
+    },
+    "1.0.1": {
+      "tag": "v1.0.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/antigravity-1.0.1.zip",
+      "sha256": "4a85c7e750d1d338c6880d896422d27c5a11b3b9b5704e4c8bdf8c13b2b65e2e",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 8455
     }
-  }
+  },
+  "default_enabled": true,
+  "icon": "antigravity",
+  "entry_point": "AntigravityPlugin",
+  "extra": {
+    "has_settings": true
+  },
+  "dependencies": {
+    "components": [],
+    "pip": [
+      "PyQt6",
+      "PyQt6-WebEngine"
+    ]
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [
+    {
+      "id": "antigravity",
+      "kind": "plugin",
+      "entry_point": "__init__.py:AntigravityPlugin"
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "__init__.py",
+      "panel.py"
+    ],
+    "resources": [
+      "antigravity.svg"
+    ],
+    "configs": {}
+  },
+  "config_paths": []
 }

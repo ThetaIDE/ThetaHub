@@ -2,7 +2,7 @@
   "id": "robotics",
   "name": "Robotics Continuous Control Experiments",
   "kind": "experiment",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A robotics experiment group with MuJoCo environment presets and Stable-Baselines3 PPO and SAC baselines for five continuous-control robots.",
   "author": {
     "name": "Theta-IDE Team"
@@ -26,20 +26,61 @@
       "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-1.0.1.zip",
       "sha256": "44e70da59ebac303c941b6443dbae4820d577fefa2eb7e23036a579bd1c7dcc7",
       "published_at": "2026-10-18T19:00:00Z"
+    },
+    "1.0.2": {
+      "tag": "v1.0.2",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-1.0.2.zip",
+      "sha256": "1eb8024548559dfded375ff5b0db2f7afadab29b6f15a5534c63f60e3c71a283",
+      "published_at": "2026-11-08T04:27:22.867386+00:00",
+      "size_bytes": 4507
     }
   },
   "paradigms": [
     "online_rl"
   ],
-  "target_path": "in/config/experiment/robotics",
   "dependencies": {
     "components": [
       "robotics-mujoco",
       "sb3-suite",
       "thetalib"
-    ]
+    ],
+    "pip": []
   },
   "compatibility": {
     "theta": ">=2.0.0"
-  }
+  },
+  "storage_version": 2,
+  "api_version": 1,
+  "capabilities": [],
+  "payload": {
+    "implementations": [],
+    "resources": [],
+    "configs": {
+      "in/config/env/mujoco/ant.yaml": "configs/env/mujoco/ant.yaml",
+      "in/config/env/mujoco/half_cheetah.yaml": "configs/env/mujoco/half_cheetah.yaml",
+      "in/config/env/mujoco/hopper.yaml": "configs/env/mujoco/hopper.yaml",
+      "in/config/env/mujoco/humanoid.yaml": "configs/env/mujoco/humanoid.yaml",
+      "in/config/env/mujoco/walker2d.yaml": "configs/env/mujoco/walker2d.yaml",
+      "in/config/experiment/robotics/_base.yaml": "configs/experiment/robotics/_base.yaml",
+      "in/config/experiment/robotics/ant_ppo.yaml": "configs/experiment/robotics/ant_ppo.yaml",
+      "in/config/experiment/robotics/half_cheetah_sac.yaml": "configs/experiment/robotics/half_cheetah_sac.yaml",
+      "in/config/experiment/robotics/hopper_ppo.yaml": "configs/experiment/robotics/hopper_ppo.yaml",
+      "in/config/experiment/robotics/humanoid_ppo.yaml": "configs/experiment/robotics/humanoid_ppo.yaml",
+      "in/config/experiment/robotics/walker2d_sac.yaml": "configs/experiment/robotics/walker2d_sac.yaml"
+    }
+  },
+  "config_paths": [
+    "in/config/env/mujoco/ant.yaml",
+    "in/config/env/mujoco/half_cheetah.yaml",
+    "in/config/env/mujoco/hopper.yaml",
+    "in/config/env/mujoco/humanoid.yaml",
+    "in/config/env/mujoco/walker2d.yaml",
+    "in/config/experiment/robotics/_base.yaml",
+    "in/config/experiment/robotics/ant_ppo.yaml",
+    "in/config/experiment/robotics/half_cheetah_sac.yaml",
+    "in/config/experiment/robotics/hopper_ppo.yaml",
+    "in/config/experiment/robotics/humanoid_ppo.yaml",
+    "in/config/experiment/robotics/walker2d_sac.yaml"
+  ],
+  "config_path": "in/config/env/mujoco/ant.yaml"
 }
