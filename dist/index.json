@@ -1,7 +1,7 @@
 {
   "$schema": "https://hub.thetaide.org/schemas/component-v1.json",
   "version": "1.0",
-  "updated_at": "2026-11-12T19:07:47.931874+00:00",
+  "updated_at": "2026-11-12T22:21:24.770739+00:00",
   "count": 38,
   "components": [
     {
@@ -4537,9 +4537,9 @@
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/ai_assistant-1.0.0.zip",
-          "sha256": "d4aca10b1c8157321ecb27c20acd9aca88c6cd1d1ed8a3804062b3845a80177f",
-          "published_at": "2026-11-12T19:07:47.809684+00:00",
-          "size_bytes": 100516
+          "sha256": "ffeedc12df80e3f45d5d8e4815f9a85aca168bbea6b41f5689cb46923e96fa5d",
+          "published_at": "2026-11-12T22:21:24.642607+00:00",
+          "size_bytes": 102426
         }
       },
       "config_paths": [],
@@ -4593,6 +4593,7 @@
         "resources": [
           "ai_assistant.svg",
           "icons/chats.svg",
+          "icons/cross.svg",
           "icons/more.svg",
           "icons/new_chat.svg",
           "icons/refresh.svg",
