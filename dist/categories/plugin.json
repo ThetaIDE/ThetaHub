@@ -1,6 +1,6 @@
 {
   "kind": "plugin",
-  "updated_at": "2026-11-12T18:42:46.960639+00:00",
+  "updated_at": "2026-11-12T19:07:47.931874+00:00",
   "count": 4,
   "components": [
     {
@@ -27,9 +27,9 @@
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/ai_assistant-1.0.0.zip",
-          "sha256": "e8a36169a0260f08b89fb24bfa94fae113397129fca0a7cbe81d98116a64a2c7",
-          "published_at": "2026-11-12T18:42:46.832874+00:00",
-          "size_bytes": 95934
+          "sha256": "d4aca10b1c8157321ecb27c20acd9aca88c6cd1d1ed8a3804062b3845a80177f",
+          "published_at": "2026-11-12T19:07:47.809684+00:00",
+          "size_bytes": 100516
         }
       },
       "config_paths": [],
@@ -63,6 +63,7 @@
           "evals/scenarios.py",
           "hub.py",
           "keys.py",
+          "oauth.py",
           "panel.py",
           "pricing.py",
           "providers/__init__.py",
