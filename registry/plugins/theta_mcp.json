@@ -4,7 +4,7 @@
   "kind": "plugin",
   "version": "1.0.0",
   "description": "Let Claude Code, Codex, pi, opencode, Cursor and other MCP agents use ThetaIDE: they can list and diagnose runs, read configs, logs and metrics, plot curves, compare variants across seeds, and, with your approval in the IDE, edit configs, launch or stop runs and install Hub components. Runs on 127.0.0.1 with a token; needs no other plugin.",
-  "author": "ThetaIDE Team",
+  "author": "ccast44",
   "repository": "https://github.com/ThetaIDE/theta-plugins",
   "license": "MIT",
   "tags": [
@@ -19,9 +19,9 @@
     "1.0.0": {
       "tag": "v1.0.0",
       "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta_mcp-1.0.0.zip",
-      "sha256": "8b0b7253b8499a97487d95ac82bbc8b5e4b5d643b2fd7704d384c382500454ae",
-      "published_at": "2026-11-13T17:32:49.252648+00:00",
-      "size_bytes": 61686
+      "sha256": "1b62381e5b5475452b8a5c857d4a0b4a1f721dd00e1a1663de35610aabf16e5f",
+      "published_at": "2026-11-13T17:38:52.135040+00:00",
+      "size_bytes": 61684
     }
   },
   "config_paths": [],
