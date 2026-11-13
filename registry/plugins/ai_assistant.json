@@ -22,9 +22,9 @@
     "1.0.0": {
       "tag": "v1.0.0",
       "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/ai_assistant-1.0.0.zip",
-      "sha256": "ffeedc12df80e3f45d5d8e4815f9a85aca168bbea6b41f5689cb46923e96fa5d",
-      "published_at": "2026-11-12T22:21:24.642607+00:00",
-      "size_bytes": 102426
+      "sha256": "8faadc11221d80a6dfac880eb27c85cc1078cc5e3156a855cf1edecd46220d19",
+      "published_at": "2026-11-13T16:09:39.920074+00:00",
+      "size_bytes": 108750
     }
   },
   "config_paths": [],
