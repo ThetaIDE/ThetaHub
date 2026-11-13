@@ -4,7 +4,7 @@
   "kind": "plugin",
   "version": "1.0.0",
   "description": "Chat with OpenAI, Anthropic, Gemini, OpenRouter or a local Ollama model about your runs. It reads configs, logs and metrics to explain failures, compare runs and suggest hyperparameters, plots metric curves and shows run figures in the chat, watches training runs for NaN, divergence and stalls, and can edit configs, install Hub components and launch or stop runs with your approval.",
-  "author": "ThetaIDE Team",
+  "author": "ccast44",
   "repository": "https://github.com/ThetaIDE/theta-plugins",
   "license": "MIT",
   "tags": [
@@ -22,9 +22,9 @@
     "1.0.0": {
       "tag": "v1.0.0",
       "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/ai_assistant-1.0.0.zip",
-      "sha256": "ffeedc12df80e3f45d5d8e4815f9a85aca168bbea6b41f5689cb46923e96fa5d",
-      "published_at": "2026-11-12T22:21:24.642607+00:00",
-      "size_bytes": 102426
+      "sha256": "33b571d00b66595b126d7f82b9d553da0ac5dab337387749edc7aa3e46a026ed",
+      "published_at": "2026-11-13T17:38:52.125025+00:00",
+      "size_bytes": 108745
     }
   },
   "config_paths": [],

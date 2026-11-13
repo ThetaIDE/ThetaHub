@@ -1,8 +1,8 @@
 {
   "$schema": "https://hub.thetaide.org/schemas/component-v1.json",
   "version": "1.0",
-  "updated_at": "2026-11-12T22:21:24.770739+00:00",
-  "count": 38,
+  "updated_at": "2026-11-13T17:38:52.262338+00:00",
+  "count": 39,
   "components": [
     {
       "id": "clinical-timeseries-data",
@@ -4519,7 +4519,7 @@
       "kind": "plugin",
       "version": "1.0.0",
       "description": "Chat with OpenAI, Anthropic, Gemini, OpenRouter or a local Ollama model about your runs. It reads configs, logs and metrics to explain failures, compare runs and suggest hyperparameters, plots metric curves and shows run figures in the chat, watches training runs for NaN, divergence and stalls, and can edit configs, install Hub components and launch or stop runs with your approval.",
-      "author": "ThetaIDE Team",
+      "author": "ccast44",
       "repository": "https://github.com/ThetaIDE/theta-plugins",
       "license": "MIT",
       "tags": [
@@ -4537,9 +4537,9 @@
         "1.0.0": {
           "tag": "v1.0.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/ai_assistant-1.0.0.zip",
-          "sha256": "ffeedc12df80e3f45d5d8e4815f9a85aca168bbea6b41f5689cb46923e96fa5d",
-          "published_at": "2026-11-12T22:21:24.642607+00:00",
-          "size_bytes": 102426
+          "sha256": "33b571d00b66595b126d7f82b9d553da0ac5dab337387749edc7aa3e46a026ed",
+          "published_at": "2026-11-13T17:38:52.125025+00:00",
+          "size_bytes": 108745
         }
       },
       "config_paths": [],
@@ -4854,6 +4854,76 @@
         "configs": {}
       },
       "config_paths": []
+    },
+    {
+      "id": "theta_mcp",
+      "name": "Theta MCP Server",
+      "kind": "plugin",
+      "version": "1.0.0",
+      "description": "Let Claude Code, Codex, pi, opencode, Cursor and other MCP agents use ThetaIDE: they can list and diagnose runs, read configs, logs and metrics, plot curves, compare variants across seeds, and, with your approval in the IDE, edit configs, launch or stop runs and install Hub components. Runs on 127.0.0.1 with a token; needs no other plugin.",
+      "author": "ccast44",
+      "repository": "https://github.com/ThetaIDE/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "mcp",
+        "agents",
+        "claude-code",
+        "codex",
+        "tools",
+        "terminal"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta_mcp-1.0.0.zip",
+          "sha256": "1b62381e5b5475452b8a5c857d4a0b4a1f721dd00e1a1663de35610aabf16e5f",
+          "published_at": "2026-11-13T17:38:52.135040+00:00",
+          "size_bytes": 61684
+        }
+      },
+      "config_paths": [],
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "storage_version": 2,
+      "api_version": 1,
+      "capabilities": [
+        {
+          "id": "theta_mcp",
+          "kind": "plugin",
+          "entry_point": "__init__.py:ThetaMCPPlugin"
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "project_config.py",
+          "server.py",
+          "settings_widget.py",
+          "harnesses.py",
+          "host.py",
+          "ide_tools/__init__.py",
+          "ide_tools/analysis.py",
+          "ide_tools/approval.py",
+          "ide_tools/bridge.py",
+          "ide_tools/chat_types.py",
+          "ide_tools/figures.py",
+          "ide_tools/hub.py",
+          "ide_tools/tools.py",
+          "ide_tools/watch.py"
+        ],
+        "resources": [
+          "theta_mcp.svg"
+        ],
+        "configs": {}
+      },
+      "default_enabled": true,
+      "icon": "theta_mcp",
+      "entry_point": "ThetaMCPPlugin",
+      "extra": {
+        "has_settings": true
+      }
     },
     {
       "id": "basic_suite",
