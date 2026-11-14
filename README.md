@@ -14,13 +14,24 @@ Official community registry for [ThetaIDE](https://github.com/CameronEgb/Theta-I
 
 ## 📦 Component Categories
 
-| Category | Description | Destination Path in ThetaIDE |
-|---|---|---|
-| `plugin` | UI extensions, activity bar panels, telemetry tools | `~/.thetaide/plugins/<id>/` |
-| `method` | RL algorithms (PPO, CQL, SAC, hybrid agents) | `src/usr/methods/<id>/` |
-| `model` | Neural architectures and NeSy symbolic reasoners | `src/usr/models/<id>/` |
-| `env` | Simulation wrappers and benchmark environments | `in/envs/<id>/` |
-| `experiment` | Pre-bundled benchmark configs and hyperparameter sweeps | `in/config/experiment/<id>/` |
+| Category | Description |
+|---|---|
+| `plugin` | UI extensions, activity bar panels, telemetry tools |
+| `method` | RL algorithms (PPO, CQL, SAC, hybrid agents) |
+| `model` | Neural architectures and NeSy symbolic reasoners |
+| `env` | Simulation wrappers and benchmark environments |
+| `datamodule`, `evaluator`, `plotter` | Data loading, evaluation and figures |
+| `experiment` | Pre-bundled benchmark configs and hyperparameter sweeps |
+| `suite`, `package` | Dependency bundles and general packages |
+| `tuner`, `scheduler` | Hyperparameter tuning and remote-site scheduling components |
+
+ThetaIDE installs every package under `src/plugins/{components,app}/installed/<id>/`. A package's
+config profiles stay inside it; users override them with files under `src/usr/config`.
+
+Every listing uses the native package format: `storage_version: 3`, `api_version: 1`, explicit
+`capabilities`, a `payload` of implementations, resources and configs, and config destinations
+written as selectors relative to the config root (`model/my_model.yaml`). The registry entry
+repeats these fields from the archive's `.theta_component.json`.
 
 ---
 
@@ -56,7 +67,10 @@ In this repository, add a new JSON file under `registry/<category>/<your-compone
   "repository": "https://github.com/your-username/my-awesome-tool",
   "license": "MIT",
   "tags": ["visualization", "telemetry"],
-  "target_path": "plugins/my_awesome_tool",
+  "storage_version": 3,
+  "api_version": 1,
+  "capabilities": [{"id": "my-awesome-tool", "kind": "plugin", "entry_point": "__init__.py:MyAwesomeTool"}],
+  "payload": {"implementations": ["__init__.py"], "resources": [], "configs": {}},
   "releases": {
     "1.0.0": {
       "tag": "v1.0.0",
@@ -83,5 +97,5 @@ Submit a PR to `main`. Once GitHub Actions passes and the PR is merged, your com
 
 ## 🛠️ Repository Scripts
 
-- `python scripts/validate_manifest.py`: Checks all manifests for schema conformity and valid SHA-256 hashes.
+- `python scripts/validate_manifest.py`: Checks all manifests for schema conformity, package format 3 and config selectors; `--check-archives` also verifies each current archive's hash and embedded manifest.
 - `python scripts/build_index.py`: Compiles manifests into `dist/index.json` and `dist/index.min.json`.

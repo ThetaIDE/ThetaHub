@@ -4,15 +4,35 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from pathlib import PurePosixPath
 import re
 import sys
 import urllib.request
 from urllib.parse import urlparse
 from zipfile import ZipFile
 
-VALID_KINDS = {"plugin", "method", "model", "env", "experiment", "suite", "package", "datamodule", "evaluator", "plotter"}
+VALID_KINDS = {"plugin", "method", "model", "env", "experiment", "suite", "package", "datamodule", "evaluator",
+               "plotter", "tuner", "scheduler"}
 SEMVER_REGEX = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$")
 ID_REGEX = re.compile(r"^[a-z0-9][a-z0-9-_]{1,63}$")
+
+
+def selector_errors(data: dict) -> list[str]:
+    """Config destinations are logical selectors relative to the workspace config root (model/mlp.yaml)."""
+    payload = data.get("payload") if isinstance(data.get("payload"), dict) else {}
+    schema = data.get("parameter_schema") if isinstance(data.get("parameter_schema"), dict) else {}
+    suite = data.get("test_suite") if isinstance(data.get("test_suite"), dict) else {}
+    values = [*(payload.get("configs") or {}), *(schema.get("x-theta-config-schemas") or {}),
+              *(data.get("config_paths") or []), *([data["config_path"]] if data.get("config_path") else []),
+              *[c.get("config_path") for c in suite.get("components", []) if isinstance(c, dict) and c.get("config_path")]]
+    errors = []
+    for value in values:
+        path = PurePosixPath(value) if isinstance(value, str) else None
+        if (path is None or not value or "\\" in value or ":" in value or path.is_absolute() or ".." in path.parts
+                or len(path.parts) < 2 or path.parts[0] in ("in", "src") or path.suffix not in (".yaml", ".yml")
+                or path.as_posix() != value):
+            errors.append(f"Invalid config selector {value!r}: use <group>/<name>.yaml relative to the config root")
+    return errors
 
 
 def validate_manifest(file_path: Path, check_urls: bool = False, check_archives: bool = False) -> list[str]:
@@ -32,8 +52,9 @@ def validate_manifest(file_path: Path, check_urls: bool = False, check_archives:
     if errors:
         return errors
 
-    if data["storage_version"] != 2 or data["api_version"] != 1:
-        errors.append("Current releases require storage_version: 2 and api_version: 1")
+    if data["storage_version"] != 3 or data["api_version"] != 1:
+        errors.append("Current releases require storage_version: 3 and api_version: 1")
+    errors += selector_errors(data)
     for field in ("target_path", "legacy_paths", "module_aliases", "legacy_archive"):
         if field in data:
             errors.append(f"Native listings cannot declare '{field}'")
@@ -109,7 +130,8 @@ def validate_manifest(file_path: Path, check_urls: bool = False, check_archives:
                     raise ValueError("Current archive SHA-256 does not match its release entry")
                 with ZipFile(archive) as package:
                     native = json.loads(package.read(".theta_component.json"))
-                    for field in ("id", "kind", "version", "storage_version", "api_version", "capabilities", "payload", "dependencies"):
+                    for field in ("id", "kind", "version", "storage_version", "api_version", "capabilities", "payload",
+                                  "dependencies", "exports"):
                         if native.get(field) != data.get(field):
                             raise ValueError(f"Current archive manifest differs from registry field '{field}'")
                     if any(field in native for field in ("target_path", "legacy_paths", "module_aliases", "legacy_archive")):

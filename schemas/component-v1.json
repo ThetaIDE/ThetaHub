@@ -33,16 +33,18 @@
     "kind": {
       "type": "string",
       "enum": [
-        "plugin",
+        "datamodule",
+        "env",
+        "evaluator",
+        "experiment",
         "method",
         "model",
-        "env",
-        "experiment",
-        "suite",
         "package",
-        "datamodule",
-        "evaluator",
-        "plotter"
+        "plotter",
+        "plugin",
+        "scheduler",
+        "suite",
+        "tuner"
       ],
       "description": "Component category, including data modules, evaluators, and plotters."
     },
@@ -94,7 +96,6 @@
       },
       "uniqueItems": true
     },
-    "target_path": false,
     "compatibility": {
       "type": "object",
       "properties": {
@@ -334,7 +335,7 @@
       "description": "JSON Schema for component parameters. Use properties for nested keys, enum for dropdown choices, x-theta-domain: model for installed model choices, and x-theta-config-schemas for profile-specific schemas."
     },
     "storage_version": {
-      "const": 2
+      "const": 3
     },
     "api_version": {
       "const": 1
@@ -378,9 +379,14 @@
         }
       }
     },
-    "legacy_paths": false,
-    "module_aliases": false,
-    "legacy_archive": false
+    "exports": {
+      "type": "object",
+      "description": "Public cross-package objects: name -> 'file.py:attribute'.",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[^:]+\\.py:[A-Za-z_][A-Za-z0-9_.]*$"
+      }
+    }
   },
   "additionalProperties": true
 }
