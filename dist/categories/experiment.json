@@ -1,44 +1,25 @@
 {
   "kind": "experiment",
-  "updated_at": "2026-11-13T17:38:52.262338+00:00",
+  "updated_at": "2026-11-14T23:34:02.600048+00:00",
   "count": 2,
   "components": [
     {
       "id": "mimic",
       "name": "MIMIC Clinical Sepsis Benchmark",
       "kind": "experiment",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "Complete MIMIC-III sepsis experiment suite: offline clinical benchmark configs, group defaults, ICU environment hooks, timeseries data module, early prediction & reward shaping evaluators, and clinical agreement plotters.",
       "author": {
         "name": "Theta Research"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "experiment",
-        "mimic"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic-1.0.0.zip",
-          "sha256": "c96ac16d722bbbbc4b216c6cda1d29506c658b18217d809589650950df169d61",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic-1.0.1.zip",
-          "sha256": "b383de75bd65fb02d59f9564ea7be02b6676408d7972bdf232055a95068a7839",
-          "published_at": "2026-10-21T15:09:32.923759+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-1.0.2.zip",
-          "sha256": "30bb35d04494e2967b8e503251a058666843ff9850ef1dbec48981dd9c006a55",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 18080
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
+      "paradigms": [
+        "supervised",
+        "offline_rl"
+      ],
       "dependencies": {
         "components": [
           "thetalib",
@@ -50,15 +31,7 @@
         ],
         "pip": []
       },
-      "paradigms": [
-        "supervised",
-        "offline_rl"
-      ],
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
@@ -67,99 +40,89 @@
           "resources/rules"
         ],
         "configs": {
-          "in/config/experiment/mimic/_base.yaml": "configs/experiment/mimic/_base.yaml",
-          "in/config/experiment/mimic/all_mimic.yaml": "configs/experiment/mimic/all_mimic.yaml",
-          "in/config/experiment/mimic/cql_benchmark.yaml": "configs/experiment/mimic/cql_benchmark.yaml",
-          "in/config/experiment/mimic/cql_literature.yaml": "configs/experiment/mimic/cql_literature.yaml",
-          "in/config/experiment/mimic/final.yaml": "configs/experiment/mimic/final.yaml",
-          "in/config/experiment/mimic/final_pos5_cql005.yaml": "configs/experiment/mimic/final_pos5_cql005.yaml",
-          "in/config/experiment/mimic/final_pos_weight_5.yaml": "configs/experiment/mimic/final_pos_weight_5.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_cross_attention.yaml": "configs/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_cew.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_neural.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
-          "in/config/experiment/mimic/methods/cql_dnn.yaml": "configs/experiment/mimic/methods/cql_dnn.yaml",
-          "in/config/experiment/mimic/methods/cql_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_dueling_resnet.yaml",
-          "in/config/experiment/mimic/methods/cql_transformer.yaml": "configs/experiment/mimic/methods/cql_transformer.yaml",
-          "in/config/experiment/mimic/mimic_gpu_test.yaml": "configs/experiment/mimic/mimic_gpu_test.yaml",
-          "in/config/experiment/mimic/mimic_test.yaml": "configs/experiment/mimic/mimic_test.yaml",
-          "in/config/experiment/mimic/quick_test.yaml": "configs/experiment/mimic/quick_test.yaml",
-          "in/config/experiment/mimic/reciprocal_refinement.yaml": "configs/experiment/mimic/reciprocal_refinement.yaml",
-          "in/config/experiment/mimic/selected_mimic.yaml": "configs/experiment/mimic/selected_mimic.yaml",
-          "in/config/experiment/mimic/tune_mimic_all.yaml": "configs/experiment/mimic/tune_mimic_all.yaml",
-          "in/config/workflow/sepsis_reciprocal.yaml": "configs/workflow/sepsis_reciprocal.yaml"
+          "experiment/mimic/_base.yaml": "configs/experiment/mimic/_base.yaml",
+          "experiment/mimic/all_mimic.yaml": "configs/experiment/mimic/all_mimic.yaml",
+          "experiment/mimic/cql_benchmark.yaml": "configs/experiment/mimic/cql_benchmark.yaml",
+          "experiment/mimic/cql_literature.yaml": "configs/experiment/mimic/cql_literature.yaml",
+          "experiment/mimic/final.yaml": "configs/experiment/mimic/final.yaml",
+          "experiment/mimic/final_pos5_cql005.yaml": "configs/experiment/mimic/final_pos5_cql005.yaml",
+          "experiment/mimic/final_pos_weight_5.yaml": "configs/experiment/mimic/final_pos_weight_5.yaml",
+          "experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
+          "experiment/mimic/methods/cql_blendrl_cross_attention.yaml": "configs/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_cew.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_neural.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
+          "experiment/mimic/methods/cql_dnn.yaml": "configs/experiment/mimic/methods/cql_dnn.yaml",
+          "experiment/mimic/methods/cql_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_dueling_resnet.yaml",
+          "experiment/mimic/methods/cql_transformer.yaml": "configs/experiment/mimic/methods/cql_transformer.yaml",
+          "experiment/mimic/mimic_gpu_test.yaml": "configs/experiment/mimic/mimic_gpu_test.yaml",
+          "experiment/mimic/mimic_test.yaml": "configs/experiment/mimic/mimic_test.yaml",
+          "experiment/mimic/quick_test.yaml": "configs/experiment/mimic/quick_test.yaml",
+          "experiment/mimic/reciprocal_refinement.yaml": "configs/experiment/mimic/reciprocal_refinement.yaml",
+          "experiment/mimic/selected_mimic.yaml": "configs/experiment/mimic/selected_mimic.yaml",
+          "experiment/mimic/tune_mimic_all.yaml": "configs/experiment/mimic/tune_mimic_all.yaml",
+          "workflow/sepsis_reciprocal.yaml": "configs/workflow/sepsis_reciprocal.yaml"
         }
       },
       "config_paths": [
-        "in/config/experiment/mimic/_base.yaml",
-        "in/config/experiment/mimic/all_mimic.yaml",
-        "in/config/experiment/mimic/cql_benchmark.yaml",
-        "in/config/experiment/mimic/cql_literature.yaml",
-        "in/config/experiment/mimic/final.yaml",
-        "in/config/experiment/mimic/final_pos5_cql005.yaml",
-        "in/config/experiment/mimic/final_pos_weight_5.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
-        "in/config/experiment/mimic/methods/cql_dnn.yaml",
-        "in/config/experiment/mimic/methods/cql_dueling_resnet.yaml",
-        "in/config/experiment/mimic/methods/cql_transformer.yaml",
-        "in/config/experiment/mimic/mimic_gpu_test.yaml",
-        "in/config/experiment/mimic/mimic_test.yaml",
-        "in/config/experiment/mimic/quick_test.yaml",
-        "in/config/experiment/mimic/reciprocal_refinement.yaml",
-        "in/config/experiment/mimic/selected_mimic.yaml",
-        "in/config/experiment/mimic/tune_mimic_all.yaml",
-        "in/config/workflow/sepsis_reciprocal.yaml"
+        "experiment/mimic/_base.yaml",
+        "experiment/mimic/all_mimic.yaml",
+        "experiment/mimic/cql_benchmark.yaml",
+        "experiment/mimic/cql_literature.yaml",
+        "experiment/mimic/final.yaml",
+        "experiment/mimic/final_pos5_cql005.yaml",
+        "experiment/mimic/final_pos_weight_5.yaml",
+        "experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
+        "experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_cew.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_neural.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
+        "experiment/mimic/methods/cql_dnn.yaml",
+        "experiment/mimic/methods/cql_dueling_resnet.yaml",
+        "experiment/mimic/methods/cql_transformer.yaml",
+        "experiment/mimic/mimic_gpu_test.yaml",
+        "experiment/mimic/mimic_test.yaml",
+        "experiment/mimic/quick_test.yaml",
+        "experiment/mimic/reciprocal_refinement.yaml",
+        "experiment/mimic/selected_mimic.yaml",
+        "experiment/mimic/tune_mimic_all.yaml",
+        "workflow/sepsis_reciprocal.yaml"
       ],
-      "config_path": "in/config/experiment/mimic/_base.yaml",
-      "rules_root": "resources/rules"
+      "config_path": "experiment/mimic/_base.yaml",
+      "rules_root": "resources/rules",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "experiment",
+        "mimic"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-1.1.0.zip",
+          "sha256": "22a609c654a61228fd904f665f5f06151d0eda0aa031976f2541e944377bdba7",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 18074
+        }
+      }
     },
     {
       "id": "robotics",
       "name": "Robotics Continuous Control Experiments",
       "kind": "experiment",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "A robotics experiment group with MuJoCo environment presets and Stable-Baselines3 PPO and SAC baselines for five continuous-control robots.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "experiment",
-        "robotics",
-        "mujoco"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-1.0.0.zip",
-          "sha256": "9cab5b5a5bbe5a7cbba542b57c36dc2d756f53cea1f4317b79faebbe5c4ebb80",
-          "published_at": "2026-10-20T00:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-1.0.1.zip",
-          "sha256": "44e70da59ebac303c941b6443dbae4820d577fefa2eb7e23036a579bd1c7dcc7",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-1.0.2.zip",
-          "sha256": "1eb8024548559dfded375ff5b0db2f7afadab29b6f15a5534c63f60e3c71a283",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4507
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "online_rl"
@@ -172,43 +135,46 @@
         ],
         "pip": []
       },
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
         "implementations": [],
         "resources": [],
         "configs": {
-          "in/config/env/mujoco/ant.yaml": "configs/env/mujoco/ant.yaml",
-          "in/config/env/mujoco/half_cheetah.yaml": "configs/env/mujoco/half_cheetah.yaml",
-          "in/config/env/mujoco/hopper.yaml": "configs/env/mujoco/hopper.yaml",
-          "in/config/env/mujoco/humanoid.yaml": "configs/env/mujoco/humanoid.yaml",
-          "in/config/env/mujoco/walker2d.yaml": "configs/env/mujoco/walker2d.yaml",
-          "in/config/experiment/robotics/_base.yaml": "configs/experiment/robotics/_base.yaml",
-          "in/config/experiment/robotics/ant_ppo.yaml": "configs/experiment/robotics/ant_ppo.yaml",
-          "in/config/experiment/robotics/half_cheetah_sac.yaml": "configs/experiment/robotics/half_cheetah_sac.yaml",
-          "in/config/experiment/robotics/hopper_ppo.yaml": "configs/experiment/robotics/hopper_ppo.yaml",
-          "in/config/experiment/robotics/humanoid_ppo.yaml": "configs/experiment/robotics/humanoid_ppo.yaml",
-          "in/config/experiment/robotics/walker2d_sac.yaml": "configs/experiment/robotics/walker2d_sac.yaml"
+          "experiment/robotics/_base.yaml": "configs/experiment/robotics/_base.yaml",
+          "experiment/robotics/ant_ppo.yaml": "configs/experiment/robotics/ant_ppo.yaml",
+          "experiment/robotics/half_cheetah_sac.yaml": "configs/experiment/robotics/half_cheetah_sac.yaml",
+          "experiment/robotics/hopper_ppo.yaml": "configs/experiment/robotics/hopper_ppo.yaml",
+          "experiment/robotics/humanoid_ppo.yaml": "configs/experiment/robotics/humanoid_ppo.yaml",
+          "experiment/robotics/walker2d_sac.yaml": "configs/experiment/robotics/walker2d_sac.yaml"
         }
       },
       "config_paths": [
-        "in/config/env/mujoco/ant.yaml",
-        "in/config/env/mujoco/half_cheetah.yaml",
-        "in/config/env/mujoco/hopper.yaml",
-        "in/config/env/mujoco/humanoid.yaml",
-        "in/config/env/mujoco/walker2d.yaml",
-        "in/config/experiment/robotics/_base.yaml",
-        "in/config/experiment/robotics/ant_ppo.yaml",
-        "in/config/experiment/robotics/half_cheetah_sac.yaml",
-        "in/config/experiment/robotics/hopper_ppo.yaml",
-        "in/config/experiment/robotics/humanoid_ppo.yaml",
-        "in/config/experiment/robotics/walker2d_sac.yaml"
+        "experiment/robotics/_base.yaml",
+        "experiment/robotics/ant_ppo.yaml",
+        "experiment/robotics/half_cheetah_sac.yaml",
+        "experiment/robotics/hopper_ppo.yaml",
+        "experiment/robotics/humanoid_ppo.yaml",
+        "experiment/robotics/walker2d_sac.yaml"
       ],
-      "config_path": "in/config/env/mujoco/ant.yaml"
+      "config_path": "experiment/robotics/_base.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "experiment",
+        "robotics",
+        "mujoco"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-1.1.0.zip",
+          "sha256": "db161bd1c00403a167f183a9ac736aea6b2131ac243b5fbc6a11d02a646cd233",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2857
+        }
+      }
     }
   ]
 }

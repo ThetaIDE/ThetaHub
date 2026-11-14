@@ -2,7 +2,7 @@
   "id": "theta-validation-suite",
   "name": "Theta Validation Suite",
   "kind": "suite",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Online-RL experiment and component conformance recipes for ThetaIDE Basics.",
   "author": {
     "name": "Theta-IDE Team"
@@ -21,30 +21,23 @@
     ],
     "pip": []
   },
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/theta-validation-suite-1.0.0.zip",
-      "sha256": "c944cf0a787c88d0294cd2571a13a0ee62925f490cfb87f572a69e8830d52ed9",
-      "published_at": "2026-10-20T00:00:00Z",
-      "size_bytes": 4673
-    },
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/theta-validation-suite-1.1.0.zip",
-      "sha256": "95ef00476e135d56f4f9c2416a52694707100c4f57da0e1107f28d2b292993c2",
-      "published_at": "2026-10-21T18:23:47.065128+00:00"
-    },
-    "1.1.1": {
-      "tag": "v1.1.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.1.1.zip",
-      "sha256": "46d4bf43d43030ec865e0709c1a597dc529438e2eeefae363573d86390bb2937",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 6278
-    }
-  },
   "paradigms": [
     "online_rl"
+  ],
+  "config_paths": [
+    "experiment/theta_validation/_base.yaml",
+    "experiment/theta_validation/failure/checkpoint_conflict.yaml",
+    "experiment/theta_validation/failure/incompatible_bc.yaml",
+    "experiment/theta_validation/failure/incompatible_cql.yaml",
+    "experiment/theta_validation/failure/incompatible_iql.yaml",
+    "experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+    "experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+    "experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+    "experiment/theta_validation/failure/missing_agent.yaml",
+    "experiment/theta_validation/failure/missing_method.yaml",
+    "experiment/theta_validation/failure/missing_model.yaml",
+    "experiment/theta_validation/failure/unknown_agent.yaml",
+    "experiment/theta_validation/success/online_smoke.yaml"
   ],
   "test_suite": {
     "format": "theta.test-suite/v1",
@@ -53,7 +46,7 @@
         "id": "gym_classic_control/cartpole",
         "title": "CartPole live environment",
         "description": "The Basic Suite environment must expose an online-RL CartPole environment.",
-        "config_path": "in/config/env/gym_classic_control/cartpole.yaml",
+        "config_path": "env/gym_classic_control/cartpole.yaml",
         "required": {
           "env_id": "CartPole-v1",
           "compatible_paradigms": [
@@ -64,11 +57,11 @@
       {
         "id": "sb3/ppo",
         "title": "SB3 PPO algorithm",
-        "description": "PPO must retain its runner entrypoint, algorithm identity, and online-RL capability declaration.",
-        "config_path": "in/config/agent/sb3/ppo.yaml",
+        "description": "PPO must declare its algorithm capability, execution backend and online-RL compatibility.",
+        "config_path": "agent/sb3/ppo.yaml",
         "required": {
-          "entrypoint": "package://sb3-suite/sb3_runner.py",
-          "algorithm": "PPO",
+          "algorithm": "sb3/ppo",
+          "backend": "sb3",
           "compatible_paradigms": [
             "online_rl"
           ]
@@ -77,11 +70,11 @@
       {
         "id": "d3rlpy/cql",
         "title": "d3rlpy CQL algorithm",
-        "description": "CQL must retain its runner entrypoint, algorithm identity, and offline-RL capability declaration.",
-        "config_path": "in/config/agent/d3rlpy/cql.yaml",
+        "description": "CQL must declare its algorithm capability, execution backend and offline-RL compatibility.",
+        "config_path": "agent/d3rlpy/cql.yaml",
         "required": {
-          "entrypoint": "package://d3rlpy-suite/d3rlpy_runner.py",
-          "algorithm": "CQL",
+          "algorithm": "d3rlpy/cql",
+          "backend": "d3rlpy",
           "compatible_paradigms": [
             "offline_rl"
           ]
@@ -91,7 +84,7 @@
         "id": "basics/dnn",
         "title": "DNN model",
         "description": "The Basic Suite DNN must expose its architecture configuration.",
-        "config_path": "in/config/model/basics/dnn.yaml",
+        "config_path": "model/basics/dnn.yaml",
         "required": {
           "architecture": "dnn"
         }
@@ -100,7 +93,7 @@
         "id": "thetalib/tabular_data",
         "title": "Tabular data module",
         "description": "The data-loader adapter must remain independently configurable from a dataset environment.",
-        "config_path": "in/config/data/thetalib/tabular_data.yaml",
+        "config_path": "data/thetalib/tabular_data.yaml",
         "required": {
           "data_module": "tabular_data",
           "batch_size": 128
@@ -228,42 +221,36 @@
       }
     ]
   },
-  "config_paths": [
-    "in/config/experiment/theta_validation/_base.yaml",
-    "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_bc.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_cql.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_iql.yaml",
-    "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
-    "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
-    "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
-    "in/config/experiment/theta_validation/failure/missing_agent.yaml",
-    "in/config/experiment/theta_validation/failure/missing_method.yaml",
-    "in/config/experiment/theta_validation/failure/missing_model.yaml",
-    "in/config/experiment/theta_validation/failure/unknown_agent.yaml",
-    "in/config/experiment/theta_validation/success/online_smoke.yaml"
-  ],
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [],
   "payload": {
     "implementations": [],
     "resources": [],
     "configs": {
-      "in/config/experiment/theta_validation/_base.yaml": "configs/experiment/theta_validation/_base.yaml",
-      "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml": "configs/experiment/theta_validation/failure/checkpoint_conflict.yaml",
-      "in/config/experiment/theta_validation/failure/incompatible_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_bc.yaml",
-      "in/config/experiment/theta_validation/failure/incompatible_cql.yaml": "configs/experiment/theta_validation/failure/incompatible_cql.yaml",
-      "in/config/experiment/theta_validation/failure/incompatible_iql.yaml": "configs/experiment/theta_validation/failure/incompatible_iql.yaml",
-      "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
-      "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml": "configs/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
-      "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml": "configs/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
-      "in/config/experiment/theta_validation/failure/missing_agent.yaml": "configs/experiment/theta_validation/failure/missing_agent.yaml",
-      "in/config/experiment/theta_validation/failure/missing_method.yaml": "configs/experiment/theta_validation/failure/missing_method.yaml",
-      "in/config/experiment/theta_validation/failure/missing_model.yaml": "configs/experiment/theta_validation/failure/missing_model.yaml",
-      "in/config/experiment/theta_validation/failure/unknown_agent.yaml": "configs/experiment/theta_validation/failure/unknown_agent.yaml",
-      "in/config/experiment/theta_validation/success/online_smoke.yaml": "configs/experiment/theta_validation/success/online_smoke.yaml"
+      "experiment/theta_validation/_base.yaml": "configs/experiment/theta_validation/_base.yaml",
+      "experiment/theta_validation/failure/checkpoint_conflict.yaml": "configs/experiment/theta_validation/failure/checkpoint_conflict.yaml",
+      "experiment/theta_validation/failure/incompatible_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_bc.yaml",
+      "experiment/theta_validation/failure/incompatible_cql.yaml": "configs/experiment/theta_validation/failure/incompatible_cql.yaml",
+      "experiment/theta_validation/failure/incompatible_iql.yaml": "configs/experiment/theta_validation/failure/incompatible_iql.yaml",
+      "experiment/theta_validation/failure/incompatible_td3_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+      "experiment/theta_validation/failure/invalid_checkpoint_value.yaml": "configs/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+      "experiment/theta_validation/failure/malformed_telemetry_metrics.yaml": "configs/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+      "experiment/theta_validation/failure/missing_agent.yaml": "configs/experiment/theta_validation/failure/missing_agent.yaml",
+      "experiment/theta_validation/failure/missing_method.yaml": "configs/experiment/theta_validation/failure/missing_method.yaml",
+      "experiment/theta_validation/failure/missing_model.yaml": "configs/experiment/theta_validation/failure/missing_model.yaml",
+      "experiment/theta_validation/failure/unknown_agent.yaml": "configs/experiment/theta_validation/failure/unknown_agent.yaml",
+      "experiment/theta_validation/success/online_smoke.yaml": "configs/experiment/theta_validation/success/online_smoke.yaml"
     }
   },
-  "config_path": "in/config/experiment/theta_validation/_base.yaml"
+  "config_path": "experiment/theta_validation/_base.yaml",
+  "releases": {
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.2.0.zip",
+      "sha256": "ab0dcec43f633bf23d61e6b89c5e68c71c07087a54d2afa22c0b5ff27cc07ea9",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 6248
+    }
+  }
 }

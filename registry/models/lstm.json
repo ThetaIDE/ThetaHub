@@ -2,39 +2,19 @@
   "id": "lstm",
   "name": "LSTM Recurrent Neural Network",
   "kind": "model",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Long Short-Term Memory (LSTM) recurrent network architecture with temporal attention pooling.",
   "author": {
     "name": "Theta-IDE Team"
-  },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "model",
-    "lstm",
-    "recurrent",
-    "rnn",
-    "sequential"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/lstm-1.0.0.zip",
-      "sha256": "df96ba85cfc189008f8ce7787f5c6bf704d602d143f782cbc8877514737e868f",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.0.1.zip",
-      "sha256": "ad6144a2e404ddfaac7b7e12bb02a4c05c08aa9900cb3a895f4c56485c068859",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 2192
-    }
   },
   "paradigms": [
     "online_rl",
     "offline_rl",
     "supervised"
+  ],
+  "config_path": "model/basics/lstm.yaml",
+  "config_paths": [
+    "model/basics/lstm.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -59,15 +39,11 @@
       }
     }
   },
-  "config_path": "in/config/model/basics/lstm.yaml",
-  "config_paths": [
-    "in/config/model/basics/lstm.yaml"
-  ],
   "dependencies": {
     "components": [],
     "pip": []
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -87,7 +63,25 @@
     ],
     "resources": [],
     "configs": {
-      "in/config/model/basics/lstm.yaml": "configs/model/basics/lstm.yaml"
+      "model/basics/lstm.yaml": "configs/model/basics/lstm.yaml"
+    }
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "model",
+    "lstm",
+    "recurrent",
+    "rnn",
+    "sequential"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.1.0.zip",
+      "sha256": "f8d6e8b4bf39ffe6950c3ffdca38a3e2f96762ce906504fd7f841f9edd54a714",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 2183
     }
   }
 }

@@ -1,47 +1,38 @@
 {
   "kind": "plotter",
-  "updated_at": "2026-11-13T17:38:52.262338+00:00",
+  "updated_at": "2026-11-14T23:34:02.600048+00:00",
   "count": 2,
   "components": [
     {
       "id": "mimic-clinical-suite",
       "name": "MIMIC Clinical Evaluation & Visualization Suite",
       "kind": "plotter",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Clinical policy alignment, septic shock trajectory counterfactuals, and clinician agreement visualizers.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "mimic-clinical-suite"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_clinical_suite-1.0.0.zip",
-          "sha256": "94e90b75d6e74aac1cf28333608ff1ad196d681f78ff9b9ba79e980ff8632024",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.0.1.zip",
-          "sha256": "30606c5982c31c09a612e26762728430c9764fa927218aba0fb2d3a41a47911b",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 20660
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "supervised",
         "offline_rl"
       ],
+      "config_paths": [
+        "plot/mimic/clinical.yaml",
+        "plot/mimic/clinical_alignment.yaml",
+        "plot/mimic/ep_agreement.yaml",
+        "plot/mimic/ep_counterfactual_table.yaml",
+        "plot/mimic/ep_dl_sweep.yaml",
+        "plot/mimic/ep_trajectories.yaml"
+      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/plot/mimic/clinical_alignment.yaml": {
+          "plot/mimic/clinical_alignment.yaml": {
             "type": "object",
             "properties": {
               "plots": {
@@ -64,7 +55,7 @@
               }
             }
           },
-          "in/config/plot/mimic/clinical.yaml": {
+          "plot/mimic/clinical.yaml": {
             "type": "object",
             "properties": {
               "figsize": {
@@ -87,7 +78,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_agreement.yaml": {
+          "plot/mimic/ep_agreement.yaml": {
             "type": "object",
             "properties": {
               "agreement_metric": {
@@ -110,7 +101,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_trajectories.yaml": {
+          "plot/mimic/ep_trajectories.yaml": {
             "type": "object",
             "properties": {
               "max_trajectories": {
@@ -130,7 +121,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_counterfactual_table.yaml": {
+          "plot/mimic/ep_counterfactual_table.yaml": {
             "type": "object",
             "properties": {
               "format": {
@@ -144,7 +135,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_dl_sweep.yaml": {
+          "plot/mimic/ep_dl_sweep.yaml": {
             "type": "object",
             "properties": {
               "enabled": {
@@ -169,25 +160,13 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/plot/mimic/clinical.yaml",
-        "in/config/plot/mimic/clinical_alignment.yaml",
-        "in/config/plot/mimic/ep_agreement.yaml",
-        "in/config/plot/mimic/ep_counterfactual_table.yaml",
-        "in/config/plot/mimic/ep_dl_sweep.yaml",
-        "in/config/plot/mimic/ep_trajectories.yaml"
-      ],
       "dependencies": {
         "components": [
           "mimic-early-prediction"
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -240,45 +219,43 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
-          "in/config/plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
-          "in/config/plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
-          "in/config/plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
-          "in/config/plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
-          "in/config/plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
+          "plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
+          "plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
+          "plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
+          "plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
+          "plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
+          "plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
         }
       },
-      "config_path": "in/config/plot/mimic/clinical.yaml"
+      "config_path": "plot/mimic/clinical.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plotter",
+        "mimic-clinical-suite"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.1.0.zip",
+          "sha256": "6e69cbc593439e3005c383ebb89dbbec5a88b382ccb68b871a0053ffb1a6964e",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 20602
+        }
+      }
     },
     {
       "id": "standard-figures",
       "name": "Standard Reinforcement Learning Figures",
       "kind": "plotter",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Universal convergence curves, policy and value loss trajectories, and benchmark summary reports.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "standard-figures"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/standard_figures-1.0.0.zip",
-          "sha256": "0967503b9f2b6ededa6c695e44a5bc1fef8d674881a0d4308de0ef574c2e674f",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.0.1.zip",
-          "sha256": "c2724746200c92335f9f206efe49c60c3b53fff261d66938a39a712b23665316",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2318
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "online_rl",
@@ -286,11 +263,18 @@
         "supervised",
         "unsupervised"
       ],
+      "config_paths": [
+        "plot/thetalib/convergence.yaml",
+        "plot/thetalib/losses.yaml",
+        "plot/thetalib/reports.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/plot/thetalib/convergence.yaml": {
+          "plot/thetalib/convergence.yaml": {
             "type": "object",
             "properties": {
               "output_subdir": {
@@ -351,7 +335,7 @@
               }
             }
           },
-          "in/config/plot/thetalib/losses.yaml": {
+          "plot/thetalib/losses.yaml": {
             "type": "object",
             "properties": {
               "output_subdir": {
@@ -406,7 +390,7 @@
               }
             }
           },
-          "in/config/plot/thetalib/reports.yaml": {
+          "plot/thetalib/reports.yaml": {
             "type": "object",
             "properties": {
               "include_hyperparameters": {
@@ -419,36 +403,40 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/plot/thetalib/convergence.yaml",
-        "in/config/plot/thetalib/losses.yaml",
-        "in/config/plot/thetalib/reports.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [
           "standard_figures"
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
         "implementations": [],
         "resources": [],
         "configs": {
-          "in/config/plot/thetalib/convergence.yaml": "configs/plot/thetalib/convergence.yaml",
-          "in/config/plot/thetalib/losses.yaml": "configs/plot/thetalib/losses.yaml",
-          "in/config/plot/thetalib/reports.yaml": "configs/plot/thetalib/reports.yaml"
+          "plot/thetalib/convergence.yaml": "configs/plot/thetalib/convergence.yaml",
+          "plot/thetalib/losses.yaml": "configs/plot/thetalib/losses.yaml",
+          "plot/thetalib/reports.yaml": "configs/plot/thetalib/reports.yaml"
         }
       },
-      "config_path": "in/config/plot/thetalib/convergence.yaml"
+      "config_path": "plot/thetalib/convergence.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plotter",
+        "standard-figures"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.1.0.zip",
+          "sha256": "eb2befb7625d5b4b762b64edae4bdf498b2117966ff82d80901e3b9b89064777",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2315
+        }
+      }
     }
   ]
 }

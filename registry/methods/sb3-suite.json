@@ -2,15 +2,9 @@
   "id": "sb3-suite",
   "name": "Stable-Baselines3 Suite",
   "kind": "method",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Standard reinforcement learning algorithms (PPO, DQN, A2C, SAC) powered by Stable-Baselines3.",
-  "author": {
-    "name": "DLR-RM & SB3 Contributors",
-    "github": "DLR-RM",
-    "url": "https://github.com/DLR-RM/stable-baselines3"
-  },
-  "repository": "https://github.com/DLR-RM/stable-baselines3",
-  "license": "MIT",
+  "author": "DLR-RM & SB3 Contributors",
   "tags": [
     "rl",
     "baselines",
@@ -18,6 +12,11 @@
     "dqn",
     "sb3"
   ],
+  "paradigms": [
+    "online_rl"
+  ],
+  "storage_version": 3,
+  "api_version": 1,
   "dependencies": {
     "pip": [
       "stable-baselines3",
@@ -26,65 +25,213 @@
     ],
     "components": []
   },
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.0.zip",
-      "sha256": "a202c8f76a2277cb4def1369014892f289682fefd06bfe4e8233e7829dadc36c",
-      "published_at": "2026-10-18T19:00:00Z"
+  "capabilities": [
+    {
+      "id": "sb3/a2c",
+      "kind": "algorithm",
+      "entry_point": "sb3_runner.py:execute",
+      "aliases": [],
+      "paradigms": [
+        "online_rl"
+      ],
+      "episode_outcomes": true,
+      "monitoring": {
+        "supports": [
+          "scalars.v1",
+          "system.v1",
+          "model_observations.v1",
+          "probe_forward.v1",
+          "post_update.v1",
+          "module_interventions.v1",
+          "policy_probabilities.v1"
+        ],
+        "provides": [],
+        "catalog": "monitor_catalog.py:describe"
+      },
+      "execution_contract": 1,
+      "backend": "sb3",
+      "execution_features": {
+        "input_types": [
+          "live_environment"
+        ],
+        "evaluation": "provider",
+        "resume_modes": [
+          "inference"
+        ],
+        "checkpoint_formats": [
+          "sb3.zip"
+        ],
+        "tuning": true,
+        "winner_promotion": true,
+        "episode_outcomes": true,
+        "intermediate_values": true
+      },
+      "resource_hints": {
+        "base_memory_gib": 0.55
+      },
+      "resource_hint_hook": "execution_hooks.py:resource_hints"
     },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.1.zip",
-      "sha256": "aa5380f049a4af8aedd4bc063e6b6e8dd32ef53206f8ea8dfce3644a7c5be75a",
-      "published_at": "2026-10-21T15:17:54.138804+00:00"
+    {
+      "id": "sb3/dqn",
+      "kind": "algorithm",
+      "entry_point": "sb3_runner.py:execute",
+      "aliases": [],
+      "paradigms": [
+        "online_rl"
+      ],
+      "episode_outcomes": true,
+      "monitoring": {
+        "supports": [
+          "scalars.v1",
+          "system.v1",
+          "model_observations.v1",
+          "probe_forward.v1",
+          "post_update.v1",
+          "module_interventions.v1",
+          "action_values.v1"
+        ],
+        "provides": [],
+        "catalog": "monitor_catalog.py:describe"
+      },
+      "execution_contract": 1,
+      "backend": "sb3",
+      "execution_features": {
+        "input_types": [
+          "live_environment"
+        ],
+        "evaluation": "provider",
+        "resume_modes": [
+          "inference"
+        ],
+        "checkpoint_formats": [
+          "sb3.zip"
+        ],
+        "tuning": true,
+        "winner_promotion": true,
+        "episode_outcomes": true,
+        "intermediate_values": true
+      },
+      "resource_hints": {
+        "base_memory_gib": 0.55
+      },
+      "resource_hint_hook": "execution_hooks.py:resource_hints"
     },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.2.zip",
-      "sha256": "e69b1a70e0a7799cbaa25348d0b14b844e276e8144a90d0191932b2714559da9",
-      "published_at": "2026-10-21T18:10:09.766730+00:00"
+    {
+      "id": "sb3/ppo",
+      "kind": "algorithm",
+      "entry_point": "sb3_runner.py:execute",
+      "aliases": [],
+      "paradigms": [
+        "online_rl"
+      ],
+      "episode_outcomes": true,
+      "monitoring": {
+        "supports": [
+          "scalars.v1",
+          "system.v1",
+          "model_observations.v1",
+          "probe_forward.v1",
+          "post_update.v1",
+          "module_interventions.v1",
+          "policy_probabilities.v1"
+        ],
+        "provides": [],
+        "catalog": "monitor_catalog.py:describe"
+      },
+      "execution_contract": 1,
+      "backend": "sb3",
+      "execution_features": {
+        "input_types": [
+          "live_environment"
+        ],
+        "evaluation": "provider",
+        "resume_modes": [
+          "inference"
+        ],
+        "checkpoint_formats": [
+          "sb3.zip"
+        ],
+        "tuning": true,
+        "winner_promotion": true,
+        "episode_outcomes": true,
+        "intermediate_values": true
+      },
+      "resource_hints": {
+        "base_memory_gib": 0.55
+      },
+      "resource_hint_hook": "execution_hooks.py:resource_hints"
     },
-    "1.0.3": {
-      "tag": "v1.0.3",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.3.zip",
-      "sha256": "9868ee162a667de4201cef092f1efddf3a21029c3c45fae146eb44a65d4ecd47",
-      "published_at": "2026-10-21T18:49:24.931340+00:00"
-    },
-    "1.0.5": {
-      "tag": "v1.0.5",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.5.zip",
-      "sha256": "cc6904fa27c39eb743f005b9f061226ebc59c0b2302aa2862c2e9b0dd579941a",
-      "published_at": "2026-11-03T03:07:24.492997+00:00"
-    },
-    "1.0.6": {
-      "tag": "v1.0.6",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.6.zip",
-      "sha256": "e4e5f699b615c7639df679838e190b10d61189bb76a4868d3a99b7ae059a7d1a",
-      "published_at": "2026-11-03T16:58:08.601649+00:00"
-    },
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3_suite-1.1.0.zip",
-      "sha256": "a62265aa56f9de95978d8109c09e6cf4d89a1abc96057c24c98fd743eb905d0b",
-      "published_at": "2026-11-06T20:06:02.377156+00:00"
-    },
-    "1.1.1": {
-      "tag": "v1.1.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-1.1.1.zip",
-      "sha256": "d50c5b056f2d21baf5d72288d59b92f4d32896f71179b3d11aac1a69a1c5f00e",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 12688
+    {
+      "id": "sb3/sac",
+      "kind": "algorithm",
+      "entry_point": "sb3_runner.py:execute",
+      "aliases": [],
+      "paradigms": [
+        "online_rl"
+      ],
+      "episode_outcomes": true,
+      "monitoring": {
+        "supports": [
+          "scalars.v1",
+          "system.v1"
+        ],
+        "provides": [],
+        "catalog": "monitor_catalog.py:describe"
+      },
+      "execution_contract": 1,
+      "backend": "sb3",
+      "execution_features": {
+        "input_types": [
+          "live_environment"
+        ],
+        "evaluation": "provider",
+        "resume_modes": [
+          "inference"
+        ],
+        "checkpoint_formats": [
+          "sb3.zip"
+        ],
+        "tuning": true,
+        "winner_promotion": true,
+        "episode_outcomes": true,
+        "intermediate_values": true
+      },
+      "resource_hints": {
+        "base_memory_gib": 0.55
+      },
+      "resource_hint_hook": "execution_hooks.py:resource_hints"
+    }
+  ],
+  "payload": {
+    "implementations": [
+      "execution_hooks.py",
+      "monitor_catalog.py",
+      "sb3_monitoring.py",
+      "sb3_runner.py",
+      "theta_sb3_policy.py"
+    ],
+    "resources": [
+      "requirements.txt"
+    ],
+    "configs": {
+      "agent/sb3/a2c.yaml": "configs/agent/sb3/a2c.yaml",
+      "agent/sb3/dqn.yaml": "configs/agent/sb3/dqn.yaml",
+      "agent/sb3/ppo.yaml": "configs/agent/sb3/ppo.yaml",
+      "agent/sb3/sac.yaml": "configs/agent/sb3/sac.yaml"
     }
   },
-  "paradigms": [
-    "online_rl"
+  "config_paths": [
+    "agent/sb3/a2c.yaml",
+    "agent/sb3/dqn.yaml",
+    "agent/sb3/ppo.yaml",
+    "agent/sb3/sac.yaml"
   ],
+  "config_path": "agent/sb3/a2c.yaml",
   "parameter_schema": {
     "type": "object",
     "properties": {},
     "x-theta-config-schemas": {
-      "in/config/agent/sb3/a2c.yaml": {
+      "agent/sb3/a2c.yaml": {
         "type": "object",
         "properties": {
           "algorithm": {
@@ -113,9 +260,6 @@
           "vf_coef": {
             "type": "number"
           },
-          "entrypoint": {
-            "type": "string"
-          },
           "learning_rate_schedule": {
             "type": "string",
             "enum": [
@@ -130,10 +274,16 @@
             "minimum": 0,
             "default": 0,
             "description": "Final rate when using a linear learning-rate schedule."
+          },
+          "backend": {
+            "type": "string",
+            "enum": [
+              "sb3"
+            ]
           }
         }
       },
-      "in/config/agent/sb3/dqn.yaml": {
+      "agent/sb3/dqn.yaml": {
         "type": "object",
         "properties": {
           "algorithm": {
@@ -171,9 +321,6 @@
           "exploration_fraction": {
             "type": "number"
           },
-          "entrypoint": {
-            "type": "string"
-          },
           "learning_rate_schedule": {
             "type": "string",
             "enum": [
@@ -188,10 +335,16 @@
             "minimum": 0,
             "default": 0,
             "description": "Final rate when using a linear learning-rate schedule."
+          },
+          "backend": {
+            "type": "string",
+            "enum": [
+              "sb3"
+            ]
           }
         }
       },
-      "in/config/agent/sb3/ppo.yaml": {
+      "agent/sb3/ppo.yaml": {
         "type": "object",
         "properties": {
           "algorithm": {
@@ -226,9 +379,6 @@
           "clip_range": {
             "type": "number"
           },
-          "entrypoint": {
-            "type": "string"
-          },
           "learning_rate_schedule": {
             "type": "string",
             "enum": [
@@ -243,10 +393,16 @@
             "minimum": 0,
             "default": 0,
             "description": "Final rate when using a linear learning-rate schedule."
+          },
+          "backend": {
+            "type": "string",
+            "enum": [
+              "sb3"
+            ]
           }
         }
       },
-      "in/config/agent/sb3/sac.yaml": {
+      "agent/sb3/sac.yaml": {
         "type": "object",
         "properties": {
           "algorithm": {
@@ -281,9 +437,6 @@
           "ent_coef": {
             "type": "string"
           },
-          "entrypoint": {
-            "type": "string"
-          },
           "learning_rate_schedule": {
             "type": "string",
             "enum": [
@@ -298,83 +451,26 @@
             "minimum": 0,
             "default": 0,
             "description": "Final rate when using a linear learning-rate schedule."
+          },
+          "backend": {
+            "type": "string",
+            "enum": [
+              "sb3"
+            ]
           }
         }
       }
     }
   },
-  "config_paths": [
-    "in/config/agent/sb3/a2c.yaml",
-    "in/config/agent/sb3/dqn.yaml",
-    "in/config/agent/sb3/ppo.yaml",
-    "in/config/agent/sb3/sac.yaml"
-  ],
-  "storage_version": 2,
-  "api_version": 1,
-  "capabilities": [
-    {
-      "id": "sb3/a2c",
-      "kind": "algorithm",
-      "entry_point": "sb3_runner.py:main",
-      "aliases": [
-        "a2c"
-      ],
-      "paradigms": [
-        "online_rl"
-      ],
-      "episode_outcomes": true
-    },
-    {
-      "id": "sb3/dqn",
-      "kind": "algorithm",
-      "entry_point": "sb3_runner.py:main",
-      "aliases": [
-        "dqn"
-      ],
-      "paradigms": [
-        "online_rl"
-      ],
-      "episode_outcomes": true
-    },
-    {
-      "id": "sb3/ppo",
-      "kind": "algorithm",
-      "entry_point": "sb3_runner.py:main",
-      "aliases": [
-        "ppo"
-      ],
-      "paradigms": [
-        "online_rl"
-      ],
-      "episode_outcomes": true
-    },
-    {
-      "id": "sb3/sac",
-      "kind": "algorithm",
-      "entry_point": "sb3_runner.py:main",
-      "aliases": [
-        "sac"
-      ],
-      "paradigms": [
-        "online_rl"
-      ],
-      "episode_outcomes": true
+  "repository": "https://github.com/DLR-RM/stable-baselines3",
+  "license": "MIT",
+  "releases": {
+    "2.0.0": {
+      "tag": "v2.0.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-2.0.0.zip",
+      "sha256": "05c8e7af84caac596d83cd3bfdfdc84553c858b96126175f1a2d3f2cd2b42738",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 18844
     }
-  ],
-  "payload": {
-    "implementations": [
-      "sb3_runner.py",
-      "theta_sb3_policy.py"
-    ],
-    "resources": [
-      "requirements.txt"
-    ],
-    "configs": {
-      "in/config/agent/sb3/a2c.yaml": "configs/agent/sb3/a2c.yaml",
-      "in/config/agent/sb3/dqn.yaml": "configs/agent/sb3/dqn.yaml",
-      "in/config/agent/sb3/ppo.yaml": "configs/agent/sb3/ppo.yaml",
-      "in/config/agent/sb3/sac.yaml": "configs/agent/sb3/sac.yaml"
-    }
-  },
-  "config_path": "in/config/agent/sb3/a2c.yaml"
+  }
 }

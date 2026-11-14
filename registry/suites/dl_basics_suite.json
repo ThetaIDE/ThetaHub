@@ -2,42 +2,11 @@
   "id": "dl_basics_suite",
   "name": "Deep Learning Basics Suite",
   "kind": "suite",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Foundational deep learning architectures for Theta-IDE: Multi-Layer Perceptrons (MLP), Transformers, LSTMs, and Dense/Sequence Autoencoders.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "suite",
-    "deep_learning",
-    "mlp",
-    "transformer",
-    "lstm",
-    "autoencoder"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dl_basics_suite-1.0.0.zip",
-      "sha256": "931d222bca55425366853af480eafc65f294f1a6871e8c98402aa7771fcce929",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.0.1.zip",
-      "sha256": "2e860fba9e2e1a51e258972d6dfa8b23b6121a78cf1f17081afb0b1495a2fc9f",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 495
-    }
-  },
-  "paradigms": [
-    "supervised",
-    "unsupervised",
-    "online_rl",
-    "offline_rl"
-  ],
   "dependencies": {
     "components": [
       "mlp",
@@ -50,7 +19,7 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [],
   "payload": {
@@ -58,5 +27,24 @@
     "resources": [],
     "configs": {}
   },
-  "config_paths": []
+  "config_paths": [],
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "suite",
+    "deep_learning",
+    "mlp",
+    "transformer",
+    "lstm",
+    "autoencoder"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.1.0.zip",
+      "sha256": "4b8cf863ea26cbdf56d0dccb4ac6e3466d2f5b9421278453e1a4aa02a056f21b",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 497
+    }
+  }
 }

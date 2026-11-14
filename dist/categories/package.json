@@ -1,0 +1,86 @@
+{
+  "kind": "package",
+  "updated_at": "2026-11-14T23:34:02.600048+00:00",
+  "count": 1,
+  "components": [
+    {
+      "id": "slurm",
+      "name": "Slurm scheduler",
+      "kind": "package",
+      "version": "1.1.0",
+      "description": "Run experiments on Slurm clusters: site setup, job submission, resource headers and a scheduler monitor, with ARC and NCShare site templates.",
+      "author": {
+        "name": "Theta-IDE Team"
+      },
+      "repository": "https://github.com/ThetaIDE/ThetaIDE",
+      "license": "MIT",
+      "storage_version": 3,
+      "api_version": 1,
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "capabilities": [
+        {
+          "id": "slurm",
+          "kind": "scheduler",
+          "entry_point": "execution.py:Scheduler",
+          "scheduler_api": 1,
+          "contribution_api": 1,
+          "readiness": {
+            "config": [
+              "site.connection.host",
+              "site.connection.remote_root"
+            ]
+          },
+          "contributions": [
+            {
+              "id": "setup",
+              "slot": "settings.site",
+              "availability": "enabled",
+              "entry_point": "settings.py:create_settings"
+            },
+            {
+              "id": "launch",
+              "slot": "commands.site",
+              "availability": "ready"
+            },
+            {
+              "id": "scheduler-monitor",
+              "slot": "monitor.scheduler",
+              "availability": "ready"
+            }
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "commands.py",
+          "execution.py",
+          "headers.py",
+          "resources.py",
+          "settings.py"
+        ],
+        "resources": [],
+        "configs": {
+          "site/arc/_defaults.yaml": "configs/site/arc/_defaults.yaml",
+          "site/arc/default.yaml": "configs/site/arc/default.yaml",
+          "site/ncshare/_defaults.yaml": "configs/site/ncshare/_defaults.yaml",
+          "site/ncshare/common.yaml": "configs/site/ncshare/common.yaml",
+          "site/ncshare/default.yaml": "configs/site/ncshare/default.yaml",
+          "site/ncshare/gpu.yaml": "configs/site/ncshare/gpu.yaml"
+        }
+      },
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/slurm-1.1.0.zip",
+          "sha256": "9664364d18079859fe601f2766c7fa379901cc21bc86d847555da1abaf5065a5",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 19595
+        }
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "id": "doom-env",
   "name": "ViZDoom Environment",
   "kind": "env",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "ViZDoom visual reinforcement learning environment for Doom scenario benchmarks.",
   "author": {
     "name": "ViZDoom Team"
@@ -15,30 +15,7 @@
     "reinforcement-learning",
     "visual"
   ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_env-1.0.0.zip",
-      "sha256": "a9a6806ad89876a3a04f58c3f304ed1faa75c2c372dc844a33fe9233ad412fb6",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_env-1.0.1.zip",
-      "sha256": "9294391f9b6d3bc2f901aa47b05c36048bf9782bb76eed3aaa2ec1ffbe4bf925",
-      "published_at": "2026-10-21T14:55:42.482302+00:00"
-    },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.0.2.zip",
-      "sha256": "2e6f0a3314d2185305c4f94857c52761da8510f642ca4e78979a95c966c844b3",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 6331
-    }
-  },
-  "paradigms": [
-    "online_rl"
-  ],
+  "config_path": "env/doom.yaml",
   "dependencies": {
     "components": [
       "thetalib"
@@ -47,6 +24,9 @@
       "vizdoom"
     ]
   },
+  "paradigms": [
+    "online_rl"
+  ],
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -85,11 +65,10 @@
       }
     }
   },
-  "config_path": "in/config/env/doom.yaml",
   "config_paths": [
-    "in/config/env/doom.yaml"
+    "env/doom.yaml"
   ],
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -112,7 +91,16 @@
     ],
     "resources": [],
     "configs": {
-      "in/config/env/doom.yaml": "configs/env/doom.yaml"
+      "env/doom.yaml": "configs/env/doom.yaml"
+    }
+  },
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.1.0.zip",
+      "sha256": "89d13e8e85842e058b609d3c7913c34c0660b239ed70c155f39d5a2f44b08981",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 6326
     }
   }
 }

@@ -2,51 +2,28 @@
   "id": "mlp",
   "name": "Multi-Layer Perceptron (MLP)",
   "kind": "model",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
   "author": {
     "name": "Theta-IDE Team"
-  },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "model",
-    "mlp",
-    "neural",
-    "classification",
-    "policy"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.0.zip",
-      "sha256": "a2cb543f3aac933ca4148bedf46eb32bebefec3af344da44bc5f8464dded8adb",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.1.zip",
-      "sha256": "2d85b920698b2782f0bdda0d2b00b707fd69bcdcc63c2a596ff8be6348199167",
-      "published_at": "2026-11-03T03:07:24.501729+00:00"
-    },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.0.2.zip",
-      "sha256": "3cd7c1e4e4fc606413ab991176815ddef30651a8f7876f91ea6c53c3be2d31ae",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 4959
-    }
   },
   "paradigms": [
     "online_rl",
     "offline_rl",
     "supervised"
   ],
+  "config_path": "model/basics/mlp.yaml",
+  "config_paths": [
+    "model/basics/mlp.yaml",
+    "model/basics/mlp_classifier.yaml"
+  ],
+  "suite": "thetalib",
+  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {},
     "x-theta-config-schemas": {
-      "in/config/model/basics/mlp.yaml": {
+      "model/basics/mlp.yaml": {
         "type": "object",
         "properties": {
           "hidden_dims": {
@@ -70,7 +47,7 @@
           }
         }
       },
-      "in/config/model/basics/mlp_classifier.yaml": {
+      "model/basics/mlp_classifier.yaml": {
         "type": "object",
         "properties": {
           "hidden_dims": {
@@ -99,20 +76,13 @@
       }
     }
   },
-  "config_path": "in/config/model/basics/mlp.yaml",
-  "config_paths": [
-    "in/config/model/basics/mlp.yaml",
-    "in/config/model/basics/mlp_classifier.yaml"
-  ],
-  "suite": "thetalib",
-  "hidden": true,
   "dependencies": {
     "components": [
       "nature_cnn"
     ],
     "pip": []
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -179,8 +149,26 @@
     ],
     "resources": [],
     "configs": {
-      "in/config/model/basics/mlp.yaml": "configs/model/basics/mlp.yaml",
-      "in/config/model/basics/mlp_classifier.yaml": "configs/model/basics/mlp_classifier.yaml"
+      "model/basics/mlp.yaml": "configs/model/basics/mlp.yaml",
+      "model/basics/mlp_classifier.yaml": "configs/model/basics/mlp_classifier.yaml"
+    }
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "model",
+    "mlp",
+    "neural",
+    "classification",
+    "policy"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.1.0.zip",
+      "sha256": "e4ca0c2acb70bc852e3705f9835c8b5dffc42674f49119d2cbd75894cafdd47f",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 4933
     }
   }
 }

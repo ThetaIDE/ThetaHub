@@ -2,57 +2,18 @@
   "id": "nsfr",
   "name": "Neural Symbolic Forward Reasoner (NSFR)",
   "kind": "model",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Differentiable forward reasoning engine computing soft valuations over first-order logic clauses.",
   "author": {
     "name": "Hikaru Shindo"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "model",
-    "neuro-symbolic",
-    "nsfr",
-    "logic",
-    "differentiable-reasoning"
+  "config_path": "model/nsfr.yaml",
+  "config_paths": [
+    "model/nsfr.yaml"
   ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.0.zip",
-      "sha256": "2cbbc76388c7137de0d51877081075ccf25a644e9fd26f0023a80d1547cc87d9",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.3": {
-      "tag": "v1.0.3",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.3.zip",
-      "sha256": "ef676fbe87ac510b935265df0a9cf95103bb6be2bbddcfcd7857d5cd2f8520fa",
-      "published_at": "2026-11-03T03:07:24.590036+00:00"
-    },
-    "1.0.4": {
-      "tag": "v1.0.4",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.4.zip",
-      "sha256": "0aea19d02dba95a38a535f26a1fcf1f78f1b1fc1df54019c886a372e94790cb0",
-      "published_at": "2026-11-04T04:45:50.252258+00:00"
-    },
-    "1.0.5": {
-      "tag": "v1.0.5",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.5.zip",
-      "sha256": "7df17617ed6627ff69c429281446a9b1b8d057ba5e1c5d2b9dbc64efa9d77be1",
-      "published_at": "2026-11-04T04:49:14.472434+00:00"
-    },
-    "1.0.7": {
-      "tag": "v1.0.7",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.7.zip",
-      "sha256": "dfdd8af80a8f56b156380dcc67c6a924c62e8ba36d708a07a3b909e88aed0594",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 86120
-    }
+  "compatibility": {
+    "theta": ">=2.0.0"
   },
-  "paradigms": [
-    "online_rl",
-    "offline_rl"
-  ],
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -76,13 +37,6 @@
       }
     }
   },
-  "config_path": "in/config/model/nsfr.yaml",
-  "config_paths": [
-    "in/config/model/nsfr.yaml"
-  ],
-  "compatibility": {
-    "theta": ">=2.0.0"
-  },
   "dependencies": {
     "components": [],
     "pip": [
@@ -91,7 +45,7 @@
     ]
   },
   "rules_root": "resources/rules",
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -136,7 +90,38 @@
       "fol/exp.lark"
     ],
     "configs": {
-      "in/config/model/nsfr.yaml": "configs/model/nsfr.yaml"
+      "model/nsfr.yaml": "configs/model/nsfr.yaml"
+    }
+  },
+  "exports": {
+    "FactsConverter": "facts_converter.py:FactsConverter",
+    "ValuationModule": "valuation.py:ValuationModule",
+    "bool_to_probs": "utils/common.py:bool_to_probs",
+    "build_infer_module": "utils/logic.py:build_infer_module",
+    "get_blender_lang": "utils/logic.py:get_blender_lang",
+    "get_blender_nsfr_model": "common.py:get_blender_nsfr_model",
+    "get_lang": "utils/logic.py:get_lang",
+    "get_nsfr_model": "common.py:get_nsfr_model",
+    "load_module": "utils/common.py:load_module",
+    "subs_list": "fol/logic_ops.py:subs_list",
+    "unify": "fol/logic_ops.py:unify"
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "model",
+    "neuro-symbolic",
+    "nsfr",
+    "logic",
+    "differentiable-reasoning"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.1.0.zip",
+      "sha256": "ad27343cfa5c629ecd2cb70c70c7c9f7582142ac292ac0be9edc637742516d99",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 86482
     }
   }
 }

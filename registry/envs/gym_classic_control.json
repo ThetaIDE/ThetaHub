@@ -2,58 +2,26 @@
   "id": "gym_classic_control",
   "name": "Gymnasium Classic Control",
   "kind": "env",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Standard Gymnasium classic control environments: CartPole, MountainCar, Pendulum, and Acrobot.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "tags": [
-    "env",
-    "gym_classic_control"
+  "config_path": "env/gym_classic_control/acrobot.yaml",
+  "config_paths": [
+    "env/gym_classic_control/acrobot.yaml",
+    "env/gym_classic_control/cartpole.yaml",
+    "env/gym_classic_control/mountaincar.yaml",
+    "env/gym_classic_control/pendulum.yaml"
   ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.0.zip",
-      "sha256": "2b21c4dad3f755c1dc100073ac0d461c96c04764efc16fd3c9d629681c9b9722",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.1.zip",
-      "sha256": "b705a00d4996d432f754654c46d3ab5cb8d3035dd4a2b8cb7d5786735f1d13eb",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.2.zip",
-      "sha256": "533494257db19db0aa87b2f9ab0c4ffe076b194c19ec59ad47fb8f03a60c7407",
-      "published_at": "2026-10-21T18:00:57.905213+00:00"
-    },
-    "1.0.3": {
-      "tag": "v1.0.3",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.3.zip",
-      "sha256": "783ab34d3058c68d6f6eb984738167d88c36eebe299624760a96532e93cf6929",
-      "published_at": "2026-11-03T03:07:24.685759+00:00"
-    },
-    "1.0.4": {
-      "tag": "v1.0.4",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/gym_classic_control-1.0.4.zip",
-      "sha256": "c198b5221d6cddb08c4f41a298a954bf705af5b06c73508519474e2ab28a6a58",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 4730
-    }
+  "compatibility": {
+    "theta": ">=2.0.0"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "paradigms": [
-    "online_rl"
-  ],
   "parameter_schema": {
     "type": "object",
     "properties": {},
     "x-theta-config-schemas": {
-      "in/config/env/gym_classic_control/mountaincar.yaml": {
+      "env/gym_classic_control/mountaincar.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -85,7 +53,7 @@
           }
         }
       },
-      "in/config/env/gym_classic_control/pendulum.yaml": {
+      "env/gym_classic_control/pendulum.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -117,7 +85,7 @@
           }
         }
       },
-      "in/config/env/gym_classic_control/acrobot.yaml": {
+      "env/gym_classic_control/acrobot.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -149,7 +117,7 @@
           }
         }
       },
-      "in/config/env/gym_classic_control/cartpole.yaml": {
+      "env/gym_classic_control/cartpole.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -183,21 +151,11 @@
       }
     }
   },
-  "config_path": "in/config/env/gym_classic_control/acrobot.yaml",
-  "config_paths": [
-    "in/config/env/gym_classic_control/acrobot.yaml",
-    "in/config/env/gym_classic_control/cartpole.yaml",
-    "in/config/env/gym_classic_control/mountaincar.yaml",
-    "in/config/env/gym_classic_control/pendulum.yaml"
-  ],
-  "compatibility": {
-    "theta": ">=2.0.0"
-  },
   "dependencies": {
     "components": [],
     "pip": []
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -226,17 +184,36 @@
   ],
   "payload": {
     "implementations": [
-      "env_vectorized.py"
+      "env_vectorized.py",
+      "resources/cartpole/valuation.py"
     ],
     "resources": [
       "resources",
       "requirements.txt"
     ],
     "configs": {
-      "in/config/env/gym_classic_control/acrobot.yaml": "configs/env/gym_classic_control/acrobot.yaml",
-      "in/config/env/gym_classic_control/cartpole.yaml": "configs/env/gym_classic_control/cartpole.yaml",
-      "in/config/env/gym_classic_control/mountaincar.yaml": "configs/env/gym_classic_control/mountaincar.yaml",
-      "in/config/env/gym_classic_control/pendulum.yaml": "configs/env/gym_classic_control/pendulum.yaml"
+      "env/gym_classic_control/acrobot.yaml": "configs/env/gym_classic_control/acrobot.yaml",
+      "env/gym_classic_control/cartpole.yaml": "configs/env/gym_classic_control/cartpole.yaml",
+      "env/gym_classic_control/mountaincar.yaml": "configs/env/gym_classic_control/mountaincar.yaml",
+      "env/gym_classic_control/pendulum.yaml": "configs/env/gym_classic_control/pendulum.yaml"
+    }
+  },
+  "exports": {
+    "cartpole_symbolic_observation": "resources/cartpole/valuation.py:build_symbolic_observation"
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "env",
+    "gym_classic_control"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/gym_classic_control-1.1.0.zip",
+      "sha256": "ee9cc7e5a2ce431fd80cabe59d038871826bdb1009fc0a450d51fb47de19262f",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 4748
     }
   }
 }

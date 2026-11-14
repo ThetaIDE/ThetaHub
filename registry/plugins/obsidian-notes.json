@@ -1,42 +1,13 @@
 {
   "id": "obsidian-notes",
   "name": "Obsidian Notes",
-  "kind": "plugin",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Embedded Obsidian markdown vault browser, research notebook, and NeSyRL experiment logger.",
   "author": "NeSyRL Team",
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "notes",
-    "obsidian",
-    "markdown",
-    "research"
-  ],
-  "releases": {
-    "0.1.0": {
-      "tag": "v0.1.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
-      "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
-      "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
-      "published_at": "2026-10-16T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.0.1.zip",
-      "sha256": "dcc38a2e9ae8e4b893641ab123189a8cd140eac875a573e9b26ad252088c2c79",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 5757
-    }
-  },
   "default_enabled": false,
   "icon": "obsidian",
   "entry_point": "ObsidianPlugin",
+  "kind": "plugin",
   "dependencies": {
     "components": [],
     "pip": [
@@ -44,7 +15,7 @@
       "PyQt6-WebEngine"
     ]
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -63,5 +34,22 @@
     ],
     "configs": {}
   },
-  "config_paths": []
+  "config_paths": [],
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "notes",
+    "obsidian",
+    "markdown",
+    "research"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.1.0.zip",
+      "sha256": "9de67d339aecc240a74a9460d3127aeb4b460454e50252c089c836cd7e4f8974",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 5773
+    }
+  }
 }

@@ -2,42 +2,11 @@
   "id": "robotics_suite",
   "name": "Robotics Suite",
   "kind": "suite",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A ready-to-use Theta-IDE robotics group with MuJoCo robot tasks, PPO and SAC baselines, MLP policies, and standard training plots.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "suite",
-    "robotics",
-    "mujoco"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics_suite-1.0.0.zip",
-      "sha256": "11e118c1e61e461201862d033811a08cc865f32ec117e2717e6471b66bda63cc",
-      "published_at": "2026-10-20T00:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics_suite-1.0.1.zip",
-      "sha256": "9260678241d0171351afb4efd99fa9524629764eb665f223946fa2a8f0a3c39c",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics_suite-1.0.2.zip",
-      "sha256": "cf4fdde2eead51f6e590a4e191fbcf9cf176d37c064c16f10e4fa268fb94ef17",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 682
-    }
-  },
-  "paradigms": [
-    "online_rl"
-  ],
   "dependencies": {
     "components": [
       "robotics"
@@ -47,7 +16,7 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [],
   "payload": {
@@ -55,5 +24,21 @@
     "resources": [],
     "configs": {}
   },
-  "config_paths": []
+  "config_paths": [],
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "suite",
+    "robotics",
+    "mujoco"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics_suite-1.1.0.zip",
+      "sha256": "e282322394f6058bae1d847883cefc79e025e49b2dca86b08451f9538b0fef90",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 683
+    }
+  }
 }

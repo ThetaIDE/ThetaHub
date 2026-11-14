@@ -2,39 +2,19 @@
   "id": "transformer",
   "name": "Transformer Policy & Attention Networks",
   "kind": "model",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Multi-head self-attention and cross-attention transformer policy architectures with temporal attention pooling.",
   "author": {
     "name": "Theta-IDE Team"
-  },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "model",
-    "transformer",
-    "attention",
-    "neural",
-    "sequential"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/transformer-1.0.0.zip",
-      "sha256": "4fa377122d17761429711d8e427186e36c0c820c8049287aca026c3d321bf6af",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.0.1.zip",
-      "sha256": "5b0fd5e1d54f818573a04c88f3d7a1f621cb7d8a87aa0a35abfa1b3c17fa40f6",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 4063
-    }
   },
   "paradigms": [
     "online_rl",
     "offline_rl",
     "supervised"
+  ],
+  "config_path": "model/basics/transformer.yaml",
+  "config_paths": [
+    "model/basics/transformer.yaml"
   ],
   "parameter_schema": {
     "type": "object",
@@ -59,15 +39,11 @@
       }
     }
   },
-  "config_path": "in/config/model/basics/transformer.yaml",
-  "config_paths": [
-    "in/config/model/basics/transformer.yaml"
-  ],
   "dependencies": {
     "components": [],
     "pip": []
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -96,7 +72,25 @@
     ],
     "resources": [],
     "configs": {
-      "in/config/model/basics/transformer.yaml": "configs/model/basics/transformer.yaml"
+      "model/basics/transformer.yaml": "configs/model/basics/transformer.yaml"
+    }
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "model",
+    "transformer",
+    "attention",
+    "neural",
+    "sequential"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.1.0.zip",
+      "sha256": "2c1d4421f901adc5c54b91177d1959f427b51611d9a45b884e1b3231e04e790f",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 4049
     }
   }
 }

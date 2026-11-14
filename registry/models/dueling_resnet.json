@@ -2,37 +2,20 @@
   "id": "dueling_resnet",
   "name": "Dueling ResNet",
   "kind": "model",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Scaled residual policy and Q-network architecture with LayerNorm, GELU, and Dueling decomposition.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "tags": [
-    "model",
-    "dueling_resnet"
+  "config_path": "model/basics/dueling_resnet.yaml",
+  "config_paths": [
+    "model/basics/dueling_resnet.yaml"
   ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dueling_resnet-1.0.0.zip",
-      "sha256": "70196ecf7abce536bd12a66a49081dffe0873ee9a75575c1508172edd69bd8c7",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dueling_resnet-1.0.1.zip",
-      "sha256": "95a48bcbc0f1f237963cf20748c579a0fb1a3c06654f2477458a06baf6311a26",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 3609
-    }
+  "compatibility": {
+    "theta": ">=2.0.0"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "paradigms": [
-    "online_rl",
-    "offline_rl",
-    "supervised"
-  ],
+  "suite": "thetalib",
+  "hidden": true,
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -44,20 +27,11 @@
       }
     }
   },
-  "config_path": "in/config/model/basics/dueling_resnet.yaml",
-  "config_paths": [
-    "in/config/model/basics/dueling_resnet.yaml"
-  ],
-  "compatibility": {
-    "theta": ">=2.0.0"
-  },
-  "suite": "thetalib",
-  "hidden": true,
   "dependencies": {
     "components": [],
     "pip": []
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -77,7 +51,22 @@
     ],
     "resources": [],
     "configs": {
-      "in/config/model/basics/dueling_resnet.yaml": "configs/model/basics/dueling_resnet.yaml"
+      "model/basics/dueling_resnet.yaml": "configs/model/basics/dueling_resnet.yaml"
+    }
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "model",
+    "dueling_resnet"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dueling_resnet-1.1.0.zip",
+      "sha256": "307400dae8e2f52823c5ff3b2c1d810fbdc7aad00da54789ca4400e3b187d527",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 3598
     }
   }
 }

@@ -1,0 +1,105 @@
+{
+  "kind": "tuner",
+  "updated_at": "2026-11-14T23:34:02.600048+00:00",
+  "count": 1,
+  "components": [
+    {
+      "id": "optuna",
+      "name": "Optuna tuner",
+      "kind": "tuner",
+      "version": "1.1.0",
+      "description": "Hyperparameter sweeps with Optuna: metric or objective-component studies, pruning, parallel and remote trials, and a study monitor.",
+      "author": {
+        "name": "Theta-IDE Team"
+      },
+      "repository": "https://github.com/ThetaIDE/ThetaIDE",
+      "license": "MIT",
+      "storage_version": 3,
+      "api_version": 1,
+      "dependencies": {
+        "pip": [
+          "optuna>=3.0,<5",
+          "sqlalchemy>=1.4.2,<3"
+        ],
+        "components": []
+      },
+      "capabilities": [
+        {
+          "id": "optuna",
+          "kind": "tuner",
+          "entry_point": "component.py:OptunaTuner",
+          "contribution_api": 1,
+          "readiness": {
+            "distributions": [
+              "optuna",
+              "sqlalchemy"
+            ]
+          },
+          "contributions": [
+            {
+              "id": "configure",
+              "slot": "configuration.tuning",
+              "label": "Hyperparameter Sweep",
+              "availability": "enabled"
+            },
+            {
+              "id": "parameters",
+              "slot": "configuration.parameter_sweeps",
+              "availability": "ready"
+            },
+            {
+              "id": "study-monitor",
+              "slot": "monitor.tuning",
+              "label": "Tuning study",
+              "availability": "ready"
+            }
+          ],
+          "tuning_features": {
+            "objective_modes": [
+              "metric",
+              "component"
+            ],
+            "pruning": true,
+            "pruning_objectives": false,
+            "pruning_repeated_runs": false
+          }
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "component.py",
+          "monitor.py",
+          "parallel.py",
+          "policy.py",
+          "pruning.py",
+          "remote.py",
+          "sweeper.py",
+          "trial_worker.py",
+          "utils.py"
+        ],
+        "resources": [],
+        "configs": {
+          "hydra/sweeper/optuna_online.yaml": "configs/hydra/sweeper/optuna_online.yaml",
+          "hydra/sweeper/optuna_offline.yaml": "configs/hydra/sweeper/optuna_offline.yaml"
+        }
+      },
+      "config_paths": [
+        "hydra/sweeper/optuna_online.yaml",
+        "hydra/sweeper/optuna_offline.yaml"
+      ],
+      "exports": {
+        "hydra_sweeper": "sweeper.py:ThetaOptunaSweeper"
+      },
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/optuna-1.1.0.zip",
+          "sha256": "893945295551d3c5c2f392eac18b98d688c6e5d8384254d5004578e73cd7c590",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 24488
+        }
+      }
+    }
+  ]
+}

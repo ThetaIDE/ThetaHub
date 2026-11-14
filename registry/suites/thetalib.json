@@ -2,58 +2,21 @@
   "id": "thetalib",
   "name": "ThetaLib Core Foundation Suite",
   "kind": "suite",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Foundational library plugin for Theta-IDE: universal convergence/loss/report figures and core data loaders (image, replay buffer, tabular).",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "plugin",
-    "thetalib"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
-      "sha256": "ea301868ff48d1b6d7ebd3ebb70399d7f6528b9d5ebcd1d5d8201e7255a3aa35",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
-      "sha256": "c596f6e47a98878fc71dea920c84ae4a7cb45d4fca765ef32e76e5611a3129a8",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.0.2.zip",
-      "sha256": "cf1044d4f6741d052c9553cd3e68fc3b140ccec77e3aa8c7cc640efdf2219e46",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 584
-    }
+  "created_at": "2026-10-18T00:00:00Z",
+  "compatibility": {
+    "theta": ">=2.0.0"
   },
-  "installed_dirs": [
-    "plot/standard_figures",
-    "src/usr/data/image_data",
-    "src/usr/data/replay_buffer",
-    "src/usr/data/tabular_data",
-    "src/usr/models/dnn",
-    "src/usr/models/mlp",
-    "src/usr/models/nature_cnn",
-    "src/usr/models/dueling_resnet"
-  ],
   "paradigms": [
     "online_rl",
     "offline_rl",
     "supervised",
     "unsupervised"
   ],
-  "created_at": "2026-10-18T00:00:00Z",
-  "compatibility": {
-    "theta": ">=2.0.0"
-  },
   "config_paths": [],
   "dependencies": {
     "components": [
@@ -68,12 +31,27 @@
     ],
     "pip": []
   },
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [],
   "payload": {
     "implementations": [],
     "resources": [],
     "configs": {}
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "plugin",
+    "thetalib"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.1.0.zip",
+      "sha256": "5a0a241770efbc14db7589172447708e69657c79e435f1d1ea1f0690efa2eba7",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 585
+    }
   }
 }

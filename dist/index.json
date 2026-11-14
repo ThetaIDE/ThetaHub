@@ -1,42 +1,30 @@
 {
   "$schema": "https://hub.thetaide.org/schemas/component-v1.json",
   "version": "1.0",
-  "updated_at": "2026-11-13T17:38:52.262338+00:00",
-  "count": 39,
+  "updated_at": "2026-11-14T23:34:02.600048+00:00",
+  "count": 41,
   "components": [
     {
       "id": "clinical-timeseries-data",
       "name": "Clinical Timeseries Data Module",
       "kind": "datamodule",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Multi-variate clinical EHR/ICU timeseries data loader with windowing, imputation, vital sign normalization, and patient cohort cross-validation.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "datamodule",
-        "clinical-timeseries-data"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/clinical_timeseries_data-1.0.0.zip",
-          "sha256": "d12276eb3fe7a226d95f8247f86f2f283d35cc8407b9a6e6f8cd36a8394e0418",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/clinical-timeseries-data-1.0.1.zip",
-          "sha256": "561df018b5f1543a32bef4aba685679d6c2b2f5df0d027b632a757c72d9d5bcf",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 3749
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "data/mimic/clinical_timeseries_data.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "supervised",
         "offline_rl"
+      ],
+      "config_paths": [
+        "data/mimic/clinical_timeseries_data.yaml",
+        "data/mimic/clinical_timeseries.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -64,20 +52,11 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/data/mimic/clinical_timeseries_data.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/data/mimic/clinical_timeseries_data.yaml",
-        "in/config/data/mimic/clinical_timeseries.yaml"
-      ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -98,8 +77,23 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/data/mimic/clinical_timeseries_data.yaml": "configs/data/mimic/clinical_timeseries_data.yaml",
-          "in/config/data/mimic/clinical_timeseries.yaml": "configs/data/mimic/clinical_timeseries.yaml"
+          "data/mimic/clinical_timeseries_data.yaml": "configs/data/mimic/clinical_timeseries_data.yaml",
+          "data/mimic/clinical_timeseries.yaml": "configs/data/mimic/clinical_timeseries.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "datamodule",
+        "clinical-timeseries-data"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/clinical-timeseries-data-1.1.0.zip",
+          "sha256": "909413f4dce7404757f07375e421d14e6676ef77769eb47c7ece5c3fd9b9e0be",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 3733
         }
       }
     },
@@ -107,37 +101,26 @@
       "id": "image-data",
       "name": "Image Data Module",
       "kind": "datamodule",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "General-purpose visual observation data module supporting frame stacking, grayscale conversion, spatial resizing, and tensor normalization for image-based RL.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "datamodule",
-        "image-data"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/image_data-1.0.0.zip",
-          "sha256": "4dc884759c7cd2b31fac85fc0caadca933ce0e40076be071048a5b582186659d",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/image-data-1.0.1.zip",
-          "sha256": "2dfef11a3633e7002fd855659296f399b406a14bf7ba8d3e259bbcf6bc30f612",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2813
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "data/thetalib/image_data.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
       ],
+      "config_paths": [
+        "data/thetalib/image_data.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -164,21 +147,11 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/data/thetalib/image_data.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/data/thetalib/image_data.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -198,7 +171,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/data/thetalib/image_data.yaml": "configs/data/thetalib/image_data.yaml"
+          "data/thetalib/image_data.yaml": "configs/data/thetalib/image_data.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "datamodule",
+        "image-data"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/image-data-1.1.0.zip",
+          "sha256": "657c2521477c0a1a2213f75113e43e126c74456c206002960cdf586fa7759abd",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2795
         }
       }
     },
@@ -206,35 +194,24 @@
       "id": "replay-buffer",
       "name": "RL Replay Buffer Data Module",
       "kind": "datamodule",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "General transition replay loader and chunk reader for offline reinforcement learning.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "datamodule",
-        "replay-buffer"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/replay_buffer-1.0.0.zip",
-          "sha256": "a07f966b1cc05d3132dfaa61ad5d642111440fcef52afb71402faf06e5d40b50",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/replay-buffer-1.0.1.zip",
-          "sha256": "a031606dba892306328ff6c7b2324e4aa8d78bd65e0943244ccf6cf5201b7b7c",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2530
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "data/thetalib/replay_buffer.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "offline_rl"
       ],
+      "config_paths": [
+        "data/thetalib/replay_buffer.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -255,21 +232,11 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/data/thetalib/replay_buffer.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/data/thetalib/replay_buffer.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -289,7 +256,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/data/thetalib/replay_buffer.yaml": "configs/data/thetalib/replay_buffer.yaml"
+          "data/thetalib/replay_buffer.yaml": "configs/data/thetalib/replay_buffer.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "datamodule",
+        "replay-buffer"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/replay-buffer-1.1.0.zip",
+          "sha256": "7b7de50880feca42018ec6a566f0ae37998b70e2a70e7f95a0cd29a2468c770b",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2508
         }
       }
     },
@@ -297,37 +279,26 @@
       "id": "tabular-data",
       "name": "Tabular Data Module",
       "kind": "datamodule",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "General tabular dataset loader supporting CSV, NPZ, and NPY files with automated train/val/test splitting and standardization.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "datamodule",
-        "tabular-data"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/tabular_data-1.0.0.zip",
-          "sha256": "d2aa9433ce5c9d194776ef1e0c1a93aa951afcc627c3467ced2e0acae44a0c14",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/tabular-data-1.0.1.zip",
-          "sha256": "75e3b5524da08faa9bcab5edbe26a0fee9effdf69c973e72d5c8cd13cb31dcff",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 3188
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "data/thetalib/tabular_data.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "supervised",
         "offline_rl",
         "unsupervised"
       ],
+      "config_paths": [
+        "data/thetalib/tabular_data.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -351,21 +322,11 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/data/thetalib/tabular_data.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/data/thetalib/tabular_data.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -384,7 +345,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/data/thetalib/tabular_data.yaml": "configs/data/thetalib/tabular_data.yaml"
+          "data/thetalib/tabular_data.yaml": "configs/data/thetalib/tabular_data.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "datamodule",
+        "tabular-data"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/tabular-data-1.1.0.zip",
+          "sha256": "b0103c9b1a223a582de5e45d244c86ffc351b52e98392350cef948b95f9c68a8",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 3172
         }
       }
     },
@@ -392,7 +368,7 @@
       "id": "atari-env",
       "name": "Atari 2600 Environment Suite",
       "kind": "env",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Standard Arcade Learning Environment (ALE) Atari 2600 benchmarks for Gymnasium.",
       "author": {
         "name": "Farama Foundation",
@@ -407,6 +383,7 @@
         "reinforcement-learning",
         "benchmark"
       ],
+      "config_path": "env/atari/beam_rider.yaml",
       "dependencies": {
         "components": [
           "thetalib"
@@ -417,21 +394,6 @@
           "opencv-python"
         ]
       },
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/atari_env-1.0.0.zip",
-          "sha256": "30164478d6cc56305a7ec751d1dac33db035edb797e91c6e81aa9632a95e1247",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/atari-env-1.0.1.zip",
-          "sha256": "965e69f20056f76c476a39b887cf8dd2cf4457e912d5b38e6eca5ffad24db09e",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4837
-        }
-      },
       "paradigms": [
         "online_rl"
       ],
@@ -439,7 +401,7 @@
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/env/atari/beam_rider.yaml": {
+          "env/atari/beam_rider.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -474,7 +436,7 @@
               }
             }
           },
-          "in/config/env/atari/breakout.yaml": {
+          "env/atari/breakout.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -509,7 +471,7 @@
               }
             }
           },
-          "in/config/env/atari/mspacman.yaml": {
+          "env/atari/mspacman.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -544,7 +506,7 @@
               }
             }
           },
-          "in/config/env/atari/pong.yaml": {
+          "env/atari/pong.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -579,7 +541,7 @@
               }
             }
           },
-          "in/config/env/atari/qbert.yaml": {
+          "env/atari/qbert.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -614,7 +576,7 @@
               }
             }
           },
-          "in/config/env/atari/seaquest.yaml": {
+          "env/atari/seaquest.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -649,7 +611,7 @@
               }
             }
           },
-          "in/config/env/atari/space_invaders.yaml": {
+          "env/atari/space_invaders.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -686,17 +648,16 @@
           }
         }
       },
-      "config_path": "in/config/env/atari/beam_rider.yaml",
       "config_paths": [
-        "in/config/env/atari/beam_rider.yaml",
-        "in/config/env/atari/breakout.yaml",
-        "in/config/env/atari/mspacman.yaml",
-        "in/config/env/atari/pong.yaml",
-        "in/config/env/atari/qbert.yaml",
-        "in/config/env/atari/seaquest.yaml",
-        "in/config/env/atari/space_invaders.yaml"
+        "env/atari/beam_rider.yaml",
+        "env/atari/breakout.yaml",
+        "env/atari/mspacman.yaml",
+        "env/atari/pong.yaml",
+        "env/atari/qbert.yaml",
+        "env/atari/seaquest.yaml",
+        "env/atari/space_invaders.yaml"
       ],
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -724,13 +685,22 @@
           "requirements.txt"
         ],
         "configs": {
-          "in/config/env/atari/beam_rider.yaml": "configs/env/atari/beam_rider.yaml",
-          "in/config/env/atari/breakout.yaml": "configs/env/atari/breakout.yaml",
-          "in/config/env/atari/mspacman.yaml": "configs/env/atari/mspacman.yaml",
-          "in/config/env/atari/pong.yaml": "configs/env/atari/pong.yaml",
-          "in/config/env/atari/qbert.yaml": "configs/env/atari/qbert.yaml",
-          "in/config/env/atari/seaquest.yaml": "configs/env/atari/seaquest.yaml",
-          "in/config/env/atari/space_invaders.yaml": "configs/env/atari/space_invaders.yaml"
+          "env/atari/beam_rider.yaml": "configs/env/atari/beam_rider.yaml",
+          "env/atari/breakout.yaml": "configs/env/atari/breakout.yaml",
+          "env/atari/mspacman.yaml": "configs/env/atari/mspacman.yaml",
+          "env/atari/pong.yaml": "configs/env/atari/pong.yaml",
+          "env/atari/qbert.yaml": "configs/env/atari/qbert.yaml",
+          "env/atari/seaquest.yaml": "configs/env/atari/seaquest.yaml",
+          "env/atari/space_invaders.yaml": "configs/env/atari/space_invaders.yaml"
+        }
+      },
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/atari-env-1.1.0.zip",
+          "sha256": "9a7e221358501d65cff03ffb1a80a06a9c63d41f765fb9294173accb3fa72851",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 4822
         }
       }
     },
@@ -738,7 +708,7 @@
       "id": "doom-env",
       "name": "ViZDoom Environment",
       "kind": "env",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "ViZDoom visual reinforcement learning environment for Doom scenario benchmarks.",
       "author": {
         "name": "ViZDoom Team"
@@ -751,30 +721,7 @@
         "reinforcement-learning",
         "visual"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_env-1.0.0.zip",
-          "sha256": "a9a6806ad89876a3a04f58c3f304ed1faa75c2c372dc844a33fe9233ad412fb6",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_env-1.0.1.zip",
-          "sha256": "9294391f9b6d3bc2f901aa47b05c36048bf9782bb76eed3aaa2ec1ffbe4bf925",
-          "published_at": "2026-10-21T14:55:42.482302+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.0.2.zip",
-          "sha256": "2e6f0a3314d2185305c4f94857c52761da8510f642ca4e78979a95c966c844b3",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 6331
-        }
-      },
-      "paradigms": [
-        "online_rl"
-      ],
+      "config_path": "env/doom.yaml",
       "dependencies": {
         "components": [
           "thetalib"
@@ -783,6 +730,9 @@
           "vizdoom"
         ]
       },
+      "paradigms": [
+        "online_rl"
+      ],
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -821,11 +771,10 @@
           }
         }
       },
-      "config_path": "in/config/env/doom.yaml",
       "config_paths": [
-        "in/config/env/doom.yaml"
+        "env/doom.yaml"
       ],
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -848,7 +797,16 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/env/doom.yaml": "configs/env/doom.yaml"
+          "env/doom.yaml": "configs/env/doom.yaml"
+        }
+      },
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.1.0.zip",
+          "sha256": "89d13e8e85842e058b609d3c7913c34c0660b239ed70c155f39d5a2f44b08981",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 6326
         }
       }
     },
@@ -856,58 +814,26 @@
       "id": "gym_classic_control",
       "name": "Gymnasium Classic Control",
       "kind": "env",
-      "version": "1.0.4",
+      "version": "1.1.0",
       "description": "Standard Gymnasium classic control environments: CartPole, MountainCar, Pendulum, and Acrobot.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "tags": [
-        "env",
-        "gym_classic_control"
+      "config_path": "env/gym_classic_control/acrobot.yaml",
+      "config_paths": [
+        "env/gym_classic_control/acrobot.yaml",
+        "env/gym_classic_control/cartpole.yaml",
+        "env/gym_classic_control/mountaincar.yaml",
+        "env/gym_classic_control/pendulum.yaml"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.0.zip",
-          "sha256": "2b21c4dad3f755c1dc100073ac0d461c96c04764efc16fd3c9d629681c9b9722",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.1.zip",
-          "sha256": "b705a00d4996d432f754654c46d3ab5cb8d3035dd4a2b8cb7d5786735f1d13eb",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.2.zip",
-          "sha256": "533494257db19db0aa87b2f9ab0c4ffe076b194c19ec59ad47fb8f03a60c7407",
-          "published_at": "2026-10-21T18:00:57.905213+00:00"
-        },
-        "1.0.3": {
-          "tag": "v1.0.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/gym_classic_control-1.0.3.zip",
-          "sha256": "783ab34d3058c68d6f6eb984738167d88c36eebe299624760a96532e93cf6929",
-          "published_at": "2026-11-03T03:07:24.685759+00:00"
-        },
-        "1.0.4": {
-          "tag": "v1.0.4",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/gym_classic_control-1.0.4.zip",
-          "sha256": "c198b5221d6cddb08c4f41a298a954bf705af5b06c73508519474e2ab28a6a58",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4730
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "paradigms": [
-        "online_rl"
-      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/env/gym_classic_control/mountaincar.yaml": {
+          "env/gym_classic_control/mountaincar.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -939,7 +865,7 @@
               }
             }
           },
-          "in/config/env/gym_classic_control/pendulum.yaml": {
+          "env/gym_classic_control/pendulum.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -971,7 +897,7 @@
               }
             }
           },
-          "in/config/env/gym_classic_control/acrobot.yaml": {
+          "env/gym_classic_control/acrobot.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1003,7 +929,7 @@
               }
             }
           },
-          "in/config/env/gym_classic_control/cartpole.yaml": {
+          "env/gym_classic_control/cartpole.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1037,21 +963,11 @@
           }
         }
       },
-      "config_path": "in/config/env/gym_classic_control/acrobot.yaml",
-      "config_paths": [
-        "in/config/env/gym_classic_control/acrobot.yaml",
-        "in/config/env/gym_classic_control/cartpole.yaml",
-        "in/config/env/gym_classic_control/mountaincar.yaml",
-        "in/config/env/gym_classic_control/pendulum.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -1080,17 +996,36 @@
       ],
       "payload": {
         "implementations": [
-          "env_vectorized.py"
+          "env_vectorized.py",
+          "resources/cartpole/valuation.py"
         ],
         "resources": [
           "resources",
           "requirements.txt"
         ],
         "configs": {
-          "in/config/env/gym_classic_control/acrobot.yaml": "configs/env/gym_classic_control/acrobot.yaml",
-          "in/config/env/gym_classic_control/cartpole.yaml": "configs/env/gym_classic_control/cartpole.yaml",
-          "in/config/env/gym_classic_control/mountaincar.yaml": "configs/env/gym_classic_control/mountaincar.yaml",
-          "in/config/env/gym_classic_control/pendulum.yaml": "configs/env/gym_classic_control/pendulum.yaml"
+          "env/gym_classic_control/acrobot.yaml": "configs/env/gym_classic_control/acrobot.yaml",
+          "env/gym_classic_control/cartpole.yaml": "configs/env/gym_classic_control/cartpole.yaml",
+          "env/gym_classic_control/mountaincar.yaml": "configs/env/gym_classic_control/mountaincar.yaml",
+          "env/gym_classic_control/pendulum.yaml": "configs/env/gym_classic_control/pendulum.yaml"
+        }
+      },
+      "exports": {
+        "cartpole_symbolic_observation": "resources/cartpole/valuation.py:build_symbolic_observation"
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "env",
+        "gym_classic_control"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/gym_classic_control-1.1.0.zip",
+          "sha256": "ee9cc7e5a2ce431fd80cabe59d038871826bdb1009fc0a450d51fb47de19262f",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 4748
         }
       }
     },
@@ -1098,38 +1033,13 @@
       "id": "mimic-env",
       "name": "MIMIC-III Clinical Environment Suite",
       "kind": "env",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "ICU sepsis benchmarks, valuation hooks, and transition interfaces for MIMIC-III.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "env",
-        "mimic-env"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_env-1.0.0.zip",
-          "sha256": "71f37fda725ab65f81346c7517ec3d8e7935e7d303dc4832d23af4239f808841",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_env-1.0.1.zip",
-          "sha256": "70d244d3f87eed12e21241b81e42f330230f77d144ffef828ea53e630c1e73df",
-          "published_at": "2026-10-21T15:06:51.811508+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-env-1.0.2.zip",
-          "sha256": "dd13d6469475b03c3fff91ef46a87e3de87387e0cd50a4febe598a430efb5d1f",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 8619
-        }
-      },
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "env/mimic.yaml",
       "dependencies": {
         "components": [
           "clinical-timeseries-data",
@@ -1200,12 +1110,10 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/env/mimic.yaml",
       "config_paths": [
-        "in/config/env/mimic.yaml"
+        "env/mimic.yaml"
       ],
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -1226,7 +1134,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/env/mimic.yaml": "configs/env/mimic.yaml"
+          "env/mimic.yaml": "configs/env/mimic.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "env",
+        "mimic-env"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-env-1.1.0.zip",
+          "sha256": "bb40f463fb2f075f3d410810c9055c71a4190901554280fd6967c2d15de68fe4",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 8653
         }
       }
     },
@@ -1234,13 +1157,11 @@
       "id": "mnist",
       "name": "MNIST Handwritten Digits",
       "kind": "env",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Handwritten digits classification benchmark (8x8 mini-MNIST and 28x28 MNIST) supporting supervised, unsupervised, and RL environments.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
       "tags": [
         "env",
         "mnist",
@@ -1249,24 +1170,14 @@
         "classification",
         "benchmark"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mnist-1.0.0.zip",
-          "sha256": "1cfa08b4ea906da07fd9845888b94d7afd7b7c24d9c511de796faa1f8ed0c125",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mnist-1.0.1.zip",
-          "sha256": "ef712aa56c4c00cd9f9f5c83172f9c6284ffe689e263ac93e79ab1637770d154",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2972
-        }
-      },
       "paradigms": [
         "supervised",
         "unsupervised"
+      ],
+      "config_path": "env/mnist/digits.yaml",
+      "config_paths": [
+        "env/mnist/digits.yaml",
+        "env/mnist/mnist.yaml"
       ],
       "dependencies": {
         "pip": [
@@ -1280,7 +1191,7 @@
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/env/mnist.yaml": {
+          "env/mnist.yaml": {
             "type": "object",
             "properties": {
               "env_id": {
@@ -1318,7 +1229,7 @@
               }
             }
           },
-          "in/config/env/digits.yaml": {
+          "env/digits.yaml": {
             "type": "object",
             "properties": {
               "env_id": {
@@ -1358,12 +1269,7 @@
           }
         }
       },
-      "config_path": "in/config/env/mnist/digits.yaml",
-      "config_paths": [
-        "in/config/env/mnist/digits.yaml",
-        "in/config/env/mnist/mnist.yaml"
-      ],
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -1387,8 +1293,19 @@
           "requirements.txt"
         ],
         "configs": {
-          "in/config/env/mnist/digits.yaml": "configs/env/mnist/digits.yaml",
-          "in/config/env/mnist/mnist.yaml": "configs/env/mnist/mnist.yaml"
+          "env/mnist/digits.yaml": "configs/env/mnist/digits.yaml",
+          "env/mnist/mnist.yaml": "configs/env/mnist/mnist.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mnist-1.1.0.zip",
+          "sha256": "4906fdd9074d2129aaaef403563d7caf86e54beb13dea071146013844f88fa47",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2961
         }
       }
     },
@@ -1396,41 +1313,17 @@
       "id": "robotics-mujoco",
       "name": "Gymnasium MuJoCo Robotics",
       "kind": "env",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "Continuous-control robotics benchmarks from Gymnasium MuJoCo: Ant, HalfCheetah, Hopper, Walker2d, and Humanoid.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "env",
-        "robotics",
-        "mujoco"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-mujoco-1.0.0.zip",
-          "sha256": "17dedf7de1c8bbfd3617e0dac3941314d2c5e0a3e1d103481966af824d32c9fc",
-          "published_at": "2026-10-20T00:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-mujoco-1.0.1.zip",
-          "sha256": "530e18d297a5a1f5cda14f1cffc70e31b90bcaa6f9d3fddd2d379b1d1fb4bc05",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.0.2.zip",
-          "sha256": "0df9a4906aea4b9733a12e606389f69c7043518e0fd94ed42d980bdf79c0bab4",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2275
-        }
-      },
-      "paradigms": [
-        "online_rl"
+      "config_paths": [
+        "env/mujoco/ant.yaml",
+        "env/mujoco/half_cheetah.yaml",
+        "env/mujoco/hopper.yaml",
+        "env/mujoco/humanoid.yaml",
+        "env/mujoco/walker2d.yaml"
       ],
       "dependencies": {
         "pip": [
@@ -1441,11 +1334,14 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
+      "paradigms": [
+        "online_rl"
+      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/env/mujoco/ant.yaml": {
+          "env/mujoco/ant.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1477,7 +1373,7 @@
               }
             }
           },
-          "in/config/env/mujoco/half_cheetah.yaml": {
+          "env/mujoco/half_cheetah.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1509,7 +1405,7 @@
               }
             }
           },
-          "in/config/env/mujoco/hopper.yaml": {
+          "env/mujoco/hopper.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1541,7 +1437,7 @@
               }
             }
           },
-          "in/config/env/mujoco/walker2d.yaml": {
+          "env/mujoco/walker2d.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1573,7 +1469,7 @@
               }
             }
           },
-          "in/config/env/mujoco/humanoid.yaml": {
+          "env/mujoco/humanoid.yaml": {
             "type": "object",
             "properties": {
               "monitor_metric": {
@@ -1607,8 +1503,7 @@
           }
         }
       },
-      "config_paths": [],
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -1633,48 +1528,51 @@
         "resources": [
           "requirements.txt"
         ],
-        "configs": {}
+        "configs": {
+          "env/mujoco/ant.yaml": "configs/env/mujoco/ant.yaml",
+          "env/mujoco/half_cheetah.yaml": "configs/env/mujoco/half_cheetah.yaml",
+          "env/mujoco/hopper.yaml": "configs/env/mujoco/hopper.yaml",
+          "env/mujoco/humanoid.yaml": "configs/env/mujoco/humanoid.yaml",
+          "env/mujoco/walker2d.yaml": "configs/env/mujoco/walker2d.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "env",
+        "robotics",
+        "mujoco"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.1.0.zip",
+          "sha256": "312ab30dcebdfa6d6114c7f067b10453f82cb083921068c4860f85ab93fb9177",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 3916
+        }
       }
     },
     {
       "id": "mimic-early-prediction",
       "name": "MIMIC Early Prediction Evaluator",
       "kind": "evaluator",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "Septic shock early prediction evaluator, AUPRC scoring, counterfactual analysis, and agreement metrics.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "evaluator",
-        "mimic-early-prediction"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_early_prediction-1.0.0.zip",
-          "sha256": "5a3e8c4b0937268353c79f170e7cf3f78568e2229abdbfe58e7745e84bbbb77a",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_early_prediction-1.0.1.zip",
-          "sha256": "8e655f24529b584c4fab919d3b7f408d67d1967b1bcb79a65b34fb9dc3d17c4f",
-          "published_at": "2026-10-21T15:06:51.819788+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-early-prediction-1.0.2.zip",
-          "sha256": "1b6b9522a5788349457d91f5de3a9ee35d35dceea6dd5f803207e94a49848f80",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 19803
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "eval/mimic/early_prediction.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "supervised",
         "offline_rl"
+      ],
+      "config_paths": [
+        "eval/mimic/early_prediction.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -1699,19 +1597,11 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/eval/mimic/early_prediction.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/eval/mimic/early_prediction.yaml"
-      ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -1741,7 +1631,33 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/eval/mimic/early_prediction.yaml": "configs/eval/mimic/early_prediction.yaml"
+          "eval/mimic/early_prediction.yaml": "configs/eval/mimic/early_prediction.yaml"
+        }
+      },
+      "exports": {
+        "SepsisLSTM": "model.py:SepsisLSTM",
+        "SepsisTransformer": "model.py:SepsisTransformer",
+        "compute_ep_eval_data": "eval_logic.py:compute_ep_eval_data",
+        "compute_volatility_features": "model.py:compute_volatility_features",
+        "evaluate_lstm_model": "model.py:evaluate_lstm_model",
+        "evaluate_transformer_model": "model.py:evaluate_transformer_model",
+        "plot_agreement_vs_shock": "eval_logic.py:plot_agreement_vs_shock",
+        "plot_ep_shock_over_tau": "eval_logic.py:plot_ep_shock_over_tau",
+        "write_counterfactual_table": "eval_logic.py:write_counterfactual_table"
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "evaluator",
+        "mimic-early-prediction"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-early-prediction-1.1.0.zip",
+          "sha256": "8c674a07724550534ee0da969ba6c2b4c49ebe1b0437c51e52cf68a241379d76",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 19943
         }
       }
     },
@@ -1749,34 +1665,21 @@
       "id": "reward-shaping",
       "name": "Potential-Based Reward Shaping",
       "kind": "evaluator",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Potential-based reward shaping hooks using Early Prediction (EP) septic shock classifiers for offline RL.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "evaluator",
-        "reward-shaping"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/reward_shaping-1.0.0.zip",
-          "sha256": "7af973bacb8541b26c7cc0ab5b0c9ec2bfb92f1a270de5ae01a5c99a53db93cb",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/reward-shaping-1.0.1.zip",
-          "sha256": "cf68df56a2910bcf27469ce967e9666ef33b8dfaeb11371ac78bc32108272303",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 6789
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "eval/mimic/reward_shaping.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "offline_rl"
+      ],
+      "config_paths": [
+        "eval/mimic/reward_shaping.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -1801,21 +1704,13 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "in/config/eval/mimic/reward_shaping.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/eval/mimic/reward_shaping.yaml"
-      ],
       "dependencies": {
         "components": [
           "mimic-early-prediction"
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -1835,7 +1730,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/eval/mimic/reward_shaping.yaml": "configs/eval/mimic/reward_shaping.yaml"
+          "eval/mimic/reward_shaping.yaml": "configs/eval/mimic/reward_shaping.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "evaluator",
+        "reward-shaping"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/reward-shaping-1.1.0.zip",
+          "sha256": "a17aced8bef52b015a60f6f982f098295a0c7f8ef3e7729fbba68995e128235a",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 6776
         }
       }
     },
@@ -1843,38 +1753,19 @@
       "id": "mimic",
       "name": "MIMIC Clinical Sepsis Benchmark",
       "kind": "experiment",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "Complete MIMIC-III sepsis experiment suite: offline clinical benchmark configs, group defaults, ICU environment hooks, timeseries data module, early prediction & reward shaping evaluators, and clinical agreement plotters.",
       "author": {
         "name": "Theta Research"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "experiment",
-        "mimic"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic-1.0.0.zip",
-          "sha256": "c96ac16d722bbbbc4b216c6cda1d29506c658b18217d809589650950df169d61",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic-1.0.1.zip",
-          "sha256": "b383de75bd65fb02d59f9564ea7be02b6676408d7972bdf232055a95068a7839",
-          "published_at": "2026-10-21T15:09:32.923759+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-1.0.2.zip",
-          "sha256": "30bb35d04494e2967b8e503251a058666843ff9850ef1dbec48981dd9c006a55",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 18080
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
+      "paradigms": [
+        "supervised",
+        "offline_rl"
+      ],
       "dependencies": {
         "components": [
           "thetalib",
@@ -1886,15 +1777,7 @@
         ],
         "pip": []
       },
-      "paradigms": [
-        "supervised",
-        "offline_rl"
-      ],
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
@@ -1903,99 +1786,89 @@
           "resources/rules"
         ],
         "configs": {
-          "in/config/experiment/mimic/_base.yaml": "configs/experiment/mimic/_base.yaml",
-          "in/config/experiment/mimic/all_mimic.yaml": "configs/experiment/mimic/all_mimic.yaml",
-          "in/config/experiment/mimic/cql_benchmark.yaml": "configs/experiment/mimic/cql_benchmark.yaml",
-          "in/config/experiment/mimic/cql_literature.yaml": "configs/experiment/mimic/cql_literature.yaml",
-          "in/config/experiment/mimic/final.yaml": "configs/experiment/mimic/final.yaml",
-          "in/config/experiment/mimic/final_pos5_cql005.yaml": "configs/experiment/mimic/final_pos5_cql005.yaml",
-          "in/config/experiment/mimic/final_pos_weight_5.yaml": "configs/experiment/mimic/final_pos_weight_5.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_cross_attention.yaml": "configs/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_cew.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_neural.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
-          "in/config/experiment/mimic/methods/cql_blendrl_human_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
-          "in/config/experiment/mimic/methods/cql_dnn.yaml": "configs/experiment/mimic/methods/cql_dnn.yaml",
-          "in/config/experiment/mimic/methods/cql_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_dueling_resnet.yaml",
-          "in/config/experiment/mimic/methods/cql_transformer.yaml": "configs/experiment/mimic/methods/cql_transformer.yaml",
-          "in/config/experiment/mimic/mimic_gpu_test.yaml": "configs/experiment/mimic/mimic_gpu_test.yaml",
-          "in/config/experiment/mimic/mimic_test.yaml": "configs/experiment/mimic/mimic_test.yaml",
-          "in/config/experiment/mimic/quick_test.yaml": "configs/experiment/mimic/quick_test.yaml",
-          "in/config/experiment/mimic/reciprocal_refinement.yaml": "configs/experiment/mimic/reciprocal_refinement.yaml",
-          "in/config/experiment/mimic/selected_mimic.yaml": "configs/experiment/mimic/selected_mimic.yaml",
-          "in/config/experiment/mimic/tune_mimic_all.yaml": "configs/experiment/mimic/tune_mimic_all.yaml",
-          "in/config/workflow/sepsis_reciprocal.yaml": "configs/workflow/sepsis_reciprocal.yaml"
+          "experiment/mimic/_base.yaml": "configs/experiment/mimic/_base.yaml",
+          "experiment/mimic/all_mimic.yaml": "configs/experiment/mimic/all_mimic.yaml",
+          "experiment/mimic/cql_benchmark.yaml": "configs/experiment/mimic/cql_benchmark.yaml",
+          "experiment/mimic/cql_literature.yaml": "configs/experiment/mimic/cql_literature.yaml",
+          "experiment/mimic/final.yaml": "configs/experiment/mimic/final.yaml",
+          "experiment/mimic/final_pos5_cql005.yaml": "configs/experiment/mimic/final_pos5_cql005.yaml",
+          "experiment/mimic/final_pos_weight_5.yaml": "configs/experiment/mimic/final_pos_weight_5.yaml",
+          "experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
+          "experiment/mimic/methods/cql_blendrl_cross_attention.yaml": "configs/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_cew.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_neural.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
+          "experiment/mimic/methods/cql_blendrl_human_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
+          "experiment/mimic/methods/cql_dnn.yaml": "configs/experiment/mimic/methods/cql_dnn.yaml",
+          "experiment/mimic/methods/cql_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_dueling_resnet.yaml",
+          "experiment/mimic/methods/cql_transformer.yaml": "configs/experiment/mimic/methods/cql_transformer.yaml",
+          "experiment/mimic/mimic_gpu_test.yaml": "configs/experiment/mimic/mimic_gpu_test.yaml",
+          "experiment/mimic/mimic_test.yaml": "configs/experiment/mimic/mimic_test.yaml",
+          "experiment/mimic/quick_test.yaml": "configs/experiment/mimic/quick_test.yaml",
+          "experiment/mimic/reciprocal_refinement.yaml": "configs/experiment/mimic/reciprocal_refinement.yaml",
+          "experiment/mimic/selected_mimic.yaml": "configs/experiment/mimic/selected_mimic.yaml",
+          "experiment/mimic/tune_mimic_all.yaml": "configs/experiment/mimic/tune_mimic_all.yaml",
+          "workflow/sepsis_reciprocal.yaml": "configs/workflow/sepsis_reciprocal.yaml"
         }
       },
       "config_paths": [
-        "in/config/experiment/mimic/_base.yaml",
-        "in/config/experiment/mimic/all_mimic.yaml",
-        "in/config/experiment/mimic/cql_benchmark.yaml",
-        "in/config/experiment/mimic/cql_literature.yaml",
-        "in/config/experiment/mimic/final.yaml",
-        "in/config/experiment/mimic/final_pos5_cql005.yaml",
-        "in/config/experiment/mimic/final_pos_weight_5.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
-        "in/config/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
-        "in/config/experiment/mimic/methods/cql_dnn.yaml",
-        "in/config/experiment/mimic/methods/cql_dueling_resnet.yaml",
-        "in/config/experiment/mimic/methods/cql_transformer.yaml",
-        "in/config/experiment/mimic/mimic_gpu_test.yaml",
-        "in/config/experiment/mimic/mimic_test.yaml",
-        "in/config/experiment/mimic/quick_test.yaml",
-        "in/config/experiment/mimic/reciprocal_refinement.yaml",
-        "in/config/experiment/mimic/selected_mimic.yaml",
-        "in/config/experiment/mimic/tune_mimic_all.yaml",
-        "in/config/workflow/sepsis_reciprocal.yaml"
+        "experiment/mimic/_base.yaml",
+        "experiment/mimic/all_mimic.yaml",
+        "experiment/mimic/cql_benchmark.yaml",
+        "experiment/mimic/cql_literature.yaml",
+        "experiment/mimic/final.yaml",
+        "experiment/mimic/final_pos5_cql005.yaml",
+        "experiment/mimic/final_pos_weight_5.yaml",
+        "experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
+        "experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_cew.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_neural.yaml",
+        "experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
+        "experiment/mimic/methods/cql_dnn.yaml",
+        "experiment/mimic/methods/cql_dueling_resnet.yaml",
+        "experiment/mimic/methods/cql_transformer.yaml",
+        "experiment/mimic/mimic_gpu_test.yaml",
+        "experiment/mimic/mimic_test.yaml",
+        "experiment/mimic/quick_test.yaml",
+        "experiment/mimic/reciprocal_refinement.yaml",
+        "experiment/mimic/selected_mimic.yaml",
+        "experiment/mimic/tune_mimic_all.yaml",
+        "workflow/sepsis_reciprocal.yaml"
       ],
-      "config_path": "in/config/experiment/mimic/_base.yaml",
-      "rules_root": "resources/rules"
+      "config_path": "experiment/mimic/_base.yaml",
+      "rules_root": "resources/rules",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "experiment",
+        "mimic"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-1.1.0.zip",
+          "sha256": "22a609c654a61228fd904f665f5f06151d0eda0aa031976f2541e944377bdba7",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 18074
+        }
+      }
     },
     {
       "id": "robotics",
       "name": "Robotics Continuous Control Experiments",
       "kind": "experiment",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "A robotics experiment group with MuJoCo environment presets and Stable-Baselines3 PPO and SAC baselines for five continuous-control robots.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "experiment",
-        "robotics",
-        "mujoco"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-1.0.0.zip",
-          "sha256": "9cab5b5a5bbe5a7cbba542b57c36dc2d756f53cea1f4317b79faebbe5c4ebb80",
-          "published_at": "2026-10-20T00:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-1.0.1.zip",
-          "sha256": "44e70da59ebac303c941b6443dbae4820d577fefa2eb7e23036a579bd1c7dcc7",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-1.0.2.zip",
-          "sha256": "1eb8024548559dfded375ff5b0db2f7afadab29b6f15a5534c63f60e3c71a283",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4507
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "online_rl"
@@ -2008,57 +1881,54 @@
         ],
         "pip": []
       },
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
         "implementations": [],
         "resources": [],
         "configs": {
-          "in/config/env/mujoco/ant.yaml": "configs/env/mujoco/ant.yaml",
-          "in/config/env/mujoco/half_cheetah.yaml": "configs/env/mujoco/half_cheetah.yaml",
-          "in/config/env/mujoco/hopper.yaml": "configs/env/mujoco/hopper.yaml",
-          "in/config/env/mujoco/humanoid.yaml": "configs/env/mujoco/humanoid.yaml",
-          "in/config/env/mujoco/walker2d.yaml": "configs/env/mujoco/walker2d.yaml",
-          "in/config/experiment/robotics/_base.yaml": "configs/experiment/robotics/_base.yaml",
-          "in/config/experiment/robotics/ant_ppo.yaml": "configs/experiment/robotics/ant_ppo.yaml",
-          "in/config/experiment/robotics/half_cheetah_sac.yaml": "configs/experiment/robotics/half_cheetah_sac.yaml",
-          "in/config/experiment/robotics/hopper_ppo.yaml": "configs/experiment/robotics/hopper_ppo.yaml",
-          "in/config/experiment/robotics/humanoid_ppo.yaml": "configs/experiment/robotics/humanoid_ppo.yaml",
-          "in/config/experiment/robotics/walker2d_sac.yaml": "configs/experiment/robotics/walker2d_sac.yaml"
+          "experiment/robotics/_base.yaml": "configs/experiment/robotics/_base.yaml",
+          "experiment/robotics/ant_ppo.yaml": "configs/experiment/robotics/ant_ppo.yaml",
+          "experiment/robotics/half_cheetah_sac.yaml": "configs/experiment/robotics/half_cheetah_sac.yaml",
+          "experiment/robotics/hopper_ppo.yaml": "configs/experiment/robotics/hopper_ppo.yaml",
+          "experiment/robotics/humanoid_ppo.yaml": "configs/experiment/robotics/humanoid_ppo.yaml",
+          "experiment/robotics/walker2d_sac.yaml": "configs/experiment/robotics/walker2d_sac.yaml"
         }
       },
       "config_paths": [
-        "in/config/env/mujoco/ant.yaml",
-        "in/config/env/mujoco/half_cheetah.yaml",
-        "in/config/env/mujoco/hopper.yaml",
-        "in/config/env/mujoco/humanoid.yaml",
-        "in/config/env/mujoco/walker2d.yaml",
-        "in/config/experiment/robotics/_base.yaml",
-        "in/config/experiment/robotics/ant_ppo.yaml",
-        "in/config/experiment/robotics/half_cheetah_sac.yaml",
-        "in/config/experiment/robotics/hopper_ppo.yaml",
-        "in/config/experiment/robotics/humanoid_ppo.yaml",
-        "in/config/experiment/robotics/walker2d_sac.yaml"
+        "experiment/robotics/_base.yaml",
+        "experiment/robotics/ant_ppo.yaml",
+        "experiment/robotics/half_cheetah_sac.yaml",
+        "experiment/robotics/hopper_ppo.yaml",
+        "experiment/robotics/humanoid_ppo.yaml",
+        "experiment/robotics/walker2d_sac.yaml"
       ],
-      "config_path": "in/config/env/mujoco/ant.yaml"
+      "config_path": "experiment/robotics/_base.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "experiment",
+        "robotics",
+        "mujoco"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-1.1.0.zip",
+          "sha256": "db161bd1c00403a167f183a9ac736aea6b2131ac243b5fbc6a11d02a646cd233",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2857
+        }
+      }
     },
     {
       "id": "d3rlpy-suite",
       "name": "d3rlpy Offline RL Suite",
       "kind": "method",
-      "version": "1.0.3",
+      "version": "2.0.0",
       "description": "Standard offline reinforcement learning algorithms (CQL, IQL, TD3+BC, BC) powered by d3rlpy.",
-      "author": {
-        "name": "Takuma Seno & d3rlpy Contributors",
-        "github": "takuseno",
-        "url": "https://github.com/takuseno/d3rlpy"
-      },
-      "repository": "https://github.com/takuseno/d3rlpy",
-      "license": "MIT",
+      "author": "Takuma Seno & d3rlpy Contributors",
       "tags": [
         "offline-rl",
         "cql",
@@ -2068,6 +1938,8 @@
         "d3rlpy",
         "baselines"
       ],
+      "storage_version": 3,
+      "api_version": 1,
       "dependencies": {
         "pip": [
           "d3rlpy>=2.8,<3",
@@ -2075,226 +1947,337 @@
         ],
         "components": []
       },
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/d3rlpy_suite-1.0.0.zip",
-          "sha256": "d1855253933406082b5967c4d823498b4b54b22d2ee6954f80069fb33a4f01ff",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/d3rlpy_suite-1.0.1.zip",
-          "sha256": "766a75ca819f8593ad760b6c71942e9dfc4d54801161e1a60ef595e284bda754",
-          "published_at": "2026-10-21T15:17:54.143258+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/d3rlpy_suite-1.0.2.zip",
-          "sha256": "b0b5a520595f4739321a73e3c6b5501bbe3219a0a68d46ea438e2f438322f965",
-          "published_at": "2026-10-21T18:10:09.769235+00:00"
-        },
-        "1.0.3": {
-          "tag": "v1.0.3",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/d3rlpy-suite-1.0.3.zip",
-          "sha256": "fec1b822dd5d3c9eb29a5394f7724795934753de5f67eb5edb90023b7314684b",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 5136
-        }
-      },
-      "paradigms": [
-        "offline_rl"
-      ],
-      "parameter_schema": {
-        "type": "object",
-        "properties": {},
-        "x-theta-config-schemas": {
-          "in/config/agent/d3rlpy/bc.yaml": {
-            "type": "object",
-            "properties": {
-              "algorithm": {
-                "type": "string"
-              },
-              "learning_rate": {
-                "type": "string"
-              },
-              "batch_size": {
-                "type": "integer"
-              },
-              "n_steps": {
-                "type": "integer"
-              },
-              "entrypoint": {
-                "type": "string"
-              }
-            }
-          },
-          "in/config/agent/d3rlpy/cql.yaml": {
-            "type": "object",
-            "properties": {
-              "algorithm": {
-                "type": "string"
-              },
-              "learning_rate": {
-                "type": "string"
-              },
-              "batch_size": {
-                "type": "integer"
-              },
-              "n_steps": {
-                "type": "integer"
-              },
-              "cql_alpha": {
-                "type": "number"
-              },
-              "gamma": {
-                "type": "number"
-              },
-              "entrypoint": {
-                "type": "string"
-              }
-            }
-          },
-          "in/config/agent/d3rlpy/iql.yaml": {
-            "type": "object",
-            "properties": {
-              "algorithm": {
-                "type": "string"
-              },
-              "learning_rate": {
-                "type": "string"
-              },
-              "batch_size": {
-                "type": "integer"
-              },
-              "n_steps": {
-                "type": "integer"
-              },
-              "expectile": {
-                "type": "number"
-              },
-              "weight_temp": {
-                "type": "number"
-              },
-              "gamma": {
-                "type": "number"
-              },
-              "entrypoint": {
-                "type": "string"
-              }
-            }
-          },
-          "in/config/agent/d3rlpy/td3_bc.yaml": {
-            "type": "object",
-            "properties": {
-              "algorithm": {
-                "type": "string"
-              },
-              "learning_rate": {
-                "type": "string"
-              },
-              "batch_size": {
-                "type": "integer"
-              },
-              "n_steps": {
-                "type": "integer"
-              },
-              "alpha": {
-                "type": "number"
-              },
-              "gamma": {
-                "type": "number"
-              },
-              "entrypoint": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "config_paths": [
-        "in/config/agent/d3rlpy/bc.yaml",
-        "in/config/agent/d3rlpy/cql.yaml",
-        "in/config/agent/d3rlpy/iql.yaml",
-        "in/config/agent/d3rlpy/td3_bc.yaml"
-      ],
-      "storage_version": 2,
-      "api_version": 1,
       "capabilities": [
         {
           "id": "d3rlpy/bc",
           "kind": "algorithm",
-          "entry_point": "d3rlpy_runner.py:main",
-          "aliases": [
-            "bc"
-          ],
+          "entry_point": "d3rlpy_backend.py:execute",
+          "execution_contract": 1,
+          "backend": "d3rlpy",
           "paradigms": [
             "offline_rl"
-          ]
+          ],
+          "execution_features": {
+            "input_types": [
+              "dataset_path"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "d3rlpy.d3"
+            ],
+            "tuning": false,
+            "winner_promotion": false,
+            "episode_outcomes": false
+          },
+          "resource_hints": {
+            "accelerator": false
+          },
+          "aliases": []
         },
         {
           "id": "d3rlpy/cql",
           "kind": "algorithm",
-          "entry_point": "d3rlpy_runner.py:main",
-          "aliases": [
-            "cql"
-          ],
+          "entry_point": "d3rlpy_backend.py:execute",
+          "execution_contract": 1,
+          "backend": "d3rlpy",
           "paradigms": [
             "offline_rl"
-          ]
+          ],
+          "execution_features": {
+            "input_types": [
+              "dataset_path"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "d3rlpy.d3"
+            ],
+            "tuning": false,
+            "winner_promotion": false,
+            "episode_outcomes": false
+          },
+          "resource_hints": {
+            "accelerator": false
+          },
+          "aliases": []
         },
         {
           "id": "d3rlpy/iql",
           "kind": "algorithm",
-          "entry_point": "d3rlpy_runner.py:main",
-          "aliases": [
-            "iql"
-          ],
+          "entry_point": "d3rlpy_backend.py:execute",
+          "execution_contract": 1,
+          "backend": "d3rlpy",
           "paradigms": [
             "offline_rl"
-          ]
+          ],
+          "execution_features": {
+            "input_types": [
+              "dataset_path"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "d3rlpy.d3"
+            ],
+            "tuning": false,
+            "winner_promotion": false,
+            "episode_outcomes": false
+          },
+          "resource_hints": {
+            "accelerator": false
+          },
+          "aliases": []
         },
         {
           "id": "d3rlpy/td3_bc",
           "kind": "algorithm",
-          "entry_point": "d3rlpy_runner.py:main",
-          "aliases": [
-            "td3_bc"
-          ],
+          "entry_point": "d3rlpy_backend.py:execute",
+          "execution_contract": 1,
+          "backend": "d3rlpy",
           "paradigms": [
             "offline_rl"
-          ]
+          ],
+          "execution_features": {
+            "input_types": [
+              "dataset_path"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "d3rlpy.d3"
+            ],
+            "tuning": false,
+            "winner_promotion": false,
+            "episode_outcomes": false
+          },
+          "resource_hints": {
+            "accelerator": false
+          },
+          "aliases": []
+        },
+        {
+          "id": "d3rlpy/vector",
+          "kind": "model",
+          "entry_point": "d3rlpy_backend.py:create_encoder",
+          "backend": "d3rlpy",
+          "paradigms": [
+            "offline_rl"
+          ],
+          "aliases": []
         }
       ],
       "payload": {
         "implementations": [
-          "d3rlpy_runner.py"
+          "d3rlpy_backend.py"
         ],
         "resources": [
           "requirements.txt"
         ],
         "configs": {
-          "in/config/agent/d3rlpy/bc.yaml": "configs/agent/d3rlpy/bc.yaml",
-          "in/config/agent/d3rlpy/cql.yaml": "configs/agent/d3rlpy/cql.yaml",
-          "in/config/agent/d3rlpy/iql.yaml": "configs/agent/d3rlpy/iql.yaml",
-          "in/config/agent/d3rlpy/td3_bc.yaml": "configs/agent/d3rlpy/td3_bc.yaml"
+          "agent/d3rlpy/bc.yaml": "configs/agent/d3rlpy/bc.yaml",
+          "agent/d3rlpy/cql.yaml": "configs/agent/d3rlpy/cql.yaml",
+          "agent/d3rlpy/iql.yaml": "configs/agent/d3rlpy/iql.yaml",
+          "agent/d3rlpy/td3_bc.yaml": "configs/agent/d3rlpy/td3_bc.yaml",
+          "model/d3rlpy/vector.yaml": "configs/model/d3rlpy/vector.yaml"
         }
       },
-      "config_path": "in/config/agent/d3rlpy/bc.yaml"
+      "config_paths": [
+        "agent/d3rlpy/bc.yaml",
+        "agent/d3rlpy/cql.yaml",
+        "agent/d3rlpy/iql.yaml",
+        "agent/d3rlpy/td3_bc.yaml",
+        "model/d3rlpy/vector.yaml"
+      ],
+      "config_path": "agent/d3rlpy/bc.yaml",
+      "parameter_schema": {
+        "type": "object",
+        "properties": {},
+        "x-theta-config-schemas": {
+          "agent/d3rlpy/bc.yaml": {
+            "type": "object",
+            "properties": {
+              "algorithm": {
+                "type": "string"
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "d3rlpy"
+                ]
+              },
+              "learning_rate": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "n_steps": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "batch_size": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "agent/d3rlpy/cql.yaml": {
+            "type": "object",
+            "properties": {
+              "algorithm": {
+                "type": "string"
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "d3rlpy"
+                ]
+              },
+              "learning_rate": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "n_steps": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "batch_size": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "gamma": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "agent/d3rlpy/iql.yaml": {
+            "type": "object",
+            "properties": {
+              "algorithm": {
+                "type": "string"
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "d3rlpy"
+                ]
+              },
+              "learning_rate": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "n_steps": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "batch_size": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "expectile": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "exclusiveMaximum": 1
+              },
+              "weight_temp": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "gamma": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "agent/d3rlpy/td3_bc.yaml": {
+            "type": "object",
+            "properties": {
+              "algorithm": {
+                "type": "string"
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "d3rlpy"
+                ]
+              },
+              "learning_rate": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "n_steps": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "batch_size": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "alpha": {
+                "type": "number",
+                "minimum": 0
+              },
+              "gamma": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "model/d3rlpy/vector.yaml": {
+            "type": "object",
+            "properties": {
+              "architecture": {
+                "type": "string"
+              },
+              "hidden_units": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "activation": {
+                "type": "string",
+                "enum": [
+                  "relu",
+                  "tanh",
+                  "elu"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "repository": "https://github.com/takuseno/d3rlpy",
+      "license": "MIT",
+      "releases": {
+        "2.0.0": {
+          "tag": "v2.0.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/d3rlpy-suite-2.0.0.zip",
+          "sha256": "286f773839af7ecb263d5e8548abd34ac13336cd4d5a5214ee87d556671241ce",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 6094
+        }
+      }
     },
     {
       "id": "sb3-suite",
       "name": "Stable-Baselines3 Suite",
       "kind": "method",
-      "version": "1.1.1",
+      "version": "2.0.0",
       "description": "Standard reinforcement learning algorithms (PPO, DQN, A2C, SAC) powered by Stable-Baselines3.",
-      "author": {
-        "name": "DLR-RM & SB3 Contributors",
-        "github": "DLR-RM",
-        "url": "https://github.com/DLR-RM/stable-baselines3"
-      },
-      "repository": "https://github.com/DLR-RM/stable-baselines3",
-      "license": "MIT",
+      "author": "DLR-RM & SB3 Contributors",
       "tags": [
         "rl",
         "baselines",
@@ -2302,6 +2285,11 @@
         "dqn",
         "sb3"
       ],
+      "paradigms": [
+        "online_rl"
+      ],
+      "storage_version": 3,
+      "api_version": 1,
       "dependencies": {
         "pip": [
           "stable-baselines3",
@@ -2310,65 +2298,213 @@
         ],
         "components": []
       },
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.0.zip",
-          "sha256": "a202c8f76a2277cb4def1369014892f289682fefd06bfe4e8233e7829dadc36c",
-          "published_at": "2026-10-18T19:00:00Z"
+      "capabilities": [
+        {
+          "id": "sb3/a2c",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:execute",
+          "aliases": [],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true,
+          "monitoring": {
+            "supports": [
+              "scalars.v1",
+              "system.v1",
+              "model_observations.v1",
+              "probe_forward.v1",
+              "post_update.v1",
+              "module_interventions.v1",
+              "policy_probabilities.v1"
+            ],
+            "provides": [],
+            "catalog": "monitor_catalog.py:describe"
+          },
+          "execution_contract": 1,
+          "backend": "sb3",
+          "execution_features": {
+            "input_types": [
+              "live_environment"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "sb3.zip"
+            ],
+            "tuning": true,
+            "winner_promotion": true,
+            "episode_outcomes": true,
+            "intermediate_values": true
+          },
+          "resource_hints": {
+            "base_memory_gib": 0.55
+          },
+          "resource_hint_hook": "execution_hooks.py:resource_hints"
         },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.1.zip",
-          "sha256": "aa5380f049a4af8aedd4bc063e6b6e8dd32ef53206f8ea8dfce3644a7c5be75a",
-          "published_at": "2026-10-21T15:17:54.138804+00:00"
+        {
+          "id": "sb3/dqn",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:execute",
+          "aliases": [],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true,
+          "monitoring": {
+            "supports": [
+              "scalars.v1",
+              "system.v1",
+              "model_observations.v1",
+              "probe_forward.v1",
+              "post_update.v1",
+              "module_interventions.v1",
+              "action_values.v1"
+            ],
+            "provides": [],
+            "catalog": "monitor_catalog.py:describe"
+          },
+          "execution_contract": 1,
+          "backend": "sb3",
+          "execution_features": {
+            "input_types": [
+              "live_environment"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "sb3.zip"
+            ],
+            "tuning": true,
+            "winner_promotion": true,
+            "episode_outcomes": true,
+            "intermediate_values": true
+          },
+          "resource_hints": {
+            "base_memory_gib": 0.55
+          },
+          "resource_hint_hook": "execution_hooks.py:resource_hints"
         },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.2.zip",
-          "sha256": "e69b1a70e0a7799cbaa25348d0b14b844e276e8144a90d0191932b2714559da9",
-          "published_at": "2026-10-21T18:10:09.766730+00:00"
+        {
+          "id": "sb3/ppo",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:execute",
+          "aliases": [],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true,
+          "monitoring": {
+            "supports": [
+              "scalars.v1",
+              "system.v1",
+              "model_observations.v1",
+              "probe_forward.v1",
+              "post_update.v1",
+              "module_interventions.v1",
+              "policy_probabilities.v1"
+            ],
+            "provides": [],
+            "catalog": "monitor_catalog.py:describe"
+          },
+          "execution_contract": 1,
+          "backend": "sb3",
+          "execution_features": {
+            "input_types": [
+              "live_environment"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "sb3.zip"
+            ],
+            "tuning": true,
+            "winner_promotion": true,
+            "episode_outcomes": true,
+            "intermediate_values": true
+          },
+          "resource_hints": {
+            "base_memory_gib": 0.55
+          },
+          "resource_hint_hook": "execution_hooks.py:resource_hints"
         },
-        "1.0.3": {
-          "tag": "v1.0.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.3.zip",
-          "sha256": "9868ee162a667de4201cef092f1efddf3a21029c3c45fae146eb44a65d4ecd47",
-          "published_at": "2026-10-21T18:49:24.931340+00:00"
-        },
-        "1.0.5": {
-          "tag": "v1.0.5",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.5.zip",
-          "sha256": "cc6904fa27c39eb743f005b9f061226ebc59c0b2302aa2862c2e9b0dd579941a",
-          "published_at": "2026-11-03T03:07:24.492997+00:00"
-        },
-        "1.0.6": {
-          "tag": "v1.0.6",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/sb3_suite-1.0.6.zip",
-          "sha256": "e4e5f699b615c7639df679838e190b10d61189bb76a4868d3a99b7ae059a7d1a",
-          "published_at": "2026-11-03T16:58:08.601649+00:00"
-        },
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3_suite-1.1.0.zip",
-          "sha256": "a62265aa56f9de95978d8109c09e6cf4d89a1abc96057c24c98fd743eb905d0b",
-          "published_at": "2026-11-06T20:06:02.377156+00:00"
-        },
-        "1.1.1": {
-          "tag": "v1.1.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-1.1.1.zip",
-          "sha256": "d50c5b056f2d21baf5d72288d59b92f4d32896f71179b3d11aac1a69a1c5f00e",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 12688
+        {
+          "id": "sb3/sac",
+          "kind": "algorithm",
+          "entry_point": "sb3_runner.py:execute",
+          "aliases": [],
+          "paradigms": [
+            "online_rl"
+          ],
+          "episode_outcomes": true,
+          "monitoring": {
+            "supports": [
+              "scalars.v1",
+              "system.v1"
+            ],
+            "provides": [],
+            "catalog": "monitor_catalog.py:describe"
+          },
+          "execution_contract": 1,
+          "backend": "sb3",
+          "execution_features": {
+            "input_types": [
+              "live_environment"
+            ],
+            "evaluation": "provider",
+            "resume_modes": [
+              "inference"
+            ],
+            "checkpoint_formats": [
+              "sb3.zip"
+            ],
+            "tuning": true,
+            "winner_promotion": true,
+            "episode_outcomes": true,
+            "intermediate_values": true
+          },
+          "resource_hints": {
+            "base_memory_gib": 0.55
+          },
+          "resource_hint_hook": "execution_hooks.py:resource_hints"
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "execution_hooks.py",
+          "monitor_catalog.py",
+          "sb3_monitoring.py",
+          "sb3_runner.py",
+          "theta_sb3_policy.py"
+        ],
+        "resources": [
+          "requirements.txt"
+        ],
+        "configs": {
+          "agent/sb3/a2c.yaml": "configs/agent/sb3/a2c.yaml",
+          "agent/sb3/dqn.yaml": "configs/agent/sb3/dqn.yaml",
+          "agent/sb3/ppo.yaml": "configs/agent/sb3/ppo.yaml",
+          "agent/sb3/sac.yaml": "configs/agent/sb3/sac.yaml"
         }
       },
-      "paradigms": [
-        "online_rl"
+      "config_paths": [
+        "agent/sb3/a2c.yaml",
+        "agent/sb3/dqn.yaml",
+        "agent/sb3/ppo.yaml",
+        "agent/sb3/sac.yaml"
       ],
+      "config_path": "agent/sb3/a2c.yaml",
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/agent/sb3/a2c.yaml": {
+          "agent/sb3/a2c.yaml": {
             "type": "object",
             "properties": {
               "algorithm": {
@@ -2397,9 +2533,6 @@
               "vf_coef": {
                 "type": "number"
               },
-              "entrypoint": {
-                "type": "string"
-              },
               "learning_rate_schedule": {
                 "type": "string",
                 "enum": [
@@ -2414,10 +2547,16 @@
                 "minimum": 0,
                 "default": 0,
                 "description": "Final rate when using a linear learning-rate schedule."
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "sb3"
+                ]
               }
             }
           },
-          "in/config/agent/sb3/dqn.yaml": {
+          "agent/sb3/dqn.yaml": {
             "type": "object",
             "properties": {
               "algorithm": {
@@ -2455,9 +2594,6 @@
               "exploration_fraction": {
                 "type": "number"
               },
-              "entrypoint": {
-                "type": "string"
-              },
               "learning_rate_schedule": {
                 "type": "string",
                 "enum": [
@@ -2472,10 +2608,16 @@
                 "minimum": 0,
                 "default": 0,
                 "description": "Final rate when using a linear learning-rate schedule."
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "sb3"
+                ]
               }
             }
           },
-          "in/config/agent/sb3/ppo.yaml": {
+          "agent/sb3/ppo.yaml": {
             "type": "object",
             "properties": {
               "algorithm": {
@@ -2510,9 +2652,6 @@
               "clip_range": {
                 "type": "number"
               },
-              "entrypoint": {
-                "type": "string"
-              },
               "learning_rate_schedule": {
                 "type": "string",
                 "enum": [
@@ -2527,10 +2666,16 @@
                 "minimum": 0,
                 "default": 0,
                 "description": "Final rate when using a linear learning-rate schedule."
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "sb3"
+                ]
               }
             }
           },
-          "in/config/agent/sb3/sac.yaml": {
+          "agent/sb3/sac.yaml": {
             "type": "object",
             "properties": {
               "algorithm": {
@@ -2565,9 +2710,6 @@
               "ent_coef": {
                 "type": "string"
               },
-              "entrypoint": {
-                "type": "string"
-              },
               "learning_rate_schedule": {
                 "type": "string",
                 "enum": [
@@ -2582,128 +2724,52 @@
                 "minimum": 0,
                 "default": 0,
                 "description": "Final rate when using a linear learning-rate schedule."
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "sb3"
+                ]
               }
             }
           }
         }
       },
-      "config_paths": [
-        "in/config/agent/sb3/a2c.yaml",
-        "in/config/agent/sb3/dqn.yaml",
-        "in/config/agent/sb3/ppo.yaml",
-        "in/config/agent/sb3/sac.yaml"
-      ],
-      "storage_version": 2,
-      "api_version": 1,
-      "capabilities": [
-        {
-          "id": "sb3/a2c",
-          "kind": "algorithm",
-          "entry_point": "sb3_runner.py:main",
-          "aliases": [
-            "a2c"
-          ],
-          "paradigms": [
-            "online_rl"
-          ],
-          "episode_outcomes": true
-        },
-        {
-          "id": "sb3/dqn",
-          "kind": "algorithm",
-          "entry_point": "sb3_runner.py:main",
-          "aliases": [
-            "dqn"
-          ],
-          "paradigms": [
-            "online_rl"
-          ],
-          "episode_outcomes": true
-        },
-        {
-          "id": "sb3/ppo",
-          "kind": "algorithm",
-          "entry_point": "sb3_runner.py:main",
-          "aliases": [
-            "ppo"
-          ],
-          "paradigms": [
-            "online_rl"
-          ],
-          "episode_outcomes": true
-        },
-        {
-          "id": "sb3/sac",
-          "kind": "algorithm",
-          "entry_point": "sb3_runner.py:main",
-          "aliases": [
-            "sac"
-          ],
-          "paradigms": [
-            "online_rl"
-          ],
-          "episode_outcomes": true
+      "repository": "https://github.com/DLR-RM/stable-baselines3",
+      "license": "MIT",
+      "releases": {
+        "2.0.0": {
+          "tag": "v2.0.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-2.0.0.zip",
+          "sha256": "05c8e7af84caac596d83cd3bfdfdc84553c858b96126175f1a2d3f2cd2b42738",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 18844
         }
-      ],
-      "payload": {
-        "implementations": [
-          "sb3_runner.py",
-          "theta_sb3_policy.py"
-        ],
-        "resources": [
-          "requirements.txt"
-        ],
-        "configs": {
-          "in/config/agent/sb3/a2c.yaml": "configs/agent/sb3/a2c.yaml",
-          "in/config/agent/sb3/dqn.yaml": "configs/agent/sb3/dqn.yaml",
-          "in/config/agent/sb3/ppo.yaml": "configs/agent/sb3/ppo.yaml",
-          "in/config/agent/sb3/sac.yaml": "configs/agent/sb3/sac.yaml"
-        }
-      },
-      "config_path": "in/config/agent/sb3/a2c.yaml"
+      }
     },
     {
       "id": "autoencoder",
       "name": "Dense & Sequence Autoencoders",
       "kind": "model",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Dense and sequence autoencoder architectures for unsupervised representation learning.",
       "author": {
         "name": "Theta-IDE Team"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "model",
-        "autoencoder",
-        "unsupervised",
-        "representation",
-        "latent"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/autoencoder-1.0.0.zip",
-          "sha256": "198afa6ed72b47ccd42938bd34ddddf1aa27c654c1a4e34672e9dc5d1b13cee2",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/autoencoder-1.0.1.zip",
-          "sha256": "e762607ec5dc9eb355db0430757442c3b39bff65a782690190fe65522b31e8fe",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 3929
-        }
       },
       "paradigms": [
         "unsupervised",
         "supervised"
       ],
+      "config_path": "model/basics/autoencoder.yaml",
+      "config_paths": [
+        "model/basics/autoencoder.yaml",
+        "model/basics/dense_autoencoder.yaml"
+      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/model/basics/autoencoder.yaml": {
+          "model/basics/autoencoder.yaml": {
             "type": "object",
             "properties": {
               "latent_dim": {
@@ -2717,7 +2783,7 @@
               }
             }
           },
-          "in/config/model/basics/dense_autoencoder.yaml": {
+          "model/basics/dense_autoencoder.yaml": {
             "type": "object",
             "properties": {
               "latent_dim": {
@@ -2733,16 +2799,11 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/autoencoder.yaml",
-      "config_paths": [
-        "in/config/model/basics/autoencoder.yaml",
-        "in/config/model/basics/dense_autoencoder.yaml"
-      ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -2781,8 +2842,26 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/autoencoder.yaml": "configs/model/basics/autoencoder.yaml",
-          "in/config/model/basics/dense_autoencoder.yaml": "configs/model/basics/dense_autoencoder.yaml"
+          "model/basics/autoencoder.yaml": "configs/model/basics/autoencoder.yaml",
+          "model/basics/dense_autoencoder.yaml": "configs/model/basics/dense_autoencoder.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "autoencoder",
+        "unsupervised",
+        "representation",
+        "latent"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/autoencoder-1.1.0.zip",
+          "sha256": "016c725b353cc266a650858382436b1737c7d72bb5cca222ae5da354b92c5f1d",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 3913
         }
       }
     },
@@ -2790,7 +2869,7 @@
       "id": "blendrl",
       "name": "BlendRL Neural-Symbolic Policy",
       "kind": "model",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
       "author": {
         "name": "NeSyRL Contributors",
@@ -2806,67 +2885,24 @@
         "logic",
         "rl"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.0.zip",
-          "sha256": "431620f2894ddeec4148db8ab037655cf9e2354a481b4f833445c96fd70e74ac",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.1.zip",
-          "sha256": "0ae852c537cf0aa26314c22f50f20222ff68ae9505e6a99ee3335c516655827b",
-          "published_at": "2026-10-21T14:55:42.486620+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.2.zip",
-          "sha256": "1bd09aea32a764c1e2d5d49418321b3fb474a55573dae6ca7cb03a83151d5c41",
-          "published_at": "2026-10-21T15:06:51.815394+00:00"
-        },
-        "1.0.3": {
-          "tag": "v1.0.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.3.zip",
-          "sha256": "a974e83a1d01d7e368fca237f27c306fc946091b92b3e0a1f818451b88a335a3",
-          "published_at": "2026-10-21T15:07:44.190439+00:00"
-        },
-        "1.0.9": {
-          "tag": "v1.0.9",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.0.9.zip",
-          "sha256": "339f13722ec5b26872836d52dd09bb56e785adb55490589d498b8260ecb673ac",
-          "published_at": "2026-11-03T03:07:24.497628+00:00"
-        },
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.1.0.zip",
-          "sha256": "ad29199700bbd67c545bd95dbb02ba3f14c3771b9c0f402b25f8eeed9efc5e9b",
-          "published_at": "2026-11-03T16:58:08.600463+00:00"
-        },
-        "1.1.1": {
-          "tag": "v1.1.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/blendrl-1.1.1.zip",
-          "sha256": "8c8c69e32c998920e686a89e7ebf3fb41b5b3a6abfcb37169ec1726923cf3431",
-          "published_at": "2026-11-03T17:39:30.139737+00:00"
-        },
-        "1.2.0": {
-          "tag": "v1.2.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.2.0.zip",
-          "sha256": "10b6991a4f7c7ecf305f7b4ed83eb9820f467e09374e496dda7107036bf2a371",
-          "published_at": "2026-11-06T20:06:02.371311+00:00"
-        },
-        "1.2.1": {
-          "tag": "v1.2.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.2.1.zip",
-          "sha256": "58d2f185ba25f0ed59c0c04b2c8f7d20c445613a4d3c718cb238484c2d9d3080",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 17389
-        }
+      "dependencies": {
+        "components": [
+          "dnn",
+          "nsfr",
+          "neumann"
+        ],
+        "pip": [
+          "captum"
+        ]
       },
-      "paradigms": [
-        "online_rl",
-        "offline_rl"
+      "config_path": "model/blendrl.yaml",
+      "config_paths": [
+        "model/blendrl.yaml",
+        "plot/blendrl/blend_routing.yaml"
       ],
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -2953,7 +2989,7 @@
           }
         },
         "x-theta-config-schemas": {
-          "in/config/plot/blendrl/blend_routing.yaml": {
+          "plot/blendrl/blend_routing.yaml": {
             "type": "object",
             "properties": {
               "output_subdir": {
@@ -2988,25 +3024,7 @@
           }
         }
       },
-      "dependencies": {
-        "components": [
-          "dnn",
-          "nsfr",
-          "neumann"
-        ],
-        "pip": [
-          "captum"
-        ]
-      },
-      "config_path": "in/config/model/blendrl.yaml",
-      "config_paths": [
-        "in/config/model/blendrl.yaml",
-        "in/config/plot/blendrl/blend_routing.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3035,8 +3053,17 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/blendrl.yaml": "configs/model/blendrl.yaml",
-          "in/config/plot/blendrl/blend_routing.yaml": "configs/plot/blendrl/blend_routing.yaml"
+          "model/blendrl.yaml": "configs/model/blendrl.yaml",
+          "plot/blendrl/blend_routing.yaml": "configs/plot/blendrl/blend_routing.yaml"
+        }
+      },
+      "releases": {
+        "1.3.0": {
+          "tag": "v1.3.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.3.0.zip",
+          "sha256": "a57b2d1f50cfd35777cfa92248b440092ae2893794e90d2ef4aabf1820add573",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 17457
         }
       }
     },
@@ -3044,41 +3071,10 @@
       "id": "cew",
       "name": "Clinical Expert Weighting (CEW)",
       "kind": "model",
-      "version": "1.0.1",
-      "description": "Self-organizing neuro-fuzzy Q-function with CLIP, ECM clustering, and Wang-Mendel rule generation.",
-      "author": {
-        "name": "NeSyRL Contributors",
-        "github": "CameronEgb"
-      },
-      "repository": "https://github.com/CameronEgb/Offline-BlendRL",
-      "license": "MIT",
-      "tags": [
-        "fuzzy",
-        "neuro-symbolic",
-        "offline-rl",
-        "interpretability",
-        "cew"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
-          "sha256": "0a8d0e96f93491e36c19756212af78593756ba2074101e03bb04e24da9fc013d",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/cew-1.0.1.zip",
-          "sha256": "8fdeb40b2efc04bc6a0b4eb38128800d58ece77653e1623b9592b1e02c81a4fd",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 10409
-        }
-      },
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised"
-      ],
+      "version": "1.1.0",
+      "installed_from": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
+      "sha256": "3db5d37219a88e614ff52a8a6cbd5bcee4fa956462311f5325ca6d4e43397043",
+      "config_path": "model/cew.yaml",
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -3093,17 +3089,14 @@
           }
         }
       },
-      "installed_from": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/cew-1.0.0.zip",
-      "sha256": "3db5d37219a88e614ff52a8a6cbd5bcee4fa956462311f5325ca6d4e43397043",
-      "config_path": "in/config/model/cew.yaml",
       "config_paths": [
-        "in/config/model/cew.yaml"
+        "model/cew.yaml"
       ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3122,7 +3115,30 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/cew.yaml": "configs/model/cew.yaml"
+          "model/cew.yaml": "configs/model/cew.yaml"
+        }
+      },
+      "description": "Self-organizing neuro-fuzzy Q-function with CLIP, ECM clustering, and Wang-Mendel rule generation.",
+      "author": {
+        "name": "NeSyRL Contributors",
+        "github": "CameronEgb"
+      },
+      "repository": "https://github.com/CameronEgb/Offline-BlendRL",
+      "license": "MIT",
+      "tags": [
+        "fuzzy",
+        "neuro-symbolic",
+        "offline-rl",
+        "interpretability",
+        "cew"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/cew-1.1.0.zip",
+          "sha256": "5cacfe8c870b590b9ab6a4c239e340da98bfac876eb7a5748862e22721219eb1",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 10387
         }
       }
     },
@@ -3130,43 +3146,20 @@
       "id": "dnn",
       "name": "Deep Neural Network (MLP)",
       "kind": "model",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "description": "Standard Multi-Layer Perceptron (DNN) wrapping PyTorch Linear, LayerNorm, and Dueling Q-value heads.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "tags": [
-        "model",
-        "dnn"
+      "config_path": "model/basics/dnn.yaml",
+      "config_paths": [
+        "model/basics/dnn.yaml"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dnn-1.0.0.zip",
-          "sha256": "8ce3ae1a0321c28bf07889d7bc664689c4a8829d1ef3d481c534f65032cf84ad",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.0.zip",
-          "sha256": "bb3bb0a78b23ca6eeb33f2a42eaf9b2a3fcc05109b0c7780082611727e199b28",
-          "published_at": "2026-11-06T20:06:02.364551+00:00"
-        },
-        "1.1.1": {
-          "tag": "v1.1.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.1.1.zip",
-          "sha256": "443ed66885b81f664a3dcc5cda7320335d8a726aca7199e94f910a64cbe7ae16",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 3764
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised"
-      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -3200,20 +3193,11 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/dnn.yaml",
-      "config_paths": [
-        "in/config/model/basics/dnn.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3232,7 +3216,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/dnn.yaml": "configs/model/basics/dnn.yaml"
+          "model/basics/dnn.yaml": "configs/model/basics/dnn.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "dnn"
+      ],
+      "releases": {
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dnn-1.2.0.zip",
+          "sha256": "cab59140af4735f1f5de4335ea7d6415d1d9f68c20e8c999efd8c5cfcfe694f0",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 3865
         }
       }
     },
@@ -3240,37 +3239,20 @@
       "id": "dueling_resnet",
       "name": "Dueling ResNet",
       "kind": "model",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Scaled residual policy and Q-network architecture with LayerNorm, GELU, and Dueling decomposition.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "tags": [
-        "model",
-        "dueling_resnet"
+      "config_path": "model/basics/dueling_resnet.yaml",
+      "config_paths": [
+        "model/basics/dueling_resnet.yaml"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dueling_resnet-1.0.0.zip",
-          "sha256": "70196ecf7abce536bd12a66a49081dffe0873ee9a75575c1508172edd69bd8c7",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dueling_resnet-1.0.1.zip",
-          "sha256": "95a48bcbc0f1f237963cf20748c579a0fb1a3c06654f2477458a06baf6311a26",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 3609
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised"
-      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -3282,20 +3264,11 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/dueling_resnet.yaml",
-      "config_paths": [
-        "in/config/model/basics/dueling_resnet.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3315,7 +3288,22 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/dueling_resnet.yaml": "configs/model/basics/dueling_resnet.yaml"
+          "model/basics/dueling_resnet.yaml": "configs/model/basics/dueling_resnet.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "dueling_resnet"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dueling_resnet-1.1.0.zip",
+          "sha256": "307400dae8e2f52823c5ff3b2c1d810fbdc7aad00da54789ca4400e3b187d527",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 3598
         }
       }
     },
@@ -3323,39 +3311,19 @@
       "id": "lstm",
       "name": "LSTM Recurrent Neural Network",
       "kind": "model",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Long Short-Term Memory (LSTM) recurrent network architecture with temporal attention pooling.",
       "author": {
         "name": "Theta-IDE Team"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "model",
-        "lstm",
-        "recurrent",
-        "rnn",
-        "sequential"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/lstm-1.0.0.zip",
-          "sha256": "df96ba85cfc189008f8ce7787f5c6bf704d602d143f782cbc8877514737e868f",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.0.1.zip",
-          "sha256": "ad6144a2e404ddfaac7b7e12bb02a4c05c08aa9900cb3a895f4c56485c068859",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2192
-        }
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
+      ],
+      "config_path": "model/basics/lstm.yaml",
+      "config_paths": [
+        "model/basics/lstm.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -3380,15 +3348,11 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/lstm.yaml",
-      "config_paths": [
-        "in/config/model/basics/lstm.yaml"
-      ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3408,7 +3372,25 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/lstm.yaml": "configs/model/basics/lstm.yaml"
+          "model/basics/lstm.yaml": "configs/model/basics/lstm.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "lstm",
+        "recurrent",
+        "rnn",
+        "sequential"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.1.0.zip",
+          "sha256": "f8d6e8b4bf39ffe6950c3ffdca38a3e2f96762ce906504fd7f841f9edd54a714",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2183
         }
       }
     },
@@ -3416,51 +3398,28 @@
       "id": "mlp",
       "name": "Multi-Layer Perceptron (MLP)",
       "kind": "model",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
       "author": {
         "name": "Theta-IDE Team"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "model",
-        "mlp",
-        "neural",
-        "classification",
-        "policy"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.0.zip",
-          "sha256": "a2cb543f3aac933ca4148bedf46eb32bebefec3af344da44bc5f8464dded8adb",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mlp-1.0.1.zip",
-          "sha256": "2d85b920698b2782f0bdda0d2b00b707fd69bcdcc63c2a596ff8be6348199167",
-          "published_at": "2026-11-03T03:07:24.501729+00:00"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.0.2.zip",
-          "sha256": "3cd7c1e4e4fc606413ab991176815ddef30651a8f7876f91ea6c53c3be2d31ae",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4959
-        }
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
       ],
+      "config_path": "model/basics/mlp.yaml",
+      "config_paths": [
+        "model/basics/mlp.yaml",
+        "model/basics/mlp_classifier.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/model/basics/mlp.yaml": {
+          "model/basics/mlp.yaml": {
             "type": "object",
             "properties": {
               "hidden_dims": {
@@ -3484,7 +3443,7 @@
               }
             }
           },
-          "in/config/model/basics/mlp_classifier.yaml": {
+          "model/basics/mlp_classifier.yaml": {
             "type": "object",
             "properties": {
               "hidden_dims": {
@@ -3513,20 +3472,13 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/mlp.yaml",
-      "config_paths": [
-        "in/config/model/basics/mlp.yaml",
-        "in/config/model/basics/mlp_classifier.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [
           "nature_cnn"
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3593,8 +3545,26 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/mlp.yaml": "configs/model/basics/mlp.yaml",
-          "in/config/model/basics/mlp_classifier.yaml": "configs/model/basics/mlp_classifier.yaml"
+          "model/basics/mlp.yaml": "configs/model/basics/mlp.yaml",
+          "model/basics/mlp_classifier.yaml": "configs/model/basics/mlp_classifier.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "mlp",
+        "neural",
+        "classification",
+        "policy"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.1.0.zip",
+          "sha256": "e4ca0c2acb70bc852e3705f9835c8b5dffc42674f49119d2cbd75894cafdd47f",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 4933
         }
       }
     },
@@ -3602,37 +3572,20 @@
       "id": "nature_cnn",
       "name": "Nature CNN",
       "kind": "model",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Canonical 3-stage convolutional neural network architecture (Mnih et al., 2015) for visual reinforcement learning.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "tags": [
-        "model",
-        "nature_cnn"
+      "config_path": "model/basics/nature_cnn.yaml",
+      "config_paths": [
+        "model/basics/nature_cnn.yaml"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nature_cnn-1.0.0.zip",
-          "sha256": "46c7d4157d99f46e29a6b19aec92f0471bb995b19990812e706fa2a38a07f414",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nature_cnn-1.0.1.zip",
-          "sha256": "89b7cf2642d85cd274af9e5381e568d31f2e5f07e78a0a7ffdccbcc0cc8dac96",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2967
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised"
-      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -3644,20 +3597,11 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/nature_cnn.yaml",
-      "config_paths": [
-        "in/config/model/basics/nature_cnn.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3679,7 +3623,25 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/nature_cnn.yaml": "configs/model/basics/nature_cnn.yaml"
+          "model/basics/nature_cnn.yaml": "configs/model/basics/nature_cnn.yaml"
+        }
+      },
+      "exports": {
+        "NatureCNNActor": "nature_cnn_model.py:NatureCNNActor"
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "nature_cnn"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nature_cnn-1.1.0.zip",
+          "sha256": "43d1e54f1e8f6340c32d80a01b255e1aa351b60ff2cf45cbcde15df6b27b0bf3",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2968
         }
       }
     },
@@ -3687,58 +3649,18 @@
       "id": "neumann",
       "name": "NEUMANN Neural Symbolic Reasoner",
       "kind": "model",
-      "version": "1.0.7",
+      "version": "1.1.0",
       "description": "Neuro-symbolic message passing reasoner over logic graphs.",
       "author": {
         "name": "Hikaru Shindo"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "model",
-        "neuro-symbolic",
-        "neumann",
-        "logic",
-        "graph-reasoning",
-        "message-passing"
+      "config_path": "model/neumann.yaml",
+      "config_paths": [
+        "model/neumann.yaml"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/neumann-1.0.0.zip",
-          "sha256": "47ff2125a956fee7fa01383511448d89c0add7f66de1de7c083a2bb8f22b52e0",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.3": {
-          "tag": "v1.0.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/neumann-1.0.3.zip",
-          "sha256": "da1fed2adacaf1635650f8d0dc7ebe156a138228e1e3043efc87410a678dc3aa",
-          "published_at": "2026-11-03T03:07:24.680202+00:00"
-        },
-        "1.0.4": {
-          "tag": "v1.0.4",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.4.zip",
-          "sha256": "c23b3eaed1c22f97a8e9ab22ee4600e3f63dcaddb8426a16de6a283f58a49597",
-          "published_at": "2026-11-04T04:45:50.295908+00:00"
-        },
-        "1.0.5": {
-          "tag": "v1.0.5",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.5.zip",
-          "sha256": "bc8074079741cab615ea1ae89132be3a2e496f59bd6183c5942c0e462eb6be9f",
-          "published_at": "2026-11-04T04:49:14.510279+00:00"
-        },
-        "1.0.7": {
-          "tag": "v1.0.7",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.0.7.zip",
-          "sha256": "08fdc0738fa0fd69ad1d281ac532e780acc6a4b9db698b8d8b06d64143940a34",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 40512
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "online_rl",
-        "offline_rl"
-      ],
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -3762,13 +3684,6 @@
           }
         }
       },
-      "config_path": "in/config/model/neumann.yaml",
-      "config_paths": [
-        "in/config/model/neumann.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
       "dependencies": {
         "components": [
           "nsfr"
@@ -3779,7 +3694,7 @@
           "joblib"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3818,7 +3733,30 @@
           "fol/exp.lark"
         ],
         "configs": {
-          "in/config/model/neumann.yaml": "configs/model/neumann.yaml"
+          "model/neumann.yaml": "configs/model/neumann.yaml"
+        }
+      },
+      "exports": {
+        "get_blender_neumann_model": "common.py:get_blender_neumann_model",
+        "get_neumann_model": "common.py:get_neumann_model"
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "neuro-symbolic",
+        "neumann",
+        "logic",
+        "graph-reasoning",
+        "message-passing"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.1.0.zip",
+          "sha256": "61aec9947096ce121ee4dccf5f2575c04c86beeaaf921d7460502805225fe53a",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 40671
         }
       }
     },
@@ -3826,57 +3764,18 @@
       "id": "nsfr",
       "name": "Neural Symbolic Forward Reasoner (NSFR)",
       "kind": "model",
-      "version": "1.0.7",
+      "version": "1.1.0",
       "description": "Differentiable forward reasoning engine computing soft valuations over first-order logic clauses.",
       "author": {
         "name": "Hikaru Shindo"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "model",
-        "neuro-symbolic",
-        "nsfr",
-        "logic",
-        "differentiable-reasoning"
+      "config_path": "model/nsfr.yaml",
+      "config_paths": [
+        "model/nsfr.yaml"
       ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.0.zip",
-          "sha256": "2cbbc76388c7137de0d51877081075ccf25a644e9fd26f0023a80d1547cc87d9",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.3": {
-          "tag": "v1.0.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/nsfr-1.0.3.zip",
-          "sha256": "ef676fbe87ac510b935265df0a9cf95103bb6be2bbddcfcd7857d5cd2f8520fa",
-          "published_at": "2026-11-03T03:07:24.590036+00:00"
-        },
-        "1.0.4": {
-          "tag": "v1.0.4",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.4.zip",
-          "sha256": "0aea19d02dba95a38a535f26a1fcf1f78f1b1fc1df54019c886a372e94790cb0",
-          "published_at": "2026-11-04T04:45:50.252258+00:00"
-        },
-        "1.0.5": {
-          "tag": "v1.0.5",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.5.zip",
-          "sha256": "7df17617ed6627ff69c429281446a9b1b8d057ba5e1c5d2b9dbc64efa9d77be1",
-          "published_at": "2026-11-04T04:49:14.472434+00:00"
-        },
-        "1.0.7": {
-          "tag": "v1.0.7",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.0.7.zip",
-          "sha256": "dfdd8af80a8f56b156380dcc67c6a924c62e8ba36d708a07a3b909e88aed0594",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 86120
-        }
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "online_rl",
-        "offline_rl"
-      ],
       "parameter_schema": {
         "type": "object",
         "properties": {
@@ -3900,13 +3799,6 @@
           }
         }
       },
-      "config_path": "in/config/model/nsfr.yaml",
-      "config_paths": [
-        "in/config/model/nsfr.yaml"
-      ],
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
       "dependencies": {
         "components": [],
         "pip": [
@@ -3915,7 +3807,7 @@
         ]
       },
       "rules_root": "resources/rules",
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -3960,7 +3852,38 @@
           "fol/exp.lark"
         ],
         "configs": {
-          "in/config/model/nsfr.yaml": "configs/model/nsfr.yaml"
+          "model/nsfr.yaml": "configs/model/nsfr.yaml"
+        }
+      },
+      "exports": {
+        "FactsConverter": "facts_converter.py:FactsConverter",
+        "ValuationModule": "valuation.py:ValuationModule",
+        "bool_to_probs": "utils/common.py:bool_to_probs",
+        "build_infer_module": "utils/logic.py:build_infer_module",
+        "get_blender_lang": "utils/logic.py:get_blender_lang",
+        "get_blender_nsfr_model": "common.py:get_blender_nsfr_model",
+        "get_lang": "utils/logic.py:get_lang",
+        "get_nsfr_model": "common.py:get_nsfr_model",
+        "load_module": "utils/common.py:load_module",
+        "subs_list": "fol/logic_ops.py:subs_list",
+        "unify": "fol/logic_ops.py:unify"
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "neuro-symbolic",
+        "nsfr",
+        "logic",
+        "differentiable-reasoning"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/nsfr-1.1.0.zip",
+          "sha256": "ad27343cfa5c629ecd2cb70c70c7c9f7582142ac292ac0be9edc637742516d99",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 86482
         }
       }
     },
@@ -3968,39 +3891,19 @@
       "id": "transformer",
       "name": "Transformer Policy & Attention Networks",
       "kind": "model",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Multi-head self-attention and cross-attention transformer policy architectures with temporal attention pooling.",
       "author": {
         "name": "Theta-IDE Team"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "model",
-        "transformer",
-        "attention",
-        "neural",
-        "sequential"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/transformer-1.0.0.zip",
-          "sha256": "4fa377122d17761429711d8e427186e36c0c820c8049287aca026c3d321bf6af",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.0.1.zip",
-          "sha256": "5b0fd5e1d54f818573a04c88f3d7a1f621cb7d8a87aa0a35abfa1b3c17fa40f6",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4063
-        }
       },
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised"
+      ],
+      "config_path": "model/basics/transformer.yaml",
+      "config_paths": [
+        "model/basics/transformer.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -4025,15 +3928,11 @@
           }
         }
       },
-      "config_path": "in/config/model/basics/transformer.yaml",
-      "config_paths": [
-        "in/config/model/basics/transformer.yaml"
-      ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -4062,7 +3961,104 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/model/basics/transformer.yaml": "configs/model/basics/transformer.yaml"
+          "model/basics/transformer.yaml": "configs/model/basics/transformer.yaml"
+        }
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "model",
+        "transformer",
+        "attention",
+        "neural",
+        "sequential"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.1.0.zip",
+          "sha256": "2c1d4421f901adc5c54b91177d1959f427b51611d9a45b884e1b3231e04e790f",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 4049
+        }
+      }
+    },
+    {
+      "id": "slurm",
+      "name": "Slurm scheduler",
+      "kind": "package",
+      "version": "1.1.0",
+      "description": "Run experiments on Slurm clusters: site setup, job submission, resource headers and a scheduler monitor, with ARC and NCShare site templates.",
+      "author": {
+        "name": "Theta-IDE Team"
+      },
+      "repository": "https://github.com/ThetaIDE/ThetaIDE",
+      "license": "MIT",
+      "storage_version": 3,
+      "api_version": 1,
+      "dependencies": {
+        "components": [],
+        "pip": []
+      },
+      "capabilities": [
+        {
+          "id": "slurm",
+          "kind": "scheduler",
+          "entry_point": "execution.py:Scheduler",
+          "scheduler_api": 1,
+          "contribution_api": 1,
+          "readiness": {
+            "config": [
+              "site.connection.host",
+              "site.connection.remote_root"
+            ]
+          },
+          "contributions": [
+            {
+              "id": "setup",
+              "slot": "settings.site",
+              "availability": "enabled",
+              "entry_point": "settings.py:create_settings"
+            },
+            {
+              "id": "launch",
+              "slot": "commands.site",
+              "availability": "ready"
+            },
+            {
+              "id": "scheduler-monitor",
+              "slot": "monitor.scheduler",
+              "availability": "ready"
+            }
+          ]
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "commands.py",
+          "execution.py",
+          "headers.py",
+          "resources.py",
+          "settings.py"
+        ],
+        "resources": [],
+        "configs": {
+          "site/arc/_defaults.yaml": "configs/site/arc/_defaults.yaml",
+          "site/arc/default.yaml": "configs/site/arc/default.yaml",
+          "site/ncshare/_defaults.yaml": "configs/site/ncshare/_defaults.yaml",
+          "site/ncshare/common.yaml": "configs/site/ncshare/common.yaml",
+          "site/ncshare/default.yaml": "configs/site/ncshare/default.yaml",
+          "site/ncshare/gpu.yaml": "configs/site/ncshare/gpu.yaml"
+        }
+      },
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/slurm-1.1.0.zip",
+          "sha256": "9664364d18079859fe601f2766c7fa379901cc21bc86d847555da1abaf5065a5",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 19595
         }
       }
     },
@@ -4070,41 +4066,32 @@
       "id": "mimic-clinical-suite",
       "name": "MIMIC Clinical Evaluation & Visualization Suite",
       "kind": "plotter",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Clinical policy alignment, septic shock trajectory counterfactuals, and clinician agreement visualizers.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "mimic-clinical-suite"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_clinical_suite-1.0.0.zip",
-          "sha256": "94e90b75d6e74aac1cf28333608ff1ad196d681f78ff9b9ba79e980ff8632024",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.0.1.zip",
-          "sha256": "30606c5982c31c09a612e26762728430c9764fa927218aba0fb2d3a41a47911b",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 20660
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "supervised",
         "offline_rl"
       ],
+      "config_paths": [
+        "plot/mimic/clinical.yaml",
+        "plot/mimic/clinical_alignment.yaml",
+        "plot/mimic/ep_agreement.yaml",
+        "plot/mimic/ep_counterfactual_table.yaml",
+        "plot/mimic/ep_dl_sweep.yaml",
+        "plot/mimic/ep_trajectories.yaml"
+      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/plot/mimic/clinical_alignment.yaml": {
+          "plot/mimic/clinical_alignment.yaml": {
             "type": "object",
             "properties": {
               "plots": {
@@ -4127,7 +4114,7 @@
               }
             }
           },
-          "in/config/plot/mimic/clinical.yaml": {
+          "plot/mimic/clinical.yaml": {
             "type": "object",
             "properties": {
               "figsize": {
@@ -4150,7 +4137,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_agreement.yaml": {
+          "plot/mimic/ep_agreement.yaml": {
             "type": "object",
             "properties": {
               "agreement_metric": {
@@ -4173,7 +4160,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_trajectories.yaml": {
+          "plot/mimic/ep_trajectories.yaml": {
             "type": "object",
             "properties": {
               "max_trajectories": {
@@ -4193,7 +4180,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_counterfactual_table.yaml": {
+          "plot/mimic/ep_counterfactual_table.yaml": {
             "type": "object",
             "properties": {
               "format": {
@@ -4207,7 +4194,7 @@
               }
             }
           },
-          "in/config/plot/mimic/ep_dl_sweep.yaml": {
+          "plot/mimic/ep_dl_sweep.yaml": {
             "type": "object",
             "properties": {
               "enabled": {
@@ -4232,25 +4219,13 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/plot/mimic/clinical.yaml",
-        "in/config/plot/mimic/clinical_alignment.yaml",
-        "in/config/plot/mimic/ep_agreement.yaml",
-        "in/config/plot/mimic/ep_counterfactual_table.yaml",
-        "in/config/plot/mimic/ep_dl_sweep.yaml",
-        "in/config/plot/mimic/ep_trajectories.yaml"
-      ],
       "dependencies": {
         "components": [
           "mimic-early-prediction"
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -4303,45 +4278,43 @@
         ],
         "resources": [],
         "configs": {
-          "in/config/plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
-          "in/config/plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
-          "in/config/plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
-          "in/config/plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
-          "in/config/plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
-          "in/config/plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
+          "plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
+          "plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
+          "plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
+          "plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
+          "plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
+          "plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
         }
       },
-      "config_path": "in/config/plot/mimic/clinical.yaml"
+      "config_path": "plot/mimic/clinical.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plotter",
+        "mimic-clinical-suite"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.1.0.zip",
+          "sha256": "6e69cbc593439e3005c383ebb89dbbec5a88b382ccb68b871a0053ffb1a6964e",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 20602
+        }
+      }
     },
     {
       "id": "standard-figures",
       "name": "Standard Reinforcement Learning Figures",
       "kind": "plotter",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Universal convergence curves, policy and value loss trajectories, and benchmark summary reports.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "standard-figures"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/standard_figures-1.0.0.zip",
-          "sha256": "0967503b9f2b6ededa6c695e44a5bc1fef8d674881a0d4308de0ef574c2e674f",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.0.1.zip",
-          "sha256": "c2724746200c92335f9f206efe49c60c3b53fff261d66938a39a712b23665316",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 2318
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
       "paradigms": [
         "online_rl",
@@ -4349,11 +4322,18 @@
         "supervised",
         "unsupervised"
       ],
+      "config_paths": [
+        "plot/thetalib/convergence.yaml",
+        "plot/thetalib/losses.yaml",
+        "plot/thetalib/reports.yaml"
+      ],
+      "suite": "thetalib",
+      "hidden": true,
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "in/config/plot/thetalib/convergence.yaml": {
+          "plot/thetalib/convergence.yaml": {
             "type": "object",
             "properties": {
               "output_subdir": {
@@ -4414,7 +4394,7 @@
               }
             }
           },
-          "in/config/plot/thetalib/losses.yaml": {
+          "plot/thetalib/losses.yaml": {
             "type": "object",
             "properties": {
               "output_subdir": {
@@ -4469,7 +4449,7 @@
               }
             }
           },
-          "in/config/plot/thetalib/reports.yaml": {
+          "plot/thetalib/reports.yaml": {
             "type": "object",
             "properties": {
               "include_hyperparameters": {
@@ -4482,36 +4462,40 @@
           }
         }
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/plot/thetalib/convergence.yaml",
-        "in/config/plot/thetalib/losses.yaml",
-        "in/config/plot/thetalib/reports.yaml"
-      ],
-      "suite": "thetalib",
-      "hidden": true,
       "dependencies": {
         "components": [
           "standard_figures"
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
         "implementations": [],
         "resources": [],
         "configs": {
-          "in/config/plot/thetalib/convergence.yaml": "configs/plot/thetalib/convergence.yaml",
-          "in/config/plot/thetalib/losses.yaml": "configs/plot/thetalib/losses.yaml",
-          "in/config/plot/thetalib/reports.yaml": "configs/plot/thetalib/reports.yaml"
+          "plot/thetalib/convergence.yaml": "configs/plot/thetalib/convergence.yaml",
+          "plot/thetalib/losses.yaml": "configs/plot/thetalib/losses.yaml",
+          "plot/thetalib/reports.yaml": "configs/plot/thetalib/reports.yaml"
         }
       },
-      "config_path": "in/config/plot/thetalib/convergence.yaml"
+      "config_path": "plot/thetalib/convergence.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plotter",
+        "standard-figures"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.1.0.zip",
+          "sha256": "eb2befb7625d5b4b762b64edae4bdf498b2117966ff82d80901e3b9b89064777",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 2315
+        }
+      }
     },
     {
       "id": "ai_assistant",
@@ -4612,79 +4596,16 @@
     {
       "id": "antigravity",
       "name": "Antigravity Agent",
-      "kind": "plugin",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Integrated Google Antigravity Agent for pair programming and codebase assistance with full-panel and sidepane modes.",
-      "author": {
-        "name": "Antigravity Team",
-        "github": "google-antigravity",
-        "url": "https://antigravity.google/"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "ai",
-        "agent",
-        "assistant",
-        "antigravity"
-      ],
-      "releases": {
-        "0.1.5": {
-          "tag": "v0.1.5",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.5.zip",
-          "sha256": "747fc603a01c35ad0144e9e52b9ad1b1defbba396f1412f0c52853e9a11ca546",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "0.1.4": {
-          "tag": "v0.1.4",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.4.zip",
-          "sha256": "cdc82f413cd30b955c65e971d0780d10effacfedda5632e823bb7c977db84042",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.3": {
-          "tag": "v0.1.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.3.zip",
-          "sha256": "9ce99b653b5beb5aec6bd819315527c863926c1e229e2d7066639639dba59289",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.2": {
-          "tag": "v0.1.2",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.2.zip",
-          "sha256": "59e516784904f435b97f6cf6a41c7a60df5134f3d057e4bfdda4f84dc2f3e010",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.1": {
-          "tag": "v0.1.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.1.zip",
-          "sha256": "c2f54e1c2909b4411ff8c0915185c0372bae4a7797ef52f430f98aa26783218f",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.0": {
-          "tag": "v0.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.0.zip",
-          "sha256": "19fdfa859e6b831123a0ccec355208fd90eb449296aea8cefaf644637af654d8",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.5.zip",
-          "sha256": "dadf64894a0312e59c49c180f06b0fb1ca865cf70db08e665f8db1c00732bc12",
-          "published_at": "2026-10-16T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/antigravity-1.0.1.zip",
-          "sha256": "4a85c7e750d1d338c6880d896422d27c5a11b3b9b5704e4c8bdf8c13b2b65e2e",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 8455
-        }
-      },
+      "author": "Antigravity Team",
       "default_enabled": true,
       "icon": "antigravity",
       "entry_point": "AntigravityPlugin",
       "extra": {
         "has_settings": true
       },
+      "kind": "plugin",
       "dependencies": {
         "components": [],
         "pip": [
@@ -4692,7 +4613,7 @@
           "PyQt6-WebEngine"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -4711,52 +4632,35 @@
         ],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "ai",
+        "agent",
+        "assistant",
+        "antigravity"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/antigravity-1.1.0.zip",
+          "sha256": "740b140dc7db8b8db7ab3e0be6b59d8e32af72e5a705f7969c2decdbec2f97a7",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 8365
+        }
+      }
     },
     {
       "id": "doom-sim",
       "name": "DOOM",
-      "kind": "plugin",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Authentic 1993 id Software DOOM engine running directly inside Theta IDE.",
-      "author": {
-        "name": "Cameron Egbert",
-        "github": "CameronEgb",
-        "url": "https://github.com/CameronEgb"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "doom",
-        "game",
-        "fps",
-        "classic",
-        "rl"
-      ],
-      "releases": {
-        "0.1.0": {
-          "tag": "v0.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_sim-0.1.0.zip",
-          "sha256": "2a4f1fc0605a5d9dfa27590f69a650366f76a7fb4874ee3ac2640771e5614ec3",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_sim-0.1.0.zip",
-          "sha256": "2a4f1fc0605a5d9dfa27590f69a650366f76a7fb4874ee3ac2640771e5614ec3",
-          "published_at": "2026-10-16T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.0.1.zip",
-          "sha256": "c47051f10cefef898618aced8f38b03e3e721770ab7c591e37c803861b02dd78",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4873
-        }
-      },
+      "author": "Cameron Egbert",
       "default_enabled": false,
       "icon": "doom",
       "entry_point": "DoomPlugin",
+      "kind": "plugin",
       "dependencies": {
         "components": [
           "doom-env"
@@ -4766,7 +4670,7 @@
           "PyQt6-WebEngine"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -4786,47 +4690,36 @@
         ],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "doom",
+        "game",
+        "fps",
+        "classic",
+        "rl"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.1.0.zip",
+          "sha256": "74bdbaa0b8bee708fc11d9be11b2f4b445034d710589644c4553c52779924d30",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 4895
+        }
+      }
     },
     {
       "id": "obsidian-notes",
       "name": "Obsidian Notes",
-      "kind": "plugin",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Embedded Obsidian markdown vault browser, research notebook, and NeSyRL experiment logger.",
       "author": "NeSyRL Team",
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "notes",
-        "obsidian",
-        "markdown",
-        "research"
-      ],
-      "releases": {
-        "0.1.0": {
-          "tag": "v0.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
-          "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
-          "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
-          "published_at": "2026-10-16T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.0.1.zip",
-          "sha256": "dcc38a2e9ae8e4b893641ab123189a8cd140eac875a573e9b26ad252088c2c79",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 5757
-        }
-      },
       "default_enabled": false,
       "icon": "obsidian",
       "entry_point": "ObsidianPlugin",
+      "kind": "plugin",
       "dependencies": {
         "components": [],
         "pip": [
@@ -4834,7 +4727,7 @@
           "PyQt6-WebEngine"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -4853,7 +4746,24 @@
         ],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "notes",
+        "obsidian",
+        "markdown",
+        "research"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.1.0.zip",
+          "sha256": "9de67d339aecc240a74a9460d3127aeb4b460454e50252c089c836cd7e4f8974",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 5773
+        }
+      }
     },
     {
       "id": "theta_mcp",
@@ -4929,37 +4839,11 @@
       "id": "basic_suite",
       "name": "ThetaIDE Basics",
       "kind": "suite",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Basic reinforcement learning benchmark suite for Theta-IDE: Stable-Baselines3, d3rlpy offline baselines, Atari 2600 (ALE), Gymnasium classic control, standard deep neural network architectures, and ThetaLib core figures and loaders.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "tags": [
-        "suite",
-        "basic_suite"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/basic_suite-1.0.0.zip",
-          "sha256": "a79dd876972d06472672d7512b60c5cdc46be9389939d25db762566e1dcd7f9c",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/basic_suite-1.0.1.zip",
-          "sha256": "452ef733d20f7e63a314005c038b61e576a8a9adbe2b6ba23c33a572e24b7122",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 575
-        }
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised"
-      ],
       "dependencies": {
         "components": [
           "thetalib",
@@ -4976,7 +4860,7 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
@@ -4984,48 +4868,32 @@
         "resources": [],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "suite",
+        "basic_suite"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/basic_suite-1.1.0.zip",
+          "sha256": "7b5be0574a18e8186ff12ab40f50a51c7896d4edc6882904cf2fe0a8461cc2da",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 576
+        }
+      }
     },
     {
       "id": "dl_basics_suite",
       "name": "Deep Learning Basics Suite",
       "kind": "suite",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Foundational deep learning architectures for Theta-IDE: Multi-Layer Perceptrons (MLP), Transformers, LSTMs, and Dense/Sequence Autoencoders.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "suite",
-        "deep_learning",
-        "mlp",
-        "transformer",
-        "lstm",
-        "autoencoder"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/dl_basics_suite-1.0.0.zip",
-          "sha256": "931d222bca55425366853af480eafc65f294f1a6871e8c98402aa7771fcce929",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.0.1.zip",
-          "sha256": "2e860fba9e2e1a51e258972d6dfa8b23b6121a78cf1f17081afb0b1495a2fc9f",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 495
-        }
-      },
-      "paradigms": [
-        "supervised",
-        "unsupervised",
-        "online_rl",
-        "offline_rl"
-      ],
       "dependencies": {
         "components": [
           "mlp",
@@ -5038,7 +4906,7 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
@@ -5046,48 +4914,36 @@
         "resources": [],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "suite",
+        "deep_learning",
+        "mlp",
+        "transformer",
+        "lstm",
+        "autoencoder"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.1.0.zip",
+          "sha256": "4b8cf863ea26cbdf56d0dccb4ac6e3466d2f5b9421278453e1a4aa02a056f21b",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 497
+        }
+      }
     },
     {
       "id": "robotics_suite",
       "name": "Robotics Suite",
       "kind": "suite",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "A ready-to-use Theta-IDE robotics group with MuJoCo robot tasks, PPO and SAC baselines, MLP policies, and standard training plots.",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "suite",
-        "robotics",
-        "mujoco"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics_suite-1.0.0.zip",
-          "sha256": "11e118c1e61e461201862d033811a08cc865f32ec117e2717e6471b66bda63cc",
-          "published_at": "2026-10-20T00:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics_suite-1.0.1.zip",
-          "sha256": "9260678241d0171351afb4efd99fa9524629764eb665f223946fa2a8f0a3c39c",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics_suite-1.0.2.zip",
-          "sha256": "cf4fdde2eead51f6e590a4e191fbcf9cf176d37c064c16f10e4fa268fb94ef17",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 682
-        }
-      },
-      "paradigms": [
-        "online_rl"
-      ],
       "dependencies": {
         "components": [
           "robotics"
@@ -5097,7 +4953,7 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
@@ -5105,13 +4961,29 @@
         "resources": [],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "suite",
+        "robotics",
+        "mujoco"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics_suite-1.1.0.zip",
+          "sha256": "e282322394f6058bae1d847883cefc79e025e49b2dca86b08451f9538b0fef90",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 683
+        }
+      }
     },
     {
       "id": "theta-validation-suite",
       "name": "Theta Validation Suite",
       "kind": "suite",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "description": "Online-RL experiment and component conformance recipes for ThetaIDE Basics.",
       "author": {
         "name": "Theta-IDE Team"
@@ -5130,30 +5002,23 @@
         ],
         "pip": []
       },
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/theta-validation-suite-1.0.0.zip",
-          "sha256": "c944cf0a787c88d0294cd2571a13a0ee62925f490cfb87f572a69e8830d52ed9",
-          "published_at": "2026-10-20T00:00:00Z",
-          "size_bytes": 4673
-        },
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/theta-validation-suite-1.1.0.zip",
-          "sha256": "95ef00476e135d56f4f9c2416a52694707100c4f57da0e1107f28d2b292993c2",
-          "published_at": "2026-10-21T18:23:47.065128+00:00"
-        },
-        "1.1.1": {
-          "tag": "v1.1.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.1.1.zip",
-          "sha256": "46d4bf43d43030ec865e0709c1a597dc529438e2eeefae363573d86390bb2937",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 6278
-        }
-      },
       "paradigms": [
         "online_rl"
+      ],
+      "config_paths": [
+        "experiment/theta_validation/_base.yaml",
+        "experiment/theta_validation/failure/checkpoint_conflict.yaml",
+        "experiment/theta_validation/failure/incompatible_bc.yaml",
+        "experiment/theta_validation/failure/incompatible_cql.yaml",
+        "experiment/theta_validation/failure/incompatible_iql.yaml",
+        "experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+        "experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+        "experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+        "experiment/theta_validation/failure/missing_agent.yaml",
+        "experiment/theta_validation/failure/missing_method.yaml",
+        "experiment/theta_validation/failure/missing_model.yaml",
+        "experiment/theta_validation/failure/unknown_agent.yaml",
+        "experiment/theta_validation/success/online_smoke.yaml"
       ],
       "test_suite": {
         "format": "theta.test-suite/v1",
@@ -5162,7 +5027,7 @@
             "id": "gym_classic_control/cartpole",
             "title": "CartPole live environment",
             "description": "The Basic Suite environment must expose an online-RL CartPole environment.",
-            "config_path": "in/config/env/gym_classic_control/cartpole.yaml",
+            "config_path": "env/gym_classic_control/cartpole.yaml",
             "required": {
               "env_id": "CartPole-v1",
               "compatible_paradigms": [
@@ -5173,11 +5038,11 @@
           {
             "id": "sb3/ppo",
             "title": "SB3 PPO algorithm",
-            "description": "PPO must retain its runner entrypoint, algorithm identity, and online-RL capability declaration.",
-            "config_path": "in/config/agent/sb3/ppo.yaml",
+            "description": "PPO must declare its algorithm capability, execution backend and online-RL compatibility.",
+            "config_path": "agent/sb3/ppo.yaml",
             "required": {
-              "entrypoint": "package://sb3-suite/sb3_runner.py",
-              "algorithm": "PPO",
+              "algorithm": "sb3/ppo",
+              "backend": "sb3",
               "compatible_paradigms": [
                 "online_rl"
               ]
@@ -5186,11 +5051,11 @@
           {
             "id": "d3rlpy/cql",
             "title": "d3rlpy CQL algorithm",
-            "description": "CQL must retain its runner entrypoint, algorithm identity, and offline-RL capability declaration.",
-            "config_path": "in/config/agent/d3rlpy/cql.yaml",
+            "description": "CQL must declare its algorithm capability, execution backend and offline-RL compatibility.",
+            "config_path": "agent/d3rlpy/cql.yaml",
             "required": {
-              "entrypoint": "package://d3rlpy-suite/d3rlpy_runner.py",
-              "algorithm": "CQL",
+              "algorithm": "d3rlpy/cql",
+              "backend": "d3rlpy",
               "compatible_paradigms": [
                 "offline_rl"
               ]
@@ -5200,7 +5065,7 @@
             "id": "basics/dnn",
             "title": "DNN model",
             "description": "The Basic Suite DNN must expose its architecture configuration.",
-            "config_path": "in/config/model/basics/dnn.yaml",
+            "config_path": "model/basics/dnn.yaml",
             "required": {
               "architecture": "dnn"
             }
@@ -5209,7 +5074,7 @@
             "id": "thetalib/tabular_data",
             "title": "Tabular data module",
             "description": "The data-loader adapter must remain independently configurable from a dataset environment.",
-            "config_path": "in/config/data/thetalib/tabular_data.yaml",
+            "config_path": "data/thetalib/tabular_data.yaml",
             "required": {
               "data_module": "tabular_data",
               "batch_size": 128
@@ -5337,101 +5202,58 @@
           }
         ]
       },
-      "config_paths": [
-        "in/config/experiment/theta_validation/_base.yaml",
-        "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_bc.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_cql.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_iql.yaml",
-        "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
-        "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
-        "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
-        "in/config/experiment/theta_validation/failure/missing_agent.yaml",
-        "in/config/experiment/theta_validation/failure/missing_method.yaml",
-        "in/config/experiment/theta_validation/failure/missing_model.yaml",
-        "in/config/experiment/theta_validation/failure/unknown_agent.yaml",
-        "in/config/experiment/theta_validation/success/online_smoke.yaml"
-      ],
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
         "implementations": [],
         "resources": [],
         "configs": {
-          "in/config/experiment/theta_validation/_base.yaml": "configs/experiment/theta_validation/_base.yaml",
-          "in/config/experiment/theta_validation/failure/checkpoint_conflict.yaml": "configs/experiment/theta_validation/failure/checkpoint_conflict.yaml",
-          "in/config/experiment/theta_validation/failure/incompatible_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_bc.yaml",
-          "in/config/experiment/theta_validation/failure/incompatible_cql.yaml": "configs/experiment/theta_validation/failure/incompatible_cql.yaml",
-          "in/config/experiment/theta_validation/failure/incompatible_iql.yaml": "configs/experiment/theta_validation/failure/incompatible_iql.yaml",
-          "in/config/experiment/theta_validation/failure/incompatible_td3_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
-          "in/config/experiment/theta_validation/failure/invalid_checkpoint_value.yaml": "configs/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
-          "in/config/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml": "configs/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
-          "in/config/experiment/theta_validation/failure/missing_agent.yaml": "configs/experiment/theta_validation/failure/missing_agent.yaml",
-          "in/config/experiment/theta_validation/failure/missing_method.yaml": "configs/experiment/theta_validation/failure/missing_method.yaml",
-          "in/config/experiment/theta_validation/failure/missing_model.yaml": "configs/experiment/theta_validation/failure/missing_model.yaml",
-          "in/config/experiment/theta_validation/failure/unknown_agent.yaml": "configs/experiment/theta_validation/failure/unknown_agent.yaml",
-          "in/config/experiment/theta_validation/success/online_smoke.yaml": "configs/experiment/theta_validation/success/online_smoke.yaml"
+          "experiment/theta_validation/_base.yaml": "configs/experiment/theta_validation/_base.yaml",
+          "experiment/theta_validation/failure/checkpoint_conflict.yaml": "configs/experiment/theta_validation/failure/checkpoint_conflict.yaml",
+          "experiment/theta_validation/failure/incompatible_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_bc.yaml",
+          "experiment/theta_validation/failure/incompatible_cql.yaml": "configs/experiment/theta_validation/failure/incompatible_cql.yaml",
+          "experiment/theta_validation/failure/incompatible_iql.yaml": "configs/experiment/theta_validation/failure/incompatible_iql.yaml",
+          "experiment/theta_validation/failure/incompatible_td3_bc.yaml": "configs/experiment/theta_validation/failure/incompatible_td3_bc.yaml",
+          "experiment/theta_validation/failure/invalid_checkpoint_value.yaml": "configs/experiment/theta_validation/failure/invalid_checkpoint_value.yaml",
+          "experiment/theta_validation/failure/malformed_telemetry_metrics.yaml": "configs/experiment/theta_validation/failure/malformed_telemetry_metrics.yaml",
+          "experiment/theta_validation/failure/missing_agent.yaml": "configs/experiment/theta_validation/failure/missing_agent.yaml",
+          "experiment/theta_validation/failure/missing_method.yaml": "configs/experiment/theta_validation/failure/missing_method.yaml",
+          "experiment/theta_validation/failure/missing_model.yaml": "configs/experiment/theta_validation/failure/missing_model.yaml",
+          "experiment/theta_validation/failure/unknown_agent.yaml": "configs/experiment/theta_validation/failure/unknown_agent.yaml",
+          "experiment/theta_validation/success/online_smoke.yaml": "configs/experiment/theta_validation/success/online_smoke.yaml"
         }
       },
-      "config_path": "in/config/experiment/theta_validation/_base.yaml"
+      "config_path": "experiment/theta_validation/_base.yaml",
+      "releases": {
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.2.0.zip",
+          "sha256": "ab0dcec43f633bf23d61e6b89c5e68c71c07087a54d2afa22c0b5ff27cc07ea9",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 6248
+        }
+      }
     },
     {
       "id": "thetalib",
       "name": "ThetaLib Core Foundation Suite",
       "kind": "suite",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "description": "Foundational library plugin for Theta-IDE: universal convergence/loss/report figures and core data loaders (image, replay buffer, tabular).",
       "author": {
         "name": "Theta-IDE Team"
       },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plugin",
-        "thetalib"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
-          "sha256": "ea301868ff48d1b6d7ebd3ebb70399d7f6528b9d5ebcd1d5d8201e7255a3aa35",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/thetalib-1.0.0.zip",
-          "sha256": "c596f6e47a98878fc71dea920c84ae4a7cb45d4fca765ef32e76e5611a3129a8",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.2": {
-          "tag": "v1.0.2",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.0.2.zip",
-          "sha256": "cf1044d4f6741d052c9553cd3e68fc3b140ccec77e3aa8c7cc640efdf2219e46",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 584
-        }
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
       },
-      "installed_dirs": [
-        "plot/standard_figures",
-        "src/usr/data/image_data",
-        "src/usr/data/replay_buffer",
-        "src/usr/data/tabular_data",
-        "src/usr/models/dnn",
-        "src/usr/models/mlp",
-        "src/usr/models/nature_cnn",
-        "src/usr/models/dueling_resnet"
-      ],
       "paradigms": [
         "online_rl",
         "offline_rl",
         "supervised",
         "unsupervised"
       ],
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
       "config_paths": [],
       "dependencies": {
         "components": [
@@ -5446,13 +5268,126 @@
         ],
         "pip": []
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [],
       "payload": {
         "implementations": [],
         "resources": [],
         "configs": {}
+      },
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plugin",
+        "thetalib"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.1.0.zip",
+          "sha256": "5a0a241770efbc14db7589172447708e69657c79e435f1d1ea1f0690efa2eba7",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 585
+        }
+      }
+    },
+    {
+      "id": "optuna",
+      "name": "Optuna tuner",
+      "kind": "tuner",
+      "version": "1.1.0",
+      "description": "Hyperparameter sweeps with Optuna: metric or objective-component studies, pruning, parallel and remote trials, and a study monitor.",
+      "author": {
+        "name": "Theta-IDE Team"
+      },
+      "repository": "https://github.com/ThetaIDE/ThetaIDE",
+      "license": "MIT",
+      "storage_version": 3,
+      "api_version": 1,
+      "dependencies": {
+        "pip": [
+          "optuna>=3.0,<5",
+          "sqlalchemy>=1.4.2,<3"
+        ],
+        "components": []
+      },
+      "capabilities": [
+        {
+          "id": "optuna",
+          "kind": "tuner",
+          "entry_point": "component.py:OptunaTuner",
+          "contribution_api": 1,
+          "readiness": {
+            "distributions": [
+              "optuna",
+              "sqlalchemy"
+            ]
+          },
+          "contributions": [
+            {
+              "id": "configure",
+              "slot": "configuration.tuning",
+              "label": "Hyperparameter Sweep",
+              "availability": "enabled"
+            },
+            {
+              "id": "parameters",
+              "slot": "configuration.parameter_sweeps",
+              "availability": "ready"
+            },
+            {
+              "id": "study-monitor",
+              "slot": "monitor.tuning",
+              "label": "Tuning study",
+              "availability": "ready"
+            }
+          ],
+          "tuning_features": {
+            "objective_modes": [
+              "metric",
+              "component"
+            ],
+            "pruning": true,
+            "pruning_objectives": false,
+            "pruning_repeated_runs": false
+          }
+        }
+      ],
+      "payload": {
+        "implementations": [
+          "__init__.py",
+          "component.py",
+          "monitor.py",
+          "parallel.py",
+          "policy.py",
+          "pruning.py",
+          "remote.py",
+          "sweeper.py",
+          "trial_worker.py",
+          "utils.py"
+        ],
+        "resources": [],
+        "configs": {
+          "hydra/sweeper/optuna_online.yaml": "configs/hydra/sweeper/optuna_online.yaml",
+          "hydra/sweeper/optuna_offline.yaml": "configs/hydra/sweeper/optuna_offline.yaml"
+        }
+      },
+      "config_paths": [
+        "hydra/sweeper/optuna_online.yaml",
+        "hydra/sweeper/optuna_offline.yaml"
+      ],
+      "exports": {
+        "hydra_sweeper": "sweeper.py:ThetaOptunaSweeper"
+      },
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/optuna-1.1.0.zip",
+          "sha256": "893945295551d3c5c2f392eac18b98d688c6e5d8384254d5004578e73cd7c590",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 24488
+        }
       }
     }
   ]

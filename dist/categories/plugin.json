@@ -1,6 +1,6 @@
 {
   "kind": "plugin",
-  "updated_at": "2026-11-13T17:38:52.262338+00:00",
+  "updated_at": "2026-11-14T23:34:02.600048+00:00",
   "count": 5,
   "components": [
     {
@@ -102,79 +102,16 @@
     {
       "id": "antigravity",
       "name": "Antigravity Agent",
-      "kind": "plugin",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Integrated Google Antigravity Agent for pair programming and codebase assistance with full-panel and sidepane modes.",
-      "author": {
-        "name": "Antigravity Team",
-        "github": "google-antigravity",
-        "url": "https://antigravity.google/"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "ai",
-        "agent",
-        "assistant",
-        "antigravity"
-      ],
-      "releases": {
-        "0.1.5": {
-          "tag": "v0.1.5",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.5.zip",
-          "sha256": "747fc603a01c35ad0144e9e52b9ad1b1defbba396f1412f0c52853e9a11ca546",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "0.1.4": {
-          "tag": "v0.1.4",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.4.zip",
-          "sha256": "cdc82f413cd30b955c65e971d0780d10effacfedda5632e823bb7c977db84042",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.3": {
-          "tag": "v0.1.3",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.3.zip",
-          "sha256": "9ce99b653b5beb5aec6bd819315527c863926c1e229e2d7066639639dba59289",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.2": {
-          "tag": "v0.1.2",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.2.zip",
-          "sha256": "59e516784904f435b97f6cf6a41c7a60df5134f3d057e4bfdda4f84dc2f3e010",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.1": {
-          "tag": "v0.1.1",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.1.zip",
-          "sha256": "c2f54e1c2909b4411ff8c0915185c0372bae4a7797ef52f430f98aa26783218f",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "0.1.0": {
-          "tag": "v0.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.0.zip",
-          "sha256": "19fdfa859e6b831123a0ccec355208fd90eb449296aea8cefaf644637af654d8",
-          "published_at": "2026-09-29T00:00:00Z"
-        },
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/antigravity-0.1.5.zip",
-          "sha256": "dadf64894a0312e59c49c180f06b0fb1ca865cf70db08e665f8db1c00732bc12",
-          "published_at": "2026-10-16T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/antigravity-1.0.1.zip",
-          "sha256": "4a85c7e750d1d338c6880d896422d27c5a11b3b9b5704e4c8bdf8c13b2b65e2e",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 8455
-        }
-      },
+      "author": "Antigravity Team",
       "default_enabled": true,
       "icon": "antigravity",
       "entry_point": "AntigravityPlugin",
       "extra": {
         "has_settings": true
       },
+      "kind": "plugin",
       "dependencies": {
         "components": [],
         "pip": [
@@ -182,7 +119,7 @@
           "PyQt6-WebEngine"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -201,52 +138,35 @@
         ],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "ai",
+        "agent",
+        "assistant",
+        "antigravity"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/antigravity-1.1.0.zip",
+          "sha256": "740b140dc7db8b8db7ab3e0be6b59d8e32af72e5a705f7969c2decdbec2f97a7",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 8365
+        }
+      }
     },
     {
       "id": "doom-sim",
       "name": "DOOM",
-      "kind": "plugin",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Authentic 1993 id Software DOOM engine running directly inside Theta IDE.",
-      "author": {
-        "name": "Cameron Egbert",
-        "github": "CameronEgb",
-        "url": "https://github.com/CameronEgb"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "doom",
-        "game",
-        "fps",
-        "classic",
-        "rl"
-      ],
-      "releases": {
-        "0.1.0": {
-          "tag": "v0.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_sim-0.1.0.zip",
-          "sha256": "2a4f1fc0605a5d9dfa27590f69a650366f76a7fb4874ee3ac2640771e5614ec3",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/doom_sim-0.1.0.zip",
-          "sha256": "2a4f1fc0605a5d9dfa27590f69a650366f76a7fb4874ee3ac2640771e5614ec3",
-          "published_at": "2026-10-16T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.0.1.zip",
-          "sha256": "c47051f10cefef898618aced8f38b03e3e721770ab7c591e37c803861b02dd78",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 4873
-        }
-      },
+      "author": "Cameron Egbert",
       "default_enabled": false,
       "icon": "doom",
       "entry_point": "DoomPlugin",
+      "kind": "plugin",
       "dependencies": {
         "components": [
           "doom-env"
@@ -256,7 +176,7 @@
           "PyQt6-WebEngine"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -276,47 +196,36 @@
         ],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "doom",
+        "game",
+        "fps",
+        "classic",
+        "rl"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.1.0.zip",
+          "sha256": "74bdbaa0b8bee708fc11d9be11b2f4b445034d710589644c4553c52779924d30",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 4895
+        }
+      }
     },
     {
       "id": "obsidian-notes",
       "name": "Obsidian Notes",
-      "kind": "plugin",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Embedded Obsidian markdown vault browser, research notebook, and NeSyRL experiment logger.",
       "author": "NeSyRL Team",
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "notes",
-        "obsidian",
-        "markdown",
-        "research"
-      ],
-      "releases": {
-        "0.1.0": {
-          "tag": "v0.1.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
-          "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/obsidian-0.1.0.zip",
-          "sha256": "52ffa795170a3835aa621ba379e5dc680600c7a4c822a49e9cc411986c180f61",
-          "published_at": "2026-10-16T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.0.1.zip",
-          "sha256": "dcc38a2e9ae8e4b893641ab123189a8cd140eac875a573e9b26ad252088c2c79",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 5757
-        }
-      },
       "default_enabled": false,
       "icon": "obsidian",
       "entry_point": "ObsidianPlugin",
+      "kind": "plugin",
       "dependencies": {
         "components": [],
         "pip": [
@@ -324,7 +233,7 @@
           "PyQt6-WebEngine"
         ]
       },
-      "storage_version": 2,
+      "storage_version": 3,
       "api_version": 1,
       "capabilities": [
         {
@@ -343,7 +252,24 @@
         ],
         "configs": {}
       },
-      "config_paths": []
+      "config_paths": [],
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "notes",
+        "obsidian",
+        "markdown",
+        "research"
+      ],
+      "releases": {
+        "1.1.0": {
+          "tag": "v1.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.1.0.zip",
+          "sha256": "9de67d339aecc240a74a9460d3127aeb4b460454e50252c089c836cd7e4f8974",
+          "published_at": "2026-11-14T00:00:00Z",
+          "size_bytes": 5773
+        }
+      }
     },
     {
       "id": "theta_mcp",

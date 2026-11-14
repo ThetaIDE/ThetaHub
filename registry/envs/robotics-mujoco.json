@@ -2,41 +2,17 @@
   "id": "robotics-mujoco",
   "name": "Gymnasium MuJoCo Robotics",
   "kind": "env",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Continuous-control robotics benchmarks from Gymnasium MuJoCo: Ant, HalfCheetah, Hopper, Walker2d, and Humanoid.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "repository": "https://github.com/CameronEgb/theta-plugins",
-  "license": "MIT",
-  "tags": [
-    "env",
-    "robotics",
-    "mujoco"
-  ],
-  "releases": {
-    "1.0.0": {
-      "tag": "v1.0.0",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-mujoco-1.0.0.zip",
-      "sha256": "17dedf7de1c8bbfd3617e0dac3941314d2c5e0a3e1d103481966af824d32c9fc",
-      "published_at": "2026-10-20T00:00:00Z"
-    },
-    "1.0.1": {
-      "tag": "v1.0.1",
-      "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/robotics-mujoco-1.0.1.zip",
-      "sha256": "530e18d297a5a1f5cda14f1cffc70e31b90bcaa6f9d3fddd2d379b1d1fb4bc05",
-      "published_at": "2026-10-18T19:00:00Z"
-    },
-    "1.0.2": {
-      "tag": "v1.0.2",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.0.2.zip",
-      "sha256": "0df9a4906aea4b9733a12e606389f69c7043518e0fd94ed42d980bdf79c0bab4",
-      "published_at": "2026-11-08T04:27:22.867386+00:00",
-      "size_bytes": 2275
-    }
-  },
-  "paradigms": [
-    "online_rl"
+  "config_paths": [
+    "env/mujoco/ant.yaml",
+    "env/mujoco/half_cheetah.yaml",
+    "env/mujoco/hopper.yaml",
+    "env/mujoco/humanoid.yaml",
+    "env/mujoco/walker2d.yaml"
   ],
   "dependencies": {
     "pip": [
@@ -47,11 +23,14 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
+  "paradigms": [
+    "online_rl"
+  ],
   "parameter_schema": {
     "type": "object",
     "properties": {},
     "x-theta-config-schemas": {
-      "in/config/env/mujoco/ant.yaml": {
+      "env/mujoco/ant.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -83,7 +62,7 @@
           }
         }
       },
-      "in/config/env/mujoco/half_cheetah.yaml": {
+      "env/mujoco/half_cheetah.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -115,7 +94,7 @@
           }
         }
       },
-      "in/config/env/mujoco/hopper.yaml": {
+      "env/mujoco/hopper.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -147,7 +126,7 @@
           }
         }
       },
-      "in/config/env/mujoco/walker2d.yaml": {
+      "env/mujoco/walker2d.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -179,7 +158,7 @@
           }
         }
       },
-      "in/config/env/mujoco/humanoid.yaml": {
+      "env/mujoco/humanoid.yaml": {
         "type": "object",
         "properties": {
           "monitor_metric": {
@@ -213,8 +192,7 @@
       }
     }
   },
-  "config_paths": [],
-  "storage_version": 2,
+  "storage_version": 3,
   "api_version": 1,
   "capabilities": [
     {
@@ -239,6 +217,28 @@
     "resources": [
       "requirements.txt"
     ],
-    "configs": {}
+    "configs": {
+      "env/mujoco/ant.yaml": "configs/env/mujoco/ant.yaml",
+      "env/mujoco/half_cheetah.yaml": "configs/env/mujoco/half_cheetah.yaml",
+      "env/mujoco/hopper.yaml": "configs/env/mujoco/hopper.yaml",
+      "env/mujoco/humanoid.yaml": "configs/env/mujoco/humanoid.yaml",
+      "env/mujoco/walker2d.yaml": "configs/env/mujoco/walker2d.yaml"
+    }
+  },
+  "repository": "https://github.com/CameronEgb/theta-plugins",
+  "license": "MIT",
+  "tags": [
+    "env",
+    "robotics",
+    "mujoco"
+  ],
+  "releases": {
+    "1.1.0": {
+      "tag": "v1.1.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.1.0.zip",
+      "sha256": "312ab30dcebdfa6d6114c7f067b10453f82cb083921068c4860f85ab93fb9177",
+      "published_at": "2026-11-14T00:00:00Z",
+      "size_bytes": 3916
+    }
   }
 }
