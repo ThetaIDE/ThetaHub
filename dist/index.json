@@ -1,7 +1,7 @@
 {
   "$schema": "https://hub.thetaide.org/schemas/component-v1.json",
   "version": "1.0",
-  "updated_at": "2026-11-15T01:17:11.540097+00:00",
+  "updated_at": "2026-11-15T14:31:23.894372+00:00",
   "count": 41,
   "components": [
     {
@@ -2338,7 +2338,6 @@
           "paradigms": [
             "online_rl"
           ],
-          "episode_outcomes": true,
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -2383,7 +2382,6 @@
           "paradigms": [
             "online_rl"
           ],
-          "episode_outcomes": true,
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -2428,7 +2426,6 @@
           "paradigms": [
             "online_rl"
           ],
-          "episode_outcomes": true,
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -2473,7 +2470,6 @@
           "paradigms": [
             "online_rl"
           ],
-          "episode_outcomes": true,
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -2772,9 +2768,9 @@
         "2.0.0": {
           "tag": "v2.0.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-2.0.0.zip",
-          "sha256": "05c8e7af84caac596d83cd3bfdfdc84553c858b96126175f1a2d3f2cd2b42738",
+          "sha256": "1f6dc372c6700de96fdbbc6e761e9c985aae6515cacf19fed60f0fb18f5ade16",
           "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 18844
+          "size_bytes": 18835
         }
       }
     },
