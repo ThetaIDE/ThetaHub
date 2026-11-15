@@ -1,7 +1,7 @@
 {
   "$schema": "https://hub.thetaide.org/schemas/component-v1.json",
   "version": "1.0",
-  "updated_at": "2026-11-15T01:16:34.952034+00:00",
+  "updated_at": "2026-11-15T01:17:11.540097+00:00",
   "count": 41,
   "components": [
     {
@@ -1033,13 +1033,38 @@
       "id": "mimic-env",
       "name": "MIMIC-III Clinical Environment Suite",
       "kind": "env",
-      "version": "1.1.0",
+      "version": "1.0.2",
       "description": "ICU sepsis benchmarks, valuation hooks, and transition interfaces for MIMIC-III.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "env/mimic.yaml",
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "env",
+        "mimic-env"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_env-1.0.0.zip",
+          "sha256": "71f37fda725ab65f81346c7517ec3d8e7935e7d303dc4832d23af4239f808841",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_env-1.0.1.zip",
+          "sha256": "70d244d3f87eed12e21241b81e42f330230f77d144ffef828ea53e630c1e73df",
+          "published_at": "2026-10-21T15:06:51.811508+00:00"
+        },
+        "1.0.2": {
+          "tag": "v1.0.2",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-env-1.0.2.zip",
+          "sha256": "dd13d6469475b03c3fff91ef46a87e3de87387e0cd50a4febe598a430efb5d1f",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 8619
+        }
+      },
       "dependencies": {
         "components": [
           "clinical-timeseries-data",
@@ -1110,10 +1135,12 @@
           }
         }
       },
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "in/config/env/mimic.yaml",
       "config_paths": [
-        "env/mimic.yaml"
+        "in/config/env/mimic.yaml"
       ],
-      "storage_version": 3,
+      "storage_version": 2,
       "api_version": 1,
       "capabilities": [
         {
@@ -1134,22 +1161,7 @@
         ],
         "resources": [],
         "configs": {
-          "env/mimic.yaml": "configs/env/mimic.yaml"
-        }
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "env",
-        "mimic-env"
-      ],
-      "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-env-1.1.0.zip",
-          "sha256": "bb40f463fb2f075f3d410810c9055c71a4190901554280fd6967c2d15de68fe4",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 8653
+          "in/config/env/mimic.yaml": "configs/env/mimic.yaml"
         }
       }
     },
@@ -1557,22 +1569,41 @@
       "id": "mimic-early-prediction",
       "name": "MIMIC Early Prediction Evaluator",
       "kind": "evaluator",
-      "version": "1.1.0",
+      "version": "1.0.2",
       "description": "Septic shock early prediction evaluator, AUPRC scoring, counterfactual analysis, and agreement metrics.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "eval/mimic/early_prediction.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "evaluator",
+        "mimic-early-prediction"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_early_prediction-1.0.0.zip",
+          "sha256": "5a3e8c4b0937268353c79f170e7cf3f78568e2229abdbfe58e7745e84bbbb77a",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_early_prediction-1.0.1.zip",
+          "sha256": "8e655f24529b584c4fab919d3b7f408d67d1967b1bcb79a65b34fb9dc3d17c4f",
+          "published_at": "2026-10-21T15:06:51.819788+00:00"
+        },
+        "1.0.2": {
+          "tag": "v1.0.2",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-early-prediction-1.0.2.zip",
+          "sha256": "1b6b9522a5788349457d91f5de3a9ee35d35dceea6dd5f803207e94a49848f80",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 19803
+        }
       },
       "paradigms": [
         "supervised",
         "offline_rl"
-      ],
-      "config_paths": [
-        "eval/mimic/early_prediction.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -1597,11 +1628,19 @@
           }
         }
       },
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "in/config/eval/mimic/early_prediction.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "config_paths": [
+        "in/config/eval/mimic/early_prediction.yaml"
+      ],
       "dependencies": {
         "components": [],
         "pip": []
       },
-      "storage_version": 3,
+      "storage_version": 2,
       "api_version": 1,
       "capabilities": [
         {
@@ -1631,33 +1670,7 @@
         ],
         "resources": [],
         "configs": {
-          "eval/mimic/early_prediction.yaml": "configs/eval/mimic/early_prediction.yaml"
-        }
-      },
-      "exports": {
-        "SepsisLSTM": "model.py:SepsisLSTM",
-        "SepsisTransformer": "model.py:SepsisTransformer",
-        "compute_ep_eval_data": "eval_logic.py:compute_ep_eval_data",
-        "compute_volatility_features": "model.py:compute_volatility_features",
-        "evaluate_lstm_model": "model.py:evaluate_lstm_model",
-        "evaluate_transformer_model": "model.py:evaluate_transformer_model",
-        "plot_agreement_vs_shock": "eval_logic.py:plot_agreement_vs_shock",
-        "plot_ep_shock_over_tau": "eval_logic.py:plot_ep_shock_over_tau",
-        "write_counterfactual_table": "eval_logic.py:write_counterfactual_table"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "evaluator",
-        "mimic-early-prediction"
-      ],
-      "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-early-prediction-1.1.0.zip",
-          "sha256": "8c674a07724550534ee0da969ba6c2b4c49ebe1b0437c51e52cf68a241379d76",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 19943
+          "in/config/eval/mimic/early_prediction.yaml": "configs/eval/mimic/early_prediction.yaml"
         }
       }
     },
@@ -1665,21 +1678,34 @@
       "id": "reward-shaping",
       "name": "Potential-Based Reward Shaping",
       "kind": "evaluator",
-      "version": "1.1.0",
+      "version": "1.0.1",
       "description": "Potential-based reward shaping hooks using Early Prediction (EP) septic shock classifiers for offline RL.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "config_path": "eval/mimic/reward_shaping.yaml",
-      "compatibility": {
-        "theta": ">=2.0.0"
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "evaluator",
+        "reward-shaping"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/reward_shaping-1.0.0.zip",
+          "sha256": "7af973bacb8541b26c7cc0ab5b0c9ec2bfb92f1a270de5ae01a5c99a53db93cb",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/reward-shaping-1.0.1.zip",
+          "sha256": "cf68df56a2910bcf27469ce967e9666ef33b8dfaeb11371ac78bc32108272303",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 6789
+        }
       },
       "paradigms": [
         "offline_rl"
-      ],
-      "config_paths": [
-        "eval/mimic/reward_shaping.yaml"
       ],
       "parameter_schema": {
         "type": "object",
@@ -1704,13 +1730,21 @@
           }
         }
       },
+      "created_at": "2026-10-18T00:00:00Z",
+      "config_path": "in/config/eval/mimic/reward_shaping.yaml",
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "config_paths": [
+        "in/config/eval/mimic/reward_shaping.yaml"
+      ],
       "dependencies": {
         "components": [
           "mimic-early-prediction"
         ],
         "pip": []
       },
-      "storage_version": 3,
+      "storage_version": 2,
       "api_version": 1,
       "capabilities": [
         {
@@ -1730,22 +1764,7 @@
         ],
         "resources": [],
         "configs": {
-          "eval/mimic/reward_shaping.yaml": "configs/eval/mimic/reward_shaping.yaml"
-        }
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "evaluator",
-        "reward-shaping"
-      ],
-      "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/reward-shaping-1.1.0.zip",
-          "sha256": "a17aced8bef52b015a60f6f982f098295a0c7f8ef3e7729fbba68995e128235a",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 6776
+          "in/config/eval/mimic/reward_shaping.yaml": "configs/eval/mimic/reward_shaping.yaml"
         }
       }
     },
@@ -1753,19 +1772,38 @@
       "id": "mimic",
       "name": "MIMIC Clinical Sepsis Benchmark",
       "kind": "experiment",
-      "version": "1.1.0",
+      "version": "1.0.2",
       "description": "Complete MIMIC-III sepsis experiment suite: offline clinical benchmark configs, group defaults, ICU environment hooks, timeseries data module, early prediction & reward shaping evaluators, and clinical agreement plotters.",
       "author": {
         "name": "Theta Research"
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "paradigms": [
-        "supervised",
-        "offline_rl"
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "experiment",
+        "mimic"
       ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic-1.0.0.zip",
+          "sha256": "c96ac16d722bbbbc4b216c6cda1d29506c658b18217d809589650950df169d61",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic-1.0.1.zip",
+          "sha256": "b383de75bd65fb02d59f9564ea7be02b6676408d7972bdf232055a95068a7839",
+          "published_at": "2026-10-21T15:09:32.923759+00:00"
+        },
+        "1.0.2": {
+          "tag": "v1.0.2",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-1.0.2.zip",
+          "sha256": "30bb35d04494e2967b8e503251a058666843ff9850ef1dbec48981dd9c006a55",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 18080
+        }
+      },
       "dependencies": {
         "components": [
           "thetalib",
@@ -1777,7 +1815,15 @@
         ],
         "pip": []
       },
-      "storage_version": 3,
+      "paradigms": [
+        "supervised",
+        "offline_rl"
+      ],
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "storage_version": 2,
       "api_version": 1,
       "capabilities": [],
       "payload": {
@@ -1786,77 +1832,62 @@
           "resources/rules"
         ],
         "configs": {
-          "experiment/mimic/_base.yaml": "configs/experiment/mimic/_base.yaml",
-          "experiment/mimic/all_mimic.yaml": "configs/experiment/mimic/all_mimic.yaml",
-          "experiment/mimic/cql_benchmark.yaml": "configs/experiment/mimic/cql_benchmark.yaml",
-          "experiment/mimic/cql_literature.yaml": "configs/experiment/mimic/cql_literature.yaml",
-          "experiment/mimic/final.yaml": "configs/experiment/mimic/final.yaml",
-          "experiment/mimic/final_pos5_cql005.yaml": "configs/experiment/mimic/final_pos5_cql005.yaml",
-          "experiment/mimic/final_pos_weight_5.yaml": "configs/experiment/mimic/final_pos_weight_5.yaml",
-          "experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
-          "experiment/mimic/methods/cql_blendrl_cross_attention.yaml": "configs/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
-          "experiment/mimic/methods/cql_blendrl_human_cew.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
-          "experiment/mimic/methods/cql_blendrl_human_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
-          "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
-          "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
-          "experiment/mimic/methods/cql_blendrl_human_neural.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
-          "experiment/mimic/methods/cql_blendrl_human_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
-          "experiment/mimic/methods/cql_dnn.yaml": "configs/experiment/mimic/methods/cql_dnn.yaml",
-          "experiment/mimic/methods/cql_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_dueling_resnet.yaml",
-          "experiment/mimic/methods/cql_transformer.yaml": "configs/experiment/mimic/methods/cql_transformer.yaml",
-          "experiment/mimic/mimic_gpu_test.yaml": "configs/experiment/mimic/mimic_gpu_test.yaml",
-          "experiment/mimic/mimic_test.yaml": "configs/experiment/mimic/mimic_test.yaml",
-          "experiment/mimic/quick_test.yaml": "configs/experiment/mimic/quick_test.yaml",
-          "experiment/mimic/reciprocal_refinement.yaml": "configs/experiment/mimic/reciprocal_refinement.yaml",
-          "experiment/mimic/selected_mimic.yaml": "configs/experiment/mimic/selected_mimic.yaml",
-          "experiment/mimic/tune_mimic_all.yaml": "configs/experiment/mimic/tune_mimic_all.yaml",
-          "workflow/sepsis_reciprocal.yaml": "configs/workflow/sepsis_reciprocal.yaml"
+          "in/config/experiment/mimic/_base.yaml": "configs/experiment/mimic/_base.yaml",
+          "in/config/experiment/mimic/all_mimic.yaml": "configs/experiment/mimic/all_mimic.yaml",
+          "in/config/experiment/mimic/cql_benchmark.yaml": "configs/experiment/mimic/cql_benchmark.yaml",
+          "in/config/experiment/mimic/cql_literature.yaml": "configs/experiment/mimic/cql_literature.yaml",
+          "in/config/experiment/mimic/final.yaml": "configs/experiment/mimic/final.yaml",
+          "in/config/experiment/mimic/final_pos5_cql005.yaml": "configs/experiment/mimic/final_pos5_cql005.yaml",
+          "in/config/experiment/mimic/final_pos_weight_5.yaml": "configs/experiment/mimic/final_pos_weight_5.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_cross_attention.yaml": "configs/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_human_cew.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_human_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_human_neural.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
+          "in/config/experiment/mimic/methods/cql_blendrl_human_rigid.yaml": "configs/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
+          "in/config/experiment/mimic/methods/cql_dnn.yaml": "configs/experiment/mimic/methods/cql_dnn.yaml",
+          "in/config/experiment/mimic/methods/cql_dueling_resnet.yaml": "configs/experiment/mimic/methods/cql_dueling_resnet.yaml",
+          "in/config/experiment/mimic/methods/cql_transformer.yaml": "configs/experiment/mimic/methods/cql_transformer.yaml",
+          "in/config/experiment/mimic/mimic_gpu_test.yaml": "configs/experiment/mimic/mimic_gpu_test.yaml",
+          "in/config/experiment/mimic/mimic_test.yaml": "configs/experiment/mimic/mimic_test.yaml",
+          "in/config/experiment/mimic/quick_test.yaml": "configs/experiment/mimic/quick_test.yaml",
+          "in/config/experiment/mimic/reciprocal_refinement.yaml": "configs/experiment/mimic/reciprocal_refinement.yaml",
+          "in/config/experiment/mimic/selected_mimic.yaml": "configs/experiment/mimic/selected_mimic.yaml",
+          "in/config/experiment/mimic/tune_mimic_all.yaml": "configs/experiment/mimic/tune_mimic_all.yaml",
+          "in/config/workflow/sepsis_reciprocal.yaml": "configs/workflow/sepsis_reciprocal.yaml"
         }
       },
       "config_paths": [
-        "experiment/mimic/_base.yaml",
-        "experiment/mimic/all_mimic.yaml",
-        "experiment/mimic/cql_benchmark.yaml",
-        "experiment/mimic/cql_literature.yaml",
-        "experiment/mimic/final.yaml",
-        "experiment/mimic/final_pos5_cql005.yaml",
-        "experiment/mimic/final_pos_weight_5.yaml",
-        "experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
-        "experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
-        "experiment/mimic/methods/cql_blendrl_human_cew.yaml",
-        "experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
-        "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
-        "experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
-        "experiment/mimic/methods/cql_blendrl_human_neural.yaml",
-        "experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
-        "experiment/mimic/methods/cql_dnn.yaml",
-        "experiment/mimic/methods/cql_dueling_resnet.yaml",
-        "experiment/mimic/methods/cql_transformer.yaml",
-        "experiment/mimic/mimic_gpu_test.yaml",
-        "experiment/mimic/mimic_test.yaml",
-        "experiment/mimic/quick_test.yaml",
-        "experiment/mimic/reciprocal_refinement.yaml",
-        "experiment/mimic/selected_mimic.yaml",
-        "experiment/mimic/tune_mimic_all.yaml",
-        "workflow/sepsis_reciprocal.yaml"
+        "in/config/experiment/mimic/_base.yaml",
+        "in/config/experiment/mimic/all_mimic.yaml",
+        "in/config/experiment/mimic/cql_benchmark.yaml",
+        "in/config/experiment/mimic/cql_literature.yaml",
+        "in/config/experiment/mimic/final.yaml",
+        "in/config/experiment/mimic/final_pos5_cql005.yaml",
+        "in/config/experiment/mimic/final_pos_weight_5.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_cew_dueling_resnet.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_cross_attention.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_human_cew.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_human_continuous.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_continuous.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_human_dueling_resnet_rigid.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_human_neural.yaml",
+        "in/config/experiment/mimic/methods/cql_blendrl_human_rigid.yaml",
+        "in/config/experiment/mimic/methods/cql_dnn.yaml",
+        "in/config/experiment/mimic/methods/cql_dueling_resnet.yaml",
+        "in/config/experiment/mimic/methods/cql_transformer.yaml",
+        "in/config/experiment/mimic/mimic_gpu_test.yaml",
+        "in/config/experiment/mimic/mimic_test.yaml",
+        "in/config/experiment/mimic/quick_test.yaml",
+        "in/config/experiment/mimic/reciprocal_refinement.yaml",
+        "in/config/experiment/mimic/selected_mimic.yaml",
+        "in/config/experiment/mimic/tune_mimic_all.yaml",
+        "in/config/workflow/sepsis_reciprocal.yaml"
       ],
-      "config_path": "experiment/mimic/_base.yaml",
-      "rules_root": "resources/rules",
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "experiment",
-        "mimic"
-      ],
-      "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-1.1.0.zip",
-          "sha256": "22a609c654a61228fd904f665f5f06151d0eda0aa031976f2541e944377bdba7",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 18074
-        }
-      }
+      "config_path": "in/config/experiment/mimic/_base.yaml",
+      "rules_root": "resources/rules"
     },
     {
       "id": "robotics",
@@ -4062,32 +4093,41 @@
       "id": "mimic-clinical-suite",
       "name": "MIMIC Clinical Evaluation & Visualization Suite",
       "kind": "plotter",
-      "version": "1.1.0",
+      "version": "1.0.1",
       "description": "Clinical policy alignment, septic shock trajectory counterfactuals, and clinician agreement visualizers.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plotter",
+        "mimic-clinical-suite"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_clinical_suite-1.0.0.zip",
+          "sha256": "94e90b75d6e74aac1cf28333608ff1ad196d681f78ff9b9ba79e980ff8632024",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.0.1.zip",
+          "sha256": "30606c5982c31c09a612e26762728430c9764fa927218aba0fb2d3a41a47911b",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 20660
+        }
       },
       "paradigms": [
         "supervised",
         "offline_rl"
       ],
-      "config_paths": [
-        "plot/mimic/clinical.yaml",
-        "plot/mimic/clinical_alignment.yaml",
-        "plot/mimic/ep_agreement.yaml",
-        "plot/mimic/ep_counterfactual_table.yaml",
-        "plot/mimic/ep_dl_sweep.yaml",
-        "plot/mimic/ep_trajectories.yaml"
-      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "plot/mimic/clinical_alignment.yaml": {
+          "in/config/plot/mimic/clinical_alignment.yaml": {
             "type": "object",
             "properties": {
               "plots": {
@@ -4110,7 +4150,7 @@
               }
             }
           },
-          "plot/mimic/clinical.yaml": {
+          "in/config/plot/mimic/clinical.yaml": {
             "type": "object",
             "properties": {
               "figsize": {
@@ -4133,7 +4173,7 @@
               }
             }
           },
-          "plot/mimic/ep_agreement.yaml": {
+          "in/config/plot/mimic/ep_agreement.yaml": {
             "type": "object",
             "properties": {
               "agreement_metric": {
@@ -4156,7 +4196,7 @@
               }
             }
           },
-          "plot/mimic/ep_trajectories.yaml": {
+          "in/config/plot/mimic/ep_trajectories.yaml": {
             "type": "object",
             "properties": {
               "max_trajectories": {
@@ -4176,7 +4216,7 @@
               }
             }
           },
-          "plot/mimic/ep_counterfactual_table.yaml": {
+          "in/config/plot/mimic/ep_counterfactual_table.yaml": {
             "type": "object",
             "properties": {
               "format": {
@@ -4190,7 +4230,7 @@
               }
             }
           },
-          "plot/mimic/ep_dl_sweep.yaml": {
+          "in/config/plot/mimic/ep_dl_sweep.yaml": {
             "type": "object",
             "properties": {
               "enabled": {
@@ -4215,13 +4255,25 @@
           }
         }
       },
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "config_paths": [
+        "in/config/plot/mimic/clinical.yaml",
+        "in/config/plot/mimic/clinical_alignment.yaml",
+        "in/config/plot/mimic/ep_agreement.yaml",
+        "in/config/plot/mimic/ep_counterfactual_table.yaml",
+        "in/config/plot/mimic/ep_dl_sweep.yaml",
+        "in/config/plot/mimic/ep_trajectories.yaml"
+      ],
       "dependencies": {
         "components": [
           "mimic-early-prediction"
         ],
         "pip": []
       },
-      "storage_version": 3,
+      "storage_version": 2,
       "api_version": 1,
       "capabilities": [
         {
@@ -4274,30 +4326,15 @@
         ],
         "resources": [],
         "configs": {
-          "plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
-          "plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
-          "plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
-          "plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
-          "plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
-          "plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
+          "in/config/plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
+          "in/config/plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
+          "in/config/plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
+          "in/config/plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
+          "in/config/plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
+          "in/config/plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
         }
       },
-      "config_path": "plot/mimic/clinical.yaml",
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "mimic-clinical-suite"
-      ],
-      "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.1.0.zip",
-          "sha256": "6e69cbc593439e3005c383ebb89dbbec5a88b382ccb68b871a0053ffb1a6964e",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 20602
-        }
-      }
+      "config_path": "in/config/plot/mimic/clinical.yaml"
     },
     {
       "id": "standard-figures",

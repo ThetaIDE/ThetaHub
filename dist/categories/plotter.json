@@ -1,38 +1,47 @@
 {
   "kind": "plotter",
-  "updated_at": "2026-11-15T01:16:34.952034+00:00",
+  "updated_at": "2026-11-15T01:17:11.540097+00:00",
   "count": 2,
   "components": [
     {
       "id": "mimic-clinical-suite",
       "name": "MIMIC Clinical Evaluation & Visualization Suite",
       "kind": "plotter",
-      "version": "1.1.0",
+      "version": "1.0.1",
       "description": "Clinical policy alignment, septic shock trajectory counterfactuals, and clinician agreement visualizers.",
       "author": {
         "name": "Theta Clinical Team"
       },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
+      "repository": "https://github.com/CameronEgb/theta-plugins",
+      "license": "MIT",
+      "tags": [
+        "plotter",
+        "mimic-clinical-suite"
+      ],
+      "releases": {
+        "1.0.0": {
+          "tag": "v1.0.0",
+          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_clinical_suite-1.0.0.zip",
+          "sha256": "94e90b75d6e74aac1cf28333608ff1ad196d681f78ff9b9ba79e980ff8632024",
+          "published_at": "2026-10-18T19:00:00Z"
+        },
+        "1.0.1": {
+          "tag": "v1.0.1",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.0.1.zip",
+          "sha256": "30606c5982c31c09a612e26762728430c9764fa927218aba0fb2d3a41a47911b",
+          "published_at": "2026-11-08T04:27:22.867386+00:00",
+          "size_bytes": 20660
+        }
       },
       "paradigms": [
         "supervised",
         "offline_rl"
       ],
-      "config_paths": [
-        "plot/mimic/clinical.yaml",
-        "plot/mimic/clinical_alignment.yaml",
-        "plot/mimic/ep_agreement.yaml",
-        "plot/mimic/ep_counterfactual_table.yaml",
-        "plot/mimic/ep_dl_sweep.yaml",
-        "plot/mimic/ep_trajectories.yaml"
-      ],
       "parameter_schema": {
         "type": "object",
         "properties": {},
         "x-theta-config-schemas": {
-          "plot/mimic/clinical_alignment.yaml": {
+          "in/config/plot/mimic/clinical_alignment.yaml": {
             "type": "object",
             "properties": {
               "plots": {
@@ -55,7 +64,7 @@
               }
             }
           },
-          "plot/mimic/clinical.yaml": {
+          "in/config/plot/mimic/clinical.yaml": {
             "type": "object",
             "properties": {
               "figsize": {
@@ -78,7 +87,7 @@
               }
             }
           },
-          "plot/mimic/ep_agreement.yaml": {
+          "in/config/plot/mimic/ep_agreement.yaml": {
             "type": "object",
             "properties": {
               "agreement_metric": {
@@ -101,7 +110,7 @@
               }
             }
           },
-          "plot/mimic/ep_trajectories.yaml": {
+          "in/config/plot/mimic/ep_trajectories.yaml": {
             "type": "object",
             "properties": {
               "max_trajectories": {
@@ -121,7 +130,7 @@
               }
             }
           },
-          "plot/mimic/ep_counterfactual_table.yaml": {
+          "in/config/plot/mimic/ep_counterfactual_table.yaml": {
             "type": "object",
             "properties": {
               "format": {
@@ -135,7 +144,7 @@
               }
             }
           },
-          "plot/mimic/ep_dl_sweep.yaml": {
+          "in/config/plot/mimic/ep_dl_sweep.yaml": {
             "type": "object",
             "properties": {
               "enabled": {
@@ -160,13 +169,25 @@
           }
         }
       },
+      "created_at": "2026-10-18T00:00:00Z",
+      "compatibility": {
+        "theta": ">=2.0.0"
+      },
+      "config_paths": [
+        "in/config/plot/mimic/clinical.yaml",
+        "in/config/plot/mimic/clinical_alignment.yaml",
+        "in/config/plot/mimic/ep_agreement.yaml",
+        "in/config/plot/mimic/ep_counterfactual_table.yaml",
+        "in/config/plot/mimic/ep_dl_sweep.yaml",
+        "in/config/plot/mimic/ep_trajectories.yaml"
+      ],
       "dependencies": {
         "components": [
           "mimic-early-prediction"
         ],
         "pip": []
       },
-      "storage_version": 3,
+      "storage_version": 2,
       "api_version": 1,
       "capabilities": [
         {
@@ -219,30 +240,15 @@
         ],
         "resources": [],
         "configs": {
-          "plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
-          "plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
-          "plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
-          "plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
-          "plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
-          "plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
+          "in/config/plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
+          "in/config/plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
+          "in/config/plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
+          "in/config/plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
+          "in/config/plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
+          "in/config/plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
         }
       },
-      "config_path": "plot/mimic/clinical.yaml",
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "mimic-clinical-suite"
-      ],
-      "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.1.0.zip",
-          "sha256": "6e69cbc593439e3005c383ebb89dbbec5a88b382ccb68b871a0053ffb1a6964e",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 20602
-        }
-      }
+      "config_path": "in/config/plot/mimic/clinical.yaml"
     },
     {
       "id": "standard-figures",
