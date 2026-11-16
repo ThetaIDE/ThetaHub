@@ -1,13 +1,13 @@
 {
   "kind": "datamodule",
-  "updated_at": "2026-11-15T14:31:23.894372+00:00",
+  "updated_at": "2026-11-16T20:05:36.196485+00:00",
   "count": 4,
   "components": [
     {
       "id": "clinical-timeseries-data",
       "name": "Clinical Timeseries Data Module",
       "kind": "datamodule",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Multi-variate clinical EHR/ICU timeseries data loader with windowing, imputation, vital sign normalization, and patient cohort cross-validation.",
       "author": {
         "name": "Theta Clinical Team"
@@ -17,10 +17,6 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "supervised",
-        "offline_rl"
-      ],
       "config_paths": [
         "data/mimic/clinical_timeseries_data.yaml",
         "data/mimic/clinical_timeseries.yaml"
@@ -66,6 +62,16 @@
             "clinical_timeseries_data",
             "EPSepsisDataModule",
             "SepsisDataModule"
+          ],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "supervised",
+                "offline_rl"
+              ]
+            }
           ]
         }
       ],
@@ -87,12 +93,12 @@
         "clinical-timeseries-data"
       ],
       "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/clinical-timeseries-data-1.1.0.zip",
-          "sha256": "909413f4dce7404757f07375e421d14e6676ef77769eb47c7ece5c3fd9b9e0be",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 3733
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/clinical-timeseries-data-1.2.0.zip",
+          "sha256": "5272a4b873c843498346d1e00fbd8c39877a293288ca8f5d00b0f7056ad7e358",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 4053
         }
       }
     },
@@ -100,7 +106,7 @@
       "id": "image-data",
       "name": "Image Data Module",
       "kind": "datamodule",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "General-purpose visual observation data module supporting frame stacking, grayscale conversion, spatial resizing, and tensor normalization for image-based RL.",
       "author": {
         "name": "Theta-IDE Team"
@@ -110,11 +116,6 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised"
-      ],
       "config_paths": [
         "data/thetalib/image_data.yaml"
       ],
@@ -160,6 +161,17 @@
           "aliases": [
             "ImageDataModule",
             "atari_image_data"
+          ],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "online_rl",
+                "offline_rl",
+                "supervised"
+              ]
+            }
           ]
         }
       ],
@@ -180,12 +192,12 @@
         "image-data"
       ],
       "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/image-data-1.1.0.zip",
-          "sha256": "657c2521477c0a1a2213f75113e43e126c74456c206002960cdf586fa7759abd",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 2795
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/image-data-1.2.0.zip",
+          "sha256": "7e25a115cf734d073c86b0b532e1f372ea8705b76e0f21c39c1103d132c57245",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 3114
         }
       }
     },
@@ -193,7 +205,7 @@
       "id": "replay-buffer",
       "name": "RL Replay Buffer Data Module",
       "kind": "datamodule",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "General transition replay loader and chunk reader for offline reinforcement learning.",
       "author": {
         "name": "Theta-IDE Team"
@@ -203,9 +215,6 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "offline_rl"
-      ],
       "config_paths": [
         "data/thetalib/replay_buffer.yaml"
       ],
@@ -245,6 +254,15 @@
           "aliases": [
             "ReplayBufferDataModule",
             "RLReplayBufferDataModule"
+          ],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "offline_rl"
+              ]
+            }
           ]
         }
       ],
@@ -265,12 +283,12 @@
         "replay-buffer"
       ],
       "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/replay-buffer-1.1.0.zip",
-          "sha256": "7b7de50880feca42018ec6a566f0ae37998b70e2a70e7f95a0cd29a2468c770b",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 2508
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/replay-buffer-1.2.0.zip",
+          "sha256": "12abab839c849fbf0711febbb8f25e4656489609090b7e34cac061e0dad4767f",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 2845
         }
       }
     },
@@ -278,7 +296,7 @@
       "id": "tabular-data",
       "name": "Tabular Data Module",
       "kind": "datamodule",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "General tabular dataset loader supporting CSV, NPZ, and NPY files with automated train/val/test splitting and standardization.",
       "author": {
         "name": "Theta-IDE Team"
@@ -288,11 +306,6 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "supervised",
-        "offline_rl",
-        "unsupervised"
-      ],
       "config_paths": [
         "data/thetalib/tabular_data.yaml"
       ],
@@ -334,6 +347,17 @@
           "entry_point": "tabular_data.py:TabularDataModule",
           "aliases": [
             "TabularDataModule"
+          ],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "supervised",
+                "offline_rl",
+                "unsupervised"
+              ]
+            }
           ]
         }
       ],
@@ -354,12 +378,12 @@
         "tabular-data"
       ],
       "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/tabular-data-1.1.0.zip",
-          "sha256": "b0103c9b1a223a582de5e45d244c86ffc351b52e98392350cef948b95f9c68a8",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 3172
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/tabular-data-1.2.0.zip",
+          "sha256": "bbb03d283037e28a9ddebb2d4dc30fa673f4aa852aa73422c7d66632941472ac",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 3497
         }
       }
     }

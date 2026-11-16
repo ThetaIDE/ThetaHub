@@ -2,16 +2,11 @@
   "id": "lstm",
   "name": "LSTM Recurrent Neural Network",
   "kind": "model",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Long Short-Term Memory (LSTM) recurrent network architecture with temporal attention pooling.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "paradigms": [
-    "online_rl",
-    "offline_rl",
-    "supervised"
-  ],
   "config_path": "model/basics/lstm.yaml",
   "config_paths": [
     "model/basics/lstm.yaml"
@@ -53,6 +48,17 @@
       "aliases": [
         "sepsis_lstm",
         "basics/lstm"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     }
   ],
@@ -76,12 +82,12 @@
     "sequential"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.1.0.zip",
-      "sha256": "f8d6e8b4bf39ffe6950c3ffdca38a3e2f96762ce906504fd7f841f9edd54a714",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 2183
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/lstm-1.2.0.zip",
+      "sha256": "545e5cda81b54e5d2811a490f408a802a22e3810dafc15f83eb806ee0119dcb7",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 2567
     }
   }
 }

@@ -2,16 +2,11 @@
   "id": "mlp",
   "name": "Multi-Layer Perceptron (MLP)",
   "kind": "model",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Standard Multi-Layer Perceptron neural network architectures for classification, value estimation, and policy modeling.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "paradigms": [
-    "online_rl",
-    "offline_rl",
-    "supervised"
-  ],
   "config_path": "model/basics/mlp.yaml",
   "config_paths": [
     "model/basics/mlp.yaml",
@@ -92,6 +87,17 @@
       "aliases": [
         "standard_mlp",
         "neural_blender_mlp"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     },
     {
@@ -100,6 +106,17 @@
       "entry_point": "mlp_model.py:ValueNetwork",
       "aliases": [
         "cnn_value_network"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     },
     {
@@ -109,13 +126,35 @@
       "aliases": [
         "mlpqnetwork",
         "basics/mlp"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     },
     {
       "id": "mlp_value_network",
       "kind": "model",
       "entry_point": "mlp_model.py:MLPValueNetwork",
-      "aliases": []
+      "aliases": [],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
+      ]
     },
     {
       "id": "q_network",
@@ -123,6 +162,17 @@
       "entry_point": "mlp_model.py:QNetwork",
       "aliases": [
         "cnn_q_network"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     },
     {
@@ -133,6 +183,17 @@
         "tabular_classifier",
         "classifier",
         "basics/mlp_classifier"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     },
     {
@@ -163,12 +224,12 @@
     "policy"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.1.0.zip",
-      "sha256": "e4ca0c2acb70bc852e3705f9835c8b5dffc42674f49119d2cbd75894cafdd47f",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 4933
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mlp-1.2.0.zip",
+      "sha256": "2b2491be411b2d2f330fa6dafacf7f186bac9911677002a5c1f748fbbe483306",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 5322
     }
   }
 }

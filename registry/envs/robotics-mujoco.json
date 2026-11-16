@@ -2,7 +2,7 @@
   "id": "robotics-mujoco",
   "name": "Gymnasium MuJoCo Robotics",
   "kind": "env",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Continuous-control robotics benchmarks from Gymnasium MuJoCo: Ant, HalfCheetah, Hopper, Walker2d, and Humanoid.",
   "author": {
     "name": "Theta-IDE Team"
@@ -23,9 +23,6 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "paradigms": [
-    "online_rl"
-  ],
   "parameter_schema": {
     "type": "object",
     "properties": {},
@@ -207,7 +204,16 @@
         "mujoco/walker2d",
         "mujoco/half_cheetah"
       ],
-      "resource_root": "."
+      "resource_root": ".",
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl"
+          ]
+        }
+      ]
     }
   ],
   "payload": {
@@ -233,12 +239,12 @@
     "mujoco"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.1.0.zip",
-      "sha256": "312ab30dcebdfa6d6114c7f067b10453f82cb083921068c4860f85ab93fb9177",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 3916
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics-mujoco-1.2.0.zip",
+      "sha256": "f2f7c8afd1496a58600b120c58db03399f2ec6946b4f6c88029e4ff30c6b424d",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 4188
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "kind": "suite",
-  "updated_at": "2026-11-15T14:31:23.894372+00:00",
+  "updated_at": "2026-11-16T20:05:36.196485+00:00",
   "count": 5,
   "components": [
     {
@@ -48,7 +48,7 @@
           "tag": "v1.1.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/basic_suite-1.1.0.zip",
           "sha256": "7b5be0574a18e8186ff12ab40f50a51c7896d4edc6882904cf2fe0a8461cc2da",
-          "published_at": "2026-11-14T00:00:00Z",
+          "published_at": "2026-11-16T20:05:22Z",
           "size_bytes": 576
         }
       }
@@ -98,7 +98,7 @@
           "tag": "v1.1.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/dl_basics_suite-1.1.0.zip",
           "sha256": "4b8cf863ea26cbdf56d0dccb4ac6e3466d2f5b9421278453e1a4aa02a056f21b",
-          "published_at": "2026-11-14T00:00:00Z",
+          "published_at": "2026-11-16T20:05:22Z",
           "size_bytes": 497
         }
       }
@@ -142,7 +142,7 @@
           "tag": "v1.1.0",
           "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/robotics_suite-1.1.0.zip",
           "sha256": "e282322394f6058bae1d847883cefc79e025e49b2dca86b08451f9538b0fef90",
-          "published_at": "2026-11-14T00:00:00Z",
+          "published_at": "2026-11-16T20:05:22Z",
           "size_bytes": 683
         }
       }
@@ -151,7 +151,7 @@
       "id": "theta-validation-suite",
       "name": "Theta Validation Suite",
       "kind": "suite",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "description": "Online-RL experiment and component conformance recipes for ThetaIDE Basics.",
       "author": {
         "name": "Theta-IDE Team"
@@ -170,9 +170,6 @@
         ],
         "pip": []
       },
-      "paradigms": [
-        "online_rl"
-      ],
       "config_paths": [
         "experiment/theta_validation/_base.yaml",
         "experiment/theta_validation/failure/checkpoint_conflict.yaml",
@@ -194,39 +191,30 @@
           {
             "id": "gym_classic_control/cartpole",
             "title": "CartPole live environment",
-            "description": "The Basic Suite environment must expose an online-RL CartPole environment.",
+            "description": "The Basic Suite environment must expose the CartPole live environment.",
             "config_path": "env/gym_classic_control/cartpole.yaml",
             "required": {
-              "env_id": "CartPole-v1",
-              "compatible_paradigms": [
-                "online_rl"
-              ]
+              "env_id": "CartPole-v1"
             }
           },
           {
             "id": "sb3/ppo",
             "title": "SB3 PPO algorithm",
-            "description": "PPO must declare its algorithm capability, execution backend and online-RL compatibility.",
+            "description": "PPO must declare its algorithm capability and execution backend.",
             "config_path": "agent/sb3/ppo.yaml",
             "required": {
               "algorithm": "sb3/ppo",
-              "backend": "sb3",
-              "compatible_paradigms": [
-                "online_rl"
-              ]
+              "backend": "sb3"
             }
           },
           {
             "id": "d3rlpy/cql",
             "title": "d3rlpy CQL algorithm",
-            "description": "CQL must declare its algorithm capability, execution backend and offline-RL compatibility.",
+            "description": "CQL must declare its algorithm capability and execution backend.",
             "config_path": "agent/d3rlpy/cql.yaml",
             "required": {
               "algorithm": "d3rlpy/cql",
-              "backend": "d3rlpy",
-              "compatible_paradigms": [
-                "offline_rl"
-              ]
+              "backend": "d3rlpy"
             }
           },
           {
@@ -266,7 +254,7 @@
             "expectation": "blocked",
             "execution": "preflight",
             "blocked_reason": "The online-RL paradigm requires methods.",
-            "expected_error": "requires 'methods'"
+            "expected_error": "declares no enabled methods"
           },
           {
             "id": "missing-agent",
@@ -295,8 +283,8 @@
             "experiment": "theta_validation/failure/incompatible_cql",
             "expectation": "blocked",
             "execution": "preflight",
-            "blocked_reason": "CQL is compatible with offline RL only.",
-            "expected_error": "not allowed in paradigm 'online_rl'"
+            "blocked_reason": "CQL declares offline RL as its only paradigm.",
+            "expected_error": "requires paradigm in ['offline_rl']; got 'online_rl'"
           },
           {
             "id": "incompatible-iql",
@@ -305,8 +293,8 @@
             "experiment": "theta_validation/failure/incompatible_iql",
             "expectation": "blocked",
             "execution": "preflight",
-            "blocked_reason": "IQL is compatible with offline RL only.",
-            "expected_error": "not allowed in paradigm 'online_rl'"
+            "blocked_reason": "IQL declares offline RL as its only paradigm.",
+            "expected_error": "requires paradigm in ['offline_rl']; got 'online_rl'"
           },
           {
             "id": "incompatible-td3-bc",
@@ -315,8 +303,8 @@
             "experiment": "theta_validation/failure/incompatible_td3_bc",
             "expectation": "blocked",
             "execution": "preflight",
-            "blocked_reason": "TD3+BC is compatible with offline RL only.",
-            "expected_error": "not allowed in paradigm 'online_rl'"
+            "blocked_reason": "TD3+BC declares offline RL as its only paradigm.",
+            "expected_error": "requires paradigm in ['offline_rl']; got 'online_rl'"
           },
           {
             "id": "incompatible-bc",
@@ -325,8 +313,8 @@
             "experiment": "theta_validation/failure/incompatible_bc",
             "expectation": "blocked",
             "execution": "preflight",
-            "blocked_reason": "Behavior cloning is compatible with offline RL only.",
-            "expected_error": "not allowed in paradigm 'online_rl'"
+            "blocked_reason": "Behavior cloning declares offline RL as its only paradigm.",
+            "expected_error": "requires paradigm in ['offline_rl']; got 'online_rl'"
           },
           {
             "id": "unknown-agent",
@@ -394,12 +382,12 @@
       },
       "config_path": "experiment/theta_validation/_base.yaml",
       "releases": {
-        "1.2.0": {
-          "tag": "v1.2.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.2.0.zip",
-          "sha256": "ab0dcec43f633bf23d61e6b89c5e68c71c07087a54d2afa22c0b5ff27cc07ea9",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 6248
+        "1.3.0": {
+          "tag": "v1.3.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/theta-validation-suite-1.3.0.zip",
+          "sha256": "484aa6be4302e348a3ba24f4e039f35c1f8f8cca67180ebe5967a115d2902eae",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 6610
         }
       }
     },
@@ -407,7 +395,7 @@
       "id": "thetalib",
       "name": "ThetaLib Core Foundation Suite",
       "kind": "suite",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Foundational library plugin for Theta-IDE: universal convergence/loss/report figures and core data loaders (image, replay buffer, tabular).",
       "author": {
         "name": "Theta-IDE Team"
@@ -416,12 +404,6 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised",
-        "unsupervised"
-      ],
       "config_paths": [],
       "dependencies": {
         "components": [
@@ -451,12 +433,12 @@
         "thetalib"
       ],
       "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.1.0.zip",
-          "sha256": "5a0a241770efbc14db7589172447708e69657c79e435f1d1ea1f0690efa2eba7",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 585
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/thetalib-1.2.0.zip",
+          "sha256": "5b36fc6624388d6669856410830a886e63cbe1b395b8136e0b820389874261c8",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 894
         }
       }
     }

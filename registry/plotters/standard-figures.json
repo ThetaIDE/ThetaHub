@@ -2,7 +2,7 @@
   "id": "standard-figures",
   "name": "Standard Reinforcement Learning Figures",
   "kind": "plotter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Universal convergence curves, policy and value loss trajectories, and benchmark summary reports.",
   "author": {
     "name": "Theta-IDE Team"
@@ -11,12 +11,6 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "paradigms": [
-    "online_rl",
-    "offline_rl",
-    "supervised",
-    "unsupervised"
-  ],
   "config_paths": [
     "plot/thetalib/convergence.yaml",
     "plot/thetalib/losses.yaml",
@@ -183,12 +177,12 @@
     "standard-figures"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.1.0.zip",
-      "sha256": "eb2befb7625d5b4b762b64edae4bdf498b2117966ff82d80901e3b9b89064777",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 2315
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.2.0.zip",
+      "sha256": "77be604af3a988b9fd6d763510379c3b558660cd469d58c554055b79174b457f",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 2628
     }
   }
 }

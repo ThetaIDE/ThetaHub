@@ -2,7 +2,7 @@
   "id": "gym_classic_control",
   "name": "Gymnasium Classic Control",
   "kind": "env",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Standard Gymnasium classic control environments: CartPole, MountainCar, Pendulum, and Acrobot.",
   "author": {
     "name": "Theta-IDE Team"
@@ -170,7 +170,31 @@
         "acrobot",
         "gym_classic_control/acrobot"
       ],
-      "resource_root": "."
+      "resource_root": ".",
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl"
+          ]
+        },
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl"
+          ],
+          "when": {
+            "env.env_id": [
+              "Acrobot-v1",
+              "Pendulum-v1"
+            ]
+          },
+          "message": "Acrobot and Pendulum have no offline datasets; use them in online_rl."
+        }
+      ]
     },
     {
       "id": "cartpole",
@@ -179,6 +203,16 @@
       "resource_root": "resources/cartpole",
       "aliases": [
         "gym_classic_control/cartpole"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl"
+          ]
+        }
       ]
     }
   ],
@@ -208,12 +242,12 @@
     "gym_classic_control"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/gym_classic_control-1.1.0.zip",
-      "sha256": "ee9cc7e5a2ce431fd80cabe59d038871826bdb1009fc0a450d51fb47de19262f",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 4748
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/gym_classic_control-1.2.0.zip",
+      "sha256": "c8d53a1b179d16d969c2260f3b81377ecc319e62c3472152fff7de2f1087b9f2",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 5309
     }
   }
 }

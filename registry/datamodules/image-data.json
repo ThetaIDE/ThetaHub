@@ -2,7 +2,7 @@
   "id": "image-data",
   "name": "Image Data Module",
   "kind": "datamodule",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "General-purpose visual observation data module supporting frame stacking, grayscale conversion, spatial resizing, and tensor normalization for image-based RL.",
   "author": {
     "name": "Theta-IDE Team"
@@ -12,11 +12,6 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "paradigms": [
-    "online_rl",
-    "offline_rl",
-    "supervised"
-  ],
   "config_paths": [
     "data/thetalib/image_data.yaml"
   ],
@@ -62,6 +57,17 @@
       "aliases": [
         "ImageDataModule",
         "atari_image_data"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     }
   ],
@@ -82,12 +88,12 @@
     "image-data"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/image-data-1.1.0.zip",
-      "sha256": "657c2521477c0a1a2213f75113e43e126c74456c206002960cdf586fa7759abd",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 2795
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/image-data-1.2.0.zip",
+      "sha256": "7e25a115cf734d073c86b0b532e1f372ea8705b76e0f21c39c1103d132c57245",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 3114
     }
   }
 }

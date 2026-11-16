@@ -2,7 +2,7 @@
   "id": "replay-buffer",
   "name": "RL Replay Buffer Data Module",
   "kind": "datamodule",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "General transition replay loader and chunk reader for offline reinforcement learning.",
   "author": {
     "name": "Theta-IDE Team"
@@ -12,9 +12,6 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "paradigms": [
-    "offline_rl"
-  ],
   "config_paths": [
     "data/thetalib/replay_buffer.yaml"
   ],
@@ -54,6 +51,15 @@
       "aliases": [
         "ReplayBufferDataModule",
         "RLReplayBufferDataModule"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "offline_rl"
+          ]
+        }
       ]
     }
   ],
@@ -74,12 +80,12 @@
     "replay-buffer"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/replay-buffer-1.1.0.zip",
-      "sha256": "7b7de50880feca42018ec6a566f0ae37998b70e2a70e7f95a0cd29a2468c770b",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 2508
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/replay-buffer-1.2.0.zip",
+      "sha256": "12abab839c849fbf0711febbb8f25e4656489609090b7e34cac061e0dad4767f",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 2845
     }
   }
 }

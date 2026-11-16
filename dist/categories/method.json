@@ -1,13 +1,13 @@
 {
   "kind": "method",
-  "updated_at": "2026-11-15T14:31:23.894372+00:00",
+  "updated_at": "2026-11-16T20:05:36.196485+00:00",
   "count": 2,
   "components": [
     {
       "id": "d3rlpy-suite",
       "name": "d3rlpy Offline RL Suite",
       "kind": "method",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "description": "Standard offline reinforcement learning algorithms (CQL, IQL, TD3+BC, BC) powered by d3rlpy.",
       "author": "Takuma Seno & d3rlpy Contributors",
       "tags": [
@@ -35,13 +35,7 @@
           "entry_point": "d3rlpy_backend.py:execute",
           "execution_contract": 1,
           "backend": "d3rlpy",
-          "paradigms": [
-            "offline_rl"
-          ],
           "execution_features": {
-            "input_types": [
-              "dataset_path"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -56,7 +50,21 @@
           "resource_hints": {
             "accelerator": false
           },
-          "aliases": []
+          "aliases": [],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "offline_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            }
+          ]
         },
         {
           "id": "d3rlpy/cql",
@@ -64,13 +72,7 @@
           "entry_point": "d3rlpy_backend.py:execute",
           "execution_contract": 1,
           "backend": "d3rlpy",
-          "paradigms": [
-            "offline_rl"
-          ],
           "execution_features": {
-            "input_types": [
-              "dataset_path"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -85,7 +87,21 @@
           "resource_hints": {
             "accelerator": false
           },
-          "aliases": []
+          "aliases": [],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "offline_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            }
+          ]
         },
         {
           "id": "d3rlpy/iql",
@@ -93,13 +109,7 @@
           "entry_point": "d3rlpy_backend.py:execute",
           "execution_contract": 1,
           "backend": "d3rlpy",
-          "paradigms": [
-            "offline_rl"
-          ],
           "execution_features": {
-            "input_types": [
-              "dataset_path"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -114,7 +124,21 @@
           "resource_hints": {
             "accelerator": false
           },
-          "aliases": []
+          "aliases": [],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "offline_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            }
+          ]
         },
         {
           "id": "d3rlpy/td3_bc",
@@ -122,13 +146,7 @@
           "entry_point": "d3rlpy_backend.py:execute",
           "execution_contract": 1,
           "backend": "d3rlpy",
-          "paradigms": [
-            "offline_rl"
-          ],
           "execution_features": {
-            "input_types": [
-              "dataset_path"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -143,17 +161,37 @@
           "resource_hints": {
             "accelerator": false
           },
-          "aliases": []
+          "aliases": [],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "offline_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            }
+          ]
         },
         {
           "id": "d3rlpy/vector",
           "kind": "model",
           "entry_point": "d3rlpy_backend.py:create_encoder",
           "backend": "d3rlpy",
-          "paradigms": [
-            "offline_rl"
-          ],
-          "aliases": []
+          "aliases": [],
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "offline_rl"
+              ]
+            }
+          ]
         }
       ],
       "payload": {
@@ -343,12 +381,12 @@
       "repository": "https://github.com/takuseno/d3rlpy",
       "license": "MIT",
       "releases": {
-        "2.0.0": {
-          "tag": "v2.0.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/d3rlpy-suite-2.0.0.zip",
-          "sha256": "286f773839af7ecb263d5e8548abd34ac13336cd4d5a5214ee87d556671241ce",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 6094
+        "2.1.0": {
+          "tag": "v2.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/d3rlpy-suite-2.1.0.zip",
+          "sha256": "932e4fae942009a2861624d009ce4c0f4c9c742d5655686579687fe3a5a4cedf",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 6251
         }
       }
     },
@@ -356,7 +394,7 @@
       "id": "sb3-suite",
       "name": "Stable-Baselines3 Suite",
       "kind": "method",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "description": "Standard reinforcement learning algorithms (PPO, DQN, A2C, SAC) powered by Stable-Baselines3.",
       "author": "DLR-RM & SB3 Contributors",
       "tags": [
@@ -365,9 +403,6 @@
         "ppo",
         "dqn",
         "sb3"
-      ],
-      "paradigms": [
-        "online_rl"
       ],
       "storage_version": 3,
       "api_version": 1,
@@ -385,9 +420,6 @@
           "kind": "algorithm",
           "entry_point": "sb3_runner.py:execute",
           "aliases": [],
-          "paradigms": [
-            "online_rl"
-          ],
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -404,9 +436,6 @@
           "execution_contract": 1,
           "backend": "sb3",
           "execution_features": {
-            "input_types": [
-              "live_environment"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -422,16 +451,32 @@
           "resource_hints": {
             "base_memory_gib": 0.55
           },
-          "resource_hint_hook": "execution_hooks.py:resource_hints"
+          "resource_hint_hook": "execution_hooks.py:resource_hints",
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "online_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            },
+            {
+              "level": "block",
+              "config": "dataset_path",
+              "present": false
+            }
+          ]
         },
         {
           "id": "sb3/dqn",
           "kind": "algorithm",
           "entry_point": "sb3_runner.py:execute",
           "aliases": [],
-          "paradigms": [
-            "online_rl"
-          ],
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -448,9 +493,6 @@
           "execution_contract": 1,
           "backend": "sb3",
           "execution_features": {
-            "input_types": [
-              "live_environment"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -466,16 +508,32 @@
           "resource_hints": {
             "base_memory_gib": 0.55
           },
-          "resource_hint_hook": "execution_hooks.py:resource_hints"
+          "resource_hint_hook": "execution_hooks.py:resource_hints",
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "online_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            },
+            {
+              "level": "block",
+              "config": "dataset_path",
+              "present": false
+            }
+          ]
         },
         {
           "id": "sb3/ppo",
           "kind": "algorithm",
           "entry_point": "sb3_runner.py:execute",
           "aliases": [],
-          "paradigms": [
-            "online_rl"
-          ],
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -492,9 +550,6 @@
           "execution_contract": 1,
           "backend": "sb3",
           "execution_features": {
-            "input_types": [
-              "live_environment"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -510,16 +565,32 @@
           "resource_hints": {
             "base_memory_gib": 0.55
           },
-          "resource_hint_hook": "execution_hooks.py:resource_hints"
+          "resource_hint_hook": "execution_hooks.py:resource_hints",
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "online_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            },
+            {
+              "level": "block",
+              "config": "dataset_path",
+              "present": false
+            }
+          ]
         },
         {
           "id": "sb3/sac",
           "kind": "algorithm",
           "entry_point": "sb3_runner.py:execute",
           "aliases": [],
-          "paradigms": [
-            "online_rl"
-          ],
           "monitoring": {
             "supports": [
               "scalars.v1",
@@ -531,9 +602,6 @@
           "execution_contract": 1,
           "backend": "sb3",
           "execution_features": {
-            "input_types": [
-              "live_environment"
-            ],
             "evaluation": "provider",
             "resume_modes": [
               "inference"
@@ -549,7 +617,26 @@
           "resource_hints": {
             "base_memory_gib": 0.55
           },
-          "resource_hint_hook": "execution_hooks.py:resource_hints"
+          "resource_hint_hook": "execution_hooks.py:resource_hints",
+          "requires": [
+            {
+              "level": "block",
+              "config": "paradigm",
+              "in": [
+                "online_rl"
+              ]
+            },
+            {
+              "level": "block",
+              "config": "data_module",
+              "present": false
+            },
+            {
+              "level": "block",
+              "config": "dataset_path",
+              "present": false
+            }
+          ]
         }
       ],
       "payload": {
@@ -815,12 +902,12 @@
       "repository": "https://github.com/DLR-RM/stable-baselines3",
       "license": "MIT",
       "releases": {
-        "2.0.0": {
-          "tag": "v2.0.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-2.0.0.zip",
-          "sha256": "1f6dc372c6700de96fdbbc6e761e9c985aae6515cacf19fed60f0fb18f5ade16",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 18835
+        "2.1.0": {
+          "tag": "v2.1.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/sb3-suite-2.1.0.zip",
+          "sha256": "a2c0fb49b7586d3108f73eda81e60f998796c61653724463ad90086c2e2d96af",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 19010
         }
       }
     }

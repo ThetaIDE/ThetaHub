@@ -2,7 +2,7 @@
   "id": "clinical-timeseries-data",
   "name": "Clinical Timeseries Data Module",
   "kind": "datamodule",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Multi-variate clinical EHR/ICU timeseries data loader with windowing, imputation, vital sign normalization, and patient cohort cross-validation.",
   "author": {
     "name": "Theta Clinical Team"
@@ -12,10 +12,6 @@
   "compatibility": {
     "theta": ">=2.0.0"
   },
-  "paradigms": [
-    "supervised",
-    "offline_rl"
-  ],
   "config_paths": [
     "data/mimic/clinical_timeseries_data.yaml",
     "data/mimic/clinical_timeseries.yaml"
@@ -61,6 +57,16 @@
         "clinical_timeseries_data",
         "EPSepsisDataModule",
         "SepsisDataModule"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "supervised",
+            "offline_rl"
+          ]
+        }
       ]
     }
   ],
@@ -82,12 +88,12 @@
     "clinical-timeseries-data"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/clinical-timeseries-data-1.1.0.zip",
-      "sha256": "909413f4dce7404757f07375e421d14e6676ef77769eb47c7ece5c3fd9b9e0be",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 3733
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/clinical-timeseries-data-1.2.0.zip",
+      "sha256": "5272a4b873c843498346d1e00fbd8c39877a293288ca8f5d00b0f7056ad7e358",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 4053
     }
   }
 }

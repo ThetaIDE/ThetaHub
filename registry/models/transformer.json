@@ -2,16 +2,11 @@
   "id": "transformer",
   "name": "Transformer Policy & Attention Networks",
   "kind": "model",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Multi-head self-attention and cross-attention transformer policy architectures with temporal attention pooling.",
   "author": {
     "name": "Theta-IDE Team"
   },
-  "paradigms": [
-    "online_rl",
-    "offline_rl",
-    "supervised"
-  ],
   "config_path": "model/basics/transformer.yaml",
   "config_paths": [
     "model/basics/transformer.yaml"
@@ -53,6 +48,17 @@
       "aliases": [
         "sepsis_transformer",
         "basics/transformer"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     },
     {
@@ -62,6 +68,17 @@
       "aliases": [
         "cross_attention_transformer",
         "sepsis_cross_attention"
+      ],
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl",
+            "offline_rl",
+            "supervised"
+          ]
+        }
       ]
     }
   ],
@@ -85,12 +102,12 @@
     "sequential"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.1.0.zip",
-      "sha256": "2c1d4421f901adc5c54b91177d1959f427b51611d9a45b884e1b3231e04e790f",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 4049
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/transformer-1.2.0.zip",
+      "sha256": "915e8923f5b3eb57ba5c14044efc0bc819118c2431fac9a7164c56ab0a9041dc",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 4438
     }
   }
 }

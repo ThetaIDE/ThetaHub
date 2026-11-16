@@ -2,7 +2,7 @@
   "id": "doom-env",
   "name": "ViZDoom Environment",
   "kind": "env",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "ViZDoom visual reinforcement learning environment for Doom scenario benchmarks.",
   "author": {
     "name": "ViZDoom Team"
@@ -24,9 +24,6 @@
       "vizdoom"
     ]
   },
-  "paradigms": [
-    "online_rl"
-  ],
   "parameter_schema": {
     "type": "object",
     "properties": {
@@ -78,7 +75,16 @@
       "aliases": [
         "doom"
       ],
-      "resource_root": "."
+      "resource_root": ".",
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl"
+          ]
+        }
+      ]
     }
   ],
   "payload": {
@@ -95,12 +101,12 @@
     }
   },
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.1.0.zip",
-      "sha256": "89d13e8e85842e058b609d3c7913c34c0660b239ed70c155f39d5a2f44b08981",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 6326
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-env-1.2.0.zip",
+      "sha256": "3881f0543d82314316c2339f5bf6b4be945b1e13acdab2cbc55ec1db126d1118",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 6706
     }
   }
 }

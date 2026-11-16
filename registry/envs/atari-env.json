@@ -2,7 +2,7 @@
   "id": "atari-env",
   "name": "Atari 2600 Environment Suite",
   "kind": "env",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Standard Arcade Learning Environment (ALE) Atari 2600 benchmarks for Gymnasium.",
   "author": {
     "name": "Farama Foundation",
@@ -28,9 +28,6 @@
       "opencv-python"
     ]
   },
-  "paradigms": [
-    "online_rl"
-  ],
   "parameter_schema": {
     "type": "object",
     "properties": {},
@@ -308,7 +305,16 @@
         "atari/seaquest",
         "atari/space_invaders"
       ],
-      "resource_root": "."
+      "resource_root": ".",
+      "requires": [
+        {
+          "level": "block",
+          "config": "paradigm",
+          "in": [
+            "online_rl"
+          ]
+        }
+      ]
     }
   ],
   "payload": {
@@ -329,12 +335,12 @@
     }
   },
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/atari-env-1.1.0.zip",
-      "sha256": "9a7e221358501d65cff03ffb1a80a06a9c63d41f765fb9294173accb3fa72851",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 4822
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/atari-env-1.2.0.zip",
+      "sha256": "ab6c68aba89e1ad1488200ccfe133a25d5e4c8cf86d15b01435504c84aaef2fd",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 5199
     }
   }
 }

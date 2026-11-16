@@ -1,7 +1,7 @@
 {
   "id": "doom-sim",
   "name": "DOOM",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Authentic 1993 id Software DOOM engine running directly inside Theta IDE.",
   "author": "Cameron Egbert",
   "default_enabled": false,
@@ -48,11 +48,11 @@
     "rl"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.1.0.zip",
-      "sha256": "74bdbaa0b8bee708fc11d9be11b2f4b445034d710589644c4553c52779924d30",
-      "published_at": "2026-11-14T00:00:00Z",
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/doom-sim-1.2.0.zip",
+      "sha256": "ef73ed52b79e98950fe70dd359ec4c19cbf10e4507f9f723d1a02ae0f4707826",
+      "published_at": "2026-11-16T20:05:22Z",
       "size_bytes": 4895
     }
   }

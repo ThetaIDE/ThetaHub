@@ -2,7 +2,7 @@
   "id": "optuna",
   "name": "Optuna tuner",
   "kind": "tuner",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Hyperparameter sweeps with Optuna: metric or objective-component studies, pruning, parallel and remote trials, and a study monitor.",
   "author": {
     "name": "Theta-IDE Team"
@@ -70,29 +70,26 @@
       "pruning.py",
       "remote.py",
       "sweeper.py",
-      "trial_worker.py",
       "utils.py"
     ],
     "resources": [],
     "configs": {
-      "hydra/sweeper/optuna_online.yaml": "configs/hydra/sweeper/optuna_online.yaml",
-      "hydra/sweeper/optuna_offline.yaml": "configs/hydra/sweeper/optuna_offline.yaml"
+      "hydra/sweeper/theta_optuna.yaml": "configs/hydra/sweeper/theta_optuna.yaml"
     }
   },
   "config_paths": [
-    "hydra/sweeper/optuna_online.yaml",
-    "hydra/sweeper/optuna_offline.yaml"
+    "hydra/sweeper/theta_optuna.yaml"
   ],
   "exports": {
     "hydra_sweeper": "sweeper.py:ThetaOptunaSweeper"
   },
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/optuna-1.1.0.zip",
-      "sha256": "893945295551d3c5c2f392eac18b98d688c6e5d8384254d5004578e73cd7c590",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 24488
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/optuna-1.2.0.zip",
+      "sha256": "1ae1e51a19e89654f6318166ff8997477cd3eba864b668cf2645ff5ca723cdd7",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 24579
     }
   }
 }

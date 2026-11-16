@@ -2,7 +2,7 @@
   "id": "neumann",
   "name": "NEUMANN Neural Symbolic Reasoner",
   "kind": "model",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Neuro-symbolic message passing reasoner over logic graphs.",
   "author": {
     "name": "Hikaru Shindo"
@@ -19,18 +19,14 @@
     "properties": {
       "rules": {
         "type": "string",
-        "x-theta-domain": "ruleset",
+        "x-theta-resource": "rules",
         "x-theta-actions": [
           {
             "type": "open-in-editor",
-            "label": "Open rules folder",
-            "handler": {
-              "path": "package://neumann/editor_actions.py",
-              "function": "rules_edit_targets"
-            }
+            "label": "Open rules folder"
           }
         ],
-        "description": "Environment-scoped ruleset name, or environment/name in an unscoped model profile."
+        "description": "Ruleset entry environment/name, or a bare name resolved against the experiment environment's symbolic name."
       },
       "logic_type": {
         "type": "string"
@@ -63,16 +59,12 @@
       "reasoning_graph.py",
       "neumann.py",
       "soft_logic.py",
-      "editor_actions.py",
       "__init__.py",
       "refinement.py",
-      "neumann_utils.py",
       "facts_converter.py",
       "common.py",
-      "valuation.py",
       "message_passing.py",
       "scatter.py",
-      "valuation_func.py",
       "torch_utils.py",
       "fol/__init__.py",
       "fol/logic.py",
@@ -104,12 +96,12 @@
     "message-passing"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.1.0.zip",
-      "sha256": "61aec9947096ce121ee4dccf5f2575c04c86beeaaf921d7460502805225fe53a",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 40671
+    "1.1.1": {
+      "tag": "v1.1.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/neumann-1.1.1.zip",
+      "sha256": "190a47597fbdc5eea8444d45f41b7dea61305e10e609c011f98a8f6fe627c2d9",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 32083
     }
   }
 }

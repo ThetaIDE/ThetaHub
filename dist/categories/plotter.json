@@ -1,260 +1,13 @@
 {
   "kind": "plotter",
-  "updated_at": "2026-11-15T14:31:23.894372+00:00",
-  "count": 2,
+  "updated_at": "2026-11-16T20:05:36.196485+00:00",
+  "count": 1,
   "components": [
-    {
-      "id": "mimic-clinical-suite",
-      "name": "MIMIC Clinical Evaluation & Visualization Suite",
-      "kind": "plotter",
-      "version": "1.0.1",
-      "description": "Clinical policy alignment, septic shock trajectory counterfactuals, and clinician agreement visualizers.",
-      "author": {
-        "name": "Theta Clinical Team"
-      },
-      "repository": "https://github.com/CameronEgb/theta-plugins",
-      "license": "MIT",
-      "tags": [
-        "plotter",
-        "mimic-clinical-suite"
-      ],
-      "releases": {
-        "1.0.0": {
-          "tag": "v1.0.0",
-          "url": "https://raw.githubusercontent.com/CameronEgb/theta-hub/main/packages/mimic_clinical_suite-1.0.0.zip",
-          "sha256": "94e90b75d6e74aac1cf28333608ff1ad196d681f78ff9b9ba79e980ff8632024",
-          "published_at": "2026-10-18T19:00:00Z"
-        },
-        "1.0.1": {
-          "tag": "v1.0.1",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/mimic-clinical-suite-1.0.1.zip",
-          "sha256": "30606c5982c31c09a612e26762728430c9764fa927218aba0fb2d3a41a47911b",
-          "published_at": "2026-11-08T04:27:22.867386+00:00",
-          "size_bytes": 20660
-        }
-      },
-      "paradigms": [
-        "supervised",
-        "offline_rl"
-      ],
-      "parameter_schema": {
-        "type": "object",
-        "properties": {},
-        "x-theta-config-schemas": {
-          "in/config/plot/mimic/clinical_alignment.yaml": {
-            "type": "object",
-            "properties": {
-              "plots": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "agreement_metric": {
-                "type": "string"
-              },
-              "window_hours": {
-                "type": "integer"
-              },
-              "empty_union_score": {
-                "type": "number"
-              },
-              "use_cache": {
-                "type": "boolean"
-              }
-            }
-          },
-          "in/config/plot/mimic/clinical.yaml": {
-            "type": "object",
-            "properties": {
-              "figsize": {
-                "type": "array",
-                "items": {
-                  "type": "integer"
-                }
-              },
-              "dpi": {
-                "type": "integer"
-              },
-              "clinician_baseline": {
-                "type": "number"
-              },
-              "metrics": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "in/config/plot/mimic/ep_agreement.yaml": {
-            "type": "object",
-            "properties": {
-              "agreement_metric": {
-                "type": "string"
-              },
-              "window_hours": {
-                "type": "integer"
-              },
-              "empty_union_score": {
-                "type": "number"
-              },
-              "figsize": {
-                "type": "array",
-                "items": {
-                  "type": "integer"
-                }
-              },
-              "dpi": {
-                "type": "integer"
-              }
-            }
-          },
-          "in/config/plot/mimic/ep_trajectories.yaml": {
-            "type": "object",
-            "properties": {
-              "max_trajectories": {
-                "type": "integer"
-              },
-              "sample_interval": {
-                "type": "integer"
-              },
-              "figsize": {
-                "type": "array",
-                "items": {
-                  "type": "integer"
-                }
-              },
-              "dpi": {
-                "type": "integer"
-              }
-            }
-          },
-          "in/config/plot/mimic/ep_counterfactual_table.yaml": {
-            "type": "object",
-            "properties": {
-              "format": {
-                "type": "string"
-              },
-              "metrics": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "in/config/plot/mimic/ep_dl_sweep.yaml": {
-            "type": "object",
-            "properties": {
-              "enabled": {
-                "type": "boolean"
-              },
-              "remake": {
-                "type": "boolean"
-              },
-              "n_splits": {
-                "type": "integer"
-              },
-              "use_volatility": {
-                "type": "boolean"
-              },
-              "dataset_path": {
-                "type": "string"
-              },
-              "ep_ckpt_root": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "created_at": "2026-10-18T00:00:00Z",
-      "compatibility": {
-        "theta": ">=2.0.0"
-      },
-      "config_paths": [
-        "in/config/plot/mimic/clinical.yaml",
-        "in/config/plot/mimic/clinical_alignment.yaml",
-        "in/config/plot/mimic/ep_agreement.yaml",
-        "in/config/plot/mimic/ep_counterfactual_table.yaml",
-        "in/config/plot/mimic/ep_dl_sweep.yaml",
-        "in/config/plot/mimic/ep_trajectories.yaml"
-      ],
-      "dependencies": {
-        "components": [
-          "mimic-early-prediction"
-        ],
-        "pip": []
-      },
-      "storage_version": 2,
-      "api_version": 1,
-      "capabilities": [
-        {
-          "id": "clinical",
-          "kind": "plotter",
-          "entry_point": "clinical.py:ClinicalPlotter",
-          "aliases": []
-        },
-        {
-          "id": "clinical_alignment",
-          "kind": "plotter",
-          "entry_point": "clinical_alignment.py:ClinicalAlignmentPlotter",
-          "aliases": []
-        },
-        {
-          "id": "ep_agreement",
-          "kind": "plotter",
-          "entry_point": "ep_agreement.py:EpAgreementPlotter",
-          "aliases": []
-        },
-        {
-          "id": "ep_counterfactual_table",
-          "kind": "plotter",
-          "entry_point": "ep_counterfactual_table.py:EpCounterfactualTablePlotter",
-          "aliases": []
-        },
-        {
-          "id": "ep_dl_sweep",
-          "kind": "plotter",
-          "entry_point": "ep_dl_sweep.py:EpDlSweepPlotter",
-          "aliases": []
-        },
-        {
-          "id": "ep_trajectories",
-          "kind": "plotter",
-          "entry_point": "ep_trajectories.py:EpTrajectoriesPlotter",
-          "aliases": []
-        }
-      ],
-      "payload": {
-        "implementations": [
-          "clinical.py",
-          "ep_cache.py",
-          "ep_agreement.py",
-          "ep_trajectories.py",
-          "ep_counterfactual_table.py",
-          "__init__.py",
-          "clinical_alignment.py",
-          "ep_dl_sweep.py"
-        ],
-        "resources": [],
-        "configs": {
-          "in/config/plot/mimic/clinical.yaml": "configs/plot/mimic/clinical.yaml",
-          "in/config/plot/mimic/clinical_alignment.yaml": "configs/plot/mimic/clinical_alignment.yaml",
-          "in/config/plot/mimic/ep_agreement.yaml": "configs/plot/mimic/ep_agreement.yaml",
-          "in/config/plot/mimic/ep_counterfactual_table.yaml": "configs/plot/mimic/ep_counterfactual_table.yaml",
-          "in/config/plot/mimic/ep_dl_sweep.yaml": "configs/plot/mimic/ep_dl_sweep.yaml",
-          "in/config/plot/mimic/ep_trajectories.yaml": "configs/plot/mimic/ep_trajectories.yaml"
-        }
-      },
-      "config_path": "in/config/plot/mimic/clinical.yaml"
-    },
     {
       "id": "standard-figures",
       "name": "Standard Reinforcement Learning Figures",
       "kind": "plotter",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Universal convergence curves, policy and value loss trajectories, and benchmark summary reports.",
       "author": {
         "name": "Theta-IDE Team"
@@ -263,12 +16,6 @@
       "compatibility": {
         "theta": ">=2.0.0"
       },
-      "paradigms": [
-        "online_rl",
-        "offline_rl",
-        "supervised",
-        "unsupervised"
-      ],
       "config_paths": [
         "plot/thetalib/convergence.yaml",
         "plot/thetalib/losses.yaml",
@@ -435,12 +182,12 @@
         "standard-figures"
       ],
       "releases": {
-        "1.1.0": {
-          "tag": "v1.1.0",
-          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.1.0.zip",
-          "sha256": "eb2befb7625d5b4b762b64edae4bdf498b2117966ff82d80901e3b9b89064777",
-          "published_at": "2026-11-14T00:00:00Z",
-          "size_bytes": 2315
+        "1.2.0": {
+          "tag": "v1.2.0",
+          "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/standard-figures-1.2.0.zip",
+          "sha256": "77be604af3a988b9fd6d763510379c3b558660cd469d58c554055b79174b457f",
+          "published_at": "2026-11-16T20:05:22Z",
+          "size_bytes": 2628
         }
       }
     }

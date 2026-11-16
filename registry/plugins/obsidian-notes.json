@@ -1,7 +1,7 @@
 {
   "id": "obsidian-notes",
   "name": "Obsidian Notes",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Embedded Obsidian markdown vault browser, research notebook, and NeSyRL experiment logger.",
   "author": "NeSyRL Team",
   "default_enabled": false,
@@ -44,12 +44,12 @@
     "research"
   ],
   "releases": {
-    "1.1.0": {
-      "tag": "v1.1.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.1.0.zip",
-      "sha256": "9de67d339aecc240a74a9460d3127aeb4b460454e50252c089c836cd7e4f8974",
-      "published_at": "2026-11-14T00:00:00Z",
-      "size_bytes": 5773
+    "1.2.0": {
+      "tag": "v1.2.0",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/obsidian-notes-1.2.0.zip",
+      "sha256": "407e275a091389a8b21bbca5a3fa26189b8fb62813f47e4bc52d2154e0ff8d73",
+      "published_at": "2026-11-16T20:05:22Z",
+      "size_bytes": 5775
     }
   }
 }
