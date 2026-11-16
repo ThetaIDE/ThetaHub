@@ -10,7 +10,7 @@ import urllib.request
 from urllib.parse import urlparse
 from zipfile import ZipFile
 
-VALID_KINDS = {"plugin", "method", "model", "env", "experiment", "suite", "package", "datamodule", "evaluator", "plotter"}
+VALID_KINDS = {"plugin", "method", "model", "env", "experiment", "suite", "package", "datamodule", "evaluator", "plotter", "tuner"}
 SEMVER_REGEX = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$")
 ID_REGEX = re.compile(r"^[a-z0-9][a-z0-9-_]{1,63}$")
 
@@ -32,8 +32,8 @@ def validate_manifest(file_path: Path, check_urls: bool = False, check_archives:
     if errors:
         return errors
 
-    if data["storage_version"] != 2 or data["api_version"] != 1:
-        errors.append("Current releases require storage_version: 2 and api_version: 1")
+    if data["storage_version"] not in (2, 3) or data["api_version"] != 1:
+        errors.append("Registry releases require storage_version: 2 or 3 and api_version: 1")
     for field in ("target_path", "legacy_paths", "module_aliases", "legacy_archive"):
         if field in data:
             errors.append(f"Native listings cannot declare '{field}'")

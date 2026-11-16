@@ -42,7 +42,8 @@
         "package",
         "datamodule",
         "evaluator",
-        "plotter"
+        "plotter",
+        "tuner"
       ],
       "description": "Component category, including data modules, evaluators, and plotters."
     },
@@ -334,7 +335,8 @@
       "description": "JSON Schema for component parameters. Use properties for nested keys, enum for dropdown choices, x-theta-domain: model for installed model choices, and x-theta-config-schemas for profile-specific schemas."
     },
     "storage_version": {
-      "const": 2
+      "type": "integer",
+      "enum": [2, 3]
     },
     "api_version": {
       "const": 1
