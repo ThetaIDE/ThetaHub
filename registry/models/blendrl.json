@@ -2,7 +2,7 @@
   "id": "blendrl",
   "name": "BlendRL Neural-Symbolic Policy",
   "kind": "model",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Modular actor-critic architecture combining neural networks and symbolic reasoners with adaptive blending.",
   "author": {
     "name": "NeSyRL Contributors",
@@ -392,12 +392,12 @@
     }
   },
   "releases": {
-    "1.4.0": {
-      "tag": "v1.4.0",
-      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.4.0.zip",
-      "sha256": "89ef69f06872862fbeaab119651095f72b0e6adf691d0645b8c263dcbdeca5fb",
-      "published_at": "2026-11-16T20:05:22Z",
-      "size_bytes": 25376
+    "1.4.1": {
+      "tag": "v1.4.1",
+      "url": "https://raw.githubusercontent.com/ThetaIDE/ThetaHub/main/packages/blendrl-1.4.1.zip",
+      "sha256": "dc74014de8beae739e55f78f824fcbad824ae21d4344fc304276591980bb2a20",
+      "published_at": "2026-11-18T05:44:58Z",
+      "size_bytes": 27256
     }
   }
 }
